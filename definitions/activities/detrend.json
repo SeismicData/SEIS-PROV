@@ -1,0 +1,17 @@
+{
+    "package": "seis_prov",
+    "type": "activity",
+    "name": "detrend",
+    "two_letter_code": "dt",
+    "recommended_label": "Detrend",
+    "description": "Remove trend from the data.",
+    "attributes": [
+        {
+            "name": "detrending method",
+            "type": "xsd:string",
+            "description": "The method used to remove the trend from the data.",
+            "required": true,
+            "example_value": "demean"
+        }
+    ]
+}

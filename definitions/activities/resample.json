@@ -1,0 +1,38 @@
+{
+    "package": "seis_prov",
+    "type": "activity",
+    "name": "resample",
+    "two_letter_code": "rs",
+    "recommended_label": "Resample",
+    "description": "Resample the data in the frequency domain.",
+    "attributes": [
+        {
+            "name": "frequency_domain_window",
+            "type": "xsd:string",
+            "description": "The window applied to the signal in the Fourier domain.",
+            "required": false,
+            "example_value": "Hanning"
+        },
+        {
+            "name": "new_start_time",
+            "type": "xsd:dateTime",
+            "description": "The time of the first sample in UTC after the interpolation.",
+            "required": false,
+            "example_value": "2012-04-23T18:25:43.511Z"
+        },
+        {
+            "name": "new_number_of_samples",
+            "type": "xsd:positiveInteger",
+            "description": "The number of samples after the interpolation.",
+            "required": false,
+            "example_value": 5000
+        },
+        {
+            "name": "new_sampling_rate",
+            "type": "xsd:double",
+            "description": "The sampling rate after the interpolation.",
+            "required": true,
+            "example_value": 10.0
+        }
+    ]
+}

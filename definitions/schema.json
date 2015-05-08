@@ -73,6 +73,11 @@
           },
           "example_value": {
             "id": "http://seisprov.org/internal_type_def/attributes/example_value"
+          },
+          "skip_example_in_doc": {
+            "id": "http://seisprov.org/internal_type_def/attributes/skip_example_in_doc",
+            "type": "boolean",
+            "description": "If true, the value will not be used in the example node"
           }
         },
         "required": ["name", "type", "description", "required", "example_value"]
