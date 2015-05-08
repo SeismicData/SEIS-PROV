@@ -1,0 +1,46 @@
+{
+    "package": "seis_prov",
+    "type": "entity",
+    "name": "waveform_trace",
+    "two_letter_code": "wf",
+    "recommended_label": "Waveform Trace",
+    "description": "Represents a continuous, equally sampled observed or synthetic waveform trace. Most attributes are optional and can be used to describe either very detailed or fairly general provenance information.",
+    "attributes": [
+        {
+            "name": "seed_id",
+            "type": "xsd:string",
+            "pattern": "^[A-Z]{1,2}\\.[A-Z]{1,5}\\.[A-Z]{0,2}\\.[A-Z]{1,3}$",
+            "description": "The SEED id of the recording station.",
+            "required": false,
+            "example_value": "BW.FURT..EHZ"
+        },
+        {
+            "name": "start_time",
+            "type": "xsd:dateTime",
+            "description": "The time of the first sample in UTC.",
+            "required": false,
+            "example_value": "2012-04-23T18:25:43.511Z"
+        },
+        {
+            "name": "number_of_samples",
+            "type": "xsd:positiveInteger",
+            "description": "The number of samples in the waveform trace.",
+            "required": false,
+            "example_value": 10000
+        },
+        {
+            "name": "sampling_rate",
+            "type": "xsd:double",
+            "description": "The sampling rate of the data.",
+            "required": false,
+            "example_value": 20.0
+        },
+        {
+            "name": "units",
+            "type": "xsd:string",
+            "description": "Units of the waveform data in a common abbreviation, e.g. `m`, `m/s`, `nm/s^2`, ...",
+            "required": false,
+            "example_value": "m/s"
+        }
+    ]
+}
