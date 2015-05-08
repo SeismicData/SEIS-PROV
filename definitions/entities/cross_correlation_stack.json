@@ -1,0 +1,47 @@
+{
+    "package": "seis_prov",
+    "type": "entity",
+    "name": "cross_correlation_stack",
+    "two_letter_code": "cs",
+    "recommended_label": "Cross Correlation Stack",
+    "description": "A stack of cross correlations.",
+    "attributes": [
+        {
+            "name": "correlation_type",
+            "type": "xsd:string",
+            "description": "The type of performed cross correlations as a string. Only useful if the same for all cross correlations, otherwise that information must be stored in the provenance records of the single cross correlations.",
+            "required": false,
+            "example_value": "Phase Cross Correlation"
+        },
+        {
+            "name": "correlation_type",
+            "type": "xsd:positiveInteger",
+            "description": "The number of cross correlations used to calculate the stack.",
+            "required": false,
+            "example_value": 48
+        },
+        {
+            "name": "stacking_method",
+            "type": "xsd:string",
+            "description": "The method used to create the stack.",
+            "required": false,
+            "example_value": "mean"
+        },
+        {
+            "name": "station_id_A",
+            "type": "xsd:string",
+            "description": "The SEED identifier of station A.",
+            "required": false,
+            "pattern": "^[A-Z]{1,2}\\.[A-Z]{1,5}\\.[A-Z]{0,2}\\.[A-Z]{1,3}$",
+            "example_value": "BW.FURT..BHZ"
+        },
+        {
+            "name": "station_id_B",
+            "type": "xsd:string",
+            "description": "The SEED identifier of station B.",
+            "required": false,
+            "pattern": "^[A-Z]{1,2}\\.[A-Z]{1,5}\\.[A-Z]{0,2}\\.[A-Z]{1,3}$",
+            "example_value": "BW.ALTM..BHZ"
+        }
+    ]
+}

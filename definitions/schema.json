@@ -38,6 +38,7 @@
       "items": {
         "id": "http://seisprov.org/internal_type_def/attributes/0",
         "type": "object",
+        "additionalProperties": false,
         "properties": {
           "name": {
             "id": "http://seisprov.org/internal_type_def/attributes/name",

@@ -1,0 +1,47 @@
+{
+    "package": "seis_prov",
+    "type": "entity",
+    "name": "cross_correlation",
+    "two_letter_code": "cc",
+    "recommended_label": "Cross Correlation",
+    "description": "A cross correlation between two stations A and B. Station metadata is not recorded here as it is part of either SEED or StationXML files. Any previously applied processing is also not part of the entity but rather of the entity used by the activity generating this one.",
+    "attributes": [
+        {
+            "name": "correlation_type",
+            "type": "xsd:string",
+            "description": "The type of performed cross correlation as a string.",
+            "required": true,
+            "example_value": "Phase Cross Correlation"
+        },
+        {
+            "name": "max_lag_time_in_sec",
+            "type": "xsd:double",
+            "description": "The maximum lag time used during the calculation in seconds.",
+            "required": false,
+            "example_value": 60.0
+        },
+        {
+            "name": "max_correlation_coefficient",
+            "type": "xsd:double",
+            "description": "The maximum correlation coefficient",
+            "required": false,
+            "example_value": 0.88
+        },
+        {
+            "name": "station_id_A",
+            "type": "xsd:string",
+            "description": "The SEED identifier of station A.",
+            "required": false,
+            "pattern": "^[A-Z]{1,2}\\.[A-Z]{1,5}\\.[A-Z]{0,2}\\.[A-Z]{1,3}$",
+            "example_value": "BW.FURT..BHZ"
+        },
+        {
+            "name": "station_id_B",
+            "type": "xsd:string",
+            "description": "The SEED identifier of station B.",
+            "required": false,
+            "pattern": "^[A-Z]{1,2}\\.[A-Z]{1,5}\\.[A-Z]{0,2}\\.[A-Z]{1,3}$",
+            "example_value": "BW.ALTM..BHZ"
+        }
+    ]
+}
