@@ -1,0 +1,31 @@
+{
+    "package": "seis_prov",
+    "type": "activity",
+    "name": "taper",
+    "two_letter_code": "tp",
+    "recommended_label": "Taper",
+    "description": "Apply a taper window to the data.",
+    "attributes": [
+       {
+         "name": "window_type",
+         "types": ["xsd:string"],
+         "description": "The type applied window.",
+         "required": true,
+         "example_value": "Hanning"
+       },
+       {
+         "name": "taper_width",
+         "types": ["xsd:double"],
+         "description": "The width of the taper at each end. Must be between 0.0 and 0.5.",
+         "required": true,
+         "example_value": 0.05
+       },
+       {
+         "name": "side",
+         "types": ["xsd:string"],
+         "description": "`'left'`, `'right'`, or `'both'`",
+         "required": true,
+         "example_value": "both"
+       }
+    ]
+}

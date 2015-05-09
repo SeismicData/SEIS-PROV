@@ -1,0 +1,17 @@
+{
+    "package": "seis_prov",
+    "type": "activity",
+    "name": "normalize",
+    "two_letter_code": "nm",
+    "recommended_label": "Normalize",
+    "description": "Normalize the data.",
+    "attributes": [
+        {
+            "name": "normalization_method",
+            "types": ["xsd:string"],
+            "description": "The used normalization method.",
+            "required": true,
+            "example_value": "Amplitude"
+        }
+    ]
+}

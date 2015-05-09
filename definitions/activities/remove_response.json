@@ -1,0 +1,31 @@
+{
+    "package": "seis_prov",
+    "type": "activity",
+    "name": "remove_response",
+    "two_letter_code": "rr",
+    "recommended_label": "Remove Response",
+    "description": "Remove an instrument's response.",
+    "attributes": [
+        {
+            "name": "water_level",
+            "types": ["xsd:double"],
+            "description": "The applied water level in dB.",
+            "required": false,
+            "example_value": 60
+        },
+        {
+            "name": "input_units",
+            "types": ["xsd:string"],
+            "description": "Units of the input data in a common abbreviation, e.g. `m`, `m/s`, `nm/s^2`, ...",
+            "required": false,
+            "example_value": "m"
+        },
+        {
+            "name": "output_units",
+            "types": ["xsd:string"],
+            "description": "Units of the output data in a common abbreviation, e.g. `m`, `m/s`, `nm/s^2`, ...",
+            "required": false,
+            "example_value": "m/s"
+        }
+    ]
+}

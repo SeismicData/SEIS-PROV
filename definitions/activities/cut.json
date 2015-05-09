@@ -1,0 +1,24 @@
+{
+    "package": "seis_prov",
+    "type": "activity",
+    "name": "cut",
+    "two_letter_code": "ct",
+    "recommended_label": "Cut",
+    "description": "Cut the data resulting in a shorter trace.",
+    "attributes": [
+        {
+            "name": "new_start_time",
+            "types": ["xsd:dateTime"],
+            "description": "The time of the first sample in UTC after cutting it.",
+            "required": false,
+            "example_value": "2012-04-23T18:25:43.511Z"
+        },
+        {
+            "name": "new_end_time",
+            "types": ["xsd:dateTime"],
+            "description": "The time of the last sample in UTC after cutting it.",
+            "required": false,
+            "example_value": "2012-04-23T20:25:43.511Z"
+        }
+    ]
+}

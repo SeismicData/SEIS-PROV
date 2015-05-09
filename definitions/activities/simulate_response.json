@@ -1,0 +1,31 @@
+{
+    "package": "seis_prov",
+    "type": "activity",
+    "name": "simulate_response",
+    "two_letter_code": "sr",
+    "recommended_label": "Simulate Response",
+    "description": "Add an instrument’s response.",
+    "attributes": [
+        {
+            "name": "description",
+            "types": ["xsd:string"],
+            "description": "Textual description of the added response. If more details are needed, then this activity should use an entity that points to the used response.",
+            "required": false,
+            "example_value": "Wood-Anderson Seismometer"
+        },
+        {
+            "name": "input_units",
+            "types": ["xsd:string"],
+            "description": "Units of the input data in a common abbreviation, e.g. `m`, `m/s`, `nm/s^2`, ...",
+            "required": false,
+            "example_value": "m/"
+        },
+        {
+            "name": "output_units",
+            "types": ["xsd:string"],
+            "description": "Units of the output data in a common abbreviation, e.g. `m`, `m/s`, `nm/s^2`, ...",
+            "required": false,
+            "example_value": "m/s"
+        }
+    ]
+}

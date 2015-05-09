@@ -1,0 +1,54 @@
+{
+    "package": "seis_prov",
+    "type": "activity",
+    "name": "highpass_filter",
+    "two_letter_code": "hp",
+    "recommended_label": "Highpass Filter",
+    "description": "Highpass the data.",
+    "attributes": [
+        {
+            "name": "filter_type",
+            "types": ["xsd:string"],
+            "description": "The type of filter, e.g. `Butterworth`, `FIR`, `Chebyshev Type I/II`, `Bessel`, ...",
+            "required": true,
+            "example_value": "Butterworth"
+        },
+        {
+            "name": "corner_frequency",
+            "types": ["xsd:double"],
+            "description": "The corner frequency of the filter if applicable in Hz",
+            "required": false,
+            "example_value": 5.0
+        },
+        {
+            "name": "filter_order",
+            "types": ["xsd:positiveInteger"],
+            "description": "The order of the filter if applicable.",
+            "required": false,
+            "example_value": 2
+        },
+        {
+            "name": "number_of_passes",
+            "types": ["xsd:positiveInteger"],
+            "description": "The number of filter passes if applicable.",
+            "required": false,
+            "example_value": 1
+        },
+        {
+            "name": "chebychev_transition_bw",
+            "types": ["xsd:double"],
+            "required": false,
+            "description": "The transition band width in the case of a Chebychev filter.",
+            "example_value": 10.0,
+            "skip_example_in_doc": true
+        },
+        {
+            "name": "chebychev_attenuation_factor",
+            "types": ["xsd:double"],
+            "required": false,
+            "description": "The attenuation factor in the case of a Chebychev filter.",
+            "example_value": 20.0,
+            "skip_example_in_doc": true
+        }
+    ]
+}

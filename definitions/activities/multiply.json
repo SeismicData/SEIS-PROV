@@ -1,0 +1,17 @@
+{
+    "package": "seis_prov",
+    "type": "activity",
+    "name": "multiply",
+    "two_letter_code": "mp",
+    "recommended_label": "Multiply",
+    "description": "Multiply each value of the data with a certain factor. This is implied by many operations but sometimes useful to capture in its own right.",
+    "attributes": [
+        {
+            "name": "factor",
+            "types": ["xsd:double"],
+            "description": "The factor by which to multiply.",
+            "required": true,
+            "example_value": 2.5
+        }
+    ]
+}

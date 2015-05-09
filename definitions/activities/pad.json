@@ -1,0 +1,31 @@
+{
+    "package": "seis_prov",
+    "type": "activity",
+    "name": "pad",
+    "two_letter_code": "pd",
+    "recommended_label": "Pad",
+    "description": "Pad the data resulting in a longer trace.",
+    "attributes": [
+        {
+            "name": "fill_value",
+            "types": ["xsd:decimal", "xsd:integer"],
+            "description": "The value that will be used to fill missing values with.",
+            "required": true,
+            "example_value": 0.0
+        },
+        {
+            "name": "new_start_time",
+            "types": ["xsd:dateTime"],
+            "description": "The time of the first sample in UTC after padding it.",
+            "required": false,
+            "example_value": "2012-04-23T18:25:43.511Z"
+        },
+        {
+            "name": "new_end_time",
+            "types": ["xsd:dateTime"],
+            "description": "The time of the last sample in UTC after padding it.",
+            "required": false,
+            "example_value": "2012-04-23T20:25:43.511Z"
+        }
+    ]
+}
