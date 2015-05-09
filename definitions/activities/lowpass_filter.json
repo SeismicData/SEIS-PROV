@@ -3,40 +3,40 @@
     "type": "activity",
     "name": "lowpass_filter",
     "two_letter_code": "lp",
-    "recommended_label": "Lowass Filter",
+    "recommended_label": "Lowpass Filter",
     "description": "Lowpass the data.",
     "attributes": [
         {
             "name": "filter_type",
-            "type": "xsd:string",
+            "types": ["xsd:string"],
             "description": "The type of filter, e.g. `Butterworth`, `FIR`, `Chebyshev Type I/II`, `Bessel`, ...",
             "required": true,
             "example_value": "Butterworth"
         },
         {
             "name": "corner_frequency",
-            "type": "xsd:double",
+            "types": ["xsd:double"],
             "description": "The corner frequency of the filter if applicable in Hz",
             "required": false,
             "example_value": 5.0
         },
         {
             "name": "filter_order",
-            "type": "xsd:positiveInteger",
+            "types": ["xsd:positiveInteger"],
             "description": "The order of the filter if applicable.",
             "required": false,
             "example_value": 2
         },
         {
             "name": "number_of_passes",
-            "type": "xsd:positiveInteger",
+            "types": ["xsd:positiveInteger"],
             "description": "The number of filter passes if applicable.",
             "required": false,
             "example_value": 1
         },
         {
             "name": "chebychev_transition_bw",
-            "type": "xsd:double",
+            "types": ["xsd:double"],
             "required": false,
             "description": "The transition band width in the case of a Chebychev filter.",
             "example_value": 10.0,
@@ -44,7 +44,7 @@
         },
         {
             "name": "chebychev_attenuation_factor",
-            "type": "xsd:double",
+            "types": ["xsd:double"],
             "required": false,
             "description": "The attenuation factor in the case of a Chebychev filter.",
             "example_value": 20.0,

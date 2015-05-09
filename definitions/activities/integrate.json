@@ -8,28 +8,28 @@
     "attributes": [
         {
             "name": "order",
-            "type": "xsd:positiveInteger",
+            "types": ["xsd:positiveInteger"],
             "description": "The order of the integration, e.g. the nth anti-derivative.",
             "required": true,
             "example_value": 1
         },
         {
             "name": "integration_method",
-            "type": "xsd:string",
+            "types": ["xsd:string"],
             "description": "The integration method.",
             "required": false,
             "example_value": "Composite trapezoidal rule."
         },
         {
             "name": "input_units",
-            "type": "xsd:string",
+            "types": ["xsd:string"],
             "description": "Units of the input data in a common abbreviation, e.g. `m`, `m/s`, `nm/s^2`, ...",
             "required": false,
             "example_value": "m/s"
         },
         {
             "name": "output_units",
-            "type": "xsd:string",
+            "types": ["xsd:string"],
             "description": "Units of the output data in a common abbreviation, e.g. `m`, `m/s`, `nm/s^2`, ...",
             "required": false,
             "example_value": "m"

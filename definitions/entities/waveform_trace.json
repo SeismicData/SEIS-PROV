@@ -8,7 +8,7 @@
     "attributes": [
         {
             "name": "seed_id",
-            "type": "xsd:string",
+            "types": ["xsd:string"],
             "pattern": "^[A-Z]{1,2}\\.[A-Z]{1,5}\\.[A-Z]{0,2}\\.[A-Z]{1,3}$",
             "description": "The SEED id of the recording station.",
             "required": false,
@@ -16,31 +16,45 @@
         },
         {
             "name": "start_time",
-            "type": "xsd:dateTime",
+            "types": ["xsd:dateTime"],
             "description": "The time of the first sample in UTC.",
             "required": false,
             "example_value": "2012-04-23T18:25:43.511Z"
         },
         {
             "name": "number_of_samples",
-            "type": "xsd:positiveInteger",
+            "types": ["xsd:positiveInteger"],
             "description": "The number of samples in the waveform trace.",
             "required": false,
             "example_value": 10000
         },
         {
             "name": "sampling_rate",
-            "type": "xsd:double",
+            "types": ["xsd:double"],
             "description": "The sampling rate of the data.",
             "required": false,
             "example_value": 20.0
         },
         {
             "name": "units",
-            "type": "xsd:string",
+            "types": ["xsd:string"],
             "description": "Units of the waveform data in a common abbreviation, e.g. `m`, `m/s`, `nm/s^2`, ...",
             "required": false,
             "example_value": "m/s"
+        },
+        {
+          "name": "azimuth",
+          "types": ["xsd:double"],
+          "description": "Azimuth of the component in degrees from north, clockwise, same definition as in StationXML.",
+          "required": false,
+          "example_value": 90.0
+        },
+        {
+          "name": "dip",
+          "types": ["xsd:double"],
+          "description": "Dip of the component in degrees, down from horizontal, same definition as in StationXML.",
+          "required": false,
+          "example_value": 0.0
         }
     ]
 }

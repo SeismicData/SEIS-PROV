@@ -8,28 +8,28 @@
     "attributes": [
         {
             "name": "order",
-            "type": "xsd:positiveInteger",
+            "types": ["xsd:positiveInteger"],
             "description": "The order of the derivative, e.g. the nth derivative.",
             "required": true,
             "example_value": 1
         },
         {
             "name": "differentiation_method",
-            "type": "xsd:string",
+            "types": ["xsd:string"],
             "description": "The differentiation method.",
             "required": false,
             "example_value": "three point centered differences"
         },
         {
             "name": "input_units",
-            "type": "xsd:string",
+            "types": ["xsd:string"],
             "description": "Units of the input data in a common abbreviation, e.g. `m`, `m/s`, `nm/s^2`, ...",
             "required": false,
             "example_value": "m"
         },
         {
             "name": "output_units",
-            "type": "xsd:string",
+            "types": ["xsd:string"],
             "description": "Units of the output data in a common abbreviation, e.g. `m`, `m/s`, `nm/s^2`, ...",
             "required": false,
             "example_value": "m/s"

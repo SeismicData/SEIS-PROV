@@ -8,28 +8,28 @@
     "attributes": [
         {
             "name": "correlation_type",
-            "type": "xsd:string",
+            "types": ["xsd:string"],
             "description": "The type of performed cross correlation as a string.",
             "required": true,
             "example_value": "Phase Cross Correlation"
         },
         {
             "name": "max_lag_time_in_sec",
-            "type": "xsd:double",
+            "types": ["xsd:double"],
             "description": "The maximum lag time used during the calculation in seconds.",
             "required": false,
             "example_value": 60.0
         },
         {
             "name": "max_correlation_coefficient",
-            "type": "xsd:double",
+            "types": ["xsd:double"],
             "description": "The maximum correlation coefficient",
             "required": false,
             "example_value": 0.88
         },
         {
             "name": "station_id_A",
-            "type": "xsd:string",
+            "types": ["xsd:string"],
             "description": "The SEED identifier of station A.",
             "required": false,
             "pattern": "^[A-Z]{1,2}\\.[A-Z]{1,5}\\.[A-Z]{0,2}\\.[A-Z]{1,3}$",
@@ -37,7 +37,7 @@
         },
         {
             "name": "station_id_B",
-            "type": "xsd:string",
+            "types": ["xsd:string"],
             "description": "The SEED identifier of station B.",
             "required": false,
             "pattern": "^[A-Z]{1,2}\\.[A-Z]{1,5}\\.[A-Z]{0,2}\\.[A-Z]{1,3}$",

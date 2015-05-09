@@ -8,7 +8,7 @@
     "attributes": [
         {
             "name": "factor",
-            "type": "xsd:positiveInteger",
+            "types": ["xsd:positiveInteger"],
             "description": "The decimation factor",
             "required": true,
             "example_value": 5

@@ -8,49 +8,49 @@
     "attributes": [
       {
         "name": "latitude",
-        "type": "xsd:double",
+        "types": ["xsd:double"],
         "description": "The latitude of the station in WGS84.",
         "required": false,
         "example_value": 48.0
        },
        {
          "name": "longitude",
-         "type": "xsd:double",
+         "types": ["xsd:double"],
          "description": "The longitude of the station in WGS84.",
          "required": false,
          "example_value": 12.1
        },
        {
          "name": "elevation_in_m",
-         "type": "xsd:double",
+         "types": ["xsd:double"],
          "description": "The elevation of the station in meter above the null level on WGS84.",
          "required": false,
          "example_value": 658.0
        },
        {
          "name": "local_depth_in_m",
-         "type": "xsd:double",
+         "types": ["xsd:double"],
          "description": "The burial of the station in meter.",
          "required": false,
          "example_value": 0.0
        },
        {
          "name": "orientation",
-         "type": "xsd:string",
+         "types": ["xsd:string"],
          "description": "The orientation of the adjoint source, either N (north), E (east), Z (up), T (transverse), or R (radial). If that is not sufficient, please use the dip and azimuth attributes.",
          "required": false,
          "example_value": "N"
        },
        {
          "name": "dip",
-         "type": "xsd:double",
+         "types": ["xsd:double"],
          "description": "Dip of the component in degrees, down from horizontal, same definition as in StationXML.",
          "required": false,
          "example_value": 0.0
        },
        {
          "name": "azimuth",
-         "type": "xsd:double",
+         "types": ["xsd:double"],
          "description": "Azimuth of the component in degrees from north, clockwise, same definition as in StationXML.",
          "required": false,
          "example_value": 90.0
@@ -58,7 +58,7 @@
        },
        {
          "name": "station_id",
-         "type": "xsd:string",
+         "types": ["xsd:string"],
          "description": "The id of the recording station.",
          "required": false,
          "pattern": "^[A-Z]{1,2}\\.[A-Z]{1,5}\\.[A-Z]{0,2}\\.[A-Z]{1,3}$",
@@ -66,42 +66,42 @@
        },
        {
          "name": "number_of_samples",
-         "type": "xsd:positiveInteger",
+         "types": ["xsd:positiveInteger"],
          "description": "The number of samples in the trace.",
          "required": false,
          "example_value": 20000
        },
        {
          "name": "sampling_rate",
-         "type": "xsd:double",
+         "types": ["xsd:double"],
          "description": "The sampling rate of the data.",
          "required": false,
          "example_value": 20.0
        },
        {
          "name": "units",
-         "type": "xsd:string",
+         "types": ["xsd:string"],
          "description": "Units of the adjoint source as a common abbreviation, e.g. m, m/s, nm/s^2, ...",
          "required": false,
          "example_value": "m/s"
        },
        {
          "name": "adjoint_source_type",
-         "type": "xsd:string",
+         "types": ["xsd:string"],
          "description": "A string denoting the type of adjoint source.",
          "required": true,
          "example_value": "Time Frequency Phase"
        },
        {
          "name": "adjoint_source_type_uri",
-         "type": "xsd:anyURI",
+         "types": ["xsd:anyURI"],
          "description": "A URI pointing to a detailed description of the adjoint source, for example a DOI link to a publication.",
          "required": false,
          "example_value": "http://dx.doi.org/10.1111/j.1365-246X.2009.04368.x"
        },
        {
          "name": "misfit_value",
-         "type": "xsd:double",
+         "types": ["xsd:double"],
          "description": "The calculation of many types of adjoint sources will automatically yield a misfit value denoting the similarity of usually observed and synthetic seismograms.",
          "required": false,
          "example_value": 0.08

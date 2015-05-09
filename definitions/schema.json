@@ -16,7 +16,7 @@
     "name": {
       "id": "http://seisprov.org/internal_type_def/name",
       "type": "string",
-      "pattern": "[a-z_]{4,}"
+      "pattern": "[a-z_]{3,}"
     },
     "two_letter_code": {
       "id": "http://seisprov.org/internal_type_def/two_letter_code",
@@ -26,7 +26,7 @@
     "recommended_label": {
       "id": "http://seisprov.org/internal_type_def/recommended_label",
       "type": "string",
-      "pattern": "^[a-zA-Z ]{4,}$"
+      "pattern": "^[a-zA-Z ]{3,}$"
     },
     "description": {
       "id": "http://seisprov.org/internal_type_def/description",
@@ -45,19 +45,24 @@
             "type": "string",
             "pattern": "^[a-z_]+"
           },
-          "type": {
-            "id": "http://seisprov.org/internal_type_def/attributes/type",
-            "type": "string",
-            "enum": ["xsd:string", "xsd:byte", "xsd:decimal", "xsd:int",
-                     "xsd:integer", "xsd:long", "xsd:negativeInteger",
-                     "xsd:nonNegativeInteger", "xsd:nonPositiveInteger",
-                     "xsd:positiveInteger", "xsd:short", "xsd:unsignedLong",
-                     "xsd:unsignedInt", "xsd:unsignedShort",
-                     "xsd:unsignedByte", "xsd:date", "xsd:dateTime",
-                     "xsd:duration", "xsd:gDay", "xsd:gMonth", "xsd:gMonthDay",
-                     "xsd:gYear", "xsd:gYearMonth", "xsd:time", "xsd:anyURI",
-                     "xsd:base64Binary", "xsd:boolean", "xsd:double",
-                     "xsd:float", "xsd:hexBinary"]
+          "types": {
+            "id": "http://seisprov.org/internal_type_def/attributes/types",
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "id": "http://seisprov.org/internal_type_def/attributes/types/type",
+                "type": "string",
+                "enum": ["xsd:string", "xsd:byte", "xsd:decimal", "xsd:int",
+                         "xsd:integer", "xsd:long", "xsd:negativeInteger",
+                         "xsd:nonNegativeInteger", "xsd:nonPositiveInteger",
+                         "xsd:positiveInteger", "xsd:short", "xsd:unsignedLong",
+                         "xsd:unsignedInt", "xsd:unsignedShort",
+                         "xsd:unsignedByte", "xsd:date", "xsd:dateTime",
+                         "xsd:duration", "xsd:gDay", "xsd:gMonth", "xsd:gMonthDay",
+                         "xsd:gYear", "xsd:gYearMonth", "xsd:time", "xsd:anyURI",
+                         "xsd:base64Binary", "xsd:boolean", "xsd:double",
+                         "xsd:float", "xsd:hexBinary"]
+                }
           },
           "pattern": {
             "id": "http://seisprov.org/internal_type_def/attributes/pattern",
@@ -80,7 +85,7 @@
             "description": "If true, the value will not be used in the example node"
           }
         },
-        "required": ["name", "type", "description", "required", "example_value"]
+        "required": ["name", "types", "description", "required", "example_value"]
       }
     }
   },
