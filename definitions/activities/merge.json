@@ -1,0 +1,17 @@
+{
+    "package": "seis_prov",
+    "type": "activity",
+    "name": "merge",
+    "two_letter_code": "mg",
+    "recommended_label": "Merge",
+    "description": "Merge several traces into one. This is very implementation dependent and thus the activity should be associated with a software agent.",
+    "attributes": [
+        {
+            "name": "merging_strategy",
+            "types": ["xsd:string"],
+            "description": "A string describing the applied merging strategy.",
+            "required": true,
+            "example_value": "discard overlaps"
+        }
+    ]
+}

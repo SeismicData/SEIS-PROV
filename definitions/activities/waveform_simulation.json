@@ -1,0 +1,10 @@
+{
+    "package": "seis_prov",
+    "type": "activity",
+    "name": "waveform_simulation",
+    "two_letter_code": "ws",
+    "recommended_label": "Waveform Simulation",
+    "description": "Generate data by running some numerical or analytic code. Must be associated with one or more agents and use some entities to achieve a useful description.",
+    "attributes": [
+    ]
+}

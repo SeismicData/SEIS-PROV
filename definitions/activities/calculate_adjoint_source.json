@@ -1,0 +1,25 @@
+{
+    "package": "seis_prov",
+    "type": "activity",
+    "name": "calculate_adjoint_source",
+    "two_letter_code": "ca",
+    "recommended_label": "Calculate Adjoint Source",
+    "description": "Calculate an adjoint source.",
+    "attributes": [
+       {
+         "name": "adjoint_source_type",
+         "types": ["xsd:string"],
+         "description": "A string denoting the type of adjoint source.",
+         "required": true,
+         "example_value": "Time Frequency Phase"
+       },
+       {
+         "name": "adjoint_source_type_uri",
+         "types": ["xsd:anyURI"],
+         "description": "A URI pointing to a detailed description of the adjoint source, for example a DOI link to a publication.",
+         "required": false,
+         "example_value": "http://dx.doi.org/10.1111/j.1365-246X.2009.04368.x"
+       }
+    ]
+}
+

@@ -1,0 +1,25 @@
+{
+    "package": "seis_prov",
+    "type": "activity",
+    "name": "cross_correlate",
+    "two_letter_code": "co",
+    "recommended_label": "Cross Correlate",
+    "description": "Cross correlate data of two stations. This does not contain information about the used data as that is captured by the incoming entities.",
+    "attributes": [
+        {
+            "name": "correlation_type",
+            "types": ["xsd:string"],
+            "description": "The type of performed cross correlation as a string.",
+            "required": true,
+            "example_value": "Phase Cross Correlation"
+        },
+        {
+            "name": "max_lag_time_in_sec",
+            "types": ["xsd:double"],
+            "description": "The type of performed cross correlation as a string.",
+            "required": false,
+            "example_value": 60.0
+        }
+    ]
+}
+
