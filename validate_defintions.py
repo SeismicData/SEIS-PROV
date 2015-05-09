@@ -22,6 +22,7 @@ Requires Python 2.7 or 3.4 and the following non-standard library modules:
 from __future__ import (absolute_import, division, print_function,
                         unicode_literals)
 
+import collections
 import inspect
 import io
 import json
@@ -29,6 +30,10 @@ import os
 
 import colorama
 import jsonschema
+
+
+class ValidationError(Exception):
+    pass
 
 
 current_dir = os.path.dirname(os.path.abspath(inspect.getfile(
@@ -58,11 +63,46 @@ def json_files(folder, exclude_filenames):
             yield filename
 
 
-if __name__ == "__main__":
+def validate():
+    two_letter_codes = collections.defaultdict(list)
+
     for filename in json_files(folder=definitions_dir,
                                exclude_filenames=[schema_filename]):
         print(colorama.Fore.GREEN +
               "Validating %s ..." % os.path.relpath(filename) +
               colorama.Style.RESET_ALL)
         with io.open(filename, "rt") as fh:
-            jsonschema.validate(json.load(fh), schema)
+            data = json.load(fh)
+
+        # Validate against the scheme.
+        jsonschema.validate(data, schema)
+
+        # Check that the filename corresponds to the node name and recommended
+        # label.
+        name = os.path.splitext(os.path.basename(filename))[0]
+        if name != data["name"]:
+            raise ValidationError(
+                "File '%s': 'name' attribute '%s' does not correspond to the "
+                "filename." % (os.path.relpath(filename), data["name"]))
+
+        expected_label = " ".join([_i.capitalize() for _i in name.split("_")])
+        if expected_label != data["recommended_label"]:
+            raise ValidationError(
+                "File '%s': 'recommended_label' attribute '%s' is not equal "
+                "to the expected value '%s':" % (
+                    os.path.relpath(filename), data["recommended_label"],
+                    expected_label))
+
+        # Collect the two letter codes.
+        two_letter_codes[data["two_letter_code"]].append(filename)
+
+    for key, value in two_letter_codes.items():
+        if len(value) == 1:
+            continue
+        raise ValidationError(
+            "Two letter code '%s' is used in %i files: %s" % (
+                key, len(value), ", ".join(value)))
+
+
+if __name__ == "__main__":
+    validate()
