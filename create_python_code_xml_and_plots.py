@@ -37,7 +37,7 @@ pr.{type}("{prefix}:001_{two_letter_code}_{short_hash}", other_attributes=((
     ("prov:label", "{label}"),
     ("prov:type", "{prefix}:{name}"),
 {contents}
-))
+)))
 """.strip()
 
 
@@ -51,14 +51,14 @@ schema_filename = os.path.abspath(
 generated_dir = os.path.join(current_dir, "_generated")
 python_dir = os.path.join(generated_dir, "python")
 xml_dir = os.path.join(generated_dir, "xml")
-plot_dir = os.path.join(generated_dir, "plots")
+dot_dir = os.path.join(generated_dir, "dot")
 
 if os.path.exists(generated_dir):
     shutil.rmtree(generated_dir)
 
 os.makedirs(python_dir)
 os.makedirs(xml_dir)
-os.makedirs(plot_dir)
+os.makedirs(dot_dir)
 
 
 def json_files(folder, exclude_filenames):
@@ -94,6 +94,22 @@ def generate_python_code():
             python_dir, "%s_%s_max.py" % (
                 definition["type"],
                 os.path.splitext(os.path.basename(filename))[0]))
+        dot_min_filename = os.path.join(
+            dot_dir, "%s_%s_min.dot" % (
+                definition["type"],
+                os.path.splitext(os.path.basename(filename))[0]))
+        dot_max_filename = os.path.join(
+            dot_dir, "%s_%s_max.dot" % (
+                definition["type"],
+                os.path.splitext(os.path.basename(filename))[0]))
+        xml_min_filename = os.path.join(
+            xml_dir, "%s_%s_min.xml" % (
+                definition["type"],
+                os.path.splitext(os.path.basename(filename))[0]))
+        xml_max_filename = os.path.join(
+            xml_dir, "%s_%s_max.xml" % (
+                definition["type"],
+                os.path.splitext(os.path.basename(filename))[0]))
 
         # Create the minimum one.
         contents = []
@@ -118,7 +134,7 @@ def generate_python_code():
         contents = ",\n    ".join(contents)
         if contents:
             contents = "    " + contents
-        file_contents = TEMPLATE.format(
+        min_file_contents = TEMPLATE.format(
             prefix=NS_PREFIX,
             type=definition["type"],
             two_letter_code=definition["two_letter_code"],
@@ -128,7 +144,7 @@ def generate_python_code():
             url=NS_URL,
             contents=contents)
         with open(py_min_filename, "wt") as fh:
-            fh.write(file_contents)
+            fh.write(min_file_contents)
 
         # Create the maximum one.
         contents = []
@@ -154,7 +170,7 @@ def generate_python_code():
         contents = ",\n    ".join(contents)
         if contents:
             contents = "    " + contents
-        file_contents = TEMPLATE.format(
+        max_file_contents = TEMPLATE.format(
             prefix=NS_PREFIX,
             type=definition["type"],
             two_letter_code=definition["two_letter_code"],
@@ -164,7 +180,25 @@ def generate_python_code():
             url=NS_URL,
             contents=contents)
         with open(py_max_filename, "wt") as fh:
-            fh.write(file_contents)
+            fh.write(max_file_contents)
+
+        # Create dot files with some more code generation.
+        exec(
+            min_file_contents +
+            "\n\nfrom prov import dot\n"
+            "dot.prov_to_dot(pr, use_labels=True).write_dot('%s')\n" %
+            dot_min_filename)
+        exec(
+            max_file_contents +
+            "\n\nfrom prov import dot\n"
+            "dot.prov_to_dot(pr, use_labels=True).write_dot('%s')\n" %
+            dot_max_filename)
+
+        # Same with the XML files.
+        exec(min_file_contents + "\n\n"
+             "pr.serialize('%s', format='xml')" % xml_min_filename)
+        exec(max_file_contents + "\n\n"
+             "pr.serialize('%s', format='xml')" % xml_max_filename)
 
 
 if __name__ == "__main__":
