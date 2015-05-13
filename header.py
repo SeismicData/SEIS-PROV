@@ -28,16 +28,17 @@ activity_dir = os.path.join(definitions_dir, "activities")
 schema_filename = os.path.abspath(
     os.path.join(definitions_dir, "schema.json"))
 generated_dir = os.path.join(current_dir, "_generated")
+examples_dir = os.path.join(current_dir, "examples")
 
 
-def get_filename(filename, node_type, file_type, min_or_max):
+def get_filename(filename, node_type, file_type, min_or_max=None):
     node_type = node_type.lower()
     file_type = file_type.lower()
-    min_or_max = min_or_max.lower()
+    min_or_max = min_or_max.lower() if min_or_max else None
 
-    assert node_type in ["activities", "entities"]
+    assert node_type in ["activities", "entities", "examples"]
     assert file_type in ["xml", "dot", "py"]
-    assert min_or_max in ["min", "max"]
+    assert min_or_max in ["min", "max", None]
 
     filename = os.path.splitext(os.path.basename(filename))[0]
 
@@ -45,7 +46,11 @@ def get_filename(filename, node_type, file_type, min_or_max):
     if not os.path.exists(folder):
         os.makedirs(folder)
 
-    return os.path.join(folder, "%s_%s.%s" % (filename, min_or_max, file_type))
+    if min_or_max:
+        return os.path.join(folder, "%s_%s.%s" % (filename, min_or_max,
+                                                  file_type))
+    else:
+        return os.path.join(folder, "%s.%s" % (filename, file_type))
 
 
 def json_files(folder):

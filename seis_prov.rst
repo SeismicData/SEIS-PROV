@@ -71,10 +71,10 @@ Entities
 
 .. sidebar:: Entity Plot
 
-    .. graphviz:: code/dot/entity_waveform_trace.dot
+    .. graphviz:: _generated/dot/entities/waveform_trace_max.dot
 
 
-    Entities are depicted as yellow ellipses. Attributes are listed in white
+    Entities are depicted as yellow ellipses. Attributes are listed in a white
     rectangle. This example show a waveform trace at a certain point in a
     processing chain.
 
@@ -100,7 +100,7 @@ sampling rate, the number of samples, and some more things.
 In the PROV XML serialization the example in the small box results in the
 following:
 
-.. literalinclude:: code/xml/entity_waveform_trace.xml
+.. literalinclude:: _generated/xml/entities/waveform_trace_max.xml
     :language: xml
 
 
@@ -109,7 +109,7 @@ Activities
 
 .. sidebar:: Activity Plot
 
-    .. graphviz:: ./code/dot/activity_lowpass.dot
+    .. graphviz:: _generated/dot/activities/lowpass_filter_max.dot
 
     Activities are shown as blue rectangles. The example shows a simple
     Butterworth lowpass filter.
@@ -135,7 +135,7 @@ with a software agent otherwise reproducibility is severely hurt.
 A ``SEIS-PROV`` example for a simple lowpass filtered graphed in box above is given
 in the following.
 
-.. literalinclude:: code/xml/activity_lowpass.xml
+.. literalinclude:: _generated/xml/activities/lowpass_filter_max.xml
     :language: xml
 
 
@@ -144,7 +144,7 @@ Agents
 
 .. sidebar:: Agent Plot
 
-    .. graphviz:: ./code/dot/simple_agent.dot
+    .. graphviz:: _generated/dot/examples/simple_agent.dot
 
 
     Agents are orange houses. The example shows a certain version of ObsPy.
@@ -164,7 +164,7 @@ recommended. Agents can furthermore have an ``seis_prov:doi`` attribute.
 
 The following example PROV XML serialization is the same as in the box above.
 
-.. literalinclude:: code/xml/simple_agent.xml
+.. literalinclude:: _generated/xml/examples/simple_agent.xml
     :language: xml
 
 

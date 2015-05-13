@@ -12,6 +12,7 @@ definitions.
 from __future__ import (absolute_import, division, print_function,
                         unicode_literals)
 
+import glob
 import io
 import json
 import os
@@ -21,10 +22,9 @@ import sys
 sys.path.append(".")
 
 from header import (NS_PREFIX, NS_URL, definitions_dir, json_files,
-                    get_filename)  # NOQA
+                    get_filename, examples_dir) # NOQA
 
-
-TEMPLATE = """
+BASIC_HEADER = """
 import prov.constants
 import prov.model
 
@@ -33,16 +33,21 @@ NS_SEIS = (NS_PREFIX, "{url}")
 
 pr = prov.model.ProvDocument()
 pr.add_namespace(*NS_SEIS)
+""".strip().format(
+    prefix=NS_PREFIX,
+    url=NS_URL)
 
+
+TEMPLATE = (BASIC_HEADER + """\n\n
 pr.{type}("{prefix}:001_{two_letter_code}_{short_hash}", other_attributes=((
     ("prov:label", "{label}"),
     ("prov:type", "{prefix}:{name}"),
 {contents}
 )))
-""".strip()
+""").strip()
 
 
-def generate_python_code():
+def generate_code():
     for filename in json_files(definitions_dir):
         with io.open(filename, "rt") as fh:
             definition = json.load(fh)
@@ -82,7 +87,6 @@ def generate_python_code():
             short_hash=str(uuid.uuid4()).replace("-", "")[:7],
             label=definition["recommended_label"],
             name=definition["name"],
-            url=NS_URL,
             contents=contents)
         with open(get_filename(filename, node_type, "py", "min"), "wt") as fh:
             fh.write(min_file_contents)
@@ -144,5 +148,28 @@ def generate_python_code():
              get_filename(filename, node_type, "xml", "max"))
 
 
+def generate_code_from_examples():
+    for filename in glob.glob(os.path.join(examples_dir, "*.py")):
+        with io.open(filename, "rt") as fh:
+            code_str = BASIC_HEADER + "\n\n\n" + fh.read()
+
+        # Write Python file.
+        with open(get_filename(filename, "examples", "py"), "wt") as fh:
+            fh.write(code_str)
+
+        # Write dot file.
+        exec(
+            code_str +
+            "\n\nfrom prov import dot\n"
+            "dot.prov_to_dot(pr, use_labels=True).write_dot('%s')\n" %
+            get_filename(filename, "examples", "dot"))
+
+        # Write XML.
+        exec(code_str + "\n\n"
+             "pr.serialize('%s', format='xml')" %
+             get_filename(filename, "examples", "xml"))
+
+
 if __name__ == "__main__":
-    generate_python_code()
+    generate_code()
+    generate_code_from_examples()
