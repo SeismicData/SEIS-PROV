@@ -7,7 +7,7 @@
     "description": "Remove trend from the data.",
     "attributes": [
         {
-            "name": "detrending method",
+            "name": "detrending_method",
             "types": ["xsd:string"],
             "description": "The method used to remove the trend from the data.",
             "required": true,

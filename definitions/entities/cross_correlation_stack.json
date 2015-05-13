@@ -28,7 +28,7 @@
             "example_value": "mean"
         },
         {
-            "name": "station_id_A",
+            "name": "station_id_a",
             "types": ["xsd:string"],
             "description": "The SEED identifier of station A.",
             "required": false,
@@ -36,7 +36,7 @@
             "example_value": "BW.FURT..BHZ"
         },
         {
-            "name": "station_id_B",
+            "name": "station_id_b",
             "types": ["xsd:string"],
             "description": "The SEED identifier of station B.",
             "required": false,
