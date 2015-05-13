@@ -16,7 +16,7 @@
     "name": {
       "id": "http://seisprov.org/internal_type_def/name",
       "type": "string",
-      "pattern": "[a-z_]{3,}"
+      "pattern": "^[a-z_]{3,}$"
     },
     "two_letter_code": {
       "id": "http://seisprov.org/internal_type_def/two_letter_code",
@@ -43,7 +43,7 @@
           "name": {
             "id": "http://seisprov.org/internal_type_def/attributes/name",
             "type": "string",
-            "pattern": "^[a-z_]+"
+            "pattern": "^[a-z_]+$"
           },
           "types": {
             "id": "http://seisprov.org/internal_type_def/attributes/types",
