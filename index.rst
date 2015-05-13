@@ -257,3 +257,10 @@ model, the important ones for *SEIS PROV* are:
 
 If that is confusing it should be clearer by looking at the examples at the end
 of this page.
+
+
+.. toctree::
+    :maxdepth: 2
+
+    index
+    details
