@@ -25,10 +25,10 @@ has been performed. All of these operations where performed by a certain
 version of ObsPy. Toolboxes can be adapted to provide this kind of provenance
 fully automatic.
 
-.. graphviz:: code/dot/example_detailed_processing_chain.dot
+.. graphviz:: _generated/dot/examples/example_detailed_processing_chain.dot
 
 
-.. literalinclude:: code/xml/example_detailed_processing_chain.xml
+.. literalinclude:: _generated/xml/examples/example_detailed_processing_chain.xml
     :language: xml
 
 Schematic Processing Chain
@@ -40,10 +40,10 @@ workflow. This is the same example as above but with less information. This
 could be treated as a schema on how to process a large amount of data
 independent of the used software and actual data.
 
-.. graphviz:: code/dot/example_schematic_processing_chain.dot
+.. graphviz:: _generated/dot/examples/example_schematic_processing_chain.dot
 
 
-.. literalinclude:: code/xml/example_schematic_processing_chain.xml
+.. literalinclude:: _generated/xml/examples/example_schematic_processing_chain.xml
     :language: xml
 
 
@@ -65,16 +65,18 @@ The implementation of this in a waveform solver is fairly simple by just using
 an existing SEIS PROV XML file as a template and adjusting the information
 dynamically. No need to incorporate an actual XML library.
 
+.. graphviz:: _generated/dot/examples/example_waveform_simulation.dot
 
-.. graphviz:: code/dot/example_waveform_simulation.dot
 
-.. literalinclude:: code/xml/example_waveform_simulation.xml
+.. literalinclude:: _generated/xml/examples/example_waveform_simulation.xml
     :language: xml
+
 
 Cross Correlation
 ^^^^^^^^^^^^^^^^^
 
-.. graphviz:: code/dot/example_cross_correlation.dot
+.. graphviz:: _generated/dot/examples/example_cross_correlation.dot
 
-.. literalinclude:: code/xml/example_cross_correlation.xml
+
+.. literalinclude:: _generated/xml/examples/example_cross_correlation.xml
     :language: xml

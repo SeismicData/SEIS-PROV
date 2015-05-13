@@ -147,6 +147,14 @@ def generate_code():
              "pr.serialize('%s', format='xml')" %
              get_filename(filename, node_type, "xml", "max"))
 
+        # And once again with JSON.
+        exec(min_file_contents + "\n\n"
+             "pr.serialize('%s', format='json')" %
+             get_filename(filename, node_type, "json", "min"))
+        exec(max_file_contents + "\n\n"
+             "pr.serialize('%s', format='json')" %
+             get_filename(filename, node_type, "json", "max"))
+
 
 def generate_code_from_examples():
     for filename in glob.glob(os.path.join(examples_dir, "*.py")):
@@ -156,6 +164,9 @@ def generate_code_from_examples():
         # Write Python file.
         with open(get_filename(filename, "examples", "py"), "wt") as fh:
             fh.write(code_str)
+
+        if "datetime(" in code_str:
+            code_str = "from datetime import datetime\n" + code_str
 
         # Write dot file.
         exec(
@@ -168,6 +179,11 @@ def generate_code_from_examples():
         exec(code_str + "\n\n"
              "pr.serialize('%s', format='xml')" %
              get_filename(filename, "examples", "xml"))
+
+        # Write JSON.
+        exec(code_str + "\n\n"
+             "pr.serialize('%s', format='json')" %
+             get_filename(filename, "examples", "json"))
 
 
 if __name__ == "__main__":
