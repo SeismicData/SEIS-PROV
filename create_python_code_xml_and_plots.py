@@ -12,15 +12,16 @@ definitions.
 from __future__ import (absolute_import, division, print_function,
                         unicode_literals)
 
-import inspect
 import io
 import json
 import os
 import uuid
-import shutil
+import sys
 
-NS_PREFIX = "seis_prov"
-NS_URL = "http://seisprov.org/seis_prov/0.0/#"
+sys.path.append(".")
+
+from header import (NS_PREFIX, NS_URL, definitions_dir, json_files,
+                    get_filename)  # NOQA
 
 
 TEMPLATE = """
@@ -41,76 +42,16 @@ pr.{type}("{prefix}:001_{two_letter_code}_{short_hash}", other_attributes=((
 """.strip()
 
 
-current_dir = os.path.dirname(os.path.abspath(inspect.getfile(
-    inspect.currentframe())))
-definitions_dir = os.path.join(current_dir, "definitions")
-schema_filename = os.path.abspath(
-    os.path.join(definitions_dir, "schema.json"))
-
-
-generated_dir = os.path.join(current_dir, "_generated")
-python_dir = os.path.join(generated_dir, "python")
-xml_dir = os.path.join(generated_dir, "xml")
-dot_dir = os.path.join(generated_dir, "dot")
-
-if os.path.exists(generated_dir):
-    shutil.rmtree(generated_dir)
-
-os.makedirs(python_dir)
-os.makedirs(xml_dir)
-os.makedirs(dot_dir)
-
-
-def json_files(folder, exclude_filenames):
-    """
-    Generator yielding all JSON definition files as absolute paths.
-
-    :param folder: Folder to recursively search into.
-    :param exclude_filenames: List of absolute file paths to exclude.
-    """
-    for dirpath, _, filenames in os.walk(folder):
-        for filename in filenames:
-            if os.path.splitext(filename)[-1].lower() != ".json":
-                continue
-            filename = os.path.abspath(os.path.join(dirpath, filename))
-            if filename in exclude_filenames:
-                continue
-            yield filename
-
-
 def generate_python_code():
-    for filename in json_files(definitions_dir,
-                               exclude_filenames=[schema_filename]):
+    for filename in json_files(definitions_dir):
         with io.open(filename, "rt") as fh:
             definition = json.load(fh)
+
+        node_type = os.path.basename(os.path.dirname(filename))
+
         # We will always generate two sets: a minimal one containing only the
         # bare minimum amount of information and a maximal one containing as
         # much as possible.
-        py_min_filename = os.path.join(
-            python_dir, "%s_%s_min.py" % (
-                definition["type"],
-                os.path.splitext(os.path.basename(filename))[0]))
-        py_max_filename = os.path.join(
-            python_dir, "%s_%s_max.py" % (
-                definition["type"],
-                os.path.splitext(os.path.basename(filename))[0]))
-        dot_min_filename = os.path.join(
-            dot_dir, "%s_%s_min.dot" % (
-                definition["type"],
-                os.path.splitext(os.path.basename(filename))[0]))
-        dot_max_filename = os.path.join(
-            dot_dir, "%s_%s_max.dot" % (
-                definition["type"],
-                os.path.splitext(os.path.basename(filename))[0]))
-        xml_min_filename = os.path.join(
-            xml_dir, "%s_%s_min.xml" % (
-                definition["type"],
-                os.path.splitext(os.path.basename(filename))[0]))
-        xml_max_filename = os.path.join(
-            xml_dir, "%s_%s_max.xml" % (
-                definition["type"],
-                os.path.splitext(os.path.basename(filename))[0]))
-
         # Create the minimum one.
         contents = []
         for attrib in definition["attributes"]:
@@ -143,7 +84,7 @@ def generate_python_code():
             name=definition["name"],
             url=NS_URL,
             contents=contents)
-        with open(py_min_filename, "wt") as fh:
+        with open(get_filename(filename, node_type, "py", "min"), "wt") as fh:
             fh.write(min_file_contents)
 
         # Create the maximum one.
@@ -179,7 +120,7 @@ def generate_python_code():
             name=definition["name"],
             url=NS_URL,
             contents=contents)
-        with open(py_max_filename, "wt") as fh:
+        with open(get_filename(filename, node_type, "py", "max"), "wt") as fh:
             fh.write(max_file_contents)
 
         # Create dot files with some more code generation.
@@ -187,18 +128,20 @@ def generate_python_code():
             min_file_contents +
             "\n\nfrom prov import dot\n"
             "dot.prov_to_dot(pr, use_labels=True).write_dot('%s')\n" %
-            dot_min_filename)
+            get_filename(filename, node_type, "dot", "min"))
         exec(
             max_file_contents +
             "\n\nfrom prov import dot\n"
             "dot.prov_to_dot(pr, use_labels=True).write_dot('%s')\n" %
-            dot_max_filename)
+            get_filename(filename, node_type, "dot", "max"))
 
         # Same with the XML files.
         exec(min_file_contents + "\n\n"
-             "pr.serialize('%s', format='xml')" % xml_min_filename)
+             "pr.serialize('%s', format='xml')" %
+             get_filename(filename, node_type, "xml", "min"))
         exec(max_file_contents + "\n\n"
-             "pr.serialize('%s', format='xml')" % xml_max_filename)
+             "pr.serialize('%s', format='xml')" %
+             get_filename(filename, node_type, "xml", "max"))
 
 
 if __name__ == "__main__":

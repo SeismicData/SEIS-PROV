@@ -54,6 +54,7 @@ clean:
 generate_stuff:
 	python ./validate_definitions.py
 	python ./create_python_code_xml_and_plots.py
+	python ./generate_details_doc.py
 
 html: generate_stuff
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html

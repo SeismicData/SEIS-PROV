@@ -263,4 +263,4 @@ of this page.
     :maxdepth: 2
 
     index
-    details
+    _generated_details
