@@ -91,7 +91,7 @@ def create_rst_representation(json_file):
 
     text = TEMPLATE.format(
         title=title,
-        title_line="_" * len(title),
+        title_line="^" * len(title),
         description=data["description"],
         two_letter_code=data["two_letter_code"],
         label=data["recommended_label"],

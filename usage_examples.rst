@@ -1,0 +1,80 @@
+Usage Examples
+--------------
+
+This section shows some more extensive examples demonstrating that SEIS PROV
+can be used to capture provenance for a wide of seismological relevant
+applications. Keep in mind that these diagrams describe the history of some
+piece of data, not a workflow.  The **arrows point towards the past**, e.g. to
+the origin of the data.
+
+.. note::
+    `Right click -> View Image` to see graphs in more detail.
+
+.. contents::
+    :local:
+    :depth: 1
+
+
+Detailed Processing Chain
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This example demonstrates how a linear chain of signal processing routines can
+be described.  The data has been detrended with a linear fit, then a
+Butterworth lowpass filter has been applied and finally some integer decimation
+has been performed. All of these operations where performed by a certain
+version of ObsPy. Toolboxes can be adapted to provide this kind of provenance
+fully automatic.
+
+.. graphviz:: code/dot/example_detailed_processing_chain.dot
+
+
+.. literalinclude:: code/xml/example_detailed_processing_chain.xml
+    :language: xml
+
+Schematic Processing Chain
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sometimes not all information needs to be captured for a given application and
+SEIS PROV is flexible enough to also allow a qualitative description of a
+workflow. This is the same example as above but with less information. This
+could be treated as a schema on how to process a large amount of data
+independent of the used software and actual data.
+
+.. graphviz:: code/dot/example_schematic_processing_chain.dot
+
+
+.. literalinclude:: code/xml/example_schematic_processing_chain.xml
+    :language: xml
+
+
+Waveform Simulation
+^^^^^^^^^^^^^^^^^^^
+
+This fairly realistic example demonstrates how the waveform files resulting
+from a numerical simulation can be described. This example does use some of the
+more advanced future of the W3C PROV data model which are useful in many
+contexts. Note that the waveform simulation activity has start- and endtimes
+and that SPECFEM in this example actually has been steered by a certain person.
+
+The amount of information to store has to be decided by the given application.
+The general idea is to store those input file parameters that actually have an
+effect on the output. It might also be useful to store information about the
+machine is was run on in the provenance information but that is not shown here.
+
+The implementation of this in a waveform solver is fairly simple by just using
+an existing SEIS PROV XML file as a template and adjusting the information
+dynamically. No need to incorporate an actual XML library.
+
+
+.. graphviz:: code/dot/example_waveform_simulation.dot
+
+.. literalinclude:: code/xml/example_waveform_simulation.xml
+    :language: xml
+
+Cross Correlation
+^^^^^^^^^^^^^^^^^
+
+.. graphviz:: code/dot/example_cross_correlation.dot
+
+.. literalinclude:: code/xml/example_cross_correlation.xml
+    :language: xml

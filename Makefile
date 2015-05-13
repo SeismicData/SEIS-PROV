@@ -47,9 +47,10 @@ help:
 	@echo "  doctest    to run all doctests embedded in the documentation (if enabled)"
 
 clean:
-	rm -rf code/xml
-	rm -rf code/dot
-	rm -rf $(BUILDDIR)/*
+	rm -rf _generated
+	rm -rf _generated_details.rst
+	rm -rf $(BUILDDIR)
+	rm -rf __pycache__
 
 generate_stuff:
 	python ./validate_definitions.py
