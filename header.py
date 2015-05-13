@@ -14,8 +14,9 @@ from __future__ import (absolute_import, division, print_function,
 import inspect
 import os
 
+VERSION = "0.1"
 NS_PREFIX = "seis_prov"
-NS_URL = "http://seisprov.org/seis_prov/0.0/#"
+NS_URL = "http://seisprov.org/seis_prov/%s/#" % VERSION
 
 
 current_dir = os.path.dirname(os.path.abspath(inspect.getfile(

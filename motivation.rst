@@ -4,9 +4,10 @@ Motivation
 What is Provenance?
 -------------------
 
-    Provenance is information about entities, activities, and people involved
+
+    *Provenance is information about entities, activities, and people involved
     in producing a piece of data or thing, which can be used to form
-    assessments about its quality, reliability or trustworthiness.  [W3C_PROV]_
+    assessments about its quality, reliability or trustworthiness.*  [W3C_PROV]_
 
 
 In a seismological context provenance can be seen as information about the
@@ -44,19 +45,25 @@ This problem only intensifies with increasing amounts of data common in modern
 research.
 
 Provenance is in theory able to solve this by capturing all information that
-went into producing a particular result.
+went into producing a particular result. If we want to advance our science we
+have to become better at tracking, storing, and exchanging it.
 
 
-Goal of the Seismological Provenance Description
-------------------------------------------------
+Goal of SEIS-PROV
+-----------------
 
 Our goal here is not full reproducibility as too many variables affect the
 final result. Effects we do not aim to capture are for example floating point
-math difference on different machines and compilers, errors in CPU operations,
+math differences on different machines and compilers, errors in CPU operations,
 and similar, hard to describe effects.
 
 What we strive for with our provenance description is simple:
 
-**A scientists looking at data described by our provenance information should
-be able to tell what steps where taken to generate this particular piece of
-data.**
+    **A scientists looking at data described by our provenance information should
+    be able to tell what steps where taken to generate this particular piece of
+    data.**
+
+.. rubric:: Footnotes
+.. [W3C_PROV] http://www.w3.org/TR/prov-overview/
+
+

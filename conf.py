@@ -13,9 +13,24 @@
 # serve to show the default.
 import inspect
 import os
+import sys
+
+sys.path.append(".")
+
+from header import  NS_PREFIX, NS_URL, VERSION
+
+# Some variables for all RST files.
+rst_epilog = """
+.. |VERSION| replace:: %s
+.. |BOLDVERSION| replace:: **%s**
+.. |NS_PREFIX| replace:: ``%s``
+.. |NS_URL| replace:: ``%s``
+""" % (VERSION, VERSION, NS_PREFIX, NS_URL)
 
 filename = os.path.abspath(inspect.getfile(inspect.currentframe()))
 folder = os.path.dirname(filename)
+
+
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
