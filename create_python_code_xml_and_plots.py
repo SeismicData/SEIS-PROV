@@ -13,6 +13,7 @@ from __future__ import (absolute_import, division, print_function,
                         unicode_literals)
 
 import glob
+import itertools
 import io
 import json
 import os
@@ -49,10 +50,24 @@ pr.{type}("{prefix}:001_{two_letter_code}_{short_hash}", other_attributes=((
 
 def generate_code():
     for filename in json_files(definitions_dir):
+        last_mod_time = os.path.getmtime(filename)
+        node_type = os.path.basename(os.path.dirname(filename))
+
+        # Collect the names of all files created from this one. If all exist
+        # and are older, nothing needs to be done. Otherwise just regenerate
+        # all.
+        types = ["py", "dot", "xml", "json", "provn"]
+        filenames = [
+            get_filename(filename, node_type, t, i)
+            for t, i in itertools.product(types, ("min", "max"))]
+        exists = [os.path.exists(_i) for _i in filenames]
+        if all(exists):
+            mtime = [os.path.getmtime(_i) > last_mod_time for _i in filenames]
+            if all(mtime):
+                continue
+
         with io.open(filename, "rt") as fh:
             definition = json.load(fh)
-
-        node_type = os.path.basename(os.path.dirname(filename))
 
         # We will always generate two sets: a minimal one containing only the
         # bare minimum amount of information and a maximal one containing as
@@ -166,9 +181,31 @@ def generate_code():
         with io.open(jsonfile, "wt") as fh:
             json.dump(data, fh, indent=4, separators=(',', ': '))
 
+        # Finally once more with the PROV-N serialization.
+        exec(min_file_contents + "\n\n"
+             "with open('%s', 'wt') as fh:\n"
+             "    fh.write(pr.get_provn())" %
+             get_filename(filename, node_type, "provn", "min"))
+        exec(min_file_contents + "\n\n"
+             "with open('%s', 'wt') as fh:\n"
+             "    fh.write(pr.get_provn())" %
+             get_filename(filename, node_type, "provn", "max"))
+
 
 def generate_code_from_examples():
     for filename in glob.glob(os.path.join(examples_dir, "*.py")):
+        last_mod_time = os.path.getmtime(filename)
+
+        # Collect the names of all files created from this one. If all exist
+        # and are older, nothing needs to be done. Otherwise just regenerate
+        # all.
+        types = ["py", "dot", "xml", "json", "provn"]
+        filenames = [get_filename(filename, "examples", _i) for _i in types]
+        exists = [os.path.exists(_i) for _i in filenames]
+        if all(exists):
+            mtime = [os.path.getmtime(_i) > last_mod_time for _i in filenames]
+            if all(mtime):
+                continue
         with io.open(filename, "rt") as fh:
             code_str = BASIC_HEADER + "\n\n\n" + fh.read()
 
@@ -192,9 +229,19 @@ def generate_code_from_examples():
              get_filename(filename, "examples", "xml"))
 
         # Write JSON.
+        jsonfile = get_filename(filename, "examples", "json")
+        exec(code_str + "\n\npr.serialize('%s', format='json')" % jsonfile)
+        # Read again and write in a pretty fashion.
+        with io.open(jsonfile, "rt") as fh:
+            data = json.load(fh)
+        with io.open(jsonfile, "wt") as fh:
+            json.dump(data, fh, indent=4, separators=(',', ': '))
+
+        # Finally once more with the PROV-N serialization.
         exec(code_str + "\n\n"
-             "pr.serialize('%s', format='json')" %
-             get_filename(filename, "examples", "json"))
+             "with open('%s', 'wt') as fh:\n"
+             "    fh.write(pr.get_provn())" %
+             get_filename(filename, "examples", "provn"))
 
 
 if __name__ == "__main__":
