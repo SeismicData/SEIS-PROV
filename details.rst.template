@@ -64,12 +64,15 @@ activities are used. For an entity or activity to be considered part of
 
 6. The types of all required and optional attributes must match the definition.
 
+-----
+
+-----
 
 Entities
 --------
 
-``SEIS-PROV`` determines the type of an entity via the ``prov:type`` attribute
-which can be one of the following choices. Further types will be added as
+``SEIS-PROV`` determines the type of an entity via the ``prov:type`` attribute.
+The following entities are currently available. Further types will be added as
 requested by the community.
 
 .. contents::
@@ -79,13 +82,16 @@ requested by the community.
 
 {entities}
 
+-----
+
+-----
 
 Activities
 ----------
 
 ``SEIS-PROV`` determines the type of an activity via the ``prov:type``
-attribute which can be one of the following choices. Further types will be
-added as requested by the community.
+attribute.  The following activities are currently available. Further types
+will be added as requested by the community.
 
 .. contents::
     :local:

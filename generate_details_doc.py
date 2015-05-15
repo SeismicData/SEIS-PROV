@@ -15,19 +15,28 @@ with io.open(os.path.join(current_dir, "details.rst.template"), "rt") as fh:
     DETAILS_TEMPLATE = fh.read()
 
 TEMPLATE = """
+------
+
 {title}
 {title_line}
 
-{description}
+Description
+    {description}
 
-============================ =======
-Two letter ID code:          ``{two_letter_code}``
-Recommended ``prov:label``   ``{label}``
-============================ =======
+Properties
+    ============================ =======
+    Name                         Value
+    ============================ =======
+    ``prov:id``                  ``{name}``
+    ``prov:label``               ``{label}``
+    Two letter ID code:          ``{two_letter_code}``
+    ============================ =======
 
-**Attributes**
+Required Attributes
+{required_attributes}
 
-{attributes}
+Optional Attributes
+{optional_attributes}
 
 **Example**
 
@@ -133,10 +142,34 @@ def create_details_rst():
         activities.append(create_rst_representation(filename))
     activities = "\n\n\n".join(activities)
 
-    with io.open(os.path.join(current_dir, "_generated_details.rst"), "wt") as fh:
+    with io.open(os.path.join(current_dir, "_generated_details.rst"), "wt") \
+            as fh:
         fh.write(DETAILS_TEMPLATE.format(
             entities=entities,
             activities=activities))
+
+
+def make_table(lines, prefix):
+    """
+    Helper function creating and RST table. The first line is interpreted as
+    the header values.
+    """
+    if len(lines) == 1:
+        return "%s*None*" % prefix
+
+    # Get the max length of each item.
+    lengths = [[len(_j) for _j in _i] for _i in lines]
+    lengths = [max(_j[_i] for _j in lengths) for _i in range(len(lines[0]))]
+
+    fmt = "  ".join("%-{0}s".format(_i) for _i in lengths)
+    border = "  ".join("=" * _i for _i in lengths)
+
+    lines = [fmt % _i for _i in lines]
+    lines.insert(0, border)
+    lines.insert(2, border)
+    lines.append(border)
+
+    return prefix + ("\n%s" % prefix).join(lines)
 
 
 def create_rst_representation(json_file):
@@ -144,15 +177,18 @@ def create_rst_representation(json_file):
         data = json.load(fh)
     node_type = os.path.basename(os.path.dirname(json_file))
     # Do the attributes first.
-    attributes = []
-    for attrib in data["attributes"]:
-        attributes.append(ATTRIBUTE_TEMPLATE.format(
-            name=attrib["name"],
-            types=", ".join("**%s**" % _i for _i in attrib["types"]),
-            description=attrib["description"]))
+    required_attributes = [("Name", "Type", "Description")]
+    optional_attributes = [("Name", "Type", "Description")]
 
-    attributes = "\n\n".join(attributes)
-    title = "%s:%s" % (NS_PREFIX, data["name"])
+    for attrib in data["attributes"]:
+        obj = required_attributes if attrib["required"] \
+            else optional_attributes
+        obj.append((
+            attrib["name"],
+            ", ".join("``%s``" % _i for _i in attrib["types"]),
+            attrib["description"]))
+
+    title = "%s" % (data["recommended_label"])
 
     text = TEMPLATE.format(
         title=title,
@@ -160,7 +196,8 @@ def create_rst_representation(json_file):
         description=data["description"],
         two_letter_code=data["two_letter_code"],
         label=data["recommended_label"],
-        attributes=attributes,
+        required_attributes=make_table(required_attributes, prefix="    "),
+        optional_attributes=make_table(optional_attributes, prefix="    "),
         dotfile=os.path.relpath(get_filename(
             json_file, node_type, "dot", "max")),
         pythonfile=os.path.relpath(get_filename(
