@@ -47,6 +47,9 @@ Recommended ``prov:label``   ``{label}``
         <li class='tab'>
             <a href="#tabs-{node_type}-{name}-json">PROV-JSON</a>
         </li>
+        <li class='tab'>
+            <a href="#tabs-{node_type}-{name}-provn">PROV-N</a>
+        </li>
       </ul>
       <div class="tab-contents" id="tabs-{node_type}-{name}-graph">
 
@@ -57,6 +60,8 @@ Recommended ``prov:label``   ``{label}``
     </div>
     <div class="tab-contents" id="tabs-{node_type}-{name}-python">
 
+Python code utilizing the `prov <http://prov.readthedocs.org/>`_ package.
+
 .. literalinclude:: {pythonfile}
     :language: python
 
@@ -64,6 +69,8 @@ Recommended ``prov:label``   ``{label}``
 
     </div>
     <div class="tab-contents" id="tabs-{node_type}-{name}-xml">
+
+In the `PROV-XML <http://www.w3.org/TR/prov-xml/>`_ serialization.
 
 .. literalinclude:: {xmlfile}
     :language: xml
@@ -73,8 +80,21 @@ Recommended ``prov:label``   ``{label}``
     </div>
     <div class="tab-contents" id="tabs-{node_type}-{name}-json">
 
+In the
+`PROV-JSON <http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/>`_
+serialization.
+
 .. literalinclude:: {jsonfile}
     :language: json
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-{node_type}-{name}-provn">
+
+In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
+
+.. literalinclude:: {provnfile}
 
 .. raw:: html
 
@@ -149,6 +169,8 @@ def create_rst_representation(json_file):
             json_file, node_type, "xml", "max")),
         jsonfile=os.path.relpath(get_filename(
             json_file, node_type, "json", "max")),
+        provnfile=os.path.relpath(get_filename(
+            json_file, node_type, "provn", "max")),
         node_type=node_type,
         name=data["name"])
 

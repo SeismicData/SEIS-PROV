@@ -1,7 +1,7 @@
-Detailed Definitions
-====================
+Detailed Definition
+===================
 
-This section details the ``SEIS-PROV``  types and expected attributes and
+This section details the ``SEIS-PROV`` types and expected attributes and
 constraints.
 
 .. contents::
@@ -10,24 +10,57 @@ constraints.
 
 Common Properties
 -----------------
-* All identifiers associated with *SEIS PROV* have to live in the ``seis_prov``
-  namespace. The identifiers have to be unique and the recommended form of the
-  identifiers, as a regular expression, is
-  ``seis_prov:[a-z]{{2}}_[A-Z0-9-]{{10}}`` (``seis_prov:`` followed by a two
-  letter description of the entity, activity, ..., followed by an underscore
-  and 10 uppercase alphanumeric letters.). The two letter description has the
-  purpose to yield a minimal descriptive identifier while still keeping its
-  total length fairly short. The description of each record will note the
-  recommended two letter code.
-* It is recommended to add a human readable ``prov:label`` to each entity,
-  activity, and agent. It enables the generation of more descriptive graphs
-  which will most likely be the representation that is consumed by the end
-  users.
-* In an effort to reduce the amount of text or information to parse, stations
-  are identified via their SEED identifier, e.g. the dot seperated network,
-  station, location, and channel code (NET.STA.LOC.CHA). The computational
-  power required to split the attributes again and it results in a more
-  readable definition and PROV XML file.
+
+``SEIS-PROV`` does not define any new node types in addition to those already
+existing within ``W3C PROV``. For an entity or activity to be considered part
+of ``SEIS-PROV`` is has to fulfill three things:
+
+1. Its ``prov:id`` must live in the ``SEIS-PROV`` namespace and follow a
+   certain pattern:
+
+
+   .. admonition:: ids in ``SEIS-PROV``
+      :class: note
+
+        In addition to being part of the ``SEIS-PROV`` namespace all ids must
+        validate against this regular expression:
+
+        ``^\d{{3,4}}_[a-z]{{2}}_[a-z0-9]{{7,10}}$``
+
+        Examples are:
+
+            * ``001_wf_f84fb9a``
+            * ``027_bs_ea78b46``
+
+        An id thus consists of three parts delimited by an underscore with the
+        goal of attaining a small but slightly descriptive identifier:
+
+        1. A 3 or 4 digit zero padded number. This is intended to further
+           illustrate the sequence of processing steps and events. ``001`` for
+           example is the first step in a processing chain, whereas ``017`` is
+           the seventeenth step. This is not enforced anywhere but nice to have
+           so users are encouraged to adopt this.
+        2. A two letter code depending on the type of entity or activity. This
+           is enforced and part of the ``SEIS-PROV`` definition. Please see the
+           definition of each node for the corresponding two letter code.
+        3. A 7 to 10 letter lowercase alphanumeric hash to ensure uniqueness of
+           ids.
+
+2. It must have a certain ``prov:type`` depending on the precise activity or
+   entity. Please see the detailed definitions further down for examples.
+
+3. It must have a corresponding human readable ``prov:label`` depending on the
+   precise activity or entity. Please see the detailed definitions further down
+   for examples.
+
+4. It must have all required attributes depending on the precise activity or
+   entity.
+
+5. It may have optional attributes from the ``SEIS-PROV`` namespace if they are
+   defined as optional attributes for the corresponding entity or activity.If
+   further attribute are required they must not be in the ``SEIS-PROV``
+   namespace.
+
 
 Entities
 --------

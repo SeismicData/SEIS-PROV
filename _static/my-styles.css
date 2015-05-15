@@ -67,3 +67,7 @@ p.graphviz {
     margin-right: auto;
     display: block;
 }
+
+.tab-contents div {
+    margin-bottom: 1px;
+}
