@@ -76,3 +76,18 @@ p.graphviz {
 table {
     margin-top: 10px;
 }
+
+
+/* Overwrite the responsive tables to wrap the lines a bit. */
+.wy-table-responsive {
+    margin-bottom: 24px;
+    max-width: 100%;
+    overflow: visible;
+}
+.wy-table-responsive table {
+    margin-bottom: 0 !important
+}
+.wy-table-responsive table td,
+.wy-table-responsive table th {
+    white-space: normal;
+}
