@@ -1,0 +1,16 @@
+{# Import the theme's layout. #}
+{% extends "!layout.html" %}
+
+{# Custom CSS overrides #}
+{% set extra_css_files = ['_static/my-styles.css'] %}
+
+{% block footer %}
+
+<script src="http://os.alfajango.com/js/jquery.easytabs.min.js" type="text/javascript"></script>
+
+<script>
+    $('.tab-container').easytabs({
+        animate: false
+    });
+</script>
+{% endblock %}

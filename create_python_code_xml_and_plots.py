@@ -148,12 +148,23 @@ def generate_code():
              get_filename(filename, node_type, "xml", "max"))
 
         # And once again with JSON.
+        jsonfile = get_filename(filename, node_type, "json", "min")
         exec(min_file_contents + "\n\n"
-             "pr.serialize('%s', format='json')" %
-             get_filename(filename, node_type, "json", "min"))
+             "pr.serialize('%s', format='json')" % jsonfile)
+        # Read again and write in a pretty fashion.
+        with io.open(jsonfile, "rt") as fh:
+            data = json.load(fh)
+        with io.open(jsonfile, "wt") as fh:
+            json.dump(data, fh, indent=4, separators=(',', ': '))
+
+        jsonfile = get_filename(filename, node_type, "json", "max")
         exec(max_file_contents + "\n\n"
-             "pr.serialize('%s', format='json')" %
-             get_filename(filename, node_type, "json", "max"))
+             "pr.serialize('%s', format='json')" % jsonfile)
+        # Read again and write in a pretty fashion.
+        with io.open(jsonfile, "rt") as fh:
+            data = json.load(fh)
+        with io.open(jsonfile, "wt") as fh:
+            json.dump(data, fh, indent=4, separators=(',', ': '))
 
 
 def generate_code_from_examples():

@@ -31,10 +31,55 @@ Recommended ``prov:label``   ``{label}``
 
 **Example**
 
+.. raw:: html
+
+    <div id="tab-container" class="tab-container">
+      <ul class='etabs'>
+        <li class='tab'>
+            <a href="#tabs-{node_type}-{name}-graph">Graph</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-{node_type}-{name}-python">Python Code</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-{node_type}-{name}-xml">PROV-XML</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-{node_type}-{name}-json">PROV-JSON</a>
+        </li>
+      </ul>
+      <div class="tab-contents" id="tabs-{node_type}-{name}-graph">
+
 .. graphviz:: {dotfile}
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-{node_type}-{name}-python">
+
+.. literalinclude:: {pythonfile}
+    :language: python
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-{node_type}-{name}-xml">
 
 .. literalinclude:: {xmlfile}
     :language: xml
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-{node_type}-{name}-json">
+
+.. literalinclude:: {jsonfile}
+    :language: json
+
+.. raw:: html
+
+    </div>
+    </div>
 """.strip()
 
 ATTRIBUTE_TEMPLATE = """
@@ -98,8 +143,14 @@ def create_rst_representation(json_file):
         attributes=attributes,
         dotfile=os.path.relpath(get_filename(
             json_file, node_type, "dot", "max")),
+        pythonfile=os.path.relpath(get_filename(
+            json_file, node_type, "py", "max")),
         xmlfile=os.path.relpath(get_filename(
-            json_file, node_type, "xml", "max")))
+            json_file, node_type, "xml", "max")),
+        jsonfile=os.path.relpath(get_filename(
+            json_file, node_type, "json", "max")),
+        node_type=node_type,
+        name=data["name"])
 
     return text
 
