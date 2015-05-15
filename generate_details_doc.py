@@ -20,8 +20,21 @@ TEMPLATE = """
 {title}
 {title_line}
 
-Description
-    {description}
+{description}
+
+.. raw:: html
+
+    <div id="tab-container" class="tab-container">
+      <ul class='etabs'>
+        <li class='tab'>
+            <a href="#tabs-{node_type}-{name}-description">Definition</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-{node_type}-{name}-json_def">JSON Definition</a>
+        </li>
+      </ul>
+      <div class="tab-contents" id="tabs-{node_type}-{name}-description">
+
 
 Properties
     ============================ =======
@@ -37,6 +50,22 @@ Required Attributes
 
 Optional Attributes
 {optional_attributes}
+
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-{node_type}-{name}-json_def">
+
+This shows the JSON that is used to generate the rest of the definition.
+
+.. literalinclude:: {json_def_file}
+    :language: json
+
+.. raw:: html
+
+    </div>
+    </div>
 
 **Example**
 
@@ -209,6 +238,7 @@ def create_rst_representation(json_file):
         provnfile=os.path.relpath(get_filename(
             json_file, node_type, "provn", "max")),
         node_type=node_type,
+        json_def_file=os.path.relpath(json_file),
         name=data["name"])
 
     return text

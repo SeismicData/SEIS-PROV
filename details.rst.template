@@ -33,8 +33,9 @@ activities are used. For an entity or activity to be considered part of
             * ``001_wf_f84fb9a``
             * ``027_bs_ea78b46``
 
-        An id thus consists of three parts delimited by an underscore with the
-        goal of attaining a small but slightly descriptive identifier:
+        An id thus consists of three parts delimited by underscores with the
+        goal of attaining a fairly short but still slightly descriptive
+        identifier:
 
         1. A 3 to 5 digit zero padded number. This is intended to further
            illustrate the sequence of processing steps and events. ``001`` for
@@ -66,8 +67,6 @@ activities are used. For an entity or activity to be considered part of
 
 -----
 
------
-
 Entities
 --------
 
@@ -81,8 +80,6 @@ requested by the community.
 
 
 {entities}
-
------
 
 -----
 

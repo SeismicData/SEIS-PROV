@@ -49,9 +49,8 @@
 }
 
 .tab-contents {
-    border: 1px #666 solid;
+    border: 1px #999 solid;
     padding: 15px;
-    background-color: white;
     position: relative;
     margin-left: auto;
     margin-right: auto;
@@ -66,15 +65,14 @@ p.graphviz {
     margin-left: auto;
     margin-right: auto;
     display: block;
+    background-color: white;
+    border: 1px solid #999;
+    border-radius: 5px;
+    padding: 10px;
 }
 
 .tab-contents div {
     margin-bottom: 1px;
-}
-
-
-table {
-    margin-top: 10px;
 }
 
 
@@ -90,4 +88,10 @@ table {
 .wy-table-responsive table td,
 .wy-table-responsive table th {
     white-space: normal;
+}
+
+/* Full width tables with a bit of a margin; looks much better. */
+table {
+    width: 100%;
+    margin-top: 10px;
 }
