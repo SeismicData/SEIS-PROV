@@ -12,8 +12,9 @@ Common Properties
 -----------------
 
 ``SEIS-PROV`` does not define any new node types in addition to those already
-existing within ``W3C PROV``. For an entity or activity to be considered part
-of ``SEIS-PROV`` is has to fulfill three things:
+existing within ``W3C PROV``. Therefore the default ``W3C PROV`` entities and
+activities are used. For an entity or activity to be considered part of
+``SEIS-PROV``, it has to fulfill six things:
 
 1. Its ``prov:id`` must live in the ``SEIS-PROV`` namespace and follow a
    certain pattern:
@@ -25,7 +26,7 @@ of ``SEIS-PROV`` is has to fulfill three things:
         In addition to being part of the ``SEIS-PROV`` namespace all ids must
         validate against this regular expression:
 
-        ``^\d{{3,4}}_[a-z]{{2}}_[a-z0-9]{{7,10}}$``
+        ``^\d{{3,5}}_[a-z]{{2}}_[a-z0-9]{{7,12}}$``
 
         Examples are:
 
@@ -35,7 +36,7 @@ of ``SEIS-PROV`` is has to fulfill three things:
         An id thus consists of three parts delimited by an underscore with the
         goal of attaining a small but slightly descriptive identifier:
 
-        1. A 3 or 4 digit zero padded number. This is intended to further
+        1. A 3 to 5 digit zero padded number. This is intended to further
            illustrate the sequence of processing steps and events. ``001`` for
            example is the first step in a processing chain, whereas ``017`` is
            the seventeenth step. This is not enforced anywhere but nice to have
@@ -43,7 +44,7 @@ of ``SEIS-PROV`` is has to fulfill three things:
         2. A two letter code depending on the type of entity or activity. This
            is enforced and part of the ``SEIS-PROV`` definition. Please see the
            definition of each node for the corresponding two letter code.
-        3. A 7 to 10 letter lowercase alphanumeric hash to ensure uniqueness of
+        3. A 7 to 12 letter lowercase alphanumeric hash to ensure uniqueness of
            ids.
 
 2. It must have a certain ``prov:type`` depending on the precise activity or
@@ -61,13 +62,15 @@ of ``SEIS-PROV`` is has to fulfill three things:
    further attribute are required they must not be in the ``SEIS-PROV``
    namespace.
 
+6. The types of all required and optional attributes must match the definition.
+
 
 Entities
 --------
 
-*SEIS_PROV* determines the type of entity via the ``prov:type`` attribute which
-can be one of the following choices. Further types will be added as requested
-by the community.
+``SEIS-PROV`` determines the type of an entity via the ``prov:type`` attribute
+which can be one of the following choices. Further types will be added as
+requested by the community.
 
 .. contents::
     :local:
@@ -80,9 +83,9 @@ by the community.
 Activities
 ----------
 
-*SEIS_PROV* determines the type of activity via the ``prov:type`` attribute
-which can be one of the following choices. Further types will be added as
-requested by the community.
+``SEIS-PROV`` determines the type of an activity via the ``prov:type``
+attribute which can be one of the following choices. Further types will be
+added as requested by the community.
 
 .. contents::
     :local:
