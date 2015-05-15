@@ -66,37 +66,42 @@ This shows the JSON that is used to generate the rest of the definition.
 
     </div>
     </div>
+""".strip()
 
-**Example**
+
+EXAMPLE_TEMPLATE = """
+**{example_title}**
+
+{description}
 
 .. raw:: html
 
     <div id="tab-container" class="tab-container">
       <ul class='etabs'>
         <li class='tab'>
-            <a href="#tabs-{node_type}-{name}-graph">Graph</a>
+            <a href="#tabs-{node_type}-{name}-{ex}-graph">Graph</a>
         </li>
         <li class='tab'>
-            <a href="#tabs-{node_type}-{name}-python">Python Code</a>
+            <a href="#tabs-{node_type}-{name}-{ex}-python">Python Code</a>
         </li>
         <li class='tab'>
-            <a href="#tabs-{node_type}-{name}-xml">PROV-XML</a>
+            <a href="#tabs-{node_type}-{name}-{ex}-xml">PROV-XML</a>
         </li>
         <li class='tab'>
-            <a href="#tabs-{node_type}-{name}-json">PROV-JSON</a>
+            <a href="#tabs-{node_type}-{name}-{ex}-json">PROV-JSON</a>
         </li>
         <li class='tab'>
-            <a href="#tabs-{node_type}-{name}-provn">PROV-N</a>
+            <a href="#tabs-{node_type}-{name}-{ex}-provn">PROV-N</a>
         </li>
       </ul>
-      <div class="tab-contents" id="tabs-{node_type}-{name}-graph">
+      <div class="tab-contents" id="tabs-{node_type}-{name}-{ex}-graph">
 
 .. graphviz:: {dotfile}
 
 .. raw:: html
 
     </div>
-    <div class="tab-contents" id="tabs-{node_type}-{name}-python">
+    <div class="tab-contents" id="tabs-{node_type}-{name}-{ex}-python">
 
 Python code utilizing the `prov <http://prov.readthedocs.org/>`_ package.
 
@@ -106,7 +111,7 @@ Python code utilizing the `prov <http://prov.readthedocs.org/>`_ package.
 .. raw:: html
 
     </div>
-    <div class="tab-contents" id="tabs-{node_type}-{name}-xml">
+    <div class="tab-contents" id="tabs-{node_type}-{name}-{ex}-xml">
 
 In the `PROV-XML <http://www.w3.org/TR/prov-xml/>`_ serialization.
 
@@ -116,7 +121,7 @@ In the `PROV-XML <http://www.w3.org/TR/prov-xml/>`_ serialization.
 .. raw:: html
 
     </div>
-    <div class="tab-contents" id="tabs-{node_type}-{name}-json">
+    <div class="tab-contents" id="tabs-{node_type}-{name}-{ex}-json">
 
 In the
 `PROV-JSON <http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/>`_
@@ -128,7 +133,7 @@ serialization.
 .. raw:: html
 
     </div>
-    <div class="tab-contents" id="tabs-{node_type}-{name}-provn">
+    <div class="tab-contents" id="tabs-{node_type}-{name}-{ex}-provn">
 
 In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
 
@@ -139,6 +144,7 @@ In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
     </div>
     </div>
 """.strip()
+
 
 ATTRIBUTE_TEMPLATE = """
 ``seis_prov:{name}`` {types}
@@ -227,21 +233,72 @@ def create_rst_representation(json_file):
         label=data["recommended_label"],
         required_attributes=make_table(required_attributes, prefix="    "),
         optional_attributes=make_table(optional_attributes, prefix="    "),
-        dotfile=os.path.relpath(get_filename(
-            json_file, node_type, "dot", "max")),
-        pythonfile=os.path.relpath(get_filename(
-            json_file, node_type, "py", "max")),
-        xmlfile=os.path.relpath(get_filename(
-            json_file, node_type, "xml", "max")),
-        jsonfile=os.path.relpath(get_filename(
-            json_file, node_type, "json", "max")),
-        provnfile=os.path.relpath(get_filename(
-            json_file, node_type, "provn", "max")),
-        node_type=node_type,
         json_def_file=os.path.relpath(json_file),
-        name=data["name"])
+        name=data["name"],
+        node_type=node_type)
 
-    return text
+    if len(optional_attributes) > 1:
+        example = EXAMPLE_TEMPLATE.format(
+            example_title="Minimal Example",
+            description="A concrete ``%s`` node example is illustrated "
+            "here as a graph, in code, and in various representations. This "
+            "is a minimal but valid ``%s`` node. See below for a full "
+            "example." % (data["name"], data["name"]),
+            name=data["name"],
+            dotfile=os.path.relpath(get_filename(
+                json_file, node_type, "dot", "min")),
+            pythonfile=os.path.relpath(get_filename(
+                json_file, node_type, "py", "min")),
+            xmlfile=os.path.relpath(get_filename(
+                json_file, node_type, "xml", "min")),
+            jsonfile=os.path.relpath(get_filename(
+                json_file, node_type, "json", "min")),
+            provnfile=os.path.relpath(get_filename(
+                json_file, node_type, "provn", "min")),
+            node_type=node_type,
+            ex="ex_min")
+
+        example += "\n\n\n" + EXAMPLE_TEMPLATE.format(
+            example_title="Full Example",
+            description="A concrete ``%s`` node example is illustrated "
+            "here as a graph, in code, and in various representations. This "
+            "is a full ``%s`` node containing the maximum amount of "
+            "information." % (data["name"], data["name"]),
+            name=data["name"],
+            dotfile=os.path.relpath(get_filename(
+                json_file, node_type, "dot", "max")),
+            pythonfile=os.path.relpath(get_filename(
+                json_file, node_type, "py", "max")),
+            xmlfile=os.path.relpath(get_filename(
+                json_file, node_type, "xml", "max")),
+            jsonfile=os.path.relpath(get_filename(
+                json_file, node_type, "json", "max")),
+            provnfile=os.path.relpath(get_filename(
+                json_file, node_type, "provn", "max")),
+            node_type=node_type,
+            ex="ex_max")
+
+    else:
+        example = EXAMPLE_TEMPLATE.format(
+            example_title="Example",
+            description="A concrete ``%s`` node example is illustrated "
+            "here as a graph, in code, and in various representations." %
+            data["name"],
+            name=data["name"],
+            dotfile=os.path.relpath(get_filename(
+                json_file, node_type, "dot", "max")),
+            pythonfile=os.path.relpath(get_filename(
+                json_file, node_type, "py", "max")),
+            xmlfile=os.path.relpath(get_filename(
+                json_file, node_type, "xml", "max")),
+            jsonfile=os.path.relpath(get_filename(
+                json_file, node_type, "json", "max")),
+            provnfile=os.path.relpath(get_filename(
+                json_file, node_type, "provn", "max")),
+            node_type=node_type,
+            ex="ex")
+
+    return text + "\n\n\n" + example
 
 
 if __name__ == "__main__":
