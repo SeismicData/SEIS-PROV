@@ -2,7 +2,7 @@
     "package": "seis_prov",
     "type": "activity",
     "name": "integrate",
-    "two_letter_code": "in",
+    "two_letter_code": "ig",
     "recommended_label": "Integrate",
     "description": "Integrate the data with respect to time.",
     "attributes": [

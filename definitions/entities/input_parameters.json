@@ -1,0 +1,10 @@
+{
+    "package": "seis_prov",
+    "type": "entity",
+    "name": "input_parameters",
+    "two_letter_code": "in",
+    "recommended_label": "Input Parameters",
+    "description": "The input parameters for a program like a waveform solvers.",
+    "attributes": [
+    ]
+}
