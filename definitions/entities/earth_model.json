@@ -1,0 +1,45 @@
+{
+    "package": "seis_prov",
+    "type": "entity",
+    "name": "earth_model",
+    "two_letter_code": "em",
+    "recommended_label": "Earth Model",
+    "description": "An earth model.",
+    "attributes": [
+        {
+            "name": "model_name",
+            "types": ["xsd:string"],
+            "description": "The name of the model.",
+            "required": true,
+            "example_value": "S40RTS"
+        },
+        {
+            "name": "model_type",
+            "types": ["xsd:string"],
+            "description": "The type of model as a short, descriptive string, e.g. ``'1D'``, ``'3D'``, ``'axially symmetric'``, ...",
+            "required": true,
+            "example_value": "3D"
+        },
+        {
+            "name": "doi",
+            "types": ["xsd:string"],
+            "description": "A DOI pointing to a publication of the model.",
+            "required": false,
+            "example_value": "10.1111/j.1365-246X.2010.04884.x"
+        },
+        {
+            "name": "url",
+            "types": ["xsd:anyURI"],
+            "description": "URL to a website with more information.",
+            "required": false,
+            "example_value": "http://www.earth.lsa.umich.edu/~jritsema/research.html"
+        },
+        {
+            "name": "description",
+            "types": ["xsd:string"],
+            "description": "A short description of the model.",
+            "required": false,
+            "example_value": "The famous S40RTS."
+        }
+    ]
+}
