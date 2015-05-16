@@ -86,22 +86,16 @@ data after each step in the processing chain will be described by an entity.
 All ``SEIS-PROV`` entities are normal ``prov:entity`` records with a special
 ``prov:type`` attribute.
 
-The most used entity in ``SEIS-PROV`` is the ``seis_prov:waveform_trace`` entity,
-describing a single continuous piece of waveform data. ``SEIS-PROV`` furthermore defines
-``seis_prov::cross_correlation``, ``seis_prov:cross_correlation_stack``,
-and ``seis_prov:adjoint_source`` entities.
-More entities will be added as the need arises.
+The most used entity in ``SEIS-PROV`` is the ``seis_prov:waveform_trace``
+entity, describing a single continuous piece of waveform data. ``SEIS-PROV``
+furthermore defines ``seis_prov::cross_correlation``,
+``seis_prov:adjoint_source``, and other entities. More entities will be added
+as the need arises.
 
 Each type of entity has a set of (optional) attributes, the
 ``seis_prov:waveform_trace`` entity for example has attributes denoting the
-network, station, location, and channel SEED identifies, the starttime,
+network, station, location, and channel SEED identifies, the start time,
 sampling rate, the number of samples, and some more things.
-
-In the PROV XML serialization the example in the small box results in the
-following:
-
-.. literalinclude:: _generated/xml/entities/waveform_trace_max.xml
-    :language: xml
 
 
 Activities
@@ -117,7 +111,7 @@ Activities
 
 Activities are action that can change or generate entities. In seismological
 data processing, each processing step can be seen as an activity that uses the
-data and generates a new version of the data.
+data and generates a new version of it.
 
 A further example for an activity would be a simulation run which generates
 some synthetic waveforms. Also an event relocation could be considered an
@@ -131,12 +125,6 @@ Activities can either use existing entities and generate new ones. The
 packages like SAC and ObsPy. Further activities should be added with time.
 While it is not required we **strongly recommend** to associate each activity
 with a software agent otherwise reproducibility is severely hurt.
-
-A ``SEIS-PROV`` example for a simple lowpass filtered graphed in box above is given
-in the following.
-
-.. literalinclude:: _generated/xml/activities/lowpass_filter_max.xml
-    :language: xml
 
 
 Agents
@@ -161,11 +149,6 @@ PROV`` are sufficient. ``SEIS-PROV`` requires each software agent to have
 ``seis_prov:software_name``, ``seis_prov:sofware_version``, and
 ``seis_prov:website`` attributes. A human readable ``prov:label`` is
 recommended. Agents can furthermore have an ``seis_prov:doi`` attribute.
-
-The following example PROV XML serialization is the same as in the box above.
-
-.. literalinclude:: _generated/xml/examples/simple_agent.xml
-    :language: xml
 
 
 Relations and the Rest of W3C PROV
