@@ -27,9 +27,13 @@ import inspect
 import io
 import json
 import os
+import sys
 
 import colorama
 import jsonschema
+
+sys.path.append(".")
+from header import generated_dir  # NOQA
 
 
 class ValidationError(Exception):
@@ -66,6 +70,10 @@ def json_files(folder, exclude_filenames):
 def validate():
     two_letter_codes = collections.defaultdict(list)
 
+    collective_definition = {
+        "entities": {},
+        "activities": {}}
+
     for filename in json_files(folder=definitions_dir,
                                exclude_filenames=[schema_filename]):
         print(colorama.Fore.GREEN +
@@ -96,12 +104,25 @@ def validate():
         # Collect the two letter codes.
         two_letter_codes[data["two_letter_code"]].append(filename)
 
+        # Add to collective information.
+        if data["type"] == "entity":
+            key = "entities"
+        elif data["type"] == "activity":
+            key = "activities"
+        else:
+            raise NotImplementedError
+        collective_definition[key][data["name"]] = data
+
     for key, value in two_letter_codes.items():
         if len(value) == 1:
             continue
         raise ValidationError(
             "Two letter code '%s' is used in %i files: %s" % (
                 key, len(value), ", ".join(value)))
+
+    jsonfile = os.path.join(generated_dir, "seis_prov.json")
+    with io.open(jsonfile, "wt") as fh:
+        json.dump(collective_definition, fh, indent=4, separators=(',', ': '))
 
 
 if __name__ == "__main__":

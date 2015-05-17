@@ -32,6 +32,25 @@ The actual definitions are then detailed in this section.
     _generated_details
 
 
+The technical definition is provided by a JSON file which acts as a kind of
+schema.
+
+.. toctree::
+    :maxdepth: 2
+    :glob:
+
+    schema
+
+``SEIS-PROV`` documents must be validated and verified to be correct to be of
+any use. This section details this process and which steps must be performed.
+
+.. toctree::
+    :maxdepth: 2
+    :glob:
+
+    validation
+
+
 The final section illustrates some more complex use cases and scenarios.
 
 .. toctree::
