@@ -1,0 +1,326 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Motivation &mdash; SEIS-PROV 0.0.1a documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="stylesheet" href="_static/css/my-styles.css" type="text/css" />
+  
+    <link rel="top" title="SEIS-PROV 0.0.1a documentation" href="index.html"/>
+        <link rel="next" title="Introduction to SEIS-PROV" href="seis_prov.html"/>
+        <link rel="prev" title="SEIS-PROV: Provenance for Seismological Data" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="index.html" class="icon icon-home"> SEIS-PROV
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">Motivation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-provenance">What is Provenance?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#why-it-matters">Why it matters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#goal-of-seis-prov">Goal of SEIS-PROV</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="seis_prov.html">Introduction to SEIS-PROV</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="seis_prov.html#w3c-prov">W3C PROV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seis_prov.html#seis-prov-namespace">SEIS-PROV Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seis_prov.html#approach-to-the-extension-of-w3c-prov">Approach to the Extension of W3C PROV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seis_prov.html#provenance-records">Provenance Records</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="seis_prov.html#entities">Entities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="seis_prov.html#activities">Activities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="seis_prov.html#agents">Agents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="seis_prov.html#relations-and-the-rest-of-w3c-prov">Relations and the Rest of W3C PROV</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="_generated_details.html">Detailed Definition</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="_generated_details.html#common-properties">Common Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_generated_details.html#entities">Entities</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#adjoint-source">Adjoint Source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#cross-correlation">Cross Correlation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#cross-correlation-stack">Cross Correlation Stack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#earth-model">Earth Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#input-parameters">Input Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#waveform-trace">Waveform Trace</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="_generated_details.html#activities">Activities</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#bandpass-filter">Bandpass Filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#bandstop-filter">Bandstop Filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#calculate-adjoint-source">Calculate Adjoint Source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#cross-correlate">Cross Correlate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#cut">Cut</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#decimate">Decimate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#detrend">Detrend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#differentiate">Differentiate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#divide">Divide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#highpass-filter">Highpass Filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#integrate">Integrate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#interpolate">Interpolate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#lowpass-filter">Lowpass Filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#merge">Merge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#multiply">Multiply</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#normalize">Normalize</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#pad">Pad</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#remove-response">Remove Response</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#resample">Resample</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#rotate">Rotate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#simulate-response">Simulate Response</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#stack-cross-correlations">Stack Cross Correlations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#taper">Taper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#waveform-simulation">Waveform Simulation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="schema.html">Schema</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="validation.html">Validation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="usage_examples.html">Usage Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="usage_examples.html#detailed-processing-chain">Detailed Processing Chain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage_examples.html#schematic-processing-chain">Schematic Processing Chain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage_examples.html#waveform-simulation">Waveform Simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage_examples.html#cross-correlation">Cross Correlation</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">SEIS-PROV</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Motivation</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/motivation.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="motivation">
+<h1>Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="what-is-provenance">
+<h2>What is Provenance?<a class="headerlink" href="#what-is-provenance" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><em>Provenance is information about entities, activities, and people involved
+in producing a piece of data or thing, which can be used to form
+assessments about its quality, reliability or trustworthiness.</em>  <a class="reference internal" href="#w3c-prov" id="id1">[W3C_PROV]</a></div></blockquote>
+<p>In a seismological context provenance can be seen as information about the
+processes that created a particular piece of data. For synthetic waveforms the
+provenance information describes which solver and settings therein were used to
+generate it. When looking at processed seismograms the provenance has knowledge
+about the different time series analysis steps that led to it.</p>
+<p>Provenance information can be derived from different perspectives.
+<em>Agent-centered provenance</em> describes what people where involved in the
+creation of a particular piece of data. <em>Object-centered provenance</em> traces the
+origins of data by tracking the different pieces of information that assembled
+it.  <em>Process-centered provenance</em> finally captures the actions that were taken
+to generate that particular piece of data.</p>
+<p>For the following we will take the <strong>process-centered</strong> viewpoint as
+essentially all data in seismology can be described by a succession of
+different processing steps that created it.</p>
+<p>Provenance is a kind of metainformation but there is metainformation that is
+not considered to be provenance. For example the physical location of a seismic
+data recording is metadata but not provenance.</p>
+</div>
+<div class="section" id="why-it-matters">
+<h2>Why it matters<a class="headerlink" href="#why-it-matters" title="Permalink to this headline">¶</a></h2>
+<p>Provenance is a key step towards the goal of reproducible research. The final
+result of many research projects are some papers describing methodology and
+results. Due to many subjective choices greatly influencing the final result
+many papers are essentially one off studies that cannot be reproduced.
+Scientists need to be very disciplined if they aim for reproducible results.
+This problem only intensifies with increasing amounts of data common in modern
+research.</p>
+<p>Provenance is in theory able to solve this by capturing all information that
+went into producing a particular result. If we want to advance our science we
+have to become better at tracking, storing, and exchanging it.</p>
+</div>
+<div class="section" id="goal-of-seis-prov">
+<h2>Goal of SEIS-PROV<a class="headerlink" href="#goal-of-seis-prov" title="Permalink to this headline">¶</a></h2>
+<p>Our goal here is not full reproducibility as too many variables affect the
+final result. Effects we do not aim to capture are for example floating point
+math differences on different machines and compilers, errors in CPU operations,
+and similar, hard to describe effects.</p>
+<p>What we strive for with our provenance description is simple:</p>
+<blockquote>
+<div><strong>A scientists looking at data described by our provenance information should
+be able to tell what steps where taken to generate this particular piece of
+data.</strong></div></blockquote>
+<p class="rubric">Footnotes</p>
+<table class="docutils citation" frame="void" id="w3c-prov" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[W3C_PROV]</a></td><td><a class="reference external" href="http://www.w3.org/TR/prov-overview/">http://www.w3.org/TR/prov-overview/</a></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="seis_prov.html" class="btn btn-neutral float-right" title="Introduction to SEIS-PROV" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="SEIS-PROV: Provenance for Seismological Data" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Lion Krischer.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.0.1a',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+    <script type="text/javascript" src="./_static/js/jquery.easytabs.min.js"></script>
+    <script>
+        $('.tab-container').easytabs({
+            animate: false
+        });
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,2061 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Usage Examples &mdash; SEIS-PROV 0.0.1a documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="stylesheet" href="_static/css/my-styles.css" type="text/css" />
+  
+    <link rel="top" title="SEIS-PROV 0.0.1a documentation" href="index.html"/>
+        <link rel="prev" title="Validation" href="validation.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="index.html" class="icon icon-home"> SEIS-PROV
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="motivation.html">Motivation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="motivation.html#what-is-provenance">What is Provenance?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motivation.html#why-it-matters">Why it matters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motivation.html#goal-of-seis-prov">Goal of SEIS-PROV</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="seis_prov.html">Introduction to SEIS-PROV</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="seis_prov.html#w3c-prov">W3C PROV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seis_prov.html#seis-prov-namespace">SEIS-PROV Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seis_prov.html#approach-to-the-extension-of-w3c-prov">Approach to the Extension of W3C PROV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seis_prov.html#provenance-records">Provenance Records</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="seis_prov.html#entities">Entities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="seis_prov.html#activities">Activities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="seis_prov.html#agents">Agents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="seis_prov.html#relations-and-the-rest-of-w3c-prov">Relations and the Rest of W3C PROV</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="_generated_details.html">Detailed Definition</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="_generated_details.html#common-properties">Common Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_generated_details.html#entities">Entities</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#adjoint-source">Adjoint Source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#cross-correlation">Cross Correlation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#cross-correlation-stack">Cross Correlation Stack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#earth-model">Earth Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#input-parameters">Input Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#waveform-trace">Waveform Trace</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="_generated_details.html#activities">Activities</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#bandpass-filter">Bandpass Filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#bandstop-filter">Bandstop Filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#calculate-adjoint-source">Calculate Adjoint Source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#cross-correlate">Cross Correlate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#cut">Cut</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#decimate">Decimate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#detrend">Detrend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#differentiate">Differentiate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#divide">Divide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#highpass-filter">Highpass Filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#integrate">Integrate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#interpolate">Interpolate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#lowpass-filter">Lowpass Filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#merge">Merge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#multiply">Multiply</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#normalize">Normalize</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#pad">Pad</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#remove-response">Remove Response</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#resample">Resample</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#rotate">Rotate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#simulate-response">Simulate Response</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#stack-cross-correlations">Stack Cross Correlations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#taper">Taper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_generated_details.html#waveform-simulation">Waveform Simulation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="schema.html">Schema</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="validation.html">Validation</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">Usage Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#detailed-processing-chain">Detailed Processing Chain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#schematic-processing-chain">Schematic Processing Chain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#waveform-simulation">Waveform Simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cross-correlation">Cross Correlation</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">SEIS-PROV</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Usage Examples</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/usage_examples.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="usage-examples">
+<h1>Usage Examples<a class="headerlink" href="#usage-examples" title="Permalink to this headline">¶</a></h1>
+<p>This section shows some more extensive examples demonstrating that SEIS PROV
+can be used to capture provenance for a wide of seismological relevant
+applications. Keep in mind that these diagrams describe the history of some
+piece of data, not a workflow.  The <strong>arrows point towards the past</strong>, e.g. to
+the origin of the data.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><cite>Right click -&gt; View Image</cite> to see graphs in more detail.</p>
+</div>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#detailed-processing-chain" id="id1">Detailed Processing Chain</a></li>
+<li><a class="reference internal" href="#schematic-processing-chain" id="id2">Schematic Processing Chain</a></li>
+<li><a class="reference internal" href="#waveform-simulation" id="id3">Waveform Simulation</a></li>
+<li><a class="reference internal" href="#cross-correlation" id="id4">Cross Correlation</a></li>
+</ul>
+</div>
+<div class="section" id="detailed-processing-chain">
+<h2><a class="toc-backref" href="#id1">Detailed Processing Chain</a><a class="headerlink" href="#detailed-processing-chain" title="Permalink to this headline">¶</a></h2>
+<p>This example demonstrates how a linear chain of signal processing routines can
+be described.  The data has been detrended with a linear fit, then a
+Butterworth lowpass filter has been applied and finally some integer decimation
+has been performed. All of these operations where performed by a certain
+version of ObsPy. Toolboxes can be adapted to provide this kind of provenance
+fully automatic.</p>
+<p class="graphviz">
+<img src="_images/graphviz-896ced3c7ac6c632b497ca99d3be0970c2f32bf9.svg" alt="digraph G {
+	graph [bb=&quot;0,0,845,1037.9&quot;,
+		charset=&quot;utf-8&quot;,
+		rankdir=BT
+	];
+	node [label=&quot;\N&quot;];
+	n1	 [URL=&quot;http://seisprov.org/seis_prov/0.1/#sa_9DIG8A-TA&quot;,
+		fillcolor=&quot;#FED37F&quot;,
+		height=0.77692,
+		label=&lt;ObsPy&lt;br /&gt;&lt;font color=&quot;#333333&quot; point-size=&quot;10&quot;&gt;seis_prov:sa_9DIG8A-TA&lt;/font&gt;&gt;,
+		pos=&quot;453,1010&quot;,
+		shape=house,
+		style=filled,
+		width=2.945];
+	ann1	 [color=gray,
+		fontcolor=black,
+		fontsize=10,
+		height=1.1389,
+		label=&lt;&lt;TABLE cellpadding=&quot;0&quot; border=&quot;0&quot;&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#label&quot;&gt;prov:label&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;ObsPy&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#type&quot;&gt;prov:type&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#SoftwareAgent&quot;&gt;prov:SoftwareAgent&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#doi&quot;&gt;seis_prov:doi&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;10.1785/gssrl.81.3.530&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#software_name&quot;&gt;seis_prov:software_name&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;ObsPy&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#software_version&quot;&gt;seis_prov:software_version&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;0.10.1&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#website&quot;&gt;seis_prov:website&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;http://www.obspy.org&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;/TABLE&gt;&gt;,
+		pos=&quot;111,904&quot;,
+		shape=note,
+		width=3.0833];
+	ann1 -&gt; n1	 [arrowhead=none,
+		color=gray,
+		pos=&quot;222.09,942.21 225.09,943.16 228.06,944.09 231,945 278.59,959.78 332.28,975.28 374.94,987.33&quot;,
+		style=dashed];
+	n2	 [URL=&quot;http://seisprov.org/seis_prov/0.1/#wf_A34J4DIDJ3&quot;,
+		color=&quot;#808080&quot;,
+		fillcolor=&quot;#FFFC87&quot;,
+		height=0.62854,
+		label=&lt;Waveform Trace&lt;br /&gt;&lt;font color=&quot;#333333&quot; point-size=&quot;10&quot;&gt;seis_prov:wf_A34J4DIDJ3&lt;/font&gt;&gt;,
+		pos=&quot;329,904&quot;,
+		shape=oval,
+		style=filled,
+		width=2.4638];
+	ann2	 [color=gray,
+		fontcolor=black,
+		fontsize=10,
+		height=1.3056,
+		label=&lt;&lt;TABLE cellpadding=&quot;0&quot; border=&quot;0&quot;&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#label&quot;&gt;prov:label&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;Waveform Trace&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#type&quot;&gt;prov:type&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;seis_prov:waveform_trace&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#number_of_samples&quot;&gt;seis_prov:number_of_samples&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;6000&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#sampling_rate&quot;&gt;seis_prov:sampling_rate&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;100.0&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#starttime&quot;&gt;seis_prov:starttime&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;2013-01-02T12:10:11&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#station_id&quot;&gt;seis_prov:station_id&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;BW.FURT.00.BHZ&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#units&quot;&gt;seis_prov:units&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;m/s&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;/TABLE&gt;&gt;,
+		pos=&quot;146,770&quot;,
+		shape=note,
+		width=3.4722];
+	ann2 -&gt; n2	 [arrowhead=none,
+		color=gray,
+		pos=&quot;210,817.17 240.93,839.47 276.46,865.11 300.59,882.51&quot;,
+		style=dashed];
+	n3	 [URL=&quot;http://seisprov.org/seis_prov/0.1/#dt_F87SF7SF78&quot;,
+		color=&quot;#0000FF&quot;,
+		fillcolor=&quot;#9FB1FC&quot;,
+		height=0.5,
+		label=&lt;Detrend&lt;br /&gt;&lt;font color=&quot;#333333&quot; point-size=&quot;10&quot;&gt;seis_prov:dt_F87SF7SF78&lt;/font&gt;&gt;,
+		pos=&quot;350,770&quot;,
+		shape=box,
+		style=filled,
+		width=1.7041];
+	n3 -&gt; n2	 [color=red4,
+		fontcolor=red,
+		fontsize=10.0,
+		label=used,
+		lp=&quot;340.17,840&quot;,
+		pos=&quot;e,328.53,881.13 343.88,788.13 339.63,800.88 334.27,818.8 331.67,835 329.79,846.7 328.98,859.67 328.68,871.12&quot;];
+	b1	 [color=gray,
+		height=0.05,
+		label=&quot;&quot;,
+		pos=&quot;437,904&quot;,
+		shape=point,
+		width=0.05];
+	n3 -&gt; b1	 [arrowhead=none,
+		color=&quot;#FED37F&quot;,
+		fontsize=10.0,
+		label=wasAssociatedWith,
+		lp=&quot;412.51,840&quot;,
+		pos=&quot;351.22,788.24 353.3,804.87 358.89,829.71 373.97,845 391.45,862.72 410.14,844.69 427,863 437.86,874.79 437.37,896.57 437.08,901.83&quot;];
+	ann3	 [color=gray,
+		fontcolor=black,
+		fontsize=10,
+		height=0.63889,
+		label=&lt;&lt;TABLE cellpadding=&quot;0&quot; border=&quot;0&quot;&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#label&quot;&gt;prov:label&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;Detrend&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#type&quot;&gt;prov:type&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;seis_prov:detrend&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#detrending_method&quot;&gt;seis_prov:detrending_method&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;demean&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;/TABLE&gt;&gt;,
+		pos=&quot;137,654&quot;,
+		shape=note,
+		width=2.9306];
+	ann3 -&gt; n3	 [arrowhead=none,
+		color=gray,
+		pos=&quot;187.82,677.11 215.54,689.67 250.17,706.21 280,723 295.71,731.84 312.63,742.91 325.89,751.98&quot;,
+		style=dashed];
+	n4	 [URL=&quot;http://seisprov.org/seis_prov/0.1/#wf_JS83HF34AJ&quot;,
+		color=&quot;#808080&quot;,
+		fillcolor=&quot;#FFFC87&quot;,
+		height=0.62854,
+		label=&lt;Waveform Trace&lt;br /&gt;&lt;font color=&quot;#333333&quot; point-size=&quot;10&quot;&gt;seis_prov:wf_JS83HF34AJ&lt;/font&gt;&gt;,
+		pos=&quot;350,654&quot;,
+		shape=oval,
+		style=filled,
+		width=2.4751];
+	n4 -&gt; n3	 [color=darkgreen,
+		fontcolor=darkgreen,
+		fontsize=10.0,
+		label=wasGeneratedBy,
+		lp=&quot;384.15,700&quot;,
+		pos=&quot;e,350,751.83 350,676.71 350,695.13 350,721.67 350,741.56&quot;];
+	ann4	 [color=gray,
+		fontcolor=black,
+		fontsize=10,
+		height=1.3056,
+		label=&lt;&lt;TABLE cellpadding=&quot;0&quot; border=&quot;0&quot;&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#label&quot;&gt;prov:label&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;Waveform Trace&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#type&quot;&gt;prov:type&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;seis_prov:waveform_trace&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#number_of_samples&quot;&gt;seis_prov:number_of_samples&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;6000&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#sampling_rate&quot;&gt;seis_prov:sampling_rate&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;100.0&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#starttime&quot;&gt;seis_prov:starttime&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;2013-01-02T12:10:11&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#station_id&quot;&gt;seis_prov:station_id&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;BW.FURT.00.BHZ&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#units&quot;&gt;seis_prov:units&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;m/s&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;/TABLE&gt;&gt;,
+		pos=&quot;260,538&quot;,
+		shape=note,
+		width=3.4722];
+	ann4 -&gt; n4	 [arrowhead=none,
+		color=gray,
+		pos=&quot;296.35,585.04 309.03,601.11 322.67,618.38 333.02,631.49&quot;,
+		style=dashed];
+	n5	 [URL=&quot;http://seisprov.org/seis_prov/0.1/#lp_F87SF7SF78&quot;,
+		color=&quot;#0000FF&quot;,
+		fillcolor=&quot;#9FB1FC&quot;,
+		height=0.5,
+		label=&lt;Lowpass Filter&lt;br /&gt;&lt;font color=&quot;#333333&quot; point-size=&quot;10&quot;&gt;seis_prov:lp_F87SF7SF78&lt;/font&gt;&gt;,
+		pos=&quot;464,538&quot;,
+		shape=box,
+		style=filled,
+		width=1.7041];
+	n5 -&gt; n4	 [color=red4,
+		fontcolor=red,
+		fontsize=10.0,
+		label=used,
+		lp=&quot;405.17,608&quot;,
+		pos=&quot;e,371.37,631.63 446.69,556.31 428.63,574.37 400.04,602.96 378.62,624.38&quot;];
+	b2	 [color=gray,
+		height=0.05,
+		label=&quot;&quot;,
+		pos=&quot;467,700&quot;,
+		shape=point,
+		width=0.05];
+	n5 -&gt; b2	 [arrowhead=none,
+		color=&quot;#FED37F&quot;,
+		fontsize=10.0,
+		label=wasAssociatedWith,
+		lp=&quot;504.51,608&quot;,
+		pos=&quot;464.32,556.12 465.05,594.82 466.77,686.54 466.98,697.85&quot;];
+	ann5	 [color=gray,
+		fontcolor=black,
+		fontsize=10,
+		height=1.1389,
+		label=&lt;&lt;TABLE cellpadding=&quot;0&quot; border=&quot;0&quot;&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#label&quot;&gt;prov:label&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;Lowpass Filter&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#type&quot;&gt;prov:type&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;seis_prov:lowpass_filter&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#corner_frequency&quot;&gt;seis_prov:corner_frequency&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;10.0&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#filter_order&quot;&gt;seis_prov:filter_order&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;4&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#filter_type&quot;&gt;seis_prov:filter_type&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;Butterworth&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#number_of_passes&quot;&gt;seis_prov:number_of_passes&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;1&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;/TABLE&gt;&gt;,
+		pos=&quot;237,404&quot;,
+		shape=note,
+		width=3.25];
+	ann5 -&gt; n5	 [arrowhead=none,
+		color=gray,
+		pos=&quot;313.16,445.12 339.07,459.19 368.03,475.39 394,491 409.21,500.14 425.82,511.02 439.04,519.9&quot;,
+		style=dashed];
+	n6	 [URL=&quot;http://seisprov.org/seis_prov/0.1/#wf_378F8KS8KD&quot;,
+		color=&quot;#808080&quot;,
+		fillcolor=&quot;#FFFC87&quot;,
+		height=0.62854,
+		label=&lt;Waveform Trace&lt;br /&gt;&lt;font color=&quot;#333333&quot; point-size=&quot;10&quot;&gt;seis_prov:wf_378F8KS8KD&lt;/font&gt;&gt;,
+		pos=&quot;464,404&quot;,
+		shape=oval,
+		style=filled,
+		width=2.5622];
+	n6 -&gt; n5	 [color=darkgreen,
+		fontcolor=darkgreen,
+		fontsize=10.0,
+		label=wasGeneratedBy,
+		lp=&quot;498.15,468&quot;,
+		pos=&quot;e,464,519.8 464,426.8 464,449.51 464,485.13 464,509.7&quot;];
+	ann6	 [color=gray,
+		fontcolor=black,
+		fontsize=10,
+		height=1.3056,
+		label=&lt;&lt;TABLE cellpadding=&quot;0&quot; border=&quot;0&quot;&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#label&quot;&gt;prov:label&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;Waveform Trace&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#type&quot;&gt;prov:type&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;seis_prov:waveform_trace&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#number_of_samples&quot;&gt;seis_prov:number_of_samples&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;6000&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#sampling_rate&quot;&gt;seis_prov:sampling_rate&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;100.0&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#starttime&quot;&gt;seis_prov:starttime&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;2013-01-02T12:10:11&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#station_id&quot;&gt;seis_prov:station_id&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;BW.FURT.00.BHZ&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#units&quot;&gt;seis_prov:units&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;m/s&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;/TABLE&gt;&gt;,
+		pos=&quot;379,270&quot;,
+		shape=note,
+		width=3.4722];
+	ann6 -&gt; n6	 [arrowhead=none,
+		color=gray,
+		pos=&quot;408.73,317.17 422.8,339.02 438.94,364.08 450.13,381.46&quot;,
+		style=dashed];
+	n7	 [URL=&quot;http://seisprov.org/seis_prov/0.1/#cd_F87SF7SF78&quot;,
+		color=&quot;#0000FF&quot;,
+		fillcolor=&quot;#9FB1FC&quot;,
+		height=0.5,
+		label=&lt;Decimate&lt;br /&gt;&lt;font color=&quot;#333333&quot; point-size=&quot;10&quot;&gt;seis_prov:cd_F87SF7SF78&lt;/font&gt;&gt;,
+		pos=&quot;584,270&quot;,
+		shape=box,
+		style=filled,
+		width=1.7271];
+	n7 -&gt; n6	 [color=red4,
+		fontcolor=red,
+		fontsize=10.0,
+		label=used,
+		lp=&quot;533.17,340&quot;,
+		pos=&quot;e,483.26,381.81 568.31,288.26 548.42,310.14 513.85,348.16 489.99,374.41&quot;];
+	b3	 [color=gray,
+		height=0.05,
+		label=&quot;&quot;,
+		pos=&quot;580,468&quot;,
+		shape=point,
+		width=0.05];
+	n7 -&gt; b3	 [arrowhead=none,
+		color=&quot;#FED37F&quot;,
+		fontsize=10.0,
+		label=wasAssociatedWith,
+		lp=&quot;621.51,340&quot;,
+		pos=&quot;583.65,288.05 582.72,333.5 580.25,454.88 580.02,466.16&quot;];
+	ann7	 [color=gray,
+		fontcolor=black,
+		fontsize=10,
+		height=0.63889,
+		label=&lt;&lt;TABLE cellpadding=&quot;0&quot; border=&quot;0&quot;&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#label&quot;&gt;prov:label&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;Decimate&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#type&quot;&gt;prov:type&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;seis_prov:decimate&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#factor&quot;&gt;seis_prov:factor&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;2&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;/TABLE&gt;&gt;,
+		pos=&quot;527,154&quot;,
+		shape=note,
+		width=2.2639];
+	ann7 -&gt; n7	 [arrowhead=none,
+		color=gray,
+		pos=&quot;538.13,177.25 549.01,199.02 565.37,231.73 575.32,251.65&quot;,
+		style=dashed];
+	n8	 [URL=&quot;http://seisprov.org/seis_prov/0.1/#wf_JUDE89DU8L&quot;,
+		color=&quot;#808080&quot;,
+		fillcolor=&quot;#FFFC87&quot;,
+		height=0.62854,
+		label=&lt;Waveform Trace&lt;br /&gt;&lt;font color=&quot;#333333&quot; point-size=&quot;10&quot;&gt;seis_prov:wf_JUDE89DU8L&lt;/font&gt;&gt;,
+		pos=&quot;720,154&quot;,
+		shape=oval,
+		style=filled,
+		width=2.6056];
+	n8 -&gt; n7	 [color=darkgreen,
+		fontcolor=darkgreen,
+		fontsize=10.0,
+		label=wasGeneratedBy,
+		lp=&quot;706.15,200&quot;,
+		pos=&quot;e,604.35,251.94 695.06,175.91 671.63,195.54 636.63,224.89 612.2,245.36&quot;];
+	ann8	 [color=gray,
+		fontcolor=black,
+		fontsize=10,
+		height=1.3056,
+		label=&lt;&lt;TABLE cellpadding=&quot;0&quot; border=&quot;0&quot;&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#label&quot;&gt;prov:label&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;Waveform Trace&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#type&quot;&gt;prov:type&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;seis_prov:waveform_trace&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#number_of_samples&quot;&gt;seis_prov:number_of_samples&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;3000&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#sampling_rate&quot;&gt;seis_prov:sampling_rate&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;100.0&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#starttime&quot;&gt;seis_prov:starttime&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;2013-01-02T12:10:11&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#station_id&quot;&gt;seis_prov:station_id&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;BW.FURT.00.BHZ&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#units&quot;&gt;seis_prov:units&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;m/s&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;/TABLE&gt;&gt;,
+		pos=&quot;720,47&quot;,
+		shape=note,
+		width=3.4722];
+	ann8 -&gt; n8	 [arrowhead=none,
+		color=gray,
+		pos=&quot;720,94.055 720,106.95 720,120.37 720,131.14&quot;,
+		style=dashed];
+	b1 -&gt; n1	 [color=&quot;#FED37F&quot;,
+		fontsize=10.0,
+		pos=&quot;e,449.61,986.95 437.18,906.17 438.25,913.09 443.83,949.39 448.07,976.91&quot;];
+	b2 -&gt; n1	 [color=&quot;#FED37F&quot;,
+		fontsize=10.0,
+		pos=&quot;e,453.99,987.16 466.96,701.88 466.31,716.21 457.91,900.94 454.46,976.79&quot;];
+	b3 -&gt; n1	 [color=&quot;#FED37F&quot;,
+		fontsize=10.0,
+		pos=&quot;e,502.34,987.19 579.85,469.87 578.43,478.49 567,549.25 567,607 567,607 567,607 567,905 567,938.86 539.2,964.64 511.05,982.05&quot;];
+}" />
+</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="cp">&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;</span>
+<span class="nt">&lt;prov:document</span> <span class="na">xmlns:seis_prov=</span><span class="s">&quot;http://seisprov.org/seis_prov/0.1/#&quot;</span> <span class="na">xmlns:prov=</span><span class="s">&quot;http://www.w3.org/ns/prov#&quot;</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;prov:softwareAgent</span> <span class="na">prov:id=</span><span class="s">&quot;seis_prov:sa_9DIG8A-TA&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;prov:label&gt;</span>ObsPy<span class="nt">&lt;/prov:label&gt;</span>
+    <span class="nt">&lt;seis_prov:doi&gt;</span>10.1785/gssrl.81.3.530<span class="nt">&lt;/seis_prov:doi&gt;</span>
+    <span class="nt">&lt;seis_prov:software_name&gt;</span>ObsPy<span class="nt">&lt;/seis_prov:software_name&gt;</span>
+    <span class="nt">&lt;seis_prov:software_version&gt;</span>0.10.1<span class="nt">&lt;/seis_prov:software_version&gt;</span>
+    <span class="nt">&lt;seis_prov:website&gt;</span>http://www.obspy.org<span class="nt">&lt;/seis_prov:website&gt;</span>
+  <span class="nt">&lt;/prov:softwareAgent&gt;</span>
+  <span class="nt">&lt;prov:entity</span> <span class="na">prov:id=</span><span class="s">&quot;seis_prov:wf_A34J4DIDJ3&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;prov:label&gt;</span>Waveform Trace<span class="nt">&lt;/prov:label&gt;</span>
+    <span class="nt">&lt;prov:type</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:string&quot;</span><span class="nt">&gt;</span>seis_prov:waveform_trace<span class="nt">&lt;/prov:type&gt;</span>
+    <span class="nt">&lt;seis_prov:number_of_samples</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:int&quot;</span><span class="nt">&gt;</span>6000<span class="nt">&lt;/seis_prov:number_of_samples&gt;</span>
+    <span class="nt">&lt;seis_prov:sampling_rate</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:double&quot;</span><span class="nt">&gt;</span>100.0<span class="nt">&lt;/seis_prov:sampling_rate&gt;</span>
+    <span class="nt">&lt;seis_prov:starttime</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:dateTime&quot;</span><span class="nt">&gt;</span>2013-01-02T12:10:11<span class="nt">&lt;/seis_prov:starttime&gt;</span>
+    <span class="nt">&lt;seis_prov:station_id&gt;</span>BW.FURT.00.BHZ<span class="nt">&lt;/seis_prov:station_id&gt;</span>
+    <span class="nt">&lt;seis_prov:units&gt;</span>m/s<span class="nt">&lt;/seis_prov:units&gt;</span>
+  <span class="nt">&lt;/prov:entity&gt;</span>
+  <span class="nt">&lt;prov:activity</span> <span class="na">prov:id=</span><span class="s">&quot;seis_prov:dt_F87SF7SF78&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;prov:label&gt;</span>Detrend<span class="nt">&lt;/prov:label&gt;</span>
+    <span class="nt">&lt;prov:type</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:string&quot;</span><span class="nt">&gt;</span>seis_prov:detrend<span class="nt">&lt;/prov:type&gt;</span>
+    <span class="nt">&lt;seis_prov:detrending_method&gt;</span>demean<span class="nt">&lt;/seis_prov:detrending_method&gt;</span>
+  <span class="nt">&lt;/prov:activity&gt;</span>
+  <span class="nt">&lt;prov:entity</span> <span class="na">prov:id=</span><span class="s">&quot;seis_prov:wf_JS83HF34AJ&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;prov:label&gt;</span>Waveform Trace<span class="nt">&lt;/prov:label&gt;</span>
+    <span class="nt">&lt;prov:type</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:string&quot;</span><span class="nt">&gt;</span>seis_prov:waveform_trace<span class="nt">&lt;/prov:type&gt;</span>
+    <span class="nt">&lt;seis_prov:number_of_samples</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:int&quot;</span><span class="nt">&gt;</span>6000<span class="nt">&lt;/seis_prov:number_of_samples&gt;</span>
+    <span class="nt">&lt;seis_prov:sampling_rate</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:double&quot;</span><span class="nt">&gt;</span>100.0<span class="nt">&lt;/seis_prov:sampling_rate&gt;</span>
+    <span class="nt">&lt;seis_prov:starttime</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:dateTime&quot;</span><span class="nt">&gt;</span>2013-01-02T12:10:11<span class="nt">&lt;/seis_prov:starttime&gt;</span>
+    <span class="nt">&lt;seis_prov:station_id&gt;</span>BW.FURT.00.BHZ<span class="nt">&lt;/seis_prov:station_id&gt;</span>
+    <span class="nt">&lt;seis_prov:units&gt;</span>m/s<span class="nt">&lt;/seis_prov:units&gt;</span>
+  <span class="nt">&lt;/prov:entity&gt;</span>
+  <span class="nt">&lt;prov:activity</span> <span class="na">prov:id=</span><span class="s">&quot;seis_prov:lp_F87SF7SF78&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;prov:label&gt;</span>Lowpass Filter<span class="nt">&lt;/prov:label&gt;</span>
+    <span class="nt">&lt;prov:type</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:string&quot;</span><span class="nt">&gt;</span>seis_prov:lowpass_filter<span class="nt">&lt;/prov:type&gt;</span>
+    <span class="nt">&lt;seis_prov:corner_frequency</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:double&quot;</span><span class="nt">&gt;</span>10.0<span class="nt">&lt;/seis_prov:corner_frequency&gt;</span>
+    <span class="nt">&lt;seis_prov:filter_order</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:int&quot;</span><span class="nt">&gt;</span>4<span class="nt">&lt;/seis_prov:filter_order&gt;</span>
+    <span class="nt">&lt;seis_prov:filter_type&gt;</span>Butterworth<span class="nt">&lt;/seis_prov:filter_type&gt;</span>
+    <span class="nt">&lt;seis_prov:number_of_passes</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:int&quot;</span><span class="nt">&gt;</span>1<span class="nt">&lt;/seis_prov:number_of_passes&gt;</span>
+  <span class="nt">&lt;/prov:activity&gt;</span>
+  <span class="nt">&lt;prov:entity</span> <span class="na">prov:id=</span><span class="s">&quot;seis_prov:wf_378F8KS8KD&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;prov:label&gt;</span>Waveform Trace<span class="nt">&lt;/prov:label&gt;</span>
+    <span class="nt">&lt;prov:type</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:string&quot;</span><span class="nt">&gt;</span>seis_prov:waveform_trace<span class="nt">&lt;/prov:type&gt;</span>
+    <span class="nt">&lt;seis_prov:number_of_samples</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:int&quot;</span><span class="nt">&gt;</span>6000<span class="nt">&lt;/seis_prov:number_of_samples&gt;</span>
+    <span class="nt">&lt;seis_prov:sampling_rate</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:double&quot;</span><span class="nt">&gt;</span>100.0<span class="nt">&lt;/seis_prov:sampling_rate&gt;</span>
+    <span class="nt">&lt;seis_prov:starttime</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:dateTime&quot;</span><span class="nt">&gt;</span>2013-01-02T12:10:11<span class="nt">&lt;/seis_prov:starttime&gt;</span>
+    <span class="nt">&lt;seis_prov:station_id&gt;</span>BW.FURT.00.BHZ<span class="nt">&lt;/seis_prov:station_id&gt;</span>
+    <span class="nt">&lt;seis_prov:units&gt;</span>m/s<span class="nt">&lt;/seis_prov:units&gt;</span>
+  <span class="nt">&lt;/prov:entity&gt;</span>
+  <span class="nt">&lt;prov:activity</span> <span class="na">prov:id=</span><span class="s">&quot;seis_prov:cd_F87SF7SF78&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;prov:label&gt;</span>Decimate<span class="nt">&lt;/prov:label&gt;</span>
+    <span class="nt">&lt;prov:type</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:string&quot;</span><span class="nt">&gt;</span>seis_prov:decimate<span class="nt">&lt;/prov:type&gt;</span>
+    <span class="nt">&lt;seis_prov:factor</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:int&quot;</span><span class="nt">&gt;</span>2<span class="nt">&lt;/seis_prov:factor&gt;</span>
+  <span class="nt">&lt;/prov:activity&gt;</span>
+  <span class="nt">&lt;prov:entity</span> <span class="na">prov:id=</span><span class="s">&quot;seis_prov:wf_JUDE89DU8L&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;prov:label&gt;</span>Waveform Trace<span class="nt">&lt;/prov:label&gt;</span>
+    <span class="nt">&lt;prov:type</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:string&quot;</span><span class="nt">&gt;</span>seis_prov:waveform_trace<span class="nt">&lt;/prov:type&gt;</span>
+    <span class="nt">&lt;seis_prov:number_of_samples</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:int&quot;</span><span class="nt">&gt;</span>3000<span class="nt">&lt;/seis_prov:number_of_samples&gt;</span>
+    <span class="nt">&lt;seis_prov:sampling_rate</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:double&quot;</span><span class="nt">&gt;</span>100.0<span class="nt">&lt;/seis_prov:sampling_rate&gt;</span>
+    <span class="nt">&lt;seis_prov:starttime</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:dateTime&quot;</span><span class="nt">&gt;</span>2013-01-02T12:10:11<span class="nt">&lt;/seis_prov:starttime&gt;</span>
+    <span class="nt">&lt;seis_prov:station_id&gt;</span>BW.FURT.00.BHZ<span class="nt">&lt;/seis_prov:station_id&gt;</span>
+    <span class="nt">&lt;seis_prov:units&gt;</span>m/s<span class="nt">&lt;/seis_prov:units&gt;</span>
+  <span class="nt">&lt;/prov:entity&gt;</span>
+  <span class="nt">&lt;prov:wasAssociatedWith&gt;</span>
+    <span class="nt">&lt;prov:activity</span> <span class="na">prov:ref=</span><span class="s">&quot;seis_prov:dt_F87SF7SF78&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;prov:agent</span> <span class="na">prov:ref=</span><span class="s">&quot;seis_prov:sa_9DIG8A-TA&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/prov:wasAssociatedWith&gt;</span>
+  <span class="nt">&lt;prov:wasAssociatedWith&gt;</span>
+    <span class="nt">&lt;prov:activity</span> <span class="na">prov:ref=</span><span class="s">&quot;seis_prov:lp_F87SF7SF78&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;prov:agent</span> <span class="na">prov:ref=</span><span class="s">&quot;seis_prov:sa_9DIG8A-TA&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/prov:wasAssociatedWith&gt;</span>
+  <span class="nt">&lt;prov:wasAssociatedWith&gt;</span>
+    <span class="nt">&lt;prov:activity</span> <span class="na">prov:ref=</span><span class="s">&quot;seis_prov:cd_F87SF7SF78&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;prov:agent</span> <span class="na">prov:ref=</span><span class="s">&quot;seis_prov:sa_9DIG8A-TA&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/prov:wasAssociatedWith&gt;</span>
+  <span class="nt">&lt;prov:used&gt;</span>
+    <span class="nt">&lt;prov:activity</span> <span class="na">prov:ref=</span><span class="s">&quot;seis_prov:dt_F87SF7SF78&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;prov:entity</span> <span class="na">prov:ref=</span><span class="s">&quot;seis_prov:wf_A34J4DIDJ3&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/prov:used&gt;</span>
+  <span class="nt">&lt;prov:used&gt;</span>
+    <span class="nt">&lt;prov:activity</span> <span class="na">prov:ref=</span><span class="s">&quot;seis_prov:lp_F87SF7SF78&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;prov:entity</span> <span class="na">prov:ref=</span><span class="s">&quot;seis_prov:wf_JS83HF34AJ&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/prov:used&gt;</span>
+  <span class="nt">&lt;prov:used&gt;</span>
+    <span class="nt">&lt;prov:activity</span> <span class="na">prov:ref=</span><span class="s">&quot;seis_prov:cd_F87SF7SF78&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;prov:entity</span> <span class="na">prov:ref=</span><span class="s">&quot;seis_prov:wf_378F8KS8KD&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/prov:used&gt;</span>
+  <span class="nt">&lt;prov:wasGeneratedBy&gt;</span>
+    <span class="nt">&lt;prov:entity</span> <span class="na">prov:ref=</span><span class="s">&quot;seis_prov:wf_JS83HF34AJ&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;prov:activity</span> <span class="na">prov:ref=</span><span class="s">&quot;seis_prov:dt_F87SF7SF78&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/prov:wasGeneratedBy&gt;</span>
+  <span class="nt">&lt;prov:wasGeneratedBy&gt;</span>
+    <span class="nt">&lt;prov:entity</span> <span class="na">prov:ref=</span><span class="s">&quot;seis_prov:wf_378F8KS8KD&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;prov:activity</span> <span class="na">prov:ref=</span><span class="s">&quot;seis_prov:lp_F87SF7SF78&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/prov:wasGeneratedBy&gt;</span>
+  <span class="nt">&lt;prov:wasGeneratedBy&gt;</span>
+    <span class="nt">&lt;prov:entity</span> <span class="na">prov:ref=</span><span class="s">&quot;seis_prov:wf_JUDE89DU8L&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;prov:activity</span> <span class="na">prov:ref=</span><span class="s">&quot;seis_prov:cd_F87SF7SF78&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/prov:wasGeneratedBy&gt;</span>
+<span class="nt">&lt;/prov:document&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="schematic-processing-chain">
+<h2><a class="toc-backref" href="#id2">Schematic Processing Chain</a><a class="headerlink" href="#schematic-processing-chain" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes not all information needs to be captured for a given application and
+SEIS PROV is flexible enough to also allow a qualitative description of a
+workflow. This is the same example as above but with less information. This
+could be treated as a schema on how to process a large amount of data
+independent of the used software and actual data.</p>
+<p class="graphviz">
+<img src="_images/graphviz-fd22b41a735d1f5827d3ee446060883391873a2f.svg" alt="digraph G {
+	graph [bb=&quot;0,0,1018.8,676.25&quot;,
+		charset=&quot;utf-8&quot;,
+		rankdir=BT
+	];
+	node [label=&quot;\N&quot;];
+	n1	 [URL=&quot;http://seisprov.org/seis_prov/0.1/#wf_A34J4DIDJ3&quot;,
+		color=&quot;#808080&quot;,
+		fillcolor=&quot;#FFFC87&quot;,
+		height=0.62854,
+		label=&lt;Waveform Trace&lt;br /&gt;&lt;font color=&quot;#333333&quot; point-size=&quot;10&quot;&gt;seis_prov:wf_A34J4DIDJ3&lt;/font&gt;&gt;,
+		pos=&quot;133,653.63&quot;,
+		shape=oval,
+		style=filled,
+		width=2.4638];
+	ann1	 [color=gray,
+		fontcolor=black,
+		fontsize=10,
+		height=0.5,
+		label=&lt;&lt;TABLE cellpadding=&quot;0&quot; border=&quot;0&quot;&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#label&quot;&gt;prov:label&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;Waveform Trace&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#type&quot;&gt;prov:type&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;seis_prov:waveform_trace&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;/TABLE&gt;&gt;,
+		pos=&quot;84,567&quot;,
+		shape=note,
+		width=2.3333];
+	ann1 -&gt; n1	 [arrowhead=none,
+		color=gray,
+		pos=&quot;93.916,585.13 101.58,598.36 112.23,616.76 120.48,631.01&quot;,
+		style=dashed];
+	n2	 [URL=&quot;http://seisprov.org/seis_prov/0.1/#dt_F87SF7SF78&quot;,
+		color=&quot;#0000FF&quot;,
+		fillcolor=&quot;#9FB1FC&quot;,
+		height=0.5,
+		label=&lt;Detrend&lt;br /&gt;&lt;font color=&quot;#333333&quot; point-size=&quot;10&quot;&gt;seis_prov:dt_F87SF7SF78&lt;/font&gt;&gt;,
+		pos=&quot;247,567&quot;,
+		shape=box,
+		style=filled,
+		width=1.7041];
+	n2 -&gt; n1	 [color=red4,
+		fontcolor=red,
+		fontsize=10.0,
+		label=used,
+		lp=&quot;205.17,608&quot;,
+		pos=&quot;e,160.87,631.94 223.93,585.13 208.28,596.75 187.25,612.35 169.36,625.63&quot;];
+	ann2	 [color=gray,
+		fontcolor=black,
+		fontsize=10,
+		height=0.63889,
+		label=&lt;&lt;TABLE cellpadding=&quot;0&quot; border=&quot;0&quot;&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#label&quot;&gt;prov:label&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;Detrend&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#type&quot;&gt;prov:type&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;seis_prov:detrend&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#detrending_method&quot;&gt;seis_prov:detrending_method&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;demean&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;/TABLE&gt;&gt;,
+		pos=&quot;185,480&quot;,
+		shape=note,
+		width=2.9306];
+	ann2 -&gt; n2	 [arrowhead=none,
+		color=gray,
+		pos=&quot;201.29,503.33 211.69,517.6 224.98,535.81 234.54,548.92&quot;,
+		style=dashed];
+	n3	 [URL=&quot;http://seisprov.org/seis_prov/0.1/#wf_JS83HF34AJ&quot;,
+		color=&quot;#808080&quot;,
+		fillcolor=&quot;#FFFC87&quot;,
+		height=0.62854,
+		label=&lt;Waveform Trace&lt;br /&gt;&lt;font color=&quot;#333333&quot; point-size=&quot;10&quot;&gt;seis_prov:wf_JS83HF34AJ&lt;/font&gt;&gt;,
+		pos=&quot;398,480&quot;,
+		shape=oval,
+		style=filled,
+		width=2.4751];
+	n3 -&gt; n2	 [color=darkgreen,
+		fontcolor=darkgreen,
+		fontsize=10.0,
+		label=wasGeneratedBy,
+		lp=&quot;356.15,526&quot;,
+		pos=&quot;e,277.59,548.78 362.6,500.93 339.72,513.81 309.92,530.58 286.31,543.87&quot;];
+	ann3	 [color=gray,
+		fontcolor=black,
+		fontsize=10,
+		height=0.5,
+		label=&lt;&lt;TABLE cellpadding=&quot;0&quot; border=&quot;0&quot;&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#label&quot;&gt;prov:label&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;Waveform Trace&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#type&quot;&gt;prov:type&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;seis_prov:waveform_trace&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;/TABLE&gt;&gt;,
+		pos=&quot;349,393&quot;,
+		shape=note,
+		width=2.3333];
+	ann3 -&gt; n3	 [arrowhead=none,
+		color=gray,
+		pos=&quot;358.92,411.2 366.58,424.49 377.23,442.98 385.48,457.29&quot;,
+		style=dashed];
+	n4	 [URL=&quot;http://seisprov.org/seis_prov/0.1/#lp_F87SF7SF78&quot;,
+		color=&quot;#0000FF&quot;,
+		fillcolor=&quot;#9FB1FC&quot;,
+		height=0.5,
+		label=&lt;Lowpass Filter&lt;br /&gt;&lt;font color=&quot;#333333&quot; point-size=&quot;10&quot;&gt;seis_prov:lp_F87SF7SF78&lt;/font&gt;&gt;,
+		pos=&quot;512,393&quot;,
+		shape=box,
+		style=filled,
+		width=1.7041];
+	n4 -&gt; n3	 [color=red4,
+		fontcolor=red,
+		fontsize=10.0,
+		label=used,
+		lp=&quot;470.17,434&quot;,
+		pos=&quot;e,425.87,458.22 488.93,411.2 473.28,422.87 452.25,438.55 434.36,451.89&quot;];
+	ann4	 [color=gray,
+		fontcolor=black,
+		fontsize=10,
+		height=1.1389,
+		label=&lt;&lt;TABLE cellpadding=&quot;0&quot; border=&quot;0&quot;&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#label&quot;&gt;prov:label&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;Lowpass Filter&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#type&quot;&gt;prov:type&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;seis_prov:lowpass_filter&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#corner_frequency&quot;&gt;seis_prov:corner_frequency&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;10.0&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#filter_order&quot;&gt;seis_prov:filter_order&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;4&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#filter_type&quot;&gt;seis_prov:filter_type&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;Butterworth&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#number_of_passes&quot;&gt;seis_prov:number_of_passes&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;1&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;/TABLE&gt;&gt;,
+		pos=&quot;447,288&quot;,
+		shape=note,
+		width=3.25];
+	ann4 -&gt; n4	 [arrowhead=none,
+		color=gray,
+		pos=&quot;472.32,329.12 482.37,345.05 493.39,362.5 501.26,374.98&quot;,
+		style=dashed];
+	n5	 [URL=&quot;http://seisprov.org/seis_prov/0.1/#wf_378F8KS8KD&quot;,
+		color=&quot;#808080&quot;,
+		fillcolor=&quot;#FFFC87&quot;,
+		height=0.62854,
+		label=&lt;Waveform Trace&lt;br /&gt;&lt;font color=&quot;#333333&quot; point-size=&quot;10&quot;&gt;seis_prov:wf_378F8KS8KD&lt;/font&gt;&gt;,
+		pos=&quot;674,288&quot;,
+		shape=oval,
+		style=filled,
+		width=2.5622];
+	n5 -&gt; n4	 [color=darkgreen,
+		fontcolor=darkgreen,
+		fontsize=10.0,
+		label=wasGeneratedBy,
+		lp=&quot;612.15,352&quot;,
+		pos=&quot;e,538.84,374.93 641.99,309.35 614.79,326.65 575.76,351.46 547.58,369.38&quot;];
+	ann5	 [color=gray,
+		fontcolor=black,
+		fontsize=10,
+		height=0.5,
+		label=&lt;&lt;TABLE cellpadding=&quot;0&quot; border=&quot;0&quot;&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#label&quot;&gt;prov:label&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;Waveform Trace&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#type&quot;&gt;prov:type&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;seis_prov:waveform_trace&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;/TABLE&gt;&gt;,
+		pos=&quot;625,183&quot;,
+		shape=note,
+		width=2.3333];
+	ann5 -&gt; n5	 [arrowhead=none,
+		color=gray,
+		pos=&quot;633.09,201.01 641.46,218.61 654.57,246.15 663.68,265.31&quot;,
+		style=dashed];
+	n6	 [URL=&quot;http://seisprov.org/seis_prov/0.1/#cd_F87SF7SF78&quot;,
+		color=&quot;#0000FF&quot;,
+		fillcolor=&quot;#9FB1FC&quot;,
+		height=0.5,
+		label=&lt;Decimate&lt;br /&gt;&lt;font color=&quot;#333333&quot; point-size=&quot;10&quot;&gt;seis_prov:cd_F87SF7SF78&lt;/font&gt;&gt;,
+		pos=&quot;789,183&quot;,
+		shape=box,
+		style=filled,
+		width=1.7271];
+	n6 -&gt; n5	 [color=red4,
+		fontcolor=red,
+		fontsize=10.0,
+		label=used,
+		lp=&quot;757.17,224&quot;,
+		pos=&quot;e,697.39,266.05 770.01,201.01 752.36,216.82 725.75,240.65 705.02,259.22&quot;];
+	ann6	 [color=gray,
+		fontcolor=black,
+		fontsize=10,
+		height=0.63889,
+		label=&lt;&lt;TABLE cellpadding=&quot;0&quot; border=&quot;0&quot;&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#label&quot;&gt;prov:label&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;Decimate&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#type&quot;&gt;prov:type&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;seis_prov:decimate&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#factor&quot;&gt;seis_prov:factor&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;2&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;/TABLE&gt;&gt;,
+		pos=&quot;732,96&quot;,
+		shape=note,
+		width=2.2639];
+	ann6 -&gt; n6	 [arrowhead=none,
+		color=gray,
+		pos=&quot;746.98,119.33 756.54,133.6 768.75,151.81 777.54,164.92&quot;,
+		style=dashed];
+	n7	 [URL=&quot;http://seisprov.org/seis_prov/0.1/#wf_JUDE89DU8L&quot;,
+		color=&quot;#808080&quot;,
+		fillcolor=&quot;#FFFC87&quot;,
+		height=0.62854,
+		label=&lt;Waveform Trace&lt;br /&gt;&lt;font color=&quot;#333333&quot; point-size=&quot;10&quot;&gt;seis_prov:wf_JUDE89DU8L&lt;/font&gt;&gt;,
+		pos=&quot;925,96&quot;,
+		shape=oval,
+		style=filled,
+		width=2.6056];
+	n7 -&gt; n6	 [color=darkgreen,
+		fontcolor=darkgreen,
+		fontsize=10.0,
+		label=wasGeneratedBy,
+		lp=&quot;891.15,142&quot;,
+		pos=&quot;e,816.27,164.96 892.42,117.36 872.07,130.08 845.84,146.47 824.89,159.57&quot;];
+	ann7	 [color=gray,
+		fontcolor=black,
+		fontsize=10,
+		height=0.5,
+		label=&lt;&lt;TABLE cellpadding=&quot;0&quot; border=&quot;0&quot;&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#label&quot;&gt;prov:label&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;Waveform Trace&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#type&quot;&gt;prov:type&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;seis_prov:waveform_trace&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;/TABLE&gt;&gt;,
+		pos=&quot;925,18&quot;,
+		shape=note,
+		width=2.3333];
+	ann7 -&gt; n7	 [arrowhead=none,
+		color=gray,
+		pos=&quot;925,36.246 925,47.194 925,61.459 925,73.191&quot;,
+		style=dashed];
+}" />
+</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="cp">&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;</span>
+<span class="nt">&lt;prov:document</span> <span class="na">xmlns:seis_prov=</span><span class="s">&quot;http://seisprov.org/seis_prov/0.1/#&quot;</span> <span class="na">xmlns:prov=</span><span class="s">&quot;http://www.w3.org/ns/prov#&quot;</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;prov:entity</span> <span class="na">prov:id=</span><span class="s">&quot;seis_prov:wf_A34J4DIDJ3&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;prov:label&gt;</span>Waveform Trace<span class="nt">&lt;/prov:label&gt;</span>
+    <span class="nt">&lt;prov:type</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:string&quot;</span><span class="nt">&gt;</span>seis_prov:waveform_trace<span class="nt">&lt;/prov:type&gt;</span>
+  <span class="nt">&lt;/prov:entity&gt;</span>
+  <span class="nt">&lt;prov:activity</span> <span class="na">prov:id=</span><span class="s">&quot;seis_prov:dt_F87SF7SF78&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;prov:label&gt;</span>Detrend<span class="nt">&lt;/prov:label&gt;</span>
+    <span class="nt">&lt;prov:type</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:string&quot;</span><span class="nt">&gt;</span>seis_prov:detrend<span class="nt">&lt;/prov:type&gt;</span>
+    <span class="nt">&lt;seis_prov:detrending_method&gt;</span>demean<span class="nt">&lt;/seis_prov:detrending_method&gt;</span>
+  <span class="nt">&lt;/prov:activity&gt;</span>
+  <span class="nt">&lt;prov:entity</span> <span class="na">prov:id=</span><span class="s">&quot;seis_prov:wf_JS83HF34AJ&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;prov:label&gt;</span>Waveform Trace<span class="nt">&lt;/prov:label&gt;</span>
+    <span class="nt">&lt;prov:type</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:string&quot;</span><span class="nt">&gt;</span>seis_prov:waveform_trace<span class="nt">&lt;/prov:type&gt;</span>
+  <span class="nt">&lt;/prov:entity&gt;</span>
+  <span class="nt">&lt;prov:activity</span> <span class="na">prov:id=</span><span class="s">&quot;seis_prov:lp_F87SF7SF78&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;prov:label&gt;</span>Lowpass Filter<span class="nt">&lt;/prov:label&gt;</span>
+    <span class="nt">&lt;prov:type</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:string&quot;</span><span class="nt">&gt;</span>seis_prov:lowpass_filter<span class="nt">&lt;/prov:type&gt;</span>
+    <span class="nt">&lt;seis_prov:corner_frequency</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:double&quot;</span><span class="nt">&gt;</span>10.0<span class="nt">&lt;/seis_prov:corner_frequency&gt;</span>
+    <span class="nt">&lt;seis_prov:filter_order</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:int&quot;</span><span class="nt">&gt;</span>4<span class="nt">&lt;/seis_prov:filter_order&gt;</span>
+    <span class="nt">&lt;seis_prov:filter_type&gt;</span>Butterworth<span class="nt">&lt;/seis_prov:filter_type&gt;</span>
+    <span class="nt">&lt;seis_prov:number_of_passes</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:int&quot;</span><span class="nt">&gt;</span>1<span class="nt">&lt;/seis_prov:number_of_passes&gt;</span>
+  <span class="nt">&lt;/prov:activity&gt;</span>
+  <span class="nt">&lt;prov:entity</span> <span class="na">prov:id=</span><span class="s">&quot;seis_prov:wf_378F8KS8KD&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;prov:label&gt;</span>Waveform Trace<span class="nt">&lt;/prov:label&gt;</span>
+    <span class="nt">&lt;prov:type</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:string&quot;</span><span class="nt">&gt;</span>seis_prov:waveform_trace<span class="nt">&lt;/prov:type&gt;</span>
+  <span class="nt">&lt;/prov:entity&gt;</span>
+  <span class="nt">&lt;prov:activity</span> <span class="na">prov:id=</span><span class="s">&quot;seis_prov:cd_F87SF7SF78&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;prov:label&gt;</span>Decimate<span class="nt">&lt;/prov:label&gt;</span>
+    <span class="nt">&lt;prov:type</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:string&quot;</span><span class="nt">&gt;</span>seis_prov:decimate<span class="nt">&lt;/prov:type&gt;</span>
+    <span class="nt">&lt;seis_prov:factor</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:int&quot;</span><span class="nt">&gt;</span>2<span class="nt">&lt;/seis_prov:factor&gt;</span>
+  <span class="nt">&lt;/prov:activity&gt;</span>
+  <span class="nt">&lt;prov:entity</span> <span class="na">prov:id=</span><span class="s">&quot;seis_prov:wf_JUDE89DU8L&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;prov:label&gt;</span>Waveform Trace<span class="nt">&lt;/prov:label&gt;</span>
+    <span class="nt">&lt;prov:type</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:string&quot;</span><span class="nt">&gt;</span>seis_prov:waveform_trace<span class="nt">&lt;/prov:type&gt;</span>
+  <span class="nt">&lt;/prov:entity&gt;</span>
+  <span class="nt">&lt;prov:used&gt;</span>
+    <span class="nt">&lt;prov:activity</span> <span class="na">prov:ref=</span><span class="s">&quot;seis_prov:dt_F87SF7SF78&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;prov:entity</span> <span class="na">prov:ref=</span><span class="s">&quot;seis_prov:wf_A34J4DIDJ3&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/prov:used&gt;</span>
+  <span class="nt">&lt;prov:used&gt;</span>
+    <span class="nt">&lt;prov:activity</span> <span class="na">prov:ref=</span><span class="s">&quot;seis_prov:lp_F87SF7SF78&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;prov:entity</span> <span class="na">prov:ref=</span><span class="s">&quot;seis_prov:wf_JS83HF34AJ&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/prov:used&gt;</span>
+  <span class="nt">&lt;prov:used&gt;</span>
+    <span class="nt">&lt;prov:activity</span> <span class="na">prov:ref=</span><span class="s">&quot;seis_prov:cd_F87SF7SF78&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;prov:entity</span> <span class="na">prov:ref=</span><span class="s">&quot;seis_prov:wf_378F8KS8KD&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/prov:used&gt;</span>
+  <span class="nt">&lt;prov:wasGeneratedBy&gt;</span>
+    <span class="nt">&lt;prov:entity</span> <span class="na">prov:ref=</span><span class="s">&quot;seis_prov:wf_JS83HF34AJ&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;prov:activity</span> <span class="na">prov:ref=</span><span class="s">&quot;seis_prov:dt_F87SF7SF78&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/prov:wasGeneratedBy&gt;</span>
+  <span class="nt">&lt;prov:wasGeneratedBy&gt;</span>
+    <span class="nt">&lt;prov:entity</span> <span class="na">prov:ref=</span><span class="s">&quot;seis_prov:wf_378F8KS8KD&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;prov:activity</span> <span class="na">prov:ref=</span><span class="s">&quot;seis_prov:lp_F87SF7SF78&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/prov:wasGeneratedBy&gt;</span>
+  <span class="nt">&lt;prov:wasGeneratedBy&gt;</span>
+    <span class="nt">&lt;prov:entity</span> <span class="na">prov:ref=</span><span class="s">&quot;seis_prov:wf_JUDE89DU8L&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;prov:activity</span> <span class="na">prov:ref=</span><span class="s">&quot;seis_prov:cd_F87SF7SF78&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/prov:wasGeneratedBy&gt;</span>
+<span class="nt">&lt;/prov:document&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="waveform-simulation">
+<h2><a class="toc-backref" href="#id3">Waveform Simulation</a><a class="headerlink" href="#waveform-simulation" title="Permalink to this headline">¶</a></h2>
+<p>This fairly realistic example demonstrates how the waveform files resulting
+from a numerical simulation can be described. This example does use some of the
+more advanced future of the W3C PROV data model which are useful in many
+contexts. Note that the waveform simulation activity has start- and endtimes
+and that SPECFEM in this example actually has been steered by a certain person.</p>
+<p>The amount of information to store has to be decided by the given application.
+The general idea is to store those input file parameters that actually have an
+effect on the output. It might also be useful to store information about the
+machine is was run on in the provenance information but that is not shown here.</p>
+<p>The implementation of this in a waveform solver is fairly simple by just using
+an existing SEIS PROV XML file as a template and adjusting the information
+dynamically. No need to incorporate an actual XML library.</p>
+<p class="graphviz">
+<img src="_images/graphviz-7b681e2651c307b6ba99a55b2edc8f6024456623.svg" alt="digraph G {
+	graph [bb=&quot;0,0,1086,927.94&quot;,
+		charset=&quot;utf-8&quot;,
+		rankdir=BT
+	];
+	node [label=&quot;\N&quot;];
+	n1	 [URL=&quot;http://seisprov.org/seis_prov/0.1/#pp_me&quot;,
+		fillcolor=&quot;#FED37F&quot;,
+		height=0.77692,
+		label=&lt;Hans Mustermann&lt;br /&gt;&lt;font color=&quot;#333333&quot; point-size=&quot;10&quot;&gt;seis_prov:pp_me&lt;/font&gt;&gt;,
+		pos=&quot;201,899.97&quot;,
+		shape=house,
+		style=filled,
+		width=2.8901];
+	ann1	 [color=gray,
+		fontcolor=black,
+		fontsize=10,
+		height=0.80556,
+		label=&lt;&lt;TABLE cellpadding=&quot;0&quot; border=&quot;0&quot;&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#label&quot;&gt;prov:label&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;Hans Mustermann&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#type&quot;&gt;prov:type&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#Person&quot;&gt;prov:Person&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#email&quot;&gt;seis_prov:email&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;hans.mustermann&#64;email.com&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#name&quot;&gt;seis_prov:name&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;Hans Mustermann&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;/TABLE&gt;&gt;,
+		pos=&quot;103,806&quot;,
+		shape=note,
+		width=2.8611];
+	ann1 -&gt; n1	 [arrowhead=none,
+		color=gray,
+		pos=&quot;132.94,835.09 147.35,848.62 164.36,864.59 177.78,877.17&quot;,
+		style=dashed];
+	n2	 [URL=&quot;http://seisprov.org/seis_prov/0.1/#pp_other&quot;,
+		fillcolor=&quot;#FED37F&quot;,
+		height=0.77692,
+		label=&lt;Susanna Musterfrau&lt;br /&gt;&lt;font color=&quot;#333333&quot; point-size=&quot;10&quot;&gt;seis_prov:pp_other&lt;/font&gt;&gt;,
+		pos=&quot;336,806&quot;,
+		shape=house,
+		style=filled,
+		width=3.1165];
+	ann2	 [color=gray,
+		fontcolor=black,
+		fontsize=10,
+		height=0.80556,
+		label=&lt;&lt;TABLE cellpadding=&quot;0&quot; border=&quot;0&quot;&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#label&quot;&gt;prov:label&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;Susanna Musterfrau&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#type&quot;&gt;prov:type&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#Person&quot;&gt;prov:Person&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#email&quot;&gt;seis_prov:email&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;susanna.musterfrau&#64;email.com&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#name&quot;&gt;seis_prov:name&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;Susanna Musterfrau&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;/TABLE&gt;&gt;,
+		pos=&quot;210,702&quot;,
+		shape=note,
+		width=2.9583];
+	ann2 -&gt; n2	 [arrowhead=none,
+		color=gray,
+		pos=&quot;244.76,731.14 265.01,747.53 290.17,767.9 308.94,783.09&quot;,
+		style=dashed];
+	n3	 [URL=&quot;http://seisprov.org/seis_prov/0.1/#sa_9DIG8A-TA&quot;,
+		fillcolor=&quot;#FED37F&quot;,
+		height=0.77692,
+		label=&lt;SPECFEM3D GLOBE&lt;br /&gt;&lt;font color=&quot;#333333&quot; point-size=&quot;10&quot;&gt;seis_prov:sa_9DIG8A-TA&lt;/font&gt;&gt;,
+		pos=&quot;483,702&quot;,
+		shape=house,
+		style=filled,
+		width=3.533];
+	b3	 [color=gray,
+		height=0.05,
+		label=&quot;&quot;,
+		pos=&quot;472,806&quot;,
+		shape=point,
+		width=0.05];
+	n3 -&gt; b3	 [arrowhead=none,
+		color=&quot;#FED37F&quot;,
+		fontsize=10.0,
+		label=actedOnBehalfOf,
+		lp=&quot;512.26,754&quot;,
+		pos=&quot;480.14,729.53 477.13,757.39 472.75,798.02 472.09,804.2&quot;];
+	ann3	 [color=gray,
+		fontcolor=black,
+		fontsize=10,
+		height=0.97222,
+		label=&lt;&lt;TABLE cellpadding=&quot;0&quot; border=&quot;0&quot;&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#label&quot;&gt;prov:label&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;SPECFEM3D GLOBE&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#type&quot;&gt;prov:type&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#SoftwareAgent&quot;&gt;prov:SoftwareAgent&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#software_name&quot;&gt;seis_prov:software_name&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;SPECFEM3D GLOBE&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#software_version&quot;&gt;seis_prov:software_version&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;7.0.0&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#website&quot;&gt;seis_prov:website&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;http://geodynamics.org/cig/software/specfem3d&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;/TABLE&gt;&gt;,
+		pos=&quot;640,592&quot;,
+		shape=note,
+		width=4.4583];
+	ann3 -&gt; n3	 [arrowhead=none,
+		color=gray,
+		pos=&quot;590.32,627.17 565.53,644.23 536.28,664.35 514.58,679.27&quot;,
+		style=dashed];
+	n4	 [URL=&quot;http://seisprov.org/seis_prov/0.1/#em_SKFUSJDOEJ&quot;,
+		color=&quot;#808080&quot;,
+		fillcolor=&quot;#FFFC87&quot;,
+		height=0.62854,
+		label=&lt;Earth Model&lt;br /&gt;&lt;font color=&quot;#333333&quot; point-size=&quot;10&quot;&gt;seis_prov:em_SKFUSJDOEJ&lt;/font&gt;&gt;,
+		pos=&quot;336,592&quot;,
+		shape=oval,
+		style=filled,
+		width=2.6278];
+	b2	 [color=gray,
+		height=0.05,
+		label=&quot;&quot;,
+		pos=&quot;336,702&quot;,
+		shape=point,
+		width=0.05];
+	n4 -&gt; b2	 [arrowhead=none,
+		color=&quot;#FED37F&quot;,
+		fontsize=10.0,
+		label=wasAssociatedWith,
+		lp=&quot;375.51,650&quot;,
+		pos=&quot;336,614.86 336,643.95 336,692.61 336,700.04&quot;];
+	ann4	 [color=gray,
+		fontcolor=black,
+		fontsize=10,
+		height=0.80556,
+		label=&lt;&lt;TABLE cellpadding=&quot;0&quot; border=&quot;0&quot;&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#label&quot;&gt;prov:label&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;Earth Model&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#type&quot;&gt;prov:type&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;seis_prov:earth_model&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#model_name&quot;&gt;seis_prov:model_name&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;Random Model&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#website&quot;&gt;seis_prov:website&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;http://random.org/model&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;/TABLE&gt;&gt;,
+		pos=&quot;316,344&quot;,
+		shape=note,
+		width=2.9306];
+	ann4 -&gt; n4	 [arrowhead=none,
+		color=gray,
+		pos=&quot;318.29,373.22 322.33,422.82 330.6,524.59 334.23,569.21&quot;,
+		style=dashed];
+	n5	 [URL=&quot;http://seisprov.org/seis_prov/0.1/#ip_38JD89DA8L&quot;,
+		color=&quot;#808080&quot;,
+		fillcolor=&quot;#FFFC87&quot;,
+		height=0.62854,
+		label=&lt;Input Parameter&lt;br /&gt;&lt;font color=&quot;#333333&quot; point-size=&quot;10&quot;&gt;seis_prov:ip_38JD89DA8L&lt;/font&gt;&gt;,
+		pos=&quot;908,592&quot;,
+		shape=oval,
+		style=filled,
+		width=2.4857];
+	ann5	 [color=gray,
+		fontcolor=black,
+		fontsize=10,
+		height=4.6389,
+		label=&lt;&lt;TABLE cellpadding=&quot;0&quot; border=&quot;0&quot;&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#label&quot;&gt;prov:label&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;Input Parameter&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#type&quot;&gt;prov:type&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;seis_prov:input_parameter&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#ABSORBING_CONDITIONS&quot;&gt;seis_prov:ABSORBING_CONDITIONS&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;False&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#ANGULAR_WIDTH_ETA_IN_DEGREES&quot;&gt;seis_prov:ANGULAR_WIDTH_ETA_IN_DEGREES&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;90.0&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#ANGULAR_WIDTH_XI_IN_DEGREES&quot;&gt;seis_prov:ANGULAR_WIDTH_XI_IN_DEGREES&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;90.0&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#ANISOTROPIC_KL&quot;&gt;seis_prov:ANISOTROPIC_KL&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;False&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#ATTENUATION&quot;&gt;seis_prov:ATTENUATION&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;False&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#CENTER_LATITUDE_IN_DEGREES&quot;&gt;seis_prov:CENTER_LATITUDE_IN_DEGREES&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;40.0&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#CENTER_LONGITUDE_IN_DEGREES&quot;&gt;seis_prov:CENTER_LONGITUDE_IN_DEGREES&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;10.0&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#ELLIPTICITY&quot;&gt;seis_prov:ELLIPTICITY&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;False&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#EXACT_MASS_MATRIX_FOR_ROTATION&quot;&gt;seis_prov:EXACT_MASS_MATRIX_FOR_ROTATION&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;False&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#GAMMA_ROTATION_AZIMUTH&quot;&gt;seis_prov:GAMMA_ROTATION_AZIMUTH&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;20.0&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#GRAVITY&quot;&gt;seis_prov:GRAVITY&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;False&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#NCHUNKS&quot;&gt;seis_prov:NCHUNKS&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;1&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#NEX_ETA&quot;&gt;seis_prov:NEX_ETA&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;240&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#NEX_XI&quot;&gt;seis_prov:NEX_XI&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;240&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#NOISE_TOMOGRAPHY&quot;&gt;seis_prov:NOISE_TOMOGRAPHY&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;0&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#NPROC_ETA&quot;&gt;seis_prov:NPROC_ETA&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;5&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#NPROC_XI&quot;&gt;seis_prov:NPROC_XI&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;5&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#OCEANS&quot;&gt;seis_prov:OCEANS&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;False&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#RECEIVERS_CAN_BE_BURIED&quot;&gt;seis_prov:RECEIVERS_CAN_BE_BURIED&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;True&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#ROTATION&quot;&gt;seis_prov:ROTATION&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;False&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#SIMULATION_TYPE&quot;&gt;seis_prov:SIMULATION_TYPE&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;1&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#TOPOGRAPHY&quot;&gt;seis_prov:TOPOGRAPHY&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;False&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#USE_LDDRK&quot;&gt;seis_prov:USE_LDDRK&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;False&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#model_name&quot;&gt;seis_prov:model_name&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;Random Model&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#website&quot;&gt;seis_prov:website&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;http://random.org/model&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;/TABLE&gt;&gt;,
+		pos=&quot;908,344&quot;,
+		shape=note,
+		width=4.9444];
+	ann5 -&gt; n5	 [arrowhead=none,
+		color=gray,
+		pos=&quot;908,511.13 908,534.09 908,554.75 908,569.3&quot;,
+		style=dashed];
+	n6	 [URL=&quot;http://seisprov.org/seis_prov/0.1/#wf_A34J4DIDJ3&quot;,
+		color=&quot;#808080&quot;,
+		fillcolor=&quot;#FFFC87&quot;,
+		height=0.62854,
+		label=&lt;Waveform Trace&lt;br /&gt;&lt;font color=&quot;#333333&quot; point-size=&quot;10&quot;&gt;seis_prov:wf_A34J4DIDJ3&lt;/font&gt;&gt;,
+		pos=&quot;371,102&quot;,
+		shape=oval,
+		style=filled,
+		width=2.4638];
+	n7	 [URL=&quot;http://seisprov.org/seis_prov/0.1/#ws_F87SF7SF78&quot;,
+		color=&quot;#0000FF&quot;,
+		fillcolor=&quot;#9FB1FC&quot;,
+		height=0.5,
+		label=&lt;Waveform Simulation&lt;br /&gt;&lt;font color=&quot;#333333&quot; point-size=&quot;10&quot;&gt;seis_prov:ws_F87SF7SF78&lt;/font&gt;&gt;,
+		pos=&quot;509,344&quot;,
+		shape=box,
+		style=filled,
+		width=1.9401];
+	n6 -&gt; n7	 [color=darkgreen,
+		fontcolor=darkgreen,
+		fontsize=10.0,
+		label=wasGeneratedBy,
+		lp=&quot;453.15,154&quot;,
+		pos=&quot;e,502.53,325.81 390.59,124.29 403.1,138.54 419.13,158.09 431,177 460.14,223.45 485.37,282.51 498.76,316.21&quot;];
+	ann6	 [color=gray,
+		fontcolor=black,
+		fontsize=10,
+		height=0.5,
+		label=&lt;&lt;TABLE cellpadding=&quot;0&quot; border=&quot;0&quot;&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#label&quot;&gt;prov:label&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;Waveform Trace&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#type&quot;&gt;prov:type&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;seis_prov:waveform_trace&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;/TABLE&gt;&gt;,
+		pos=&quot;371,18&quot;,
+		shape=note,
+		width=2.3333];
+	ann6 -&gt; n6	 [arrowhead=none,
+		color=gray,
+		pos=&quot;371,36.39 371,48.895 371,65.846 371,79.248&quot;,
+		style=dashed];
+	n7 -&gt; n4	 [color=red4,
+		fontcolor=red,
+		fontsize=10.0,
+		label=used,
+		lp=&quot;422.17,534&quot;,
+		pos=&quot;e,366.83,570.4 503.72,362.09 493.37,393.74 468.15,462.64 431,511 415.32,531.41 393.62,550.17 374.91,564.39&quot;];
+	n7 -&gt; n5	 [color=red4,
+		fontcolor=red,
+		fontsize=10.0,
+		label=used,
+		lp=&quot;784.17,534&quot;,
+		pos=&quot;e,857.07,573.33 527.37,362.12 562.71,394.41 643.55,465.18 721,511 761.17,534.77 809.72,555.32 847.28,569.64&quot;];
+	b1	 [color=gray,
+		height=0.05,
+		label=&quot;&quot;,
+		pos=&quot;460,592&quot;,
+		shape=point,
+		width=0.05];
+	n7 -&gt; b1	 [arrowhead=none,
+		color=&quot;#FED37F&quot;,
+		fontsize=10.0,
+		label=wasAssociatedWith,
+		lp=&quot;510.51,534&quot;,
+		pos=&quot;505.55,362.3 494.92,415.67 463.17,575.07 460.22,589.89&quot;];
+	ann7	 [color=gray,
+		fontcolor=black,
+		fontsize=10,
+		height=0.80556,
+		label=&lt;&lt;TABLE cellpadding=&quot;0&quot; border=&quot;0&quot;&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#startTime&quot;&gt;prov:startTime&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;2014-02-02T12:15:03&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#endTime&quot;&gt;prov:endTime&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;2014-02-02T14:07:13&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#label&quot;&gt;prov:label&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;Waveform Simulation&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#type&quot;&gt;prov:type&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;seis_prov:waveform_simulation&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;/TABLE&gt;&gt;,
+		pos=&quot;582,102&quot;,
+		shape=note,
+		width=2.9028];
+	ann7 -&gt; n7	 [arrowhead=none,
+		color=gray,
+		pos=&quot;573.48,131 558.21,181.2 526.61,285.09 514.18,325.96&quot;,
+		style=dashed];
+	b1 -&gt; n3	 [color=&quot;#FED37F&quot;,
+		fontsize=10.0,
+		pos=&quot;e,478.34,679.11 460.26,594.21 461.81,601.52 470.08,640.32 476.2,669.06&quot;];
+	b2 -&gt; n2	 [color=&quot;#FED37F&quot;,
+		fontsize=10.0,
+		pos=&quot;e,336,782.93 336,704.15 336,710.87 336,745.84 336,772.73&quot;];
+	b3 -&gt; n1	 [color=&quot;#FED37F&quot;,
+		fontsize=10.0,
+		pos=&quot;e,305.22,892.45 471.81,807.85 470.92,811.66 466.74,827.41 457,835 416.77,866.35 363.11,882.53 315.32,890.8&quot;];
+}" />
+</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="cp">&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;</span>
+<span class="nt">&lt;prov:document</span> <span class="na">xmlns:seis_prov=</span><span class="s">&quot;http://seisprov.org/seis_prov/0.1/#&quot;</span> <span class="na">xmlns:prov=</span><span class="s">&quot;http://www.w3.org/ns/prov#&quot;</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;prov:person</span> <span class="na">prov:id=</span><span class="s">&quot;seis_prov:pp_me&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;prov:label&gt;</span>Hans Mustermann<span class="nt">&lt;/prov:label&gt;</span>
+    <span class="nt">&lt;seis_prov:email&gt;</span>hans.mustermann@email.com<span class="nt">&lt;/seis_prov:email&gt;</span>
+    <span class="nt">&lt;seis_prov:name&gt;</span>Hans Mustermann<span class="nt">&lt;/seis_prov:name&gt;</span>
+  <span class="nt">&lt;/prov:person&gt;</span>
+  <span class="nt">&lt;prov:person</span> <span class="na">prov:id=</span><span class="s">&quot;seis_prov:pp_other&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;prov:label&gt;</span>Susanna Musterfrau<span class="nt">&lt;/prov:label&gt;</span>
+    <span class="nt">&lt;seis_prov:email&gt;</span>susanna.musterfrau@email.com<span class="nt">&lt;/seis_prov:email&gt;</span>
+    <span class="nt">&lt;seis_prov:name&gt;</span>Susanna Musterfrau<span class="nt">&lt;/seis_prov:name&gt;</span>
+  <span class="nt">&lt;/prov:person&gt;</span>
+  <span class="nt">&lt;prov:softwareAgent</span> <span class="na">prov:id=</span><span class="s">&quot;seis_prov:sa_9DIG8A-TA&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;prov:label&gt;</span>SPECFEM3D GLOBE<span class="nt">&lt;/prov:label&gt;</span>
+    <span class="nt">&lt;seis_prov:software_name&gt;</span>SPECFEM3D GLOBE<span class="nt">&lt;/seis_prov:software_name&gt;</span>
+    <span class="nt">&lt;seis_prov:software_version&gt;</span>7.0.0<span class="nt">&lt;/seis_prov:software_version&gt;</span>
+    <span class="nt">&lt;seis_prov:website&gt;</span>http://geodynamics.org/cig/software/specfem3d<span class="nt">&lt;/seis_prov:website&gt;</span>
+  <span class="nt">&lt;/prov:softwareAgent&gt;</span>
+  <span class="nt">&lt;prov:entity</span> <span class="na">prov:id=</span><span class="s">&quot;seis_prov:em_SKFUSJDOEJ&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;prov:label&gt;</span>Earth Model<span class="nt">&lt;/prov:label&gt;</span>
+    <span class="nt">&lt;prov:type</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:string&quot;</span><span class="nt">&gt;</span>seis_prov:earth_model<span class="nt">&lt;/prov:type&gt;</span>
+    <span class="nt">&lt;seis_prov:model_name&gt;</span>Random Model<span class="nt">&lt;/seis_prov:model_name&gt;</span>
+    <span class="nt">&lt;seis_prov:website&gt;</span>http://random.org/model<span class="nt">&lt;/seis_prov:website&gt;</span>
+  <span class="nt">&lt;/prov:entity&gt;</span>
+  <span class="nt">&lt;prov:entity</span> <span class="na">prov:id=</span><span class="s">&quot;seis_prov:ip_38JD89DA8L&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;prov:label&gt;</span>Input Parameter<span class="nt">&lt;/prov:label&gt;</span>
+    <span class="nt">&lt;prov:type</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:string&quot;</span><span class="nt">&gt;</span>seis_prov:input_parameter<span class="nt">&lt;/prov:type&gt;</span>
+    <span class="nt">&lt;seis_prov:ABSORBING_CONDITIONS</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:boolean&quot;</span><span class="nt">&gt;</span>false<span class="nt">&lt;/seis_prov:ABSORBING_CONDITIONS&gt;</span>
+    <span class="nt">&lt;seis_prov:ANGULAR_WIDTH_ETA_IN_DEGREES</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:double&quot;</span><span class="nt">&gt;</span>90.0<span class="nt">&lt;/seis_prov:ANGULAR_WIDTH_ETA_IN_DEGREES&gt;</span>
+    <span class="nt">&lt;seis_prov:ANGULAR_WIDTH_XI_IN_DEGREES</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:double&quot;</span><span class="nt">&gt;</span>90.0<span class="nt">&lt;/seis_prov:ANGULAR_WIDTH_XI_IN_DEGREES&gt;</span>
+    <span class="nt">&lt;seis_prov:ANISOTROPIC_KL</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:boolean&quot;</span><span class="nt">&gt;</span>false<span class="nt">&lt;/seis_prov:ANISOTROPIC_KL&gt;</span>
+    <span class="nt">&lt;seis_prov:ATTENUATION</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:boolean&quot;</span><span class="nt">&gt;</span>false<span class="nt">&lt;/seis_prov:ATTENUATION&gt;</span>
+    <span class="nt">&lt;seis_prov:CENTER_LATITUDE_IN_DEGREES</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:double&quot;</span><span class="nt">&gt;</span>40.0<span class="nt">&lt;/seis_prov:CENTER_LATITUDE_IN_DEGREES&gt;</span>
+    <span class="nt">&lt;seis_prov:CENTER_LONGITUDE_IN_DEGREES</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:double&quot;</span><span class="nt">&gt;</span>10.0<span class="nt">&lt;/seis_prov:CENTER_LONGITUDE_IN_DEGREES&gt;</span>
+    <span class="nt">&lt;seis_prov:ELLIPTICITY</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:boolean&quot;</span><span class="nt">&gt;</span>false<span class="nt">&lt;/seis_prov:ELLIPTICITY&gt;</span>
+    <span class="nt">&lt;seis_prov:EXACT_MASS_MATRIX_FOR_ROTATION</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:boolean&quot;</span><span class="nt">&gt;</span>false<span class="nt">&lt;/seis_prov:EXACT_MASS_MATRIX_FOR_ROTATION&gt;</span>
+    <span class="nt">&lt;seis_prov:GAMMA_ROTATION_AZIMUTH</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:double&quot;</span><span class="nt">&gt;</span>20.0<span class="nt">&lt;/seis_prov:GAMMA_ROTATION_AZIMUTH&gt;</span>
+    <span class="nt">&lt;seis_prov:GRAVITY</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:boolean&quot;</span><span class="nt">&gt;</span>false<span class="nt">&lt;/seis_prov:GRAVITY&gt;</span>
+    <span class="nt">&lt;seis_prov:NCHUNKS</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:int&quot;</span><span class="nt">&gt;</span>1<span class="nt">&lt;/seis_prov:NCHUNKS&gt;</span>
+    <span class="nt">&lt;seis_prov:NEX_ETA</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:int&quot;</span><span class="nt">&gt;</span>240<span class="nt">&lt;/seis_prov:NEX_ETA&gt;</span>
+    <span class="nt">&lt;seis_prov:NEX_XI</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:int&quot;</span><span class="nt">&gt;</span>240<span class="nt">&lt;/seis_prov:NEX_XI&gt;</span>
+    <span class="nt">&lt;seis_prov:NOISE_TOMOGRAPHY</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:int&quot;</span><span class="nt">&gt;</span>0<span class="nt">&lt;/seis_prov:NOISE_TOMOGRAPHY&gt;</span>
+    <span class="nt">&lt;seis_prov:NPROC_ETA</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:int&quot;</span><span class="nt">&gt;</span>5<span class="nt">&lt;/seis_prov:NPROC_ETA&gt;</span>
+    <span class="nt">&lt;seis_prov:NPROC_XI</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:int&quot;</span><span class="nt">&gt;</span>5<span class="nt">&lt;/seis_prov:NPROC_XI&gt;</span>
+    <span class="nt">&lt;seis_prov:OCEANS</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:boolean&quot;</span><span class="nt">&gt;</span>false<span class="nt">&lt;/seis_prov:OCEANS&gt;</span>
+    <span class="nt">&lt;seis_prov:RECEIVERS_CAN_BE_BURIED</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:boolean&quot;</span><span class="nt">&gt;</span>true<span class="nt">&lt;/seis_prov:RECEIVERS_CAN_BE_BURIED&gt;</span>
+    <span class="nt">&lt;seis_prov:ROTATION</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:boolean&quot;</span><span class="nt">&gt;</span>false<span class="nt">&lt;/seis_prov:ROTATION&gt;</span>
+    <span class="nt">&lt;seis_prov:SIMULATION_TYPE</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:int&quot;</span><span class="nt">&gt;</span>1<span class="nt">&lt;/seis_prov:SIMULATION_TYPE&gt;</span>
+    <span class="nt">&lt;seis_prov:TOPOGRAPHY</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:boolean&quot;</span><span class="nt">&gt;</span>false<span class="nt">&lt;/seis_prov:TOPOGRAPHY&gt;</span>
+    <span class="nt">&lt;seis_prov:USE_LDDRK</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:boolean&quot;</span><span class="nt">&gt;</span>false<span class="nt">&lt;/seis_prov:USE_LDDRK&gt;</span>
+    <span class="nt">&lt;seis_prov:model_name&gt;</span>Random Model<span class="nt">&lt;/seis_prov:model_name&gt;</span>
+    <span class="nt">&lt;seis_prov:website&gt;</span>http://random.org/model<span class="nt">&lt;/seis_prov:website&gt;</span>
+  <span class="nt">&lt;/prov:entity&gt;</span>
+  <span class="nt">&lt;prov:entity</span> <span class="na">prov:id=</span><span class="s">&quot;seis_prov:wf_A34J4DIDJ3&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;prov:label&gt;</span>Waveform Trace<span class="nt">&lt;/prov:label&gt;</span>
+    <span class="nt">&lt;prov:type</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:string&quot;</span><span class="nt">&gt;</span>seis_prov:waveform_trace<span class="nt">&lt;/prov:type&gt;</span>
+  <span class="nt">&lt;/prov:entity&gt;</span>
+  <span class="nt">&lt;prov:activity</span> <span class="na">prov:id=</span><span class="s">&quot;seis_prov:ws_F87SF7SF78&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;prov:startTime&gt;</span>2014-02-02T12:15:03<span class="nt">&lt;/prov:startTime&gt;</span>
+    <span class="nt">&lt;prov:endTime&gt;</span>2014-02-02T14:07:13<span class="nt">&lt;/prov:endTime&gt;</span>
+    <span class="nt">&lt;prov:label&gt;</span>Waveform Simulation<span class="nt">&lt;/prov:label&gt;</span>
+    <span class="nt">&lt;prov:type</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:string&quot;</span><span class="nt">&gt;</span>seis_prov:waveform_simulation<span class="nt">&lt;/prov:type&gt;</span>
+  <span class="nt">&lt;/prov:activity&gt;</span>
+  <span class="nt">&lt;prov:wasAssociatedWith&gt;</span>
+    <span class="nt">&lt;prov:activity</span> <span class="na">prov:ref=</span><span class="s">&quot;seis_prov:ws_F87SF7SF78&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;prov:agent</span> <span class="na">prov:ref=</span><span class="s">&quot;seis_prov:sa_9DIG8A-TA&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/prov:wasAssociatedWith&gt;</span>
+  <span class="nt">&lt;prov:wasAssociatedWith&gt;</span>
+    <span class="nt">&lt;prov:activity</span> <span class="na">prov:ref=</span><span class="s">&quot;seis_prov:em_SKFUSJDOEJ&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;prov:agent</span> <span class="na">prov:ref=</span><span class="s">&quot;seis_prov:pp_other&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/prov:wasAssociatedWith&gt;</span>
+  <span class="nt">&lt;prov:actedOnBehalfOf&gt;</span>
+    <span class="nt">&lt;prov:delegate</span> <span class="na">prov:ref=</span><span class="s">&quot;seis_prov:sa_9DIG8A-TA&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;prov:responsible</span> <span class="na">prov:ref=</span><span class="s">&quot;seis_prov:pp_me&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/prov:actedOnBehalfOf&gt;</span>
+  <span class="nt">&lt;prov:used&gt;</span>
+    <span class="nt">&lt;prov:activity</span> <span class="na">prov:ref=</span><span class="s">&quot;seis_prov:ws_F87SF7SF78&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;prov:entity</span> <span class="na">prov:ref=</span><span class="s">&quot;seis_prov:em_SKFUSJDOEJ&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/prov:used&gt;</span>
+  <span class="nt">&lt;prov:used&gt;</span>
+    <span class="nt">&lt;prov:activity</span> <span class="na">prov:ref=</span><span class="s">&quot;seis_prov:ws_F87SF7SF78&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;prov:entity</span> <span class="na">prov:ref=</span><span class="s">&quot;seis_prov:ip_38JD89DA8L&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/prov:used&gt;</span>
+  <span class="nt">&lt;prov:wasGeneratedBy&gt;</span>
+    <span class="nt">&lt;prov:entity</span> <span class="na">prov:ref=</span><span class="s">&quot;seis_prov:wf_A34J4DIDJ3&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;prov:activity</span> <span class="na">prov:ref=</span><span class="s">&quot;seis_prov:ws_F87SF7SF78&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/prov:wasGeneratedBy&gt;</span>
+<span class="nt">&lt;/prov:document&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="cross-correlation">
+<h2><a class="toc-backref" href="#id4">Cross Correlation</a><a class="headerlink" href="#cross-correlation" title="Permalink to this headline">¶</a></h2>
+<p class="graphviz">
+<img src="_images/graphviz-6389190d8023ab998e8163aceda4b7dbc9d3d142.svg" alt="digraph G {
+	graph [bb=&quot;0,0,767,549.94&quot;,
+		charset=&quot;utf-8&quot;,
+		rankdir=BT
+	];
+	node [label=&quot;\N&quot;];
+	n1	 [URL=&quot;http://seisprov.org/seis_prov/0.1/#sa_9DIG8A-TA&quot;,
+		fillcolor=&quot;#FED37F&quot;,
+		height=0.77692,
+		label=&lt;ObsPy&lt;br /&gt;&lt;font color=&quot;#333333&quot; point-size=&quot;10&quot;&gt;seis_prov:sa_9DIG8A-TA&lt;/font&gt;&gt;,
+		pos=&quot;198,521.97&quot;,
+		shape=house,
+		style=filled,
+		width=2.945];
+	ann1	 [color=gray,
+		fontcolor=black,
+		fontsize=10,
+		height=1.1389,
+		label=&lt;&lt;TABLE cellpadding=&quot;0&quot; border=&quot;0&quot;&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#label&quot;&gt;prov:label&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;ObsPy&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#type&quot;&gt;prov:type&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#SoftwareAgent&quot;&gt;prov:SoftwareAgent&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#doi&quot;&gt;seis_prov:doi&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;10.1785/gssrl.81.3.530&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#software_name&quot;&gt;seis_prov:software_name&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;ObsPy&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#software_version&quot;&gt;seis_prov:software_version&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;0.10.1&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#website&quot;&gt;seis_prov:website&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;http://www.obspy.org&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;/TABLE&gt;&gt;,
+		pos=&quot;111,416&quot;,
+		shape=note,
+		width=3.0833];
+	ann1 -&gt; n1	 [arrowhead=none,
+		color=gray,
+		pos=&quot;144.64,457.2 156.59,471.48 169.59,487.02 179.77,499.18&quot;,
+		style=dashed];
+	n2	 [URL=&quot;http://seisprov.org/seis_prov/0.1/#wf_A34J4DIDJ3&quot;,
+		color=&quot;#808080&quot;,
+		fillcolor=&quot;#FFFC87&quot;,
+		height=0.62854,
+		label=&lt;Waveform Trace&lt;br /&gt;&lt;font color=&quot;#333333&quot; point-size=&quot;10&quot;&gt;seis_prov:wf_A34J4DIDJ3&lt;/font&gt;&gt;,
+		pos=&quot;329,416&quot;,
+		shape=oval,
+		style=filled,
+		width=2.4638];
+	ann2	 [color=gray,
+		fontcolor=black,
+		fontsize=10,
+		height=1.3056,
+		label=&lt;&lt;TABLE cellpadding=&quot;0&quot; border=&quot;0&quot;&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#label&quot;&gt;prov:label&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;Waveform Trace&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#type&quot;&gt;prov:type&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;seis_prov:waveform_trace&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#number_of_samples&quot;&gt;seis_prov:number_of_samples&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;6000&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#sampling_rate&quot;&gt;seis_prov:sampling_rate&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;100.0&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#starttime&quot;&gt;seis_prov:starttime&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;2013-01-02T12:10:11&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#station_id&quot;&gt;seis_prov:station_id&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;BW.FURT.00.BHZ&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#units&quot;&gt;seis_prov:units&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;m/s&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;/TABLE&gt;&gt;,
+		pos=&quot;232,282&quot;,
+		shape=note,
+		width=3.4722];
+	ann2 -&gt; n2	 [arrowhead=none,
+		color=gray,
+		pos=&quot;265.93,329.17 281.99,351.02 300.4,376.08 313.17,393.46&quot;,
+		style=dashed];
+	n3	 [URL=&quot;http://seisprov.org/seis_prov/0.1/#wf_0034AIDDJ8&quot;,
+		color=&quot;#808080&quot;,
+		fillcolor=&quot;#FFFC87&quot;,
+		height=0.62854,
+		label=&lt;Waveform Trace&lt;br /&gt;&lt;font color=&quot;#333333&quot; point-size=&quot;10&quot;&gt;seis_prov:wf_0034AIDDJ8&lt;/font&gt;&gt;,
+		pos=&quot;579,416&quot;,
+		shape=oval,
+		style=filled,
+		width=2.4856];
+	ann3	 [color=gray,
+		fontcolor=black,
+		fontsize=10,
+		height=1.3056,
+		label=&lt;&lt;TABLE cellpadding=&quot;0&quot; border=&quot;0&quot;&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#label&quot;&gt;prov:label&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;Waveform Trace&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#type&quot;&gt;prov:type&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;seis_prov:waveform_trace&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#number_of_samples&quot;&gt;seis_prov:number_of_samples&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;6000&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#sampling_rate&quot;&gt;seis_prov:sampling_rate&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;100.0&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#starttime&quot;&gt;seis_prov:starttime&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;2013-01-02T12:10:11&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#station_id&quot;&gt;seis_prov:station_id&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;BW.ALTM..BHZ&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#units&quot;&gt;seis_prov:units&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;m/s&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;/TABLE&gt;&gt;,
+		pos=&quot;642,282&quot;,
+		shape=note,
+		width=3.4722];
+	ann3 -&gt; n3	 [arrowhead=none,
+		color=gray,
+		pos=&quot;619.97,329.17 609.53,351.02 597.57,376.08 589.28,393.46&quot;,
+		style=dashed];
+	n4	 [URL=&quot;http://seisprov.org/seis_prov/0.1/#co_F87SF7SF78&quot;,
+		color=&quot;#0000FF&quot;,
+		fillcolor=&quot;#9FB1FC&quot;,
+		height=0.5,
+		label=&lt;Cross Correlate&lt;br /&gt;&lt;font color=&quot;#333333&quot; point-size=&quot;10&quot;&gt;seis_prov:co_F87SF7SF78&lt;/font&gt;&gt;,
+		pos=&quot;437,282&quot;,
+		shape=box,
+		style=filled,
+		width=1.7271];
+	n4 -&gt; n2	 [color=red4,
+		fontcolor=red,
+		fontsize=10.0,
+		label=used,
+		lp=&quot;392.17,352&quot;,
+		pos=&quot;e,346.71,393.36 422.88,300.26 405.16,321.92 374.49,359.4 353.04,385.61&quot;];
+	n4 -&gt; n3	 [color=red4,
+		fontcolor=red,
+		fontsize=10.0,
+		label=used,
+		lp=&quot;539.17,352&quot;,
+		pos=&quot;e,562.2,393.49 461.64,300.01 478.72,312.26 501.61,329.64 520,347 532.59,358.88 545.33,373.21 555.73,385.64&quot;];
+	b1	 [color=gray,
+		height=0.05,
+		label=&quot;&quot;,
+		pos=&quot;437,416&quot;,
+		shape=point,
+		width=0.05];
+	n4 -&gt; b1	 [arrowhead=none,
+		color=&quot;#FED37F&quot;,
+		fontsize=10.0,
+		label=wasAssociatedWith,
+		lp=&quot;476.51,352&quot;,
+		pos=&quot;437,300.26 437,333.8 437,405.3 437,414.1&quot;];
+	ann4	 [color=gray,
+		fontcolor=black,
+		fontsize=10,
+		height=0.80556,
+		label=&lt;&lt;TABLE cellpadding=&quot;0&quot; border=&quot;0&quot;&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#label&quot;&gt;prov:label&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;Cross Correlate&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#type&quot;&gt;prov:type&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;seis_prov:cross_correlate&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#correlation_type&quot;&gt;seis_prov:correlation_type&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;Phase Cross Correlation&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#max_lag_time_in_sec&quot;&gt;seis_prov:max_lag_time_in_sec&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;120.0&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;/TABLE&gt;&gt;,
+		pos=&quot;369,160&quot;,
+		shape=note,
+		width=3.4861];
+	ann4 -&gt; n4	 [arrowhead=none,
+		color=gray,
+		pos=&quot;384.94,189.13 398.05,212.27 416.21,244.32 427.25,263.8&quot;,
+		style=dashed];
+	n5	 [URL=&quot;http://seisprov.org/seis_prov/0.1/#cc_UTAKGH82HL&quot;,
+		color=&quot;#808080&quot;,
+		fillcolor=&quot;#FFFC87&quot;,
+		height=0.62854,
+		label=&lt;Cross Correlation&lt;br /&gt;&lt;font color=&quot;#333333&quot; point-size=&quot;10&quot;&gt;seis_prov:cc_UTAKGH82HL&lt;/font&gt;&gt;,
+		pos=&quot;608,160&quot;,
+		shape=oval,
+		style=filled,
+		width=2.6661];
+	n5 -&gt; n4	 [color=darkgreen,
+		fontcolor=darkgreen,
+		fontsize=10.0,
+		label=wasGeneratedBy,
+		lp=&quot;571.15,212&quot;,
+		pos=&quot;e,461.32,263.94 578.6,181.63 548.32,202.88 501.21,235.94 469.75,258.02&quot;];
+	ann5	 [color=gray,
+		fontcolor=black,
+		fontsize=10,
+		height=1.3056,
+		label=&lt;&lt;TABLE cellpadding=&quot;0&quot; border=&quot;0&quot;&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#label&quot;&gt;prov:label&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;Cross Correlation&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://www.w3.org/ns/prov#type&quot;&gt;prov:type&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;seis_prov:cross_correlation&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#correlation_type&quot;&gt;seis_prov:correlation_type&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;Phase Cross Correlation&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#max_correlation_coefficient&quot;&gt;seis_prov:max_correlation_coefficient&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;0.75&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#max_lag_time_in_sec&quot;&gt;seis_prov:max_lag_time_in_sec&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;120.0&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#station_id_A&quot;&gt;seis_prov:station_id_A&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;BW.FURT.00.BHZ&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;TR&gt;
+        &lt;TD align=&quot;left&quot; href=&quot;http://seisprov.org/seis_prov/0.1/#station_id_B&quot;&gt;seis_prov:station_id_B&lt;/TD&gt;
+        &lt;TD align=&quot;left&quot;&gt;BW.ALTM..BHZ&lt;/TD&gt;
+    &lt;/TR&gt;
+    &lt;/TABLE&gt;&gt;,
+		pos=&quot;608,47&quot;,
+		shape=note,
+		width=3.9444];
+	ann5 -&gt; n5	 [arrowhead=none,
+		color=gray,
+		pos=&quot;608,94.11 608,109 608,124.82 608,137.11&quot;,
+		style=dashed];
+	b1 -&gt; n1	 [color=&quot;#FED37F&quot;,
+		fontsize=10.0,
+		pos=&quot;e,304.13,514.31 437.09,418.18 437.45,423.5 438.18,445.51 427,457 397.42,487.41 354.68,503.71 314.11,512.33&quot;];
+}" />
+</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="cp">&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;</span>
+<span class="nt">&lt;prov:document</span> <span class="na">xmlns:seis_prov=</span><span class="s">&quot;http://seisprov.org/seis_prov/0.1/#&quot;</span> <span class="na">xmlns:prov=</span><span class="s">&quot;http://www.w3.org/ns/prov#&quot;</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;prov:softwareAgent</span> <span class="na">prov:id=</span><span class="s">&quot;seis_prov:sa_9DIG8A-TA&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;prov:label&gt;</span>ObsPy<span class="nt">&lt;/prov:label&gt;</span>
+    <span class="nt">&lt;seis_prov:doi&gt;</span>10.1785/gssrl.81.3.530<span class="nt">&lt;/seis_prov:doi&gt;</span>
+    <span class="nt">&lt;seis_prov:software_name&gt;</span>ObsPy<span class="nt">&lt;/seis_prov:software_name&gt;</span>
+    <span class="nt">&lt;seis_prov:software_version&gt;</span>0.10.1<span class="nt">&lt;/seis_prov:software_version&gt;</span>
+    <span class="nt">&lt;seis_prov:website&gt;</span>http://www.obspy.org<span class="nt">&lt;/seis_prov:website&gt;</span>
+  <span class="nt">&lt;/prov:softwareAgent&gt;</span>
+  <span class="nt">&lt;prov:entity</span> <span class="na">prov:id=</span><span class="s">&quot;seis_prov:wf_A34J4DIDJ3&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;prov:label&gt;</span>Waveform Trace<span class="nt">&lt;/prov:label&gt;</span>
+    <span class="nt">&lt;prov:type</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:string&quot;</span><span class="nt">&gt;</span>seis_prov:waveform_trace<span class="nt">&lt;/prov:type&gt;</span>
+    <span class="nt">&lt;seis_prov:number_of_samples</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:int&quot;</span><span class="nt">&gt;</span>6000<span class="nt">&lt;/seis_prov:number_of_samples&gt;</span>
+    <span class="nt">&lt;seis_prov:sampling_rate</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:double&quot;</span><span class="nt">&gt;</span>100.0<span class="nt">&lt;/seis_prov:sampling_rate&gt;</span>
+    <span class="nt">&lt;seis_prov:starttime</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:dateTime&quot;</span><span class="nt">&gt;</span>2013-01-02T12:10:11<span class="nt">&lt;/seis_prov:starttime&gt;</span>
+    <span class="nt">&lt;seis_prov:station_id&gt;</span>BW.FURT.00.BHZ<span class="nt">&lt;/seis_prov:station_id&gt;</span>
+    <span class="nt">&lt;seis_prov:units&gt;</span>m/s<span class="nt">&lt;/seis_prov:units&gt;</span>
+  <span class="nt">&lt;/prov:entity&gt;</span>
+  <span class="nt">&lt;prov:entity</span> <span class="na">prov:id=</span><span class="s">&quot;seis_prov:wf_0034AIDDJ8&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;prov:label&gt;</span>Waveform Trace<span class="nt">&lt;/prov:label&gt;</span>
+    <span class="nt">&lt;prov:type</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:string&quot;</span><span class="nt">&gt;</span>seis_prov:waveform_trace<span class="nt">&lt;/prov:type&gt;</span>
+    <span class="nt">&lt;seis_prov:number_of_samples</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:int&quot;</span><span class="nt">&gt;</span>6000<span class="nt">&lt;/seis_prov:number_of_samples&gt;</span>
+    <span class="nt">&lt;seis_prov:sampling_rate</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:double&quot;</span><span class="nt">&gt;</span>100.0<span class="nt">&lt;/seis_prov:sampling_rate&gt;</span>
+    <span class="nt">&lt;seis_prov:starttime</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:dateTime&quot;</span><span class="nt">&gt;</span>2013-01-02T12:10:11<span class="nt">&lt;/seis_prov:starttime&gt;</span>
+    <span class="nt">&lt;seis_prov:station_id&gt;</span>BW.ALTM..BHZ<span class="nt">&lt;/seis_prov:station_id&gt;</span>
+    <span class="nt">&lt;seis_prov:units&gt;</span>m/s<span class="nt">&lt;/seis_prov:units&gt;</span>
+  <span class="nt">&lt;/prov:entity&gt;</span>
+  <span class="nt">&lt;prov:activity</span> <span class="na">prov:id=</span><span class="s">&quot;seis_prov:co_F87SF7SF78&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;prov:label&gt;</span>Cross Correlate<span class="nt">&lt;/prov:label&gt;</span>
+    <span class="nt">&lt;prov:type</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:string&quot;</span><span class="nt">&gt;</span>seis_prov:cross_correlate<span class="nt">&lt;/prov:type&gt;</span>
+    <span class="nt">&lt;seis_prov:correlation_type&gt;</span>Phase Cross Correlation<span class="nt">&lt;/seis_prov:correlation_type&gt;</span>
+    <span class="nt">&lt;seis_prov:max_lag_time_in_sec&gt;</span>120.0<span class="nt">&lt;/seis_prov:max_lag_time_in_sec&gt;</span>
+  <span class="nt">&lt;/prov:activity&gt;</span>
+  <span class="nt">&lt;prov:entity</span> <span class="na">prov:id=</span><span class="s">&quot;seis_prov:cc_UTAKGH82HL&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;prov:label&gt;</span>Cross Correlation<span class="nt">&lt;/prov:label&gt;</span>
+    <span class="nt">&lt;prov:type</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:string&quot;</span><span class="nt">&gt;</span>seis_prov:cross_correlation<span class="nt">&lt;/prov:type&gt;</span>
+    <span class="nt">&lt;seis_prov:correlation_type&gt;</span>Phase Cross Correlation<span class="nt">&lt;/seis_prov:correlation_type&gt;</span>
+    <span class="nt">&lt;seis_prov:max_correlation_coefficient&gt;</span>0.75<span class="nt">&lt;/seis_prov:max_correlation_coefficient&gt;</span>
+    <span class="nt">&lt;seis_prov:max_lag_time_in_sec&gt;</span>120.0<span class="nt">&lt;/seis_prov:max_lag_time_in_sec&gt;</span>
+    <span class="nt">&lt;seis_prov:station_id_A&gt;</span>BW.FURT.00.BHZ<span class="nt">&lt;/seis_prov:station_id_A&gt;</span>
+    <span class="nt">&lt;seis_prov:station_id_B&gt;</span>BW.ALTM..BHZ<span class="nt">&lt;/seis_prov:station_id_B&gt;</span>
+  <span class="nt">&lt;/prov:entity&gt;</span>
+  <span class="nt">&lt;prov:wasAssociatedWith&gt;</span>
+    <span class="nt">&lt;prov:activity</span> <span class="na">prov:ref=</span><span class="s">&quot;seis_prov:co_F87SF7SF78&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;prov:agent</span> <span class="na">prov:ref=</span><span class="s">&quot;seis_prov:sa_9DIG8A-TA&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/prov:wasAssociatedWith&gt;</span>
+  <span class="nt">&lt;prov:used&gt;</span>
+    <span class="nt">&lt;prov:activity</span> <span class="na">prov:ref=</span><span class="s">&quot;seis_prov:co_F87SF7SF78&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;prov:entity</span> <span class="na">prov:ref=</span><span class="s">&quot;seis_prov:wf_A34J4DIDJ3&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/prov:used&gt;</span>
+  <span class="nt">&lt;prov:used&gt;</span>
+    <span class="nt">&lt;prov:activity</span> <span class="na">prov:ref=</span><span class="s">&quot;seis_prov:co_F87SF7SF78&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;prov:entity</span> <span class="na">prov:ref=</span><span class="s">&quot;seis_prov:wf_0034AIDDJ8&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/prov:used&gt;</span>
+  <span class="nt">&lt;prov:wasGeneratedBy&gt;</span>
+    <span class="nt">&lt;prov:entity</span> <span class="na">prov:ref=</span><span class="s">&quot;seis_prov:cc_UTAKGH82HL&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;prov:activity</span> <span class="na">prov:ref=</span><span class="s">&quot;seis_prov:co_F87SF7SF78&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/prov:wasGeneratedBy&gt;</span>
+<span class="nt">&lt;/prov:document&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="validation.html" class="btn btn-neutral" title="Validation" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Lion Krischer.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.0.1a',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+    <script type="text/javascript" src="./_static/js/jquery.easytabs.min.js"></script>
+    <script>
+        $('.tab-container').easytabs({
+            animate: false
+        });
+    </script>
+
+
+</body>
+</html>
