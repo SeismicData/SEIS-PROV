@@ -14,7 +14,7 @@ other = pr.agent("seis_prov:pp_other", other_attributes=(
     ("seis_prov:email", "susanna.musterfrau@email.com")
 ))
 
-specfem = pr.agent("seis_prov:sa_9DIG8A-TA", other_attributes=(
+specfem = pr.agent("seis_prov:sp001_sa_9dig8a-ta", other_attributes=(
     ("prov:type",
         prov.identifier.QualifiedName(prov.constants.PROV, "SoftwareAgent")),
     ("prov:label", "SPECFEM3D GLOBE"),
@@ -23,17 +23,18 @@ specfem = pr.agent("seis_prov:sa_9DIG8A-TA", other_attributes=(
     ("seis_prov:website", "http://geodynamics.org/cig/software/specfem3d")
 ))
 
-model = pr.entity("seis_prov:em_SKFUSJDOEJ", other_attributes=(
+model = pr.entity("seis_prov:sp002_em_skfusjdoej", other_attributes=(
     ("prov:label", "Earth Model"),
     ("prov:type", "seis_prov:earth_model"),
     ("seis_prov:model_name", "Random Model"),
+    ("seis_prov:model_type", "3D"),
     ("seis_prov:website", "http://random.org/model")
 ))
 
 
-param = pr.entity("seis_prov:ip_38JD89DA8L", other_attributes=(
-    ("prov:label", "Input Parameter"),
-    ("prov:type", "seis_prov:input_parameter"),
+param = pr.entity("seis_prov:sp003_in_38jd89da8l", other_attributes=(
+    ("prov:label", "Input Parameters"),
+    ("prov:type", "seis_prov:input_parameters"),
     ("seis_prov:model_name", "Random Model"),
     ("seis_prov:website", "http://random.org/model"),
     ("seis_prov:SIMULATION_TYPE", 1),
@@ -62,12 +63,12 @@ param = pr.entity("seis_prov:ip_38JD89DA8L", other_attributes=(
 ))
 
 
-trace = pr.entity("seis_prov:wf_A34J4DIDJ3", other_attributes=(
+trace = pr.entity("seis_prov:sp004_wf_a34j4didj3", other_attributes=(
     ("prov:label", "Waveform Trace"),
     ("prov:type", "seis_prov:waveform_trace"),
 ))
 
-simulation = pr.activity("seis_prov:ws_F87SF7SF78",
+simulation = pr.activity("seis_prov:sp005_ws_f87sf7sf78",
     startTime=datetime(2014, 2, 2, 12, 15, 3),
     endTime=datetime(2014, 2, 2, 14, 7, 13),
     other_attributes=(
