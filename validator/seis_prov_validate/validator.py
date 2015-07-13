@@ -16,6 +16,7 @@ import inspect
 import io
 import json
 import os
+import re
 import sys
 
 import jsonschema
@@ -97,12 +98,40 @@ def _validate_prov_bundle(doc, json_schema, ns):
         # XXX: I honestly don't quite understand this part of the prov API. For
         # now I assume attributes and additional attributes are identical.
         assert record.extra_attributes == record.attributes
+        attrs = record.attributes
 
         rec_type = record.get_type()
 
         if rec_type not in json_schema_map:
             _log_error("%s not a record type that is valid for SEIS-PROV." %
                        str(rec_type))
+        json_def = json_schema_map[rec_type]
+
+        # Find the prov type.
+        prov_type = [i for i in attrs if i[0] == prov.model.PROV_TYPE]
+        if not prov_type:
+            _log_error("Record '%s' does have a prov:type set." %
+                       str(record.identifier))
+        elif len(prov_type) > 1:
+            _log_error("Record '%s' has %i prov:type's set. Only one is "
+                       "allowed" % (str(record.identifier), len(prov_type)))
+
+        prov_type = assert_ns_and_extract(prov_type[0][1], ns)
+
+        if prov_type not in json_def:
+            _log_error("prov type '%s' of record type '%s' no  valid for "
+                       "SEIS-PROV." % (prov_type, str(rec_type)))
+
+        definition = json_def[prov_type]
+
+        # First up, validate the id.
+        regex = r"^sp\d{3,5}_%s_[a-z0-9]{7,12}$" % \
+            definition["two_letter_code"]
+        if re.match(regex, record.identifier.localpart) is None:
+            _log_error("Identifier '%s' does not match the regular expression "
+                       "'%s'." % (record.identifier.localpart, regex))
+
+
 
         ################
         # DEBUGGING START
@@ -115,6 +144,16 @@ def _validate_prov_bundle(doc, json_schema, ns):
         # DEBUGGING END
         ################
 
+
+
+def assert_ns_and_extract(name, ns):
+    """
+    Makes sure the given name is under the given namespace and extract the name.
+    """
+    prefix = "%s:" % ns.prefix
+    if not name.startswith(prefix):
+        _log_error("%s does not start with %s" % (name, prefix))
+    return name.lstrip(prefix)
 
 def _validate_against_xsd_scheme(doc):
     # Serialize to XML (this makes it work with JSON and others as well).
