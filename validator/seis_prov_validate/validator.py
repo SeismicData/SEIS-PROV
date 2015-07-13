@@ -172,10 +172,20 @@ def _validate_prov_bundle(doc, json_schema, ns):
                         if i["name"] == name][0]
             _validate_type(name, value, this_def["types"])
 
+            # Also validate the patterns if any.
+            if "pattern" in this_def:
+                if "xsd:string" not in this_def["types"]:
+                    # This should not happen.
+                    raise Exception
+                if re.match(this_def["pattern"], value) is None:
+                    _log_error("Attribute '%s' in record '%s' with the value "
+                               "'%s' does not match the regex '%s'." % (
+                                name, str(record.identifier), value,
+                                this_def["pattern"]))
 
 TYPE_MAP = {
     "xsd:double": lambda x: isinstance(x, float),
-    "xsd:positiveInteger": lambda x: isinstance(x, int) and x >= 0,
+    "xsd:positiveInteger": lambda x: x.value.isnumeric() and int(x.value) >= 0,
     "xsd:string": lambda x: isinstance(x, six.string_types) and bool(x),
     "xsd:dateTime": lambda x: isinstance(x, datetime.datetime)
 }
@@ -183,13 +193,16 @@ TYPE_MAP = {
 
 def _validate_type(value_name, value, possible_types):
     """
-    Validate the possible types.
+    Validate the possible types and also check the values if possible.
     """
     for t in possible_types:
         if t not in TYPE_MAP:
             from IPython.core.debugger import Tracer;Tracer(colors="Linux")()
-        if TYPE_MAP[t](value) is True:
-            break
+        try:
+            if TYPE_MAP[t](value) is True:
+                break
+        except:
+            continue
     else:
         from IPython.core.debugger import Tracer;Tracer(colors="Linux")()
         _log_error("Attribute '%s' has an invalid type '%s'. Valid types: %s"
