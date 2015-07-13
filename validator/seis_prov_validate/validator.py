@@ -47,7 +47,7 @@ def _log_warning(message):
     """
     Print the message to stdout
     """
-    print(message)
+    print("WARNING:", message)
 
 
 def validate(filename):
@@ -80,28 +80,48 @@ def validate(filename):
 
     # Step 4: Custom validation against the JSON schema. Validate the root
     # document as well as any bundles.
-    _validate_prov_bundle(doc, json_schema, ns=ns)
+    seis_prov_elements = _validate_prov_bundle(doc, json_schema, ns=ns)
     for bundle in doc.bundles:
-        _validate_prov_bundle(bundle, json_schema, ns=ns)
+        seis_prov_elements += _validate_prov_bundle(bundle, json_schema, ns=ns)
+
+    if not seis_prov_elements:
+        _log_warning("The document is a valid W3C PROV document but not a "
+                     "single SEIS-PROV record has been found.")
 
 
 def _validate_prov_bundle(doc, json_schema, ns):
     """
     Custom validator for SEIS-PROV.
     """
+    count = 0
+
     json_schema_map = {
         prov.model.PROV_ENTITY: json_schema["entities"],
         prov.model.PROV_ACTIVITY: json_schema["activities"]}
 
     for record in doc._records:
-        # Now we only care about records in the SEIS-PROV namespace.
-        if record.identifier.namespace != ns:
-            continue
-
         # XXX: I honestly don't quite understand this part of the prov API. For
         # now I assume attributes and additional attributes are identical.
         assert record.extra_attributes == record.attributes
         attrs = record.attributes
+
+        # Find the prov type.
+        prov_type = [i for i in attrs if
+                     i[0] == prov.model.PROV_TYPE
+                     and isinstance(i[1], six.string_types)
+                     and i[1].startswith("%s:" % ns.prefix)]
+        if not prov_type:
+            continue
+        elif len(prov_type) > 1:
+            _log_error("Record '%s' has %i prov:type's set. Only one is "
+                       "allowed" % (str(record.identifier), len(prov_type)))
+        prov_type = assert_ns_and_extract(prov_type[0][1], ns)
+
+        # Now the identifier must also be part of the seis prov namespace.
+        # lives in the prov-type namespace.
+        if record.identifier.namespace != ns:
+            _log_error("The identifier of record '%s' is not in the SEIS-PROV "
+                       "namespace" % str(record.identifier))
 
         rec_type = record.get_type()
 
@@ -110,21 +130,13 @@ def _validate_prov_bundle(doc, json_schema, ns):
                        str(rec_type))
         json_def = json_schema_map[rec_type]
 
-        # Find the prov type.
-        prov_type = [i for i in attrs if i[0] == prov.model.PROV_TYPE]
-        if not prov_type:
-            _log_error("Record '%s' does have a prov:type set." %
-                       str(record.identifier))
-        elif len(prov_type) > 1:
-            _log_error("Record '%s' has %i prov:type's set. Only one is "
-                       "allowed" % (str(record.identifier), len(prov_type)))
-        prov_type = assert_ns_and_extract(prov_type[0][1], ns)
-
         if prov_type not in json_def:
             _log_error("prov type '%s' of record type '%s' no  valid for "
                        "SEIS-PROV." % (prov_type, str(rec_type)))
 
         definition = json_def[prov_type]
+
+        count += 1
 
         # First up, validate the id.
         regex = r"^sp\d{3,5}_%s_[a-z0-9]{7,12}$" % \
@@ -183,6 +195,7 @@ def _validate_prov_bundle(doc, json_schema, ns):
                                "'%s' does not match the regex '%s'." % (
                                 name, str(record.identifier), value,
                                 this_def["pattern"]))
+    return count
 
 
 TYPE_MAP = {
@@ -202,21 +215,21 @@ def _validate_type(value_name, value, possible_types):
     """
     for t in possible_types:
         if t not in TYPE_MAP:
-            from IPython.core.debugger import Tracer;Tracer(colors="Linux")()
+            raise NotImplementedError
         try:
             if TYPE_MAP[t](value) is True:
                 break
         except:
             continue
     else:
-        from IPython.core.debugger import Tracer;Tracer(colors="Linux")()
         _log_error("Attribute '%s' has an invalid type '%s'. Valid types: %s"
                    % (value_name, type(value), ", ".join(possible_types)))
 
 
 def assert_ns_and_extract(name, ns):
     """
-    Makes sure the given name is under the given namespace and extract the name.
+    Makes sure the given name is under the given namespace and extract the
+    name.
     """
     prefix = "%s:" % ns.prefix
     if not name.startswith(prefix):
