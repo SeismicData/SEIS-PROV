@@ -30,6 +30,9 @@ schema_filename = os.path.abspath(
 generated_dir = os.path.join(current_dir, "_generated")
 examples_dir = os.path.join(current_dir, "examples")
 
+if not os.path.exists(generated_dir):
+    os.makedirs(generated_dir)
+
 
 def get_filename(filename, node_type, file_type, min_or_max=None):
     node_type = node_type.lower()
