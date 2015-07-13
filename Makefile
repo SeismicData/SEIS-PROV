@@ -48,14 +48,16 @@ help:
 
 clean:
 	rm -rf _generated
-	rm -rf _generated_details.rst
+	rm -f _generated_details.rst
 	rm -rf $(BUILDDIR)
 	rm -rf __pycache__
+	rm -f validator/seis_prov_validate/schemas/seis_prov.json
 
 generate_stuff:
 	python ./validate_definitions.py
 	python ./create_python_code_xml_and_plots.py
 	python ./generate_details_doc.py
+	cp ./_generated/seis_prov.json ./validator/seis_prov_validate/schemas/seis_prov.json
 
 html: generate_stuff
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html

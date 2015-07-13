@@ -131,6 +131,8 @@ def _validate_prov_bundle(doc, json_schema, ns):
             _log_error("Identifier '%s' does not match the regular expression "
                        "'%s'." % (record.identifier.localpart, regex))
 
+        # Validate the label.
+
 
 
         ################
