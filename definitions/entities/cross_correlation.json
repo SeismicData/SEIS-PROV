@@ -5,6 +5,7 @@
     "two_letter_code": "cc",
     "label": "Cross Correlation",
     "description": "A cross correlation between two stations A and B. Station metadata is not recorded here as it is part of either SEED or StationXML files. Any previously applied processing is also not part of the entity but rather of the entity used by the activity generating this one.",
+    "other_seis_prov_attributes_allowed": false,
     "attributes": [
         {
             "name": "correlation_type",

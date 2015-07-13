@@ -5,6 +5,7 @@
     "two_letter_code": "ct",
     "label": "Cut",
     "description": "Cut the data resulting in a shorter trace.",
+    "other_seis_prov_attributes_allowed": false,
     "attributes": [
         {
             "name": "new_start_time",

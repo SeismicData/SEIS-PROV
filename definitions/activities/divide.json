@@ -5,6 +5,7 @@
     "two_letter_code": "dv",
     "label": "Divide",
     "description": "Divide each value of the data by a certain factor. This is implied by many operations but sometimes useful to capture in its own right.",
+    "other_seis_prov_attributes_allowed": false,
     "attributes": [
         {
             "name": "divisor",

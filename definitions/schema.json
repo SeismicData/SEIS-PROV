@@ -32,6 +32,10 @@
       "id": "http://seisprov.org/internal_type_def/description",
       "type": "string"
     },
+     "other_seis_prov_attributes_allowed": {
+       "id": "http://seisprov.org/internal_type_def/other_seis_prov_attributes_allowed",
+       "type": "boolean"
+     },
     "attributes": {
       "id": "http://seisprov.org/internal_type_def/attributes",
       "type": "array",
@@ -97,6 +101,7 @@
     "two_letter_code",
     "label",
     "description",
-    "attributes"
+    "attributes",
+    "other_seis_prov_attributes_allowed"
   ]
 }

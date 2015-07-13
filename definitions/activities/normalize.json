@@ -5,6 +5,7 @@
     "two_letter_code": "nm",
     "label": "Normalize",
     "description": "Normalize the data.",
+    "other_seis_prov_attributes_allowed": false,
     "attributes": [
         {
             "name": "normalization_method",

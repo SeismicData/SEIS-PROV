@@ -5,6 +5,7 @@
     "two_letter_code": "ip",
     "label": "Interpolate",
     "description": "Interpolate the data to new sampling points.",
+    "other_seis_prov_attributes_allowed": false,
     "attributes": [
         {
             "name": "interpolation_method",
