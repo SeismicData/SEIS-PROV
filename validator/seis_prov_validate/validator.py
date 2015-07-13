@@ -100,10 +100,7 @@ def _validate_prov_bundle(doc, json_schema, ns):
         prov.model.PROV_ACTIVITY: json_schema["activities"]}
 
     for record in doc._records:
-        # XXX: I honestly don't quite understand this part of the prov API. For
-        # now I assume attributes and additional attributes are identical.
-        assert record.extra_attributes == record.attributes
-        attrs = record.attributes
+        attrs = list(set(record.attributes).union(record.extra_attributes))
 
         # Find the prov type.
         prov_type = [i for i in attrs if
@@ -202,7 +199,9 @@ TYPE_MAP = {
     "xsd:double": lambda x: isinstance(x, float),
     "xsd:decimal": lambda x: float(x.value) is not None,
     "xsd:integer": lambda x: str(x).isnumeric(),
-    "xsd:positiveInteger": lambda x: x.value.isnumeric() and int(x.value) >= 0,
+    "xsd:positiveInteger": lambda x:
+        (isinstance(x, int) and int(x) >= 0) or
+        (x.value.isnumeric() and int(x.value) >= 0),
     "xsd:string": lambda x: isinstance(x, six.string_types) and bool(x),
     "xsd:dateTime": lambda x: isinstance(x, datetime.datetime),
     "xsd:anyURI": lambda x: bool(urlparse(x.uri))
