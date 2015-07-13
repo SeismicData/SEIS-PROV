@@ -182,9 +182,7 @@ def _validate_prov_bundle(doc, json_schema, ns):
                         if i["name"] == name]
 
             if not this_def and \
-                    definition["other_seis_prov_attributes_allowed"]:
-                continue
-            else:
+                    not definition["other_seis_prov_attributes_allowed"]:
                 _log_error("Record '%s' has an additional attribute in the "
                            "SEIS-PROV namespace: %s. This is not allowed for "
                            "this record type." % (str(record.identifier),
