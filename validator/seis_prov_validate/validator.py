@@ -179,7 +179,10 @@ def _validate_prov_bundle(doc, json_schema, ns):
         for attr in attrs:
             name, value = attr[0].localpart, attr[1]
             this_def = [i for i in definition["attributes"]
-                        if i["name"] == name][0]
+                        if i["name"] == name]
+            if not this_def:
+                continue
+            this_def = this_def[0]
             _validate_type(name, value, this_def["types"])
 
             # Also validate the patterns if any.
