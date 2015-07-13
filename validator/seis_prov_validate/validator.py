@@ -19,6 +19,7 @@ import json
 import os
 import re
 import six
+from six.moves.urllib.parse import urlparse
 import sys
 
 import jsonschema
@@ -183,11 +184,15 @@ def _validate_prov_bundle(doc, json_schema, ns):
                                 name, str(record.identifier), value,
                                 this_def["pattern"]))
 
+
 TYPE_MAP = {
     "xsd:double": lambda x: isinstance(x, float),
+    "xsd:decimal": lambda x: float(x.value) is not None,
+    "xsd:integer": lambda x: str(x).isnumeric(),
     "xsd:positiveInteger": lambda x: x.value.isnumeric() and int(x.value) >= 0,
     "xsd:string": lambda x: isinstance(x, six.string_types) and bool(x),
-    "xsd:dateTime": lambda x: isinstance(x, datetime.datetime)
+    "xsd:dateTime": lambda x: isinstance(x, datetime.datetime),
+    "xsd:anyURI": lambda x: bool(urlparse(x.uri))
 }
 
 
@@ -216,7 +221,8 @@ def assert_ns_and_extract(name, ns):
     prefix = "%s:" % ns.prefix
     if not name.startswith(prefix):
         _log_error("Record %s does not start with %s" % (name, prefix))
-    return name.lstrip(prefix)
+    return name[len(prefix):]
+
 
 def _validate_against_xsd_scheme(doc):
     # Serialize to XML (this makes it work with JSON and others as well).
