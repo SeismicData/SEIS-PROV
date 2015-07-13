@@ -12,11 +12,13 @@ from __future__ import (absolute_import, division, print_function,
                         unicode_literals)
 
 import argparse
+import datetime
 import inspect
 import io
 import json
 import os
 import re
+import six
 import sys
 
 import jsonschema
@@ -115,7 +117,6 @@ def _validate_prov_bundle(doc, json_schema, ns):
         elif len(prov_type) > 1:
             _log_error("Record '%s' has %i prov:type's set. Only one is "
                        "allowed" % (str(record.identifier), len(prov_type)))
-
         prov_type = assert_ns_and_extract(prov_type[0][1], ns)
 
         if prov_type not in json_def:
@@ -132,20 +133,67 @@ def _validate_prov_bundle(doc, json_schema, ns):
                        "'%s'." % (record.identifier.localpart, regex))
 
         # Validate the label.
+        prov_label = [i for i in attrs if i[0] == prov.model.PROV_LABEL]
+        if not prov_label:
+            _log_error("Record '%s' does have a prov:label set." %
+                       str(record.identifier))
+        elif len(prov_label) > 1:
+            _log_error("Record '%s' has %i prov:label's set. Only one is "
+                       "allowed" % (str(record.identifier), len(prov_label)))
+        prov_label = prov_label[0][1]
+        if definition["label"] != prov_label:
+            _log_error("Record '%s' has label '%s' instead of '%s'." % (
+                       str(record.identifier), prov_label,
+                       definition["label"]))
+
+        # Get all attributes which are part of the seis prov namespace. All
+        # others don't matter for the sake of validation.
+        attrs = [_i for _i in attrs
+                 if isinstance(_i[0], prov.model.QualifiedName) and
+                 _i[0].namespace == ns]
+
+        # Make sure it has all required attributes.
+        required_attributes = set([_i["name"]
+                                   for _i in definition["attributes"]
+                                   if _i["required"]])
+        available_attributes = set([_i[0].localpart for _i in attrs])
+        missing_attributes = required_attributes.difference(
+            available_attributes)
+
+        if missing_attributes:
+            _log_error("Record '%s' misses the following required "
+                       "attributes:\n %s" % (str(record.identifier),
+                                             ", ".join(missing_attributes)))
+
+        # Validate each attribute.
+        for attr in attrs:
+            name, value = attr[0].localpart, attr[1]
+            this_def = [i for i in definition["attributes"]
+                        if i["name"] == name][0]
+            _validate_type(name, value, this_def["types"])
 
 
+TYPE_MAP = {
+    "xsd:double": lambda x: isinstance(x, float),
+    "xsd:positiveInteger": lambda x: isinstance(x, int) and x >= 0,
+    "xsd:string": lambda x: isinstance(x, six.string_types) and bool(x),
+    "xsd:dateTime": lambda x: isinstance(x, datetime.datetime)
+}
 
-        ################
-        # DEBUGGING START
-        import sys
-        __o_std__ = sys.stdout
-        sys.stdout = sys.__stdout__
-        from IPython.core.debugger import Tracer
-        Tracer(colors="Linux")()
-        sys.stdout = __o_std__
-        # DEBUGGING END
-        ################
 
+def _validate_type(value_name, value, possible_types):
+    """
+    Validate the possible types.
+    """
+    for t in possible_types:
+        if t not in TYPE_MAP:
+            from IPython.core.debugger import Tracer;Tracer(colors="Linux")()
+        if TYPE_MAP[t](value) is True:
+            break
+    else:
+        from IPython.core.debugger import Tracer;Tracer(colors="Linux")()
+        _log_error("Attribute '%s' has an invalid type '%s'. Valid types: %s"
+                   % (value_name, type(value), ", ".join(possible_types)))
 
 
 def assert_ns_and_extract(name, ns):
@@ -154,7 +202,7 @@ def assert_ns_and_extract(name, ns):
     """
     prefix = "%s:" % ns.prefix
     if not name.startswith(prefix):
-        _log_error("%s does not start with %s" % (name, prefix))
+        _log_error("Record %s does not start with %s" % (name, prefix))
     return name.lstrip(prefix)
 
 def _validate_against_xsd_scheme(doc):
