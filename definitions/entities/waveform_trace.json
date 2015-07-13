@@ -3,7 +3,7 @@
     "type": "entity",
     "name": "waveform_trace",
     "two_letter_code": "wf",
-    "recommended_label": "Waveform Trace",
+    "label": "Waveform Trace",
     "description": "Represents a continuous, equally sampled observed or synthetic waveform trace. Most attributes are optional and can be used to describe either very detailed or fairly general provenance information.",
     "attributes": [
         {

@@ -3,7 +3,7 @@
     "type": "activity",
     "name": "normalize",
     "two_letter_code": "nm",
-    "recommended_label": "Normalize",
+    "label": "Normalize",
     "description": "Normalize the data.",
     "attributes": [
         {

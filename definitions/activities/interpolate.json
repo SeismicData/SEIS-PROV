@@ -3,7 +3,7 @@
     "type": "activity",
     "name": "interpolate",
     "two_letter_code": "ip",
-    "recommended_label": "Interpolate",
+    "label": "Interpolate",
     "description": "Interpolate the data to new sampling points.",
     "attributes": [
         {

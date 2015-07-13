@@ -3,7 +3,7 @@
     "type": "activity",
     "name": "bandstop_filter",
     "two_letter_code": "bs",
-    "recommended_label": "Bandstop Filter",
+    "label": "Bandstop Filter",
     "description": "Bandstop the data.",
     "attributes": [
         {

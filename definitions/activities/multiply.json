@@ -3,7 +3,7 @@
     "type": "activity",
     "name": "multiply",
     "two_letter_code": "mp",
-    "recommended_label": "Multiply",
+    "label": "Multiply",
     "description": "Multiply each value of the data with a certain factor. This is implied by many operations but sometimes useful to capture in its own right.",
     "attributes": [
         {

@@ -3,7 +3,7 @@
     "type": "activity",
     "name": "highpass_filter",
     "two_letter_code": "hp",
-    "recommended_label": "Highpass Filter",
+    "label": "Highpass Filter",
     "description": "Highpass the data.",
     "attributes": [
         {

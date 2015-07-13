@@ -3,7 +3,7 @@
     "type": "activity",
     "name": "integrate",
     "two_letter_code": "ig",
-    "recommended_label": "Integrate",
+    "label": "Integrate",
     "description": "Integrate the data with respect to time.",
     "attributes": [
         {

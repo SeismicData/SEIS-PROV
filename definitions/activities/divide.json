@@ -3,7 +3,7 @@
     "type": "activity",
     "name": "divide",
     "two_letter_code": "dv",
-    "recommended_label": "Divide",
+    "label": "Divide",
     "description": "Divide each value of the data by a certain factor. This is implied by many operations but sometimes useful to capture in its own right.",
     "attributes": [
         {

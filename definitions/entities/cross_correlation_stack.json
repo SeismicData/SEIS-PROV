@@ -3,7 +3,7 @@
     "type": "entity",
     "name": "cross_correlation_stack",
     "two_letter_code": "cs",
-    "recommended_label": "Cross Correlation Stack",
+    "label": "Cross Correlation Stack",
     "description": "A stack of cross correlations.",
     "attributes": [
         {

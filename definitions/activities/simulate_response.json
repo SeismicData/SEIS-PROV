@@ -3,7 +3,7 @@
     "type": "activity",
     "name": "simulate_response",
     "two_letter_code": "sr",
-    "recommended_label": "Simulate Response",
+    "label": "Simulate Response",
     "description": "Add an instrument’s response.",
     "attributes": [
         {

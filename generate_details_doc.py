@@ -223,14 +223,14 @@ def create_rst_representation(json_file):
             ", ".join("``%s``" % _i for _i in attrib["types"]),
             attrib["description"]))
 
-    title = "%s" % (data["recommended_label"])
+    title = "%s" % (data["label"])
 
     text = TEMPLATE.format(
         title=title,
         title_line="^" * len(title),
         description=data["description"],
         two_letter_code=data["two_letter_code"],
-        label=data["recommended_label"],
+        label=data["label"],
         required_attributes=make_table(required_attributes, prefix="    "),
         optional_attributes=make_table(optional_attributes, prefix="    "),
         json_def_file=os.path.relpath(json_file),

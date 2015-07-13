@@ -3,7 +3,7 @@
     "type": "activity",
     "name": "lowpass_filter",
     "two_letter_code": "lp",
-    "recommended_label": "Lowpass Filter",
+    "label": "Lowpass Filter",
     "description": "Lowpass the data.",
     "attributes": [
         {

@@ -3,7 +3,7 @@
     "type": "activity",
     "name": "differentiate",
     "two_letter_code": "df",
-    "recommended_label": "Differentiate",
+    "label": "Differentiate",
     "description": "Differentiate the data with respect to time.",
     "attributes": [
         {

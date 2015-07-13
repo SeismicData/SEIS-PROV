@@ -3,7 +3,7 @@
     "type": "activity",
     "name": "decimate",
     "two_letter_code": "dc",
-    "recommended_label": "Decimate",
+    "label": "Decimate",
     "description": "Downsample the waveform data by an integer factor. Any applied anti-alias filtering has to be described by a filtering activity.",
     "attributes": [
         {

@@ -3,7 +3,7 @@
     "type": "activity",
     "name": "calculate_adjoint_source",
     "two_letter_code": "ca",
-    "recommended_label": "Calculate Adjoint Source",
+    "label": "Calculate Adjoint Source",
     "description": "Calculate an adjoint source.",
     "attributes": [
        {

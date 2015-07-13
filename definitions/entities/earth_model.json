@@ -3,7 +3,7 @@
     "type": "entity",
     "name": "earth_model",
     "two_letter_code": "em",
-    "recommended_label": "Earth Model",
+    "label": "Earth Model",
     "description": "An earth model.",
     "attributes": [
         {

@@ -3,7 +3,7 @@
     "type": "activity",
     "name": "remove_response",
     "two_letter_code": "rr",
-    "recommended_label": "Remove Response",
+    "label": "Remove Response",
     "description": "Remove an instrument's response.",
     "attributes": [
         {

@@ -3,7 +3,7 @@
     "type": "activity",
     "name": "stack_cross_correlations",
     "two_letter_code": "sc",
-    "recommended_label": "Stack Cross Correlations",
+    "label": "Stack Cross Correlations",
     "description": "Stack a number of cross correlations.",
     "attributes": [
         {

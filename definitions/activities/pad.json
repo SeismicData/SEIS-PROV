@@ -3,7 +3,7 @@
     "type": "activity",
     "name": "pad",
     "two_letter_code": "pd",
-    "recommended_label": "Pad",
+    "label": "Pad",
     "description": "Pad the data resulting in a longer trace.",
     "attributes": [
         {

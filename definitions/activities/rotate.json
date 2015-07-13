@@ -3,7 +3,7 @@
     "type": "activity",
     "name": "rotate",
     "two_letter_code": "rt",
-    "recommended_label": "Rotate",
+    "label": "Rotate",
     "description": "Rotate multi-component data. This activity has no other attributes. The rotation angles are described by input and output activities.",
     "attributes": [
     ]

@@ -100,7 +100,7 @@ def generate_code():
             type=definition["type"],
             two_letter_code=definition["two_letter_code"],
             short_hash=str(uuid.uuid4()).replace("-", "")[:7],
-            label=definition["recommended_label"],
+            label=definition["label"],
             name=definition["name"],
             contents=contents)
         with open(get_filename(filename, node_type, "py", "min"), "wt") as fh:
@@ -135,7 +135,7 @@ def generate_code():
             type=definition["type"],
             two_letter_code=definition["two_letter_code"],
             short_hash=str(uuid.uuid4()).replace("-", "")[:7],
-            label=definition["recommended_label"],
+            label=definition["label"],
             name=definition["name"],
             url=NS_URL,
             contents=contents)

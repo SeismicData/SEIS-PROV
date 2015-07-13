@@ -3,7 +3,7 @@
     "type": "activity",
     "name": "cross_correlate",
     "two_letter_code": "co",
-    "recommended_label": "Cross Correlate",
+    "label": "Cross Correlate",
     "description": "Cross correlate data of two stations. This does not contain information about the used data as that is captured by the incoming entities.",
     "attributes": [
         {

@@ -85,8 +85,7 @@ def validate():
         # Validate against the scheme.
         jsonschema.validate(data, schema)
 
-        # Check that the filename corresponds to the node name and recommended
-        # label.
+        # Check that the filename corresponds to the node name and label.
         name = os.path.splitext(os.path.basename(filename))[0]
         if name != data["name"]:
             raise ValidationError(
@@ -94,11 +93,11 @@ def validate():
                 "filename." % (os.path.relpath(filename), data["name"]))
 
         expected_label = " ".join([_i.capitalize() for _i in name.split("_")])
-        if expected_label != data["recommended_label"]:
+        if expected_label != data["label"]:
             raise ValidationError(
-                "File '%s': 'recommended_label' attribute '%s' is not equal "
+                "File '%s': 'label' attribute '%s' is not equal "
                 "to the expected value '%s':" % (
-                    os.path.relpath(filename), data["recommended_label"],
+                    os.path.relpath(filename), data["label"],
                     expected_label))
 
         # Collect the two letter codes.

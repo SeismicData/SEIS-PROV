@@ -3,7 +3,7 @@
     "type": "activity",
     "name": "merge",
     "two_letter_code": "mg",
-    "recommended_label": "Merge",
+    "label": "Merge",
     "description": "Merge several traces into one. This is very implementation dependent and thus the activity should be associated with a software agent.",
     "attributes": [
         {
