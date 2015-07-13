@@ -112,6 +112,15 @@ def validate():
             raise NotImplementedError
         collective_definition[key][data["name"]] = data
 
+        # Find duplicate attribute names.
+        attr_names = [_i["name"] for _i in data["attributes"]]
+        duplicates = set([i for i in attr_names
+                          if sum([1 for a in attr_names if a == i]) > 1])
+        if duplicates:
+            raise ValidationError(
+                "File '%s': Duplicate attributes: %s" % (
+                    os.path.relpath(filename), duplicates))
+
     for key, value in two_letter_codes.items():
         if len(value) == 1:
             continue
