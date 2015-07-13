@@ -187,6 +187,9 @@ def _validate_prov_bundle(doc, json_schema, ns):
                            "SEIS-PROV namespace: %s. This is not allowed for "
                            "this record type." % (str(record.identifier),
                                                   name))
+            elif not this_def:
+                # In some instances its allowed.
+                continue
 
             this_def = this_def[0]
             _validate_type(name, value, this_def["types"])
@@ -213,7 +216,8 @@ TYPE_MAP = {
         (x.value.isnumeric() and int(x.value) >= 0),
     "xsd:string": lambda x: isinstance(x, six.string_types) and bool(x),
     "xsd:dateTime": lambda x: isinstance(x, datetime.datetime),
-    "xsd:anyURI": lambda x: bool(urlparse(x.uri))
+    "xsd:anyURI": lambda x: (isinstance(x, six.string_types) and
+                             bool(urlparse(x))) or bool(urlparse(x.uri))
 }
 
 

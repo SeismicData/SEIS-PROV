@@ -29,19 +29,19 @@
             "example_value": "mean"
         },
         {
-            "name": "station_id_a",
+            "name": "seed_id_a",
             "types": ["xsd:string"],
             "description": "The SEED identifier of station A.",
             "required": false,
-            "pattern": "^[A-Z]{1,2}\\.[A-Z]{1,5}\\.[A-Z]{0,2}\\.[A-Z]{1,3}$",
+            "pattern": "^[A-Z0-9]{1,2}\\.[A-Z0-9]{1,5}\\.[A-Z0-9]{0,2}\\.[A-Z0-9]{3}$",
             "example_value": "BW.FURT..BHZ"
         },
         {
-            "name": "station_id_b",
+            "name": "seed_id_b",
             "types": ["xsd:string"],
             "description": "The SEED identifier of station B.",
             "required": false,
-            "pattern": "^[A-Z]{1,2}\\.[A-Z]{1,5}\\.[A-Z]{0,2}\\.[A-Z]{1,3}$",
+            "pattern": "^[A-Z0-9]{1,2}\\.[A-Z0-9]{1,5}\\.[A-Z0-9]{0,2}\\.[A-Z0-9]{3}$",
             "example_value": "BW.ALTM..BHZ"
         }
     ]

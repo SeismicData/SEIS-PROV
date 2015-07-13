@@ -11,8 +11,8 @@ obspy = pr.agent("seis_prov:sp001_sa_9dig8ata", other_attributes=(
 trace_1 = pr.entity("seis_prov:sp002_wf_a34j4didj3", other_attributes=(
     ("prov:label", "Waveform Trace"),
     ("prov:type", "seis_prov:waveform_trace"),
-    ("seis_prov:station_id", "BW.FURT.00.BHZ"),
-    ("seis_prov:starttime",
+    ("seis_prov:seed_id", "BW.FURT.00.BHZ"),
+    ("seis_prov:start_time",
      prov.model.Literal(datetime(2013, 1, 2, 12, 10, 11),
                         prov.constants.XSD_DATETIME)),
     ("seis_prov:number_of_samples",
@@ -26,8 +26,8 @@ trace_1 = pr.entity("seis_prov:sp002_wf_a34j4didj3", other_attributes=(
 trace_2 = pr.entity("seis_prov:sp003_wf_0034aiddj8", other_attributes=(
     ("prov:label", "Waveform Trace"),
     ("prov:type", "seis_prov:waveform_trace"),
-    ("seis_prov:station_id", "BW.ALTM..BHZ"),
-    ("seis_prov:starttime",
+    ("seis_prov:seed_id", "BW.ALTM..BHZ"),
+    ("seis_prov:start_time",
      prov.model.Literal(datetime(2013, 1, 2, 12, 10, 11),
                         prov.constants.XSD_DATETIME)),
     ("seis_prov:number_of_samples",
@@ -49,8 +49,8 @@ correlation = pr.entity("seis_prov:sp005_cc_utakgh82hl", other_attributes=(
     ("prov:label", "Cross Correlation"),
     ("prov:type", "seis_prov:cross_correlation"),
     ("seis_prov:correlation_type", "Phase Cross Correlation"),
-    ("seis_prov:station_id_A", "BW.FURT.00.BHZ"),
-    ("seis_prov:station_id_B", "BW.ALTM..BHZ"),
+    ("seis_prov:seed_id_a", "BW.FURT.00.BHZ"),
+    ("seis_prov:seed_id_b", "BW.ALTM..BHZ"),
     ("seis_prov:max_correlation_coefficient", 0.75),
     ("seis_prov:max_lag_time_in_sec", 120.0)
 ))

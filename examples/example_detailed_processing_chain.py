@@ -11,8 +11,8 @@ obspy = pr.agent("seis_prov:sp001_sa_9dig8ata", other_attributes=(
 trace_1 = pr.entity("seis_prov:sp002_wf_a34j4didj3", other_attributes=(
     ("prov:label", "Waveform Trace"),
     ("prov:type", "seis_prov:waveform_trace"),
-    ("seis_prov:station_id", "BW.FURT.00.BHZ"),
-    ("seis_prov:starttime",
+    ("seis_prov:seed_id", "BW.FURT.00.BHZ"),
+    ("seis_prov:start_time",
      prov.model.Literal(datetime(2013, 1, 2, 12, 10, 11),
                         prov.constants.XSD_DATETIME)),
     ("seis_prov:number_of_samples",
@@ -32,8 +32,8 @@ detrend = pr.activity("seis_prov:sp003_dt_f87sf7sf78", other_attributes=(
 trace_2 = pr.entity("seis_prov:sp004_wf_js83hf34aj", other_attributes=(
     ("prov:label", "Waveform Trace"),
     ("prov:type", "seis_prov:waveform_trace"),
-    ("seis_prov:station_id", "BW.FURT.00.BHZ"),
-    ("seis_prov:starttime",
+    ("seis_prov:seed_id", "BW.FURT.00.BHZ"),
+    ("seis_prov:start_time",
      prov.model.Literal(datetime(2013, 1, 2, 12, 10, 11),
                         prov.constants.XSD_DATETIME)),
     ("seis_prov:number_of_samples",
@@ -58,8 +58,8 @@ lowpass = pr.activity("seis_prov:sp005_lp_f87sf7sf78", other_attributes=(
 trace_3 = pr.entity("seis_prov:sp006_wf_378f8ks8kd", other_attributes=(
     ("prov:label", "Waveform Trace"),
     ("prov:type", "seis_prov:waveform_trace"),
-    ("seis_prov:station_id", "BW.FURT.00.BHZ"),
-    ("seis_prov:starttime",
+    ("seis_prov:seed_id", "BW.FURT.00.BHZ"),
+    ("seis_prov:start_time",
      prov.model.Literal(datetime(2013, 1, 2, 12, 10, 11),
                         prov.constants.XSD_DATETIME)),
     ("seis_prov:number_of_samples",
@@ -79,8 +79,8 @@ decimate = pr.activity("seis_prov:sp007_dc_f87sf7sf78", other_attributes=(
 trace_4 = pr.entity("seis_prov:sp008_wf_jadz89du8l", other_attributes=(
     ("prov:label", "Waveform Trace"),
     ("prov:type", "seis_prov:waveform_trace"),
-    ("seis_prov:station_id", "BW.FURT.00.BHZ"),
-    ("seis_prov:starttime",
+    ("seis_prov:seed_id", "BW.FURT.00.BHZ"),
+    ("seis_prov:start_time",
      prov.model.Literal(datetime(2013, 1, 2, 12, 10, 11),
                         prov.constants.XSD_DATETIME)),
     ("seis_prov:number_of_samples",
