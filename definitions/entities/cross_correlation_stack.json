@@ -14,7 +14,7 @@
             "example_value": "Phase Cross Correlation"
         },
         {
-            "name": "correlation_type",
+            "name": "correlation_count",
             "types": ["xsd:positiveInteger"],
             "description": "The number of cross correlations used to calculate the stack.",
             "required": false,
