@@ -22,22 +22,24 @@ activities are used. For an entity or activity to be considered part of
    In addition to being part of the ``SEIS-PROV`` namespace all ids must
    validate against this regular expression:
 
-   ``^\d{{3,5}}_[a-z]{{2}}_[a-z0-9]{{7,12}}$``
+   ``^sp\d{{3,5}}_[a-z]{{2}}_[a-z0-9]{{7,12}}$``
 
    Examples are:
 
-       * ``001_wf_f84fb9a``
-       * ``027_bs_ea78b46``
+       * ``sp001_wf_f84fb9a``
+       * ``sp027_bs_ea78b46``
 
    An id thus consists of three parts delimited by underscores with the
    goal of attaining a fairly short but still slightly descriptive
    identifier:
 
-   A. A 3 to 5 digit zero padded number. This is intended to further
-      illustrate the sequence of processing steps and events. ``001`` for
-      example is the first step in a processing chain, whereas ``017`` is
-      the seventeenth step. This is not enforced anywhere but nice to have
-      so users are encouraged to adopt this.
+   A. A 3 to 5 digit zero padded number prefixed with ``sp``. This is intended
+      to further illustrate the sequence of processing steps and events.
+      ``001`` for example is the first step in a processing chain, whereas
+      ``017`` is the seventeenth step. This is not enforced anywhere but nice
+      to have so users are encouraged to adopt this. The ``sp`` prefix is
+      needed to provide a valid qualified name attribute according the XML
+      specification and stands for ``SEIS-PROV``.
    B. A two letter code depending on the type of entity or activity. This
       is enforced and part of the ``SEIS-PROV`` definition. Please see the
       definition of each node for the corresponding two letter code.

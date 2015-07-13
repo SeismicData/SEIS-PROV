@@ -40,7 +40,7 @@ pr.add_namespace(*NS_SEIS)
 
 
 TEMPLATE = (BASIC_HEADER + """\n\n
-pr.{type}("{prefix}:001_{two_letter_code}_{short_hash}", other_attributes=((
+pr.{type}("{prefix}:sp001_{two_letter_code}_{short_hash}", other_attributes=((
     ("prov:label", "{label}"),
     ("prov:type", "{prefix}:{name}"),
 {contents}
