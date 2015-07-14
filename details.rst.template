@@ -66,14 +66,6 @@ identifier:
    ids.
 
 
-Agents
-------
-
-One is free to use any agent as long as they are valid according to the W3C
-PROV specification. If an agent is under the ``SEIS-PROV`` namespace, a couple
-of additional constraints apply. These are intended to enforce a certain
-minimum amount of information.
-
 
 2. It must have a certain ``prov:type`` depending on the precise activity or
    entity. Please see the detailed definitions further down for examples.
@@ -91,6 +83,24 @@ minimum amount of information.
    namespace.
 
 6. The types of all required and optional attributes must match the definition.
+
+-----
+
+Agents
+------
+
+One is free to use any agent as long as they are valid according to the W3C
+PROV specification. If an agent is under the ``SEIS-PROV`` namespace, a couple
+of additional constraints apply. These are intended to enforce a certain
+minimum amount of information.
+
+
+.. contents::
+    :local:
+    :depth: 1
+
+
+{agents}
 
 -----
 

@@ -23,6 +23,7 @@ current_dir = os.path.dirname(os.path.abspath(inspect.getfile(
     inspect.currentframe())))
 
 definitions_dir = os.path.join(current_dir, "definitions")
+agent_dir = os.path.join(definitions_dir, "agents")
 entity_dir = os.path.join(definitions_dir, "entities")
 activity_dir = os.path.join(definitions_dir, "activities")
 schema_filename = os.path.abspath(

@@ -9,7 +9,7 @@ import sys
 sys.path.append(".")
 
 from header import (NS_PREFIX, NS_URL, get_filename,
-                    current_dir, activity_dir, entity_dir)  # NOQA
+                    current_dir, activity_dir, entity_dir, agent_dir)  # NOQA
 
 with io.open(os.path.join(current_dir, "details.rst.template"), "rt") as fh:
     DETAILS_TEMPLATE = fh.read()
@@ -167,6 +167,11 @@ def json_files(folder):
 
 
 def create_details_rst():
+    agents = []
+    for filename in json_files(folder=agent_dir):
+        agents.append(create_rst_representation(filename))
+    agents = "\n\n\n".join(agents)
+
     entities = []
     for filename in json_files(folder=entity_dir):
         entities.append(create_rst_representation(filename))
@@ -181,7 +186,8 @@ def create_details_rst():
             as fh:
         fh.write(DETAILS_TEMPLATE.format(
             entities=entities,
-            activities=activities))
+            activities=activities,
+            agents=agents))
 
 
 def make_table(lines, prefix):
@@ -223,7 +229,12 @@ def create_rst_representation(json_file):
             ", ".join("``%s``" % _i for _i in attrib["types"]),
             attrib["description"]))
 
-    title = "%s" % (data["label"])
+    if data["name"] == "person":
+        title = "Person"
+    elif data["name"] == "software_agent":
+        title = "Software Agent"
+    else:
+        title = "%s" % (data["label"])
 
     text = TEMPLATE.format(
         title=title,
