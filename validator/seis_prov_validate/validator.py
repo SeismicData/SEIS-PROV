@@ -20,6 +20,7 @@ import os
 import re
 import six
 from six.moves.urllib.parse import urlparse
+import warnings
 import sys
 
 import jsonschema
@@ -35,22 +36,97 @@ _SEIS_PROV_SCHEMA = os.path.join(_DIR, "schemas", "seis_prov.json")
 
 SEIS_PROV_NAMESPACE = "http://seisprov.org/seis_prov/0.1/#"
 
+# Caches to speed up repeated runs.
+__JSON_SCHEMA_CACHE = []
+
+
+def _check_json_schema():
+    """
+    Validate the JSON schema itself to avoid silly errors. Only done once to
+    speedup successive calls.
+    """
+    if not __JSON_SCHEMA_CACHE:
+        with io.open(_SEIS_PROV_SCHEMA, "rt") as fh:
+            schema = json.load(fh)
+
+        jsonschema.Draft4Validator.check_schema(schema)
+        __JSON_SCHEMA_CACHE.append(schema)
+
+    return __JSON_SCHEMA_CACHE[0]
+
+
+class SeisProvValidationException(Exception):
+    def __init__(self, message):
+        self.message = message
+
+
+class SeisProvValidationWarning(UserWarning):
+    pass
+
 
 def _log_error(message):
     """
     Print the message to stdout and exit with a non-zero exit code.
     """
-    sys.exit(message)
+    raise SeisProvValidationException(message)
 
 
 def _log_warning(message):
     """
     Print the message to stdout
     """
-    print("WARNING:", message)
+    warnings.warn(message, SeisProvValidationWarning)
+
+
+class SeisProvValidationResult(object):
+    def __init__(self, errors, warnings):
+        self.errors = errors
+        self.warnings = warnings
+
+    @property
+    def is_valid(self):
+        return not bool(self.errors)
+
+    def __str__(self):
+        ret_str = ""
+        for error in self.errors:
+            ret_str += "%s\n" % error
+        for warning in self.warnings:
+            ret_str += "WARNING: %s\n" % warning
+        if self.is_valid:
+            ret_str += "VALID SEIS-PROV FILE!"
+        return ret_str.strip()
 
 
 def validate(filename):
+    """
+    Validate a given SEIS-PROV file.
+
+    :param filename: The filename to validate.
+    """
+    errors = []
+    warns = []
+
+    with warnings.catch_warnings(record=True) as w:
+        warnings.resetwarnings()
+        warnings.simplefilter("always")
+
+        try:
+            _validate(filename)
+        except SeisProvValidationException as e:
+            errors.append(e.message)
+
+    for warn in w:
+        warn = warn.message
+        if not isinstance(warn, SeisProvValidationWarning):
+            continue
+        warns.append(warn.args[0])
+
+    return SeisProvValidationResult(errors=errors,
+                                    warnings=warns)
+
+
+def _validate(filename):
     # Start with the very basic checks. Check if the file exists.
     if not os.path.exists(filename):
         _log_error("Path '%s' does not exist." % filename)
@@ -267,18 +343,6 @@ def _validate_against_xsd_scheme(doc):
                    str(i) for i in xml_schema.error_log))
 
 
-def _check_json_schema():
-    """
-    Validate the JSON schema itself to avoid silly errors.
-    """
-    with io.open(_SEIS_PROV_SCHEMA, "rt") as fh:
-        schema = json.load(fh)
-
-    jsonschema.Draft4Validator.check_schema(schema)
-
-    return schema
-
-
 def main():
     parser = argparse.ArgumentParser(
         description="Validator for SEIS-PROV files.")
@@ -287,9 +351,10 @@ def main():
 
     filename = args.filename
 
-    validate(filename)
-
-    print("Valid SEIS-PROV File!")
+    result = validate(filename)
+    print(result)
+    if not result.is_valid:
+        sys.exit(1)
 
 
 if __name__ == "__main__":
