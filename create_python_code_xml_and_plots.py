@@ -23,7 +23,7 @@ import sys
 sys.path.append(".")
 
 from header import (NS_PREFIX, NS_URL, definitions_dir, json_files,
-                    get_filename, examples_dir) # NOQA
+                    get_filename, examples_dir)  # NOQA
 
 BASIC_HEADER = """
 import prov
@@ -119,7 +119,11 @@ def generate_code():
             prefix=NS_PREFIX,
             type=definition["type"],
             two_letter_code=definition["two_letter_code"],
-            short_hash=str(uuid.uuid4()).replace("-", "")[:7],
+            # Generate hash that is constant per type so the examples don't
+            # change each time they are regenerated.
+            short_hash=str(uuid.uuid5(uuid.NAMESPACE_OID, definition["type"] +
+                                      definition["two_letter_code"] +
+                                      "min_file")).replace("-", "")[:7],
             label=label,
             name=name,
             contents=contents)
@@ -154,7 +158,11 @@ def generate_code():
             prefix=NS_PREFIX,
             type=definition["type"],
             two_letter_code=definition["two_letter_code"],
-            short_hash=str(uuid.uuid4()).replace("-", "")[:7],
+            # Generate hash that is constant per type so the examples don't
+            # change each time they are regenerated.
+            short_hash=str(uuid.uuid5(uuid.NAMESPACE_OID, definition["type"] +
+                                      definition["two_letter_code"] +
+                                      "max_file")).replace("-", "")[:7],
             label=label,
             name=name,
             url=NS_URL,
