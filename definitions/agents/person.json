@@ -18,7 +18,7 @@
             "name": "email",
             "types": ["xsd:string"],
             "description": "The email address of the person.",
-            "pattern": "[^@]+@[^@]+\.[^@]+",
+            "pattern": "[^@]+@[^@]+\\.[^@]+",
             "required": false,
             "example_value": "susanna.musterfrau@email.com"
         }

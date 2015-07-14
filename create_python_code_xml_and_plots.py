@@ -26,7 +26,7 @@ from header import (NS_PREFIX, NS_URL, definitions_dir, json_files,
                     get_filename, examples_dir) # NOQA
 
 BASIC_HEADER = """
-import prov.constants
+import prov
 import prov.model
 
 NS_PREFIX = "{prefix}"
@@ -42,7 +42,7 @@ pr.add_namespace(*NS_SEIS)
 TEMPLATE = (BASIC_HEADER + """\n\n
 pr.{type}("{prefix}:sp001_{two_letter_code}_{short_hash}", other_attributes=((
     ("prov:label", "{label}"),
-    ("prov:type", "{prefix}:{name}"),
+    ("prov:type", {name}),
 {contents}
 )))
 """).strip()
@@ -95,13 +95,33 @@ def generate_code():
         contents = ",\n    ".join(contents)
         if contents:
             contents = "    " + contents
+
+        if definition["type"] in ["activity", "entity"]:
+            name = '"%s:%s"' % (NS_PREFIX, definition["name"])
+            label = definition["label"]
+        elif definition["type"] == "agent":
+            if definition["name"] == "software_agent":
+                name = ('prov.identifier.QualifiedName(prov.constants.PROV, '
+                        '"SoftwareAgent")')
+                label = [_i for _i in definition["attributes"]
+                         if _i["name"] == "software_name"][0]["example_value"]
+            elif definition["name"] == "person":
+                name = ('prov.identifier.QualifiedName(prov.constants.PROV, '
+                        '"Person")')
+                label = [_i for _i in definition["attributes"]
+                         if _i["name"] == "name"][0]["example_value"]
+            else:
+                raise ValueError
+        else:
+            raise ValueError
+
         min_file_contents = TEMPLATE.format(
             prefix=NS_PREFIX,
             type=definition["type"],
             two_letter_code=definition["two_letter_code"],
             short_hash=str(uuid.uuid4()).replace("-", "")[:7],
-            label=definition["label"],
-            name=definition["name"],
+            label=label,
+            name=name,
             contents=contents)
         with open(get_filename(filename, node_type, "py", "min"), "wt") as fh:
             fh.write(min_file_contents)
@@ -118,7 +138,7 @@ def generate_code():
             if d_type == "xsd:string":
                 contents.append('("%s:%s", "%s")' % (
                     NS_PREFIX, attrib["name"], attrib["example_value"]))
-            # Others harders as they have to be represented as literals.
+            # Others harder as they have to be represented as literals.
             else:
                 contents.append(
                     '("{prefix}:{name}", prov.model.Literal(\n'
@@ -135,8 +155,8 @@ def generate_code():
             type=definition["type"],
             two_letter_code=definition["two_letter_code"],
             short_hash=str(uuid.uuid4()).replace("-", "")[:7],
-            label=definition["label"],
-            name=definition["name"],
+            label=label,
+            name=name,
             url=NS_URL,
             contents=contents)
         with open(get_filename(filename, node_type, "py", "max"), "wt") as fh:

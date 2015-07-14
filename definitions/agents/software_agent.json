@@ -35,6 +35,6 @@
             "description": "The digital object identifier for the software.",
             "required": false,
             "example_value": "10.5281/zenodo.17641"
-        },
+        }
     ]
 }

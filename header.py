@@ -39,7 +39,7 @@ def get_filename(filename, node_type, file_type, min_or_max=None):
     file_type = file_type.lower()
     min_or_max = min_or_max.lower() if min_or_max else None
 
-    assert node_type in ["activities", "entities", "examples"]
+    assert node_type in ["activities", "entities", "agents", "examples"]
     assert file_type in ["xml", "dot", "py", "json", "provn"]
     assert min_or_max in ["min", "max", None]
 

@@ -72,7 +72,8 @@ def validate():
 
     collective_definition = {
         "entities": {},
-        "activities": {}}
+        "activities": {},
+        "agents": {}}
 
     for filename in json_files(folder=definitions_dir,
                                exclude_filenames=[schema_filename]):
@@ -92,7 +93,13 @@ def validate():
                 "File '%s': 'name' attribute '%s' does not correspond to the "
                 "filename." % (os.path.relpath(filename), data["name"]))
 
-        expected_label = " ".join([_i.capitalize() for _i in name.split("_")])
+        # Agents have an arbitrary label. Other record types not.
+        if data["type"] == "agent":
+            expected_label = "*"
+        else:
+            expected_label = " ".join([_i.capitalize()
+                                       for _i in name.split("_")])
+
         if expected_label != data["label"]:
             raise ValidationError(
                 "File '%s': 'label' attribute '%s' is not equal "
@@ -108,6 +115,8 @@ def validate():
             key = "entities"
         elif data["type"] == "activity":
             key = "activities"
+        elif data["type"] == "agent":
+            key = "agents"
         else:
             raise NotImplementedError
         collective_definition[key][data["name"]] = data

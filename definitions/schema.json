@@ -11,7 +11,7 @@
     "type": {
       "id": "http://seisprov.org/internal_type_def/type",
       "type": "string",
-      "enum": ["entity", "activity"]
+      "enum": ["entity", "activity", "agent"]
     },
     "name": {
       "id": "http://seisprov.org/internal_type_def/name",
@@ -26,7 +26,7 @@
     "label": {
       "id": "http://seisprov.org/internal_type_def/label",
       "type": "string",
-      "pattern": "^[a-zA-Z ]{3,}$"
+      "pattern": "^[a-zA-Z ]{3,}$|\\*"
     },
     "description": {
       "id": "http://seisprov.org/internal_type_def/description",
