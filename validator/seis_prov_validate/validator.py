@@ -26,6 +26,8 @@ import sys
 import jsonschema
 from lxml import etree
 import prov
+import prov.constants
+import prov.identifier
 
 # Directory of the file.
 _DIR = os.path.dirname(
@@ -39,6 +41,10 @@ SEIS_PROV_NAMESPACE = "http://seisprov.org/seis_prov/0.1/#"
 # Caches to speed up repeated runs.
 __JSON_SCHEMA_CACHE = []
 __XSD_SCHEMA_CACHE = []
+
+_PERSON = prov.identifier.QualifiedName(prov.constants.PROV, "Person")
+_SOFTWARE_AGENT = prov.identifier.QualifiedName(prov.constants.PROV,
+                                                "SoftwareAgent")
 
 
 def _check_json_schema():
@@ -174,30 +180,71 @@ def _validate_prov_bundle(doc, json_schema, ns):
 
     json_schema_map = {
         prov.model.PROV_ENTITY: json_schema["entities"],
-        prov.model.PROV_ACTIVITY: json_schema["activities"]}
+        prov.model.PROV_ACTIVITY: json_schema["activities"],
+        prov.model.PROV_AGENT: json_schema["agents"]}
 
     for record in doc._records:
+        # I don't fully understand what the prov API intends to do with two
+        # sets of attributes so we just create a union of them here.
         attrs = list(set(record.attributes).union(record.extra_attributes))
 
-        # Find the prov type.
-        prov_type = [i for i in attrs if
-                     i[0] == prov.model.PROV_TYPE
-                     and isinstance(i[1], six.string_types)
-                     and i[1].startswith("%s:" % ns.prefix)]
-        if not prov_type:
-            continue
-        elif len(prov_type) > 1:
+        # Find the prov type
+        prov_type = [i[1] for i in attrs if i[0] == prov.model.PROV_TYPE]
+        if len(prov_type) > 1:
             _log_error("Record '%s' has %i prov:type's set. Only one is "
                        "allowed" % (str(record.identifier), len(prov_type)))
-        prov_type = assert_ns_and_extract(prov_type[0][1], ns)
 
-        # Now the identifier must also be part of the seis prov namespace.
-        # lives in the prov-type namespace.
-        if record.identifier.namespace != ns:
-            _log_error("The identifier of record '%s' is not in the SEIS-PROV "
-                       "namespace" % str(record.identifier))
+        # Figure out if its id lives in the SEIS-PROV namespace.
+        id_in_seis_prov_ns = record.identifier.namespace == ns
+
+        if not prov_type:
+            # If the id is in the SEIS-PROV namespace, it must have a
+            # prov_type.
+            if id_in_seis_prov_ns:
+                _log_error("Record '%s' has an id in the SEIS-PROV namespace "
+                           "but no prov:type attribute. This is not allowed."
+                           % str(record.identifier))
+            continue
+        prov_type = prov_type[0]
+
+        # If neither the prov type nor the id are in the SEIS-PROV namespace it
+        # is not part of SEIS-PROV and so we don't validate it.
+        if prov_type.namespace != ns and not id_in_seis_prov_ns:
+            continue
+
+        # Now we need to deal with a couple of different failure cases.
+        if prov_type.namespace == ns:
+            # 1. It's prov_type is in the seis_prov namespace but the id is
+            #    not. This is not valid.
+            if not id_in_seis_prov_ns:
+                _log_error("Record '%s' has a prov:type attribute in the "
+                           "SEIS-PROV namespace but its id is not part of the "
+                           "namespace. This is not allowed." %
+                           (str(record.identifier)))
+        else:
+            # 2. If the prov type is not in the SEIS-PROV namespace but the id
+            #    is, then it must either be a software agent or a person.
+            #    Anything else is not allowed.
+            if id_in_seis_prov_ns:
+                if prov_type not in (_PERSON, _SOFTWARE_AGENT):
+                    _log_error(
+                        "Record '%s' has an id in the SEIS-PROV namespace "
+                        "but its prov:type is neither in the SEIS-PROV "
+                        "namespace not is it a person or a software agent."
+                        " This is not allowed.")
+            else:
+                # This should not be able to happen as we check for this
+                # combination a bit further up the code.
+                raise NotImplementedError
 
         rec_type = record.get_type()
+
+        if prov_type == _PERSON:
+            prov_type = "person"
+        elif prov_type == _SOFTWARE_AGENT:
+            prov_type = "software_agent"
+        else:
+            prov_type = assert_ns_and_extract(prov_type, ns)
 
         if rec_type not in json_schema_map:
             _log_error("%s not a record type that is valid for SEIS-PROV." %
@@ -212,13 +259,6 @@ def _validate_prov_bundle(doc, json_schema, ns):
 
         count += 1
 
-        # First up, validate the id.
-        regex = r"^sp\d{3,5}_%s_[a-z0-9]{7,12}$" % \
-            definition["two_letter_code"]
-        if re.match(regex, record.identifier.localpart) is None:
-            _log_error("Identifier '%s' does not match the regular expression "
-                       "'%s'." % (record.identifier.localpart, regex))
-
         # Validate the label.
         prov_label = [i for i in attrs if i[0] == prov.model.PROV_LABEL]
         if not prov_label:
@@ -228,7 +268,9 @@ def _validate_prov_bundle(doc, json_schema, ns):
             _log_error("Record '%s' has %i prov:label's set. Only one is "
                        "allowed" % (str(record.identifier), len(prov_label)))
         prov_label = prov_label[0][1]
-        if definition["label"] != prov_label:
+
+        # '*' is a special label for agents.
+        if definition["label"] != "*" and definition["label"] != prov_label:
             _log_error("Record '%s' has label '%s' instead of '%s'." % (
                        str(record.identifier), prov_label,
                        definition["label"]))
