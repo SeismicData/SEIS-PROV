@@ -1,0 +1,28 @@
+{
+    "activity": {
+        "seis_prov:sp001_bs_b004b51": {
+            "prov:type": "seis_prov:bandstop_filter",
+            "seis_prov:filter_type": "Butterworth",
+            "seis_prov:filter_order": {
+                "$": "2",
+                "type": "xsd:positiveInteger"
+            },
+            "seis_prov:number_of_passes": {
+                "$": "1",
+                "type": "xsd:positiveInteger"
+            },
+            "seis_prov:lower_corner_frequency": {
+                "$": 5.0,
+                "type": "xsd:double"
+            },
+            "seis_prov:uppoer_corner_frequency": {
+                "$": 15.0,
+                "type": "xsd:double"
+            },
+            "prov:label": "Bandstop Filter"
+        }
+    },
+    "prefix": {
+        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
+    }
+}

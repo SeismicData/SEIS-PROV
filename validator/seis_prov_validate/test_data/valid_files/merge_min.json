@@ -1,0 +1,12 @@
+{
+    "activity": {
+        "seis_prov:sp001_mg_1c1ca74": {
+            "prov:type": "seis_prov:merge",
+            "seis_prov:merging_strategy": "discard overlaps",
+            "prov:label": "Merge"
+        }
+    },
+    "prefix": {
+        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
+    }
+}

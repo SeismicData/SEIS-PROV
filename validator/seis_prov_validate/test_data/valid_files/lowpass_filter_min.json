@@ -1,0 +1,12 @@
+{
+    "activity": {
+        "seis_prov:sp001_lp_a0a7b38": {
+            "prov:type": "seis_prov:lowpass_filter",
+            "seis_prov:filter_type": "Butterworth",
+            "prov:label": "Lowpass Filter"
+        }
+    },
+    "prefix": {
+        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
+    }
+}

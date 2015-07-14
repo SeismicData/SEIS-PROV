@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<prov:document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:seis_prov="http://seisprov.org/seis_prov/0.1/#">
+  <prov:activity prov:id="seis_prov:sp001_ip_450ad8a">
+    <prov:label>Interpolate</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:interpolate</prov:type>
+    <seis_prov:interpolation_method>cubic spline</seis_prov:interpolation_method>
+    <seis_prov:new_number_of_samples xsi:type="xsd:positiveInteger">5000</seis_prov:new_number_of_samples>
+    <seis_prov:new_sampling_rate xsi:type="xsd:double">10.0</seis_prov:new_sampling_rate>
+    <seis_prov:new_start_time xsi:type="xsd:dateTime">2012-04-23T18:25:43.511000+00:00</seis_prov:new_start_time>
+  </prov:activity>
+</prov:document>

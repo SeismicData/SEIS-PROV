@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<prov:document xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:seis_prov="http://seisprov.org/seis_prov/0.1/#" xmlns:prov="http://www.w3.org/ns/prov#">
-  <prov:person prov:id="seis_prov:sp001_pp_0c83e82">
+<prov:document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:seis_prov="http://seisprov.org/seis_prov/0.1/#">
+  <prov:person prov:id="seis_prov:sp001_pp_18a80fa">
     <prov:label>Susanna Musterfrau</prov:label>
     <seis_prov:email>susanna.musterfrau@email.com</seis_prov:email>
     <seis_prov:name>Susanna Musterfrau</seis_prov:name>

@@ -1,0 +1,83 @@
+{
+    "entity": {
+        "seis_prov:sp001_wf_a34j4didj3": {
+            "prov:type": "seis_prov:waveform_trace",
+            "prov:label": "Waveform Trace"
+        },
+        "seis_prov:sp005_wf_378f8ks8kd": {
+            "prov:type": "seis_prov:waveform_trace",
+            "prov:label": "Waveform Trace"
+        },
+        "seis_prov:sp003_wf_js83hf34aj": {
+            "prov:type": "seis_prov:waveform_trace",
+            "prov:label": "Waveform Trace"
+        },
+        "seis_prov:sp007_wf_jude89du8l": {
+            "prov:type": "seis_prov:waveform_trace",
+            "prov:label": "Waveform Trace"
+        }
+    },
+    "wasGeneratedBy": {
+        "_:id4": {
+            "prov:entity": "seis_prov:sp003_wf_js83hf34aj",
+            "prov:activity": "seis_prov:sp002_dt_f87sf7sf78"
+        },
+        "_:id5": {
+            "prov:entity": "seis_prov:sp005_wf_378f8ks8kd",
+            "prov:activity": "seis_prov:sp004_lp_f87sf7sf78"
+        },
+        "_:id6": {
+            "prov:entity": "seis_prov:sp007_wf_jude89du8l",
+            "prov:activity": "seis_prov:sp006_dc_f87sf7sf78"
+        }
+    },
+    "prefix": {
+        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
+    },
+    "used": {
+        "_:id3": {
+            "prov:entity": "seis_prov:sp005_wf_378f8ks8kd",
+            "prov:activity": "seis_prov:sp006_dc_f87sf7sf78"
+        },
+        "_:id2": {
+            "prov:entity": "seis_prov:sp003_wf_js83hf34aj",
+            "prov:activity": "seis_prov:sp004_lp_f87sf7sf78"
+        },
+        "_:id1": {
+            "prov:entity": "seis_prov:sp001_wf_a34j4didj3",
+            "prov:activity": "seis_prov:sp002_dt_f87sf7sf78"
+        }
+    },
+    "activity": {
+        "seis_prov:sp006_dc_f87sf7sf78": {
+            "prov:type": "seis_prov:decimate",
+            "seis_prov:factor": {
+                "$": 2,
+                "type": "xsd:int"
+            },
+            "prov:label": "Decimate"
+        },
+        "seis_prov:sp004_lp_f87sf7sf78": {
+            "prov:type": "seis_prov:lowpass_filter",
+            "seis_prov:filter_type": "Butterworth",
+            "prov:label": "Lowpass Filter",
+            "seis_prov:filter_order": {
+                "$": 4,
+                "type": "xsd:int"
+            },
+            "seis_prov:corner_frequency": {
+                "$": 10.0,
+                "type": "xsd:double"
+            },
+            "seis_prov:number_of_passes": {
+                "$": 1,
+                "type": "xsd:int"
+            }
+        },
+        "seis_prov:sp002_dt_f87sf7sf78": {
+            "prov:type": "seis_prov:detrend",
+            "seis_prov:detrending_method": "demean",
+            "prov:label": "Detrend"
+        }
+    }
+}

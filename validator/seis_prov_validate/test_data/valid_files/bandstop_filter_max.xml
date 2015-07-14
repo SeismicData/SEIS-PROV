@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<prov:document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:seis_prov="http://seisprov.org/seis_prov/0.1/#">
+  <prov:activity prov:id="seis_prov:sp001_bs_b004b51">
+    <prov:label>Bandstop Filter</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:bandstop_filter</prov:type>
+    <seis_prov:filter_order xsi:type="xsd:positiveInteger">2</seis_prov:filter_order>
+    <seis_prov:filter_type>Butterworth</seis_prov:filter_type>
+    <seis_prov:lower_corner_frequency xsi:type="xsd:double">5.0</seis_prov:lower_corner_frequency>
+    <seis_prov:number_of_passes xsi:type="xsd:positiveInteger">1</seis_prov:number_of_passes>
+    <seis_prov:uppoer_corner_frequency xsi:type="xsd:double">15.0</seis_prov:uppoer_corner_frequency>
+  </prov:activity>
+</prov:document>

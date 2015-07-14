@@ -1,0 +1,19 @@
+{
+    "activity": {
+        "seis_prov:sp001_ct_aae73f2": {
+            "seis_prov:new_start_time": {
+                "$": "2012-04-23T18:25:43.511000+00:00",
+                "type": "xsd:dateTime"
+            },
+            "seis_prov:new_end_time": {
+                "$": "2012-04-23T20:25:43.511000+00:00",
+                "type": "xsd:dateTime"
+            },
+            "prov:type": "seis_prov:cut",
+            "prov:label": "Cut"
+        }
+    },
+    "prefix": {
+        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
+    }
+}

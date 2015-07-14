@@ -1,0 +1,11 @@
+{
+    "activity": {
+        "seis_prov:sp001_ct_e73ced0": {
+            "prov:type": "seis_prov:cut",
+            "prov:label": "Cut"
+        }
+    },
+    "prefix": {
+        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
+    }
+}

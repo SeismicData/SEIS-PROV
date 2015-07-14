@@ -1,0 +1,104 @@
+{
+    "activity": {
+        "seis_prov:sp004_co_f87sf7sf78": {
+            "seis_prov:max_lag_time_in_sec": {
+                "$": 120.0,
+                "type": "xsd:double"
+            },
+            "prov:type": "seis_prov:cross_correlate",
+            "seis_prov:correlation_type": "Phase Cross Correlation",
+            "prov:label": "Cross Correlate"
+        }
+    },
+    "wasGeneratedBy": {
+        "_:id4": {
+            "prov:entity": "seis_prov:sp005_cc_utakgh82hl",
+            "prov:activity": "seis_prov:sp004_co_f87sf7sf78"
+        }
+    },
+    "wasAssociatedWith": {
+        "_:id1": {
+            "prov:agent": "seis_prov:sp001_sa_9dig8ata",
+            "prov:activity": "seis_prov:sp004_co_f87sf7sf78"
+        }
+    },
+    "entity": {
+        "seis_prov:sp002_wf_a34j4didj3": {
+            "seis_prov:units": "m/s",
+            "seis_prov:number_of_samples": {
+                "$": 6000,
+                "type": "xsd:int"
+            },
+            "prov:type": "seis_prov:waveform_trace",
+            "seis_prov:start_time": {
+                "$": "2013-01-02T12:10:11",
+                "type": "xsd:dateTime"
+            },
+            "seis_prov:sampling_rate": {
+                "$": 100.0,
+                "type": "xsd:double"
+            },
+            "seis_prov:seed_id": "BW.FURT.00.BHZ",
+            "prov:label": "Waveform Trace"
+        },
+        "seis_prov:sp003_wf_0034aiddj8": {
+            "seis_prov:units": "m/s",
+            "seis_prov:number_of_samples": {
+                "$": 6000,
+                "type": "xsd:int"
+            },
+            "prov:type": "seis_prov:waveform_trace",
+            "seis_prov:start_time": {
+                "$": "2013-01-02T12:10:11",
+                "type": "xsd:dateTime"
+            },
+            "seis_prov:sampling_rate": {
+                "$": 100.0,
+                "type": "xsd:double"
+            },
+            "seis_prov:seed_id": "BW.ALTM..BHZ",
+            "prov:label": "Waveform Trace"
+        },
+        "seis_prov:sp005_cc_utakgh82hl": {
+            "seis_prov:seed_id_a": "BW.FURT.00.BHZ",
+            "seis_prov:correlation_type": "Phase Cross Correlation",
+            "prov:type": "seis_prov:cross_correlation",
+            "seis_prov:max_lag_time_in_sec": {
+                "$": 120.0,
+                "type": "xsd:double"
+            },
+            "seis_prov:seed_id_b": "BW.ALTM..BHZ",
+            "prov:label": "Cross Correlation",
+            "seis_prov:max_correlation_coefficient": {
+                "$": 0.75,
+                "type": "xsd:double"
+            }
+        }
+    },
+    "agent": {
+        "seis_prov:sp001_sa_9dig8ata": {
+            "seis_prov:website": "http://www.obspy.org",
+            "prov:type": {
+                "$": "prov:SoftwareAgent",
+                "type": "prov:QualifiedName"
+            },
+            "seis_prov:software_version": "0.10.1",
+            "seis_prov:doi": "10.1785/gssrl.81.3.530",
+            "seis_prov:software_name": "ObsPy",
+            "prov:label": "ObsPy"
+        }
+    },
+    "prefix": {
+        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
+    },
+    "used": {
+        "_:id3": {
+            "prov:entity": "seis_prov:sp003_wf_0034aiddj8",
+            "prov:activity": "seis_prov:sp004_co_f87sf7sf78"
+        },
+        "_:id2": {
+            "prov:entity": "seis_prov:sp002_wf_a34j4didj3",
+            "prov:activity": "seis_prov:sp004_co_f87sf7sf78"
+        }
+    }
+}

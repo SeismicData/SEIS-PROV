@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<prov:document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:seis_prov="http://seisprov.org/seis_prov/0.1/#">
+  <prov:entity prov:id="seis_prov:sp001_as_ff956c5">
+    <prov:label>Adjoint Source</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:adjoint_source</prov:type>
+    <seis_prov:adjoint_source_type>Time Frequency Phase</seis_prov:adjoint_source_type>
+    <seis_prov:adjoint_source_type_uri xsi:type="xsd:anyURI">http://dx.doi.org/10.1111/j.1365-246X.2009.04368.x</seis_prov:adjoint_source_type_uri>
+    <seis_prov:azimuth xsi:type="xsd:double">90.0</seis_prov:azimuth>
+    <seis_prov:dip xsi:type="xsd:double">0.0</seis_prov:dip>
+    <seis_prov:elevation_in_m xsi:type="xsd:double">658.0</seis_prov:elevation_in_m>
+    <seis_prov:latitude xsi:type="xsd:double">48.0</seis_prov:latitude>
+    <seis_prov:local_depth_in_m xsi:type="xsd:double">0.0</seis_prov:local_depth_in_m>
+    <seis_prov:longitude xsi:type="xsd:double">12.1</seis_prov:longitude>
+    <seis_prov:misfit_value xsi:type="xsd:double">0.08</seis_prov:misfit_value>
+    <seis_prov:number_of_samples xsi:type="xsd:positiveInteger">20000</seis_prov:number_of_samples>
+    <seis_prov:orientation>N</seis_prov:orientation>
+    <seis_prov:sampling_rate xsi:type="xsd:double">20.0</seis_prov:sampling_rate>
+    <seis_prov:station_id>BW.FURT..BHZ</seis_prov:station_id>
+    <seis_prov:units>m/s</seis_prov:units>
+  </prov:entity>
+</prov:document>

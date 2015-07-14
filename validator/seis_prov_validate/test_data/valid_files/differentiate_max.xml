@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<prov:document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:seis_prov="http://seisprov.org/seis_prov/0.1/#">
+  <prov:activity prov:id="seis_prov:sp001_df_681128b">
+    <prov:label>Differentiate</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:differentiate</prov:type>
+    <seis_prov:differentiation_method>three point centered differences</seis_prov:differentiation_method>
+    <seis_prov:input_units>m</seis_prov:input_units>
+    <seis_prov:order xsi:type="xsd:positiveInteger">1</seis_prov:order>
+    <seis_prov:output_units>m/s</seis_prov:output_units>
+  </prov:activity>
+</prov:document>

@@ -1,0 +1,15 @@
+{
+    "activity": {
+        "seis_prov:sp001_pd_5936410": {
+            "seis_prov:fill_value": {
+                "$": "0.0",
+                "type": "xsd:decimal"
+            },
+            "prov:type": "seis_prov:pad",
+            "prov:label": "Pad"
+        }
+    },
+    "prefix": {
+        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
+    }
+}

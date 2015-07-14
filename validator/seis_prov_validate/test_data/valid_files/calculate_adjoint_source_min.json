@@ -1,0 +1,12 @@
+{
+    "activity": {
+        "seis_prov:sp001_ca_c7540fc": {
+            "seis_prov:adjoint_source_type": "Time Frequency Phase",
+            "prov:type": "seis_prov:calculate_adjoint_source",
+            "prov:label": "Calculate Adjoint Source"
+        }
+    },
+    "prefix": {
+        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
+    }
+}

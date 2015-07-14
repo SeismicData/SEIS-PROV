@@ -1,0 +1,15 @@
+{
+    "activity": {
+        "seis_prov:sp001_ig_a43b174": {
+            "seis_prov:order": {
+                "$": "1",
+                "type": "xsd:positiveInteger"
+            },
+            "prov:type": "seis_prov:integrate",
+            "prov:label": "Integrate"
+        }
+    },
+    "prefix": {
+        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
+    }
+}

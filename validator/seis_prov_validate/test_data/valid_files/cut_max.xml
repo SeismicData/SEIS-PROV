@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<prov:document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:seis_prov="http://seisprov.org/seis_prov/0.1/#">
+  <prov:activity prov:id="seis_prov:sp001_ct_aae73f2">
+    <prov:label>Cut</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:cut</prov:type>
+    <seis_prov:new_end_time xsi:type="xsd:dateTime">2012-04-23T20:25:43.511000+00:00</seis_prov:new_end_time>
+    <seis_prov:new_start_time xsi:type="xsd:dateTime">2012-04-23T18:25:43.511000+00:00</seis_prov:new_start_time>
+  </prov:activity>
+</prov:document>

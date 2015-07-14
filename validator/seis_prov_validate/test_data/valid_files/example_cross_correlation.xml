@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<prov:document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:seis_prov="http://seisprov.org/seis_prov/0.1/#">
+  <prov:softwareAgent prov:id="seis_prov:sp001_sa_9dig8ata">
+    <prov:label>ObsPy</prov:label>
+    <seis_prov:doi>10.1785/gssrl.81.3.530</seis_prov:doi>
+    <seis_prov:software_name>ObsPy</seis_prov:software_name>
+    <seis_prov:software_version>0.10.1</seis_prov:software_version>
+    <seis_prov:website>http://www.obspy.org</seis_prov:website>
+  </prov:softwareAgent>
+  <prov:entity prov:id="seis_prov:sp002_wf_a34j4didj3">
+    <prov:label>Waveform Trace</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:waveform_trace</prov:type>
+    <seis_prov:number_of_samples xsi:type="xsd:int">6000</seis_prov:number_of_samples>
+    <seis_prov:sampling_rate xsi:type="xsd:double">100.0</seis_prov:sampling_rate>
+    <seis_prov:seed_id>BW.FURT.00.BHZ</seis_prov:seed_id>
+    <seis_prov:start_time xsi:type="xsd:dateTime">2013-01-02T12:10:11</seis_prov:start_time>
+    <seis_prov:units>m/s</seis_prov:units>
+  </prov:entity>
+  <prov:entity prov:id="seis_prov:sp003_wf_0034aiddj8">
+    <prov:label>Waveform Trace</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:waveform_trace</prov:type>
+    <seis_prov:number_of_samples xsi:type="xsd:int">6000</seis_prov:number_of_samples>
+    <seis_prov:sampling_rate xsi:type="xsd:double">100.0</seis_prov:sampling_rate>
+    <seis_prov:seed_id>BW.ALTM..BHZ</seis_prov:seed_id>
+    <seis_prov:start_time xsi:type="xsd:dateTime">2013-01-02T12:10:11</seis_prov:start_time>
+    <seis_prov:units>m/s</seis_prov:units>
+  </prov:entity>
+  <prov:activity prov:id="seis_prov:sp004_co_f87sf7sf78">
+    <prov:label>Cross Correlate</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:cross_correlate</prov:type>
+    <seis_prov:correlation_type>Phase Cross Correlation</seis_prov:correlation_type>
+    <seis_prov:max_lag_time_in_sec xsi:type="xsd:double">120.0</seis_prov:max_lag_time_in_sec>
+  </prov:activity>
+  <prov:entity prov:id="seis_prov:sp005_cc_utakgh82hl">
+    <prov:label>Cross Correlation</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:cross_correlation</prov:type>
+    <seis_prov:correlation_type>Phase Cross Correlation</seis_prov:correlation_type>
+    <seis_prov:max_correlation_coefficient xsi:type="xsd:double">0.75</seis_prov:max_correlation_coefficient>
+    <seis_prov:max_lag_time_in_sec xsi:type="xsd:double">120.0</seis_prov:max_lag_time_in_sec>
+    <seis_prov:seed_id_a>BW.FURT.00.BHZ</seis_prov:seed_id_a>
+    <seis_prov:seed_id_b>BW.ALTM..BHZ</seis_prov:seed_id_b>
+  </prov:entity>
+  <prov:wasAssociatedWith>
+    <prov:activity prov:ref="seis_prov:sp004_co_f87sf7sf78"/>
+    <prov:agent prov:ref="seis_prov:sp001_sa_9dig8ata"/>
+  </prov:wasAssociatedWith>
+  <prov:used>
+    <prov:activity prov:ref="seis_prov:sp004_co_f87sf7sf78"/>
+    <prov:entity prov:ref="seis_prov:sp002_wf_a34j4didj3"/>
+  </prov:used>
+  <prov:used>
+    <prov:activity prov:ref="seis_prov:sp004_co_f87sf7sf78"/>
+    <prov:entity prov:ref="seis_prov:sp003_wf_0034aiddj8"/>
+  </prov:used>
+  <prov:wasGeneratedBy>
+    <prov:entity prov:ref="seis_prov:sp005_cc_utakgh82hl"/>
+    <prov:activity prov:ref="seis_prov:sp004_co_f87sf7sf78"/>
+  </prov:wasGeneratedBy>
+</prov:document>

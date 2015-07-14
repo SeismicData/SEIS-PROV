@@ -1,0 +1,20 @@
+{
+    "agent": {
+        "seis_prov:sp001_sa_3880d70": {
+            "seis_prov:website": {
+                "$": "http://obspy.org",
+                "type": "xsd:anyURI"
+            },
+            "seis_prov:software_version": "0.10.2",
+            "prov:type": {
+                "$": "prov:SoftwareAgent",
+                "type": "prov:QualifiedName"
+            },
+            "seis_prov:software_name": "ObsPy",
+            "prov:label": "ObsPy"
+        }
+    },
+    "prefix": {
+        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
+    }
+}

@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<prov:document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:seis_prov="http://seisprov.org/seis_prov/0.1/#">
+  <prov:entity prov:id="seis_prov:sp001_em_1cc94ec">
+    <prov:label>Earth Model</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:earth_model</prov:type>
+    <seis_prov:model_name>S40RTS</seis_prov:model_name>
+    <seis_prov:model_type>3D</seis_prov:model_type>
+  </prov:entity>
+</prov:document>

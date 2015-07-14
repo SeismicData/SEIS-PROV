@@ -1,0 +1,18 @@
+{
+    "activity": {
+        "seis_prov:sp001_ig_ee9c7fe": {
+            "seis_prov:order": {
+                "$": "1",
+                "type": "xsd:positiveInteger"
+            },
+            "prov:type": "seis_prov:integrate",
+            "seis_prov:input_units": "m/s",
+            "seis_prov:integration_method": "Composite trapezoidal rule.",
+            "seis_prov:output_units": "m",
+            "prov:label": "Integrate"
+        }
+    },
+    "prefix": {
+        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
+    }
+}

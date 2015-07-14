@@ -1,0 +1,15 @@
+{
+    "activity": {
+        "seis_prov:sp001_dc_354e9d6": {
+            "prov:type": "seis_prov:decimate",
+            "seis_prov:factor": {
+                "$": "5",
+                "type": "xsd:positiveInteger"
+            },
+            "prov:label": "Decimate"
+        }
+    },
+    "prefix": {
+        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
+    }
+}

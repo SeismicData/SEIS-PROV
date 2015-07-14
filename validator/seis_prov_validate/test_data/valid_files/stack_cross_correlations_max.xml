@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<prov:document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:seis_prov="http://seisprov.org/seis_prov/0.1/#">
+  <prov:activity prov:id="seis_prov:sp001_sc_a830659">
+    <prov:label>Stack Cross Correlations</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:stack_cross_correlations</prov:type>
+    <seis_prov:stacking_method>mean</seis_prov:stacking_method>
+  </prov:activity>
+</prov:document>

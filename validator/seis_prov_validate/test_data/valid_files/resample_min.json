@@ -1,0 +1,15 @@
+{
+    "activity": {
+        "seis_prov:sp001_rs_d983560": {
+            "seis_prov:new_sampling_rate": {
+                "$": 10.0,
+                "type": "xsd:double"
+            },
+            "prov:type": "seis_prov:resample",
+            "prov:label": "Resample"
+        }
+    },
+    "prefix": {
+        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
+    }
+}

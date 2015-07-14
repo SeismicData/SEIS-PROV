@@ -1,0 +1,11 @@
+{
+    "activity": {
+        "seis_prov:sp001_sr_cc1051a": {
+            "prov:type": "seis_prov:simulate_response",
+            "prov:label": "Simulate Response"
+        }
+    },
+    "prefix": {
+        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
+    }
+}

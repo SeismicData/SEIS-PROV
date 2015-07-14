@@ -1,0 +1,17 @@
+{
+    "activity": {
+        "seis_prov:sp001_tp_c0df3f9": {
+            "seis_prov:window_type": "Hanning",
+            "seis_prov:taper_width": {
+                "$": 0.05,
+                "type": "xsd:double"
+            },
+            "prov:type": "seis_prov:taper",
+            "seis_prov:side": "both",
+            "prov:label": "Taper"
+        }
+    },
+    "prefix": {
+        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
+    }
+}

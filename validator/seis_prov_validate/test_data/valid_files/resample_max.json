@@ -1,0 +1,24 @@
+{
+    "activity": {
+        "seis_prov:sp001_rs_2c36605": {
+            "seis_prov:new_sampling_rate": {
+                "$": 10.0,
+                "type": "xsd:double"
+            },
+            "prov:type": "seis_prov:resample",
+            "seis_prov:new_start_time": {
+                "$": "2012-04-23T18:25:43.511000+00:00",
+                "type": "xsd:dateTime"
+            },
+            "seis_prov:new_number_of_samples": {
+                "$": "5000",
+                "type": "xsd:positiveInteger"
+            },
+            "seis_prov:frequency_domain_window": "Hanning",
+            "prov:label": "Resample"
+        }
+    },
+    "prefix": {
+        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
+    }
+}

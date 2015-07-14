@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<prov:document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:seis_prov="http://seisprov.org/seis_prov/0.1/#">
+  <prov:activity prov:id="seis_prov:sp001_tp_c0df3f9">
+    <prov:label>Taper</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:taper</prov:type>
+    <seis_prov:side>both</seis_prov:side>
+    <seis_prov:taper_width xsi:type="xsd:double">0.05</seis_prov:taper_width>
+    <seis_prov:window_type>Hanning</seis_prov:window_type>
+  </prov:activity>
+</prov:document>

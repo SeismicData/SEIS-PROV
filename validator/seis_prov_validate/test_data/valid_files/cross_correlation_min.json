@@ -1,0 +1,12 @@
+{
+    "entity": {
+        "seis_prov:sp001_cc_22661c5": {
+            "prov:type": "seis_prov:cross_correlation",
+            "seis_prov:correlation_type": "Phase Cross Correlation",
+            "prov:label": "Cross Correlation"
+        }
+    },
+    "prefix": {
+        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
+    }
+}

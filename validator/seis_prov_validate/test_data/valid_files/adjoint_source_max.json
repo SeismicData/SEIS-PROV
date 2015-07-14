@@ -1,0 +1,55 @@
+{
+    "entity": {
+        "seis_prov:sp001_as_ff956c5": {
+            "seis_prov:orientation": "N",
+            "seis_prov:number_of_samples": {
+                "$": "20000",
+                "type": "xsd:positiveInteger"
+            },
+            "seis_prov:dip": {
+                "$": 0.0,
+                "type": "xsd:double"
+            },
+            "seis_prov:local_depth_in_m": {
+                "$": 0.0,
+                "type": "xsd:double"
+            },
+            "seis_prov:latitude": {
+                "$": 48.0,
+                "type": "xsd:double"
+            },
+            "seis_prov:azimuth": {
+                "$": 90.0,
+                "type": "xsd:double"
+            },
+            "seis_prov:longitude": {
+                "$": 12.1,
+                "type": "xsd:double"
+            },
+            "seis_prov:misfit_value": {
+                "$": 0.08,
+                "type": "xsd:double"
+            },
+            "prov:label": "Adjoint Source",
+            "seis_prov:units": "m/s",
+            "seis_prov:adjoint_source_type": "Time Frequency Phase",
+            "prov:type": "seis_prov:adjoint_source",
+            "seis_prov:adjoint_source_type_uri": {
+                "$": "http://dx.doi.org/10.1111/j.1365-246X.2009.04368.x",
+                "type": "xsd:anyURI"
+            },
+            "seis_prov:station_id": "BW.FURT..BHZ",
+            "seis_prov:elevation_in_m": {
+                "$": 658.0,
+                "type": "xsd:double"
+            },
+            "seis_prov:sampling_rate": {
+                "$": 20.0,
+                "type": "xsd:double"
+            }
+        }
+    },
+    "prefix": {
+        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
+    }
+}

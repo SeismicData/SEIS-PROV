@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<prov:document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:seis_prov="http://seisprov.org/seis_prov/0.1/#">
+  <prov:activity prov:id="seis_prov:sp001_ca_e1532cc">
+    <prov:label>Calculate Adjoint Source</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:calculate_adjoint_source</prov:type>
+    <seis_prov:adjoint_source_type>Time Frequency Phase</seis_prov:adjoint_source_type>
+    <seis_prov:adjoint_source_type_uri xsi:type="xsd:anyURI">http://dx.doi.org/10.1111/j.1365-246X.2009.04368.x</seis_prov:adjoint_source_type_uri>
+  </prov:activity>
+</prov:document>

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<prov:document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:seis_prov="http://seisprov.org/seis_prov/0.1/#">
+  <prov:entity prov:id="seis_prov:sp001_em_cb7d70a">
+    <prov:label>Earth Model</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:earth_model</prov:type>
+    <seis_prov:description>The famous S40RTS.</seis_prov:description>
+    <seis_prov:doi>10.1111/j.1365-246X.2010.04884.x</seis_prov:doi>
+    <seis_prov:model_name>S40RTS</seis_prov:model_name>
+    <seis_prov:model_type>3D</seis_prov:model_type>
+    <seis_prov:website xsi:type="xsd:anyURI">http://www.earth.lsa.umich.edu/~jritsema/research.html</seis_prov:website>
+  </prov:entity>
+</prov:document>

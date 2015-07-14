@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <prov:document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:seis_prov="http://seisprov.org/seis_prov/0.1/#">
-  <prov:person prov:id="seis_prov:sp001_pp_2458e1f">
-    <prov:label>Susanna Musterfrau</prov:label>
-    <seis_prov:name>Susanna Musterfrau</seis_prov:name>
-  </prov:person>
+  <prov:activity prov:id="seis_prov:sp001_rr_8986e38">
+    <prov:label>Remove Response</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:remove_response</prov:type>
+  </prov:activity>
 </prov:document>

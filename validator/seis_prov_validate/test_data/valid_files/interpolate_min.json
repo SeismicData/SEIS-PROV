@@ -1,0 +1,16 @@
+{
+    "activity": {
+        "seis_prov:sp001_ip_8230ff2": {
+            "seis_prov:new_sampling_rate": {
+                "$": 10.0,
+                "type": "xsd:double"
+            },
+            "seis_prov:interpolation_method": "cubic spline",
+            "prov:type": "seis_prov:interpolate",
+            "prov:label": "Interpolate"
+        }
+    },
+    "prefix": {
+        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
+    }
+}

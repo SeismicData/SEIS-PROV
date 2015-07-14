@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<prov:document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:seis_prov="http://seisprov.org/seis_prov/0.1/#">
+  <prov:activity prov:id="seis_prov:sp001_hp_6deb47f">
+    <prov:label>Highpass Filter</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:highpass_filter</prov:type>
+    <seis_prov:corner_frequency xsi:type="xsd:double">5.0</seis_prov:corner_frequency>
+    <seis_prov:filter_order xsi:type="xsd:positiveInteger">2</seis_prov:filter_order>
+    <seis_prov:filter_type>Butterworth</seis_prov:filter_type>
+    <seis_prov:number_of_passes xsi:type="xsd:positiveInteger">1</seis_prov:number_of_passes>
+  </prov:activity>
+</prov:document>

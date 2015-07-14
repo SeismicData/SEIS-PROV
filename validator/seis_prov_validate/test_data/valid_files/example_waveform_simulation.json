@@ -1,0 +1,151 @@
+{
+    "activity": {
+        "seis_prov:sp005_ws_f87sf7sf78": {
+            "prov:type": "seis_prov:waveform_simulation",
+            "prov:endTime": "2014-02-02T14:07:13",
+            "prov:startTime": "2014-02-02T12:15:03",
+            "prov:label": "Waveform Simulation"
+        }
+    },
+    "wasGeneratedBy": {
+        "_:id6": {
+            "prov:entity": "seis_prov:sp004_wf_a34j4didj3",
+            "prov:activity": "seis_prov:sp005_ws_f87sf7sf78"
+        }
+    },
+    "wasAssociatedWith": {
+        "_:id2": {
+            "prov:agent": "seis_prov:pp_other",
+            "prov:activity": "seis_prov:sp002_em_skfusjdoej"
+        },
+        "_:id1": {
+            "prov:agent": "seis_prov:sp001_sa_9dig8a-ta",
+            "prov:activity": "seis_prov:sp005_ws_f87sf7sf78"
+        }
+    },
+    "actedOnBehalfOf": {
+        "_:id3": {
+            "prov:responsible": "seis_prov:pp_me",
+            "prov:delegate": "seis_prov:sp001_sa_9dig8a-ta"
+        }
+    },
+    "entity": {
+        "seis_prov:sp002_em_skfusjdoej": {
+            "seis_prov:website": "http://random.org/model",
+            "seis_prov:model_type": "3D",
+            "prov:type": "seis_prov:earth_model",
+            "seis_prov:model_name": "Random Model",
+            "prov:label": "Earth Model"
+        },
+        "seis_prov:sp003_in_38jd89da8l": {
+            "seis_prov:NOISE_TOMOGRAPHY": {
+                "$": 0,
+                "type": "xsd:int"
+            },
+            "seis_prov:SIMULATION_TYPE": {
+                "$": 1,
+                "type": "xsd:int"
+            },
+            "seis_prov:ABSORBING_CONDITIONS": false,
+            "seis_prov:NEX_ETA": {
+                "$": 240,
+                "type": "xsd:int"
+            },
+            "prov:label": "Input Parameters",
+            "seis_prov:NPROC_ETA": {
+                "$": 5,
+                "type": "xsd:int"
+            },
+            "seis_prov:CENTER_LATITUDE_IN_DEGREES": {
+                "$": 40.0,
+                "type": "xsd:double"
+            },
+            "seis_prov:GAMMA_ROTATION_AZIMUTH": {
+                "$": 20.0,
+                "type": "xsd:double"
+            },
+            "seis_prov:GRAVITY": false,
+            "seis_prov:RECEIVERS_CAN_BE_BURIED": true,
+            "seis_prov:NEX_XI": {
+                "$": 240,
+                "type": "xsd:int"
+            },
+            "seis_prov:CENTER_LONGITUDE_IN_DEGREES": {
+                "$": 10.0,
+                "type": "xsd:double"
+            },
+            "seis_prov:NPROC_XI": {
+                "$": 5,
+                "type": "xsd:int"
+            },
+            "seis_prov:ROTATION": false,
+            "seis_prov:ANISOTROPIC_KL": false,
+            "seis_prov:ANGULAR_WIDTH_ETA_IN_DEGREES": {
+                "$": 90.0,
+                "type": "xsd:double"
+            },
+            "seis_prov:ELLIPTICITY": false,
+            "seis_prov:ANGULAR_WIDTH_XI_IN_DEGREES": {
+                "$": 90.0,
+                "type": "xsd:double"
+            },
+            "seis_prov:USE_LDDRK": false,
+            "prov:type": "seis_prov:input_parameters",
+            "seis_prov:ATTENUATION": false,
+            "seis_prov:OCEANS": false,
+            "seis_prov:NCHUNKS": {
+                "$": 1,
+                "type": "xsd:int"
+            },
+            "seis_prov:EXACT_MASS_MATRIX_FOR_ROTATION": false,
+            "seis_prov:TOPOGRAPHY": false
+        },
+        "seis_prov:sp004_wf_a34j4didj3": {
+            "prov:type": "seis_prov:waveform_trace",
+            "prov:label": "Waveform Trace"
+        }
+    },
+    "agent": {
+        "seis_prov:pp_me": {
+            "seis_prov:email": "hans.mustermann@email.com",
+            "seis_prov:name": "Hans Mustermann",
+            "prov:label": "Hans Mustermann",
+            "prov:type": {
+                "$": "prov:Person",
+                "type": "prov:QualifiedName"
+            }
+        },
+        "seis_prov:sp001_sa_9dig8a-ta": {
+            "seis_prov:website": "http://geodynamics.org/cig/software/specfem3d",
+            "seis_prov:software_version": "7.0.0",
+            "prov:type": {
+                "$": "prov:SoftwareAgent",
+                "type": "prov:QualifiedName"
+            },
+            "seis_prov:software_name": "SPECFEM3D GLOBE",
+            "prov:label": "SPECFEM3D GLOBE"
+        },
+        "seis_prov:pp_other": {
+            "seis_prov:email": "susanna.musterfrau@email.com",
+            "seis_prov:name": "Susanna Musterfrau",
+            "prov:label": "Susanna Musterfrau",
+            "prov:type": {
+                "$": "prov:Person",
+                "type": "prov:QualifiedName"
+            }
+        }
+    },
+    "prefix": {
+        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
+    },
+    "used": {
+        "_:id4": {
+            "prov:entity": "seis_prov:sp002_em_skfusjdoej",
+            "prov:activity": "seis_prov:sp005_ws_f87sf7sf78"
+        },
+        "_:id5": {
+            "prov:entity": "seis_prov:sp003_in_38jd89da8l",
+            "prov:activity": "seis_prov:sp005_ws_f87sf7sf78"
+        }
+    }
+}
