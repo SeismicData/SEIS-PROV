@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<prov:document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:seis_prov="http://seisprov.org/seis_prov/0.1/#" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <prov:person prov:id="seis_prov:sp001_pp_de12fb1">
+    <prov:label>Susanna Musterfrau</prov:label>
+    <seis_prov:name>Susanna Musterfrau</seis_prov:name>
+  </prov:person>
+</prov:document>
