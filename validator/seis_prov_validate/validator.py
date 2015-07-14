@@ -38,6 +38,7 @@ SEIS_PROV_NAMESPACE = "http://seisprov.org/seis_prov/0.1/#"
 
 # Caches to speed up repeated runs.
 __JSON_SCHEMA_CACHE = []
+__XSD_SCHEMA_CACHE = []
 
 
 def _check_json_schema():
@@ -332,7 +333,11 @@ def _validate_against_xsd_scheme(doc):
     buf.seek(0, 0)
 
     xml_doc = etree.parse(buf)
-    xml_schema = etree.XMLSchema(etree.parse(_PROV_XML_SCHEMA))
+    if not __XSD_SCHEMA_CACHE:
+        __XSD_SCHEMA_CACHE.append(
+            etree.XMLSchema(etree.parse(_PROV_XML_SCHEMA)))
+
+    xml_schema = __XSD_SCHEMA_CACHE[0]
 
     is_valid = xml_schema.validate(xml_doc)
     if is_valid:
