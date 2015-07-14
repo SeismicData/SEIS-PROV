@@ -1,0 +1,40 @@
+{
+    "package": "seis_prov",
+    "type": "agent",
+    "name": "software_agent",
+    "two_letter_code": "sa",
+    "label": "*",
+    "description": "This agent describes the software used for a particular task.",
+    "other_seis_prov_attributes_allowed": false,
+    "attributes": [
+        {
+            "name": "software_name",
+            "types": ["xsd:string"],
+            "description": "The name of the software.",
+            "required": true,
+            "example_value": "ObsPy"
+        },
+        {
+            "name": "software_version",
+            "types": ["xsd:string"],
+            "description": "The version number of the used software.",
+            "required": true,
+            "example_value": "0.10.2"
+        },
+        {
+            "name": "website",
+            "types": ["xsd:anyURI"],
+            "description": "The website where one can find further information.",
+            "required": true,
+            "example_value": "http://obspy.org"
+        },
+        {
+            "name": "doi",
+            "types": ["xsd:string"],
+            "pattern": "(10[.][0-9]{4,}(?:[.][0-9]+)*/(?:(?![%\"#? ])\\S)+)",
+            "description": "The digital object identifier for the software.",
+            "required": false,
+            "example_value": "10.5281/zenodo.17641"
+        },
+    ]
+}

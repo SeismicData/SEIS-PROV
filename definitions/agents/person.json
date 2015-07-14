@@ -1,0 +1,26 @@
+{
+    "package": "seis_prov",
+    "type": "agent",
+    "name": "person",
+    "two_letter_code": "pp",
+    "label": "*",
+    "description": "This agent describes the person associated with a certain task.",
+    "other_seis_prov_attributes_allowed": false,
+    "attributes": [
+        {
+            "name": "name",
+            "types": ["xsd:string"],
+            "description": "The name of the person.",
+            "required": true,
+            "example_value": "Susanna Musterfrau"
+        },
+        {
+            "name": "email",
+            "types": ["xsd:string"],
+            "description": "The email address of the person.",
+            "pattern": "[^@]+@[^@]+\.[^@]+",
+            "required": false,
+            "example_value": "susanna.musterfrau@email.com"
+        }
+    ]
+}
