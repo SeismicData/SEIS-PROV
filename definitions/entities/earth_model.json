@@ -29,7 +29,7 @@
             "example_value": "10.1111/j.1365-246X.2010.04884.x"
         },
         {
-            "name": "url",
+            "name": "website",
             "types": ["xsd:anyURI"],
             "description": "URL to a website with more information.",
             "required": false,
