@@ -194,7 +194,12 @@ def _validate_prov_bundle(doc, json_schema, ns):
             _log_error("Record '%s' has %i prov:type's set. Only one is "
                        "allowed" % (str(record.identifier), len(prov_type)))
 
-        # Figure out if its id lives in the SEIS-PROV namespace.
+        rec_type = record.get_type()
+        if rec_type not in (
+                prov.model.PROV_ENTITY, prov.model.PROV_ACTIVITY,
+                prov.model.PROV_AGENT) and record.identifier is None:
+            continue
+
         id_in_seis_prov_ns = record.identifier.namespace == ns
 
         if not prov_type:
@@ -209,11 +214,16 @@ def _validate_prov_bundle(doc, json_schema, ns):
 
         # If neither the prov type nor the id are in the SEIS-PROV namespace it
         # is not part of SEIS-PROV and so we don't validate it.
-        if prov_type.namespace != ns and not id_in_seis_prov_ns:
+        if isinstance(prov_type, six.string_types):
+            prov_type_in_ns = prov_type.startswith("%s:" % ns.prefix)
+        else:
+            prov_type_in_ns = prov_type.namespace == ns
+
+        if not prov_type_in_ns and not id_in_seis_prov_ns:
             continue
 
         # Now we need to deal with a couple of different failure cases.
-        if prov_type.namespace == ns:
+        if prov_type_in_ns:
             # 1. It's prov_type is in the seis_prov namespace but the id is
             #    not. This is not valid.
             if not id_in_seis_prov_ns:
@@ -236,8 +246,6 @@ def _validate_prov_bundle(doc, json_schema, ns):
                 # This should not be able to happen as we check for this
                 # combination a bit further up the code.
                 raise NotImplementedError
-
-        rec_type = record.get_type()
 
         if prov_type == _PERSON:
             prov_type = "person"

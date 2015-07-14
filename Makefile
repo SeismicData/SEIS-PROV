@@ -58,6 +58,8 @@ generate_stuff:
 	python ./create_python_code_xml_and_plots.py
 	python ./generate_details_doc.py
 	cp ./_generated/seis_prov.json ./validator/seis_prov_validate/schemas/seis_prov.json
+	cp ./_generated/xml/*/*.xml ./validator/seis_prov_validate/test_data/valid_files
+	cp ./_generated/json/*/*.json ./validator/seis_prov_validate/test_data/valid_files
 
 html: generate_stuff
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
