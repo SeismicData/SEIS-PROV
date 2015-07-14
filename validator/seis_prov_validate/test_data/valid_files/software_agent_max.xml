@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<prov:document xmlns:prov="http://www.w3.org/ns/prov#" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:seis_prov="http://seisprov.org/seis_prov/0.1/#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <prov:softwareAgent prov:id="seis_prov:sp001_sa_6aac338">
+<prov:document xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:seis_prov="http://seisprov.org/seis_prov/0.1/#" xmlns:prov="http://www.w3.org/ns/prov#">
+  <prov:softwareAgent prov:id="seis_prov:sp001_sa_1e0dae8">
     <prov:label>ObsPy</prov:label>
     <seis_prov:doi>10.5281/zenodo.17641</seis_prov:doi>
     <seis_prov:software_name>ObsPy</seis_prov:software_name>

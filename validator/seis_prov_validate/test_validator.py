@@ -27,7 +27,8 @@ DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(
 # Find all valid files.
 VALID_FILES = {
     os.path.basename(_i): os.path.abspath(_i) for _i in
-    glob.glob(os.path.join(DATA_DIR, "valid_files", "*.xml"))}
+    glob.glob(os.path.join(DATA_DIR, "valid_files", "*.xml")) +
+    glob.glob(os.path.join(DATA_DIR, "valid_files", "*.json"))}
 
 # Make sure the globbing expression is not completely wrong.
 assert len(VALID_FILES)
@@ -35,7 +36,8 @@ assert len(VALID_FILES)
 # Find all invalid files.
 INVALID_FILES = {
     os.path.basename(_i): os.path.abspath(_i) for _i in
-    glob.glob(os.path.join(DATA_DIR, "invalid_files", "*.xml"))}
+    glob.glob(os.path.join(DATA_DIR, "invalid_files", "*.xml")) +
+    glob.glob(os.path.join(DATA_DIR, "invalid_files", "*.json"))}
 
 # Make sure the globbing expression is not completely wrong.
 assert len(INVALID_FILES)
