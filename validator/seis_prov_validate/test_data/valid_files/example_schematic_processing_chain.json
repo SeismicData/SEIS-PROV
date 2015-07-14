@@ -1,22 +1,41 @@
 {
-    "prefix": {
-        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
-    },
-    "wasGeneratedBy": {
-        "_:id5": {
-            "prov:activity": "seis_prov:sp004_lp_f87sf7sf78",
-            "prov:entity": "seis_prov:sp005_wf_378f8ks8kd"
+    "activity": {
+        "seis_prov:sp002_dt_f87sf7sf78": {
+            "prov:label": "Detrend",
+            "prov:type": "seis_prov:detrend",
+            "seis_prov:detrending_method": "demean"
         },
-        "_:id6": {
-            "prov:activity": "seis_prov:sp006_dc_f87sf7sf78",
-            "prov:entity": "seis_prov:sp007_wf_jude89du8l"
+        "seis_prov:sp004_lp_f87sf7sf78": {
+            "prov:label": "Lowpass Filter",
+            "prov:type": "seis_prov:lowpass_filter",
+            "seis_prov:corner_frequency": {
+                "$": 10.0,
+                "type": "xsd:double"
+            },
+            "seis_prov:filter_order": {
+                "$": 4,
+                "type": "xsd:int"
+            },
+            "seis_prov:filter_type": "Butterworth",
+            "seis_prov:number_of_passes": {
+                "$": 1,
+                "type": "xsd:int"
+            }
         },
-        "_:id4": {
-            "prov:activity": "seis_prov:sp002_dt_f87sf7sf78",
-            "prov:entity": "seis_prov:sp003_wf_js83hf34aj"
+        "seis_prov:sp006_dc_f87sf7sf78": {
+            "prov:label": "Decimate",
+            "prov:type": "seis_prov:decimate",
+            "seis_prov:factor": {
+                "$": 2,
+                "type": "xsd:int"
+            }
         }
     },
     "entity": {
+        "seis_prov:sp001_wf_a34j4didj3": {
+            "prov:label": "Waveform Trace",
+            "prov:type": "seis_prov:waveform_trace"
+        },
         "seis_prov:sp003_wf_js83hf34aj": {
             "prov:label": "Waveform Trace",
             "prov:type": "seis_prov:waveform_trace"
@@ -25,16 +44,19 @@
             "prov:label": "Waveform Trace",
             "prov:type": "seis_prov:waveform_trace"
         },
-        "seis_prov:sp001_wf_a34j4didj3": {
-            "prov:label": "Waveform Trace",
-            "prov:type": "seis_prov:waveform_trace"
-        },
         "seis_prov:sp007_wf_jude89du8l": {
             "prov:label": "Waveform Trace",
             "prov:type": "seis_prov:waveform_trace"
         }
     },
+    "prefix": {
+        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
+    },
     "used": {
+        "_:id1": {
+            "prov:activity": "seis_prov:sp002_dt_f87sf7sf78",
+            "prov:entity": "seis_prov:sp001_wf_a34j4didj3"
+        },
         "_:id2": {
             "prov:activity": "seis_prov:sp004_lp_f87sf7sf78",
             "prov:entity": "seis_prov:sp003_wf_js83hf34aj"
@@ -42,42 +64,20 @@
         "_:id3": {
             "prov:activity": "seis_prov:sp006_dc_f87sf7sf78",
             "prov:entity": "seis_prov:sp005_wf_378f8ks8kd"
-        },
-        "_:id1": {
-            "prov:activity": "seis_prov:sp002_dt_f87sf7sf78",
-            "prov:entity": "seis_prov:sp001_wf_a34j4didj3"
         }
     },
-    "activity": {
-        "seis_prov:sp004_lp_f87sf7sf78": {
-            "seis_prov:filter_type": "Butterworth",
-            "seis_prov:number_of_passes": {
-                "type": "xsd:int",
-                "$": 1
-            },
-            "prov:type": "seis_prov:lowpass_filter",
-            "seis_prov:filter_order": {
-                "type": "xsd:int",
-                "$": 4
-            },
-            "prov:label": "Lowpass Filter",
-            "seis_prov:corner_frequency": {
-                "type": "xsd:double",
-                "$": 10.0
-            }
+    "wasGeneratedBy": {
+        "_:id4": {
+            "prov:activity": "seis_prov:sp002_dt_f87sf7sf78",
+            "prov:entity": "seis_prov:sp003_wf_js83hf34aj"
         },
-        "seis_prov:sp002_dt_f87sf7sf78": {
-            "prov:label": "Detrend",
-            "prov:type": "seis_prov:detrend",
-            "seis_prov:detrending_method": "demean"
+        "_:id5": {
+            "prov:activity": "seis_prov:sp004_lp_f87sf7sf78",
+            "prov:entity": "seis_prov:sp005_wf_378f8ks8kd"
         },
-        "seis_prov:sp006_dc_f87sf7sf78": {
-            "prov:label": "Decimate",
-            "prov:type": "seis_prov:decimate",
-            "seis_prov:factor": {
-                "type": "xsd:int",
-                "$": 2
-            }
+        "_:id6": {
+            "prov:activity": "seis_prov:sp006_dc_f87sf7sf78",
+            "prov:entity": "seis_prov:sp007_wf_jude89du8l"
         }
     }
 }

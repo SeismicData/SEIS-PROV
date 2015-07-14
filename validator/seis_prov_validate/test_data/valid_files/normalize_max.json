@@ -1,12 +1,12 @@
 {
-    "prefix": {
-        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
-    },
     "activity": {
         "seis_prov:sp001_nm_5464d2c": {
-            "seis_prov:normalization_method": "Amplitude",
             "prov:label": "Normalize",
-            "prov:type": "seis_prov:normalize"
+            "prov:type": "seis_prov:normalize",
+            "seis_prov:normalization_method": "Amplitude"
         }
+    },
+    "prefix": {
+        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
     }
 }

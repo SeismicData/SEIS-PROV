@@ -1,17 +1,17 @@
 {
-    "prefix": {
-        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
-    },
     "activity": {
         "seis_prov:sp001_rr_ddcc155": {
-            "prov:type": "seis_prov:remove_response",
             "prov:label": "Remove Response",
-            "seis_prov:water_level": {
-                "type": "xsd:double",
-                "$": 60.0
-            },
+            "prov:type": "seis_prov:remove_response",
+            "seis_prov:input_units": "m",
             "seis_prov:output_units": "m/s",
-            "seis_prov:input_units": "m"
+            "seis_prov:water_level": {
+                "$": 60.0,
+                "type": "xsd:double"
+            }
         }
+    },
+    "prefix": {
+        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
     }
 }

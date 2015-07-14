@@ -1,21 +1,21 @@
 {
-    "prefix": {
-        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
-    },
     "agent": {
         "seis_prov:sp001_sa_63fd9d1": {
+            "prov:label": "ObsPy",
             "prov:type": {
-                "type": "prov:QualifiedName",
-                "$": "prov:SoftwareAgent"
+                "$": "prov:SoftwareAgent",
+                "type": "prov:QualifiedName"
             },
             "seis_prov:doi": "10.5281/zenodo.17641",
-            "prov:label": "ObsPy",
             "seis_prov:software_name": "ObsPy",
             "seis_prov:software_version": "0.10.2",
             "seis_prov:website": {
-                "type": "xsd:anyURI",
-                "$": "http://obspy.org"
+                "$": "http://obspy.org",
+                "type": "xsd:anyURI"
             }
         }
+    },
+    "prefix": {
+        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
     }
 }

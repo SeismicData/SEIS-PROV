@@ -1,12 +1,12 @@
 {
-    "prefix": {
-        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
-    },
     "activity": {
         "seis_prov:sp001_bs_68753fc": {
             "prov:label": "Bandstop Filter",
-            "seis_prov:filter_type": "Butterworth",
-            "prov:type": "seis_prov:bandstop_filter"
+            "prov:type": "seis_prov:bandstop_filter",
+            "seis_prov:filter_type": "Butterworth"
         }
+    },
+    "prefix": {
+        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
     }
 }

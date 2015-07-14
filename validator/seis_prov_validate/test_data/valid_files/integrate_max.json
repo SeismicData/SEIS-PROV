@@ -1,18 +1,18 @@
 {
-    "prefix": {
-        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
-    },
     "activity": {
         "seis_prov:sp001_ig_ee9c7fe": {
-            "seis_prov:integration_method": "Composite trapezoidal rule.",
+            "prov:label": "Integrate",
             "prov:type": "seis_prov:integrate",
             "seis_prov:input_units": "m/s",
+            "seis_prov:integration_method": "Composite trapezoidal rule.",
             "seis_prov:order": {
-                "type": "xsd:positiveInteger",
-                "$": "1"
+                "$": "1",
+                "type": "xsd:positiveInteger"
             },
-            "prov:label": "Integrate",
             "seis_prov:output_units": "m"
         }
+    },
+    "prefix": {
+        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
     }
 }

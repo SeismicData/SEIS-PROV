@@ -1,17 +1,17 @@
 {
-    "prefix": {
-        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
-    },
     "activity": {
         "seis_prov:sp001_tp_13f0336": {
             "prov:label": "Taper",
-            "seis_prov:window_type": "Hanning",
-            "seis_prov:side": "both",
             "prov:type": "seis_prov:taper",
+            "seis_prov:side": "both",
             "seis_prov:taper_width": {
-                "type": "xsd:double",
-                "$": 0.05
-            }
+                "$": 0.05,
+                "type": "xsd:double"
+            },
+            "seis_prov:window_type": "Hanning"
         }
+    },
+    "prefix": {
+        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
     }
 }

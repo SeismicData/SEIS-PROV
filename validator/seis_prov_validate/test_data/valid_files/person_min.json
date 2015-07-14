@@ -1,15 +1,15 @@
 {
-    "prefix": {
-        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
-    },
     "agent": {
         "seis_prov:sp001_pp_2458e1f": {
             "prov:label": "Susanna Musterfrau",
             "prov:type": {
-                "type": "prov:QualifiedName",
-                "$": "prov:Person"
+                "$": "prov:Person",
+                "type": "prov:QualifiedName"
             },
             "seis_prov:name": "Susanna Musterfrau"
         }
+    },
+    "prefix": {
+        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
     }
 }

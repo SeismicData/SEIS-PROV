@@ -1,12 +1,12 @@
 {
-    "prefix": {
-        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
-    },
     "activity": {
         "seis_prov:sp001_mg_1c1ca74": {
             "prov:label": "Merge",
-            "seis_prov:merging_strategy": "discard overlaps",
-            "prov:type": "seis_prov:merge"
+            "prov:type": "seis_prov:merge",
+            "seis_prov:merging_strategy": "discard overlaps"
         }
+    },
+    "prefix": {
+        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
     }
 }

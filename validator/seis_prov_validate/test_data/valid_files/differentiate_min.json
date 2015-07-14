@@ -1,15 +1,15 @@
 {
-    "prefix": {
-        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
-    },
     "activity": {
         "seis_prov:sp001_df_038d237": {
-            "seis_prov:order": {
-                "type": "xsd:positiveInteger",
-                "$": "1"
-            },
             "prov:label": "Differentiate",
-            "prov:type": "seis_prov:differentiate"
+            "prov:type": "seis_prov:differentiate",
+            "seis_prov:order": {
+                "$": "1",
+                "type": "xsd:positiveInteger"
+            }
         }
+    },
+    "prefix": {
+        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
     }
 }

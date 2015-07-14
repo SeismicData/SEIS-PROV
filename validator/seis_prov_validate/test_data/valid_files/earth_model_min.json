@@ -1,13 +1,13 @@
 {
-    "prefix": {
-        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
-    },
     "entity": {
         "seis_prov:sp001_em_1cc94ec": {
-            "seis_prov:model_type": "3D",
-            "seis_prov:model_name": "S40RTS",
             "prov:label": "Earth Model",
-            "prov:type": "seis_prov:earth_model"
+            "prov:type": "seis_prov:earth_model",
+            "seis_prov:model_name": "S40RTS",
+            "seis_prov:model_type": "3D"
         }
+    },
+    "prefix": {
+        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
     }
 }

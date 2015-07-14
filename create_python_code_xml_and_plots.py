@@ -212,7 +212,8 @@ def generate_code():
         with io.open(jsonfile, "rt") as fh:
             data = json.load(fh)
         with io.open(jsonfile, "wt") as fh:
-            json.dump(data, fh, indent=4, separators=(',', ': '))
+            json.dump(data, fh, indent=4, separators=(',', ': '),
+                      sort_keys=True)
 
         jsonfile = get_filename(filename, node_type, "json", "max")
         exec(max_file_contents + "\n\n"
@@ -221,7 +222,8 @@ def generate_code():
         with io.open(jsonfile, "rt") as fh:
             data = json.load(fh)
         with io.open(jsonfile, "wt") as fh:
-            json.dump(data, fh, indent=4, separators=(',', ': '))
+            json.dump(data, fh, indent=4, separators=(',', ': '),
+                      sort_keys=True)
 
         # Finally once more with the PROV-N serialization.
         exec(min_file_contents + "\n\n"
@@ -278,7 +280,8 @@ def generate_code_from_examples():
         with io.open(jsonfile, "rt") as fh:
             data = json.load(fh)
         with io.open(jsonfile, "wt") as fh:
-            json.dump(data, fh, indent=4, separators=(',', ': '))
+            json.dump(data, fh, indent=4, separators=(',', ': '),
+                      sort_keys=True)
 
         # Finally once more with the PROV-N serialization.
         exec(code_str + "\n\n"

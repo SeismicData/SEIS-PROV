@@ -1,145 +1,145 @@
 {
-    "prefix": {
-        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
+    "actedOnBehalfOf": {
+        "_:id3": {
+            "prov:delegate": "seis_prov:sp001_sa_9dig8a-ta",
+            "prov:responsible": "seis_prov:pp_me"
+        }
+    },
+    "activity": {
+        "seis_prov:sp005_ws_f87sf7sf78": {
+            "prov:endTime": "2014-02-02T14:07:13",
+            "prov:label": "Waveform Simulation",
+            "prov:startTime": "2014-02-02T12:15:03",
+            "prov:type": "seis_prov:waveform_simulation"
+        }
     },
     "agent": {
         "seis_prov:pp_me": {
             "prov:label": "Hans Mustermann",
             "prov:type": {
-                "type": "prov:QualifiedName",
-                "$": "prov:Person"
+                "$": "prov:Person",
+                "type": "prov:QualifiedName"
             },
-            "seis_prov:name": "Hans Mustermann",
-            "seis_prov:email": "hans.mustermann@email.com"
+            "seis_prov:email": "hans.mustermann@email.com",
+            "seis_prov:name": "Hans Mustermann"
         },
         "seis_prov:pp_other": {
             "prov:label": "Susanna Musterfrau",
             "prov:type": {
-                "type": "prov:QualifiedName",
-                "$": "prov:Person"
+                "$": "prov:Person",
+                "type": "prov:QualifiedName"
             },
-            "seis_prov:name": "Susanna Musterfrau",
-            "seis_prov:email": "susanna.musterfrau@email.com"
+            "seis_prov:email": "susanna.musterfrau@email.com",
+            "seis_prov:name": "Susanna Musterfrau"
         },
         "seis_prov:sp001_sa_9dig8a-ta": {
             "prov:label": "SPECFEM3D GLOBE",
-            "seis_prov:software_version": "7.0.0",
-            "seis_prov:software_name": "SPECFEM3D GLOBE",
             "prov:type": {
-                "type": "prov:QualifiedName",
-                "$": "prov:SoftwareAgent"
+                "$": "prov:SoftwareAgent",
+                "type": "prov:QualifiedName"
             },
+            "seis_prov:software_name": "SPECFEM3D GLOBE",
+            "seis_prov:software_version": "7.0.0",
             "seis_prov:website": "http://geodynamics.org/cig/software/specfem3d"
         }
     },
     "entity": {
+        "seis_prov:sp002_em_skfusjdoej": {
+            "prov:label": "Earth Model",
+            "prov:type": "seis_prov:earth_model",
+            "seis_prov:model_name": "Random Model",
+            "seis_prov:model_type": "3D",
+            "seis_prov:website": "http://random.org/model"
+        },
         "seis_prov:sp003_in_38jd89da8l": {
-            "seis_prov:NEX_ETA": {
-                "type": "xsd:int",
-                "$": 240
-            },
-            "seis_prov:ABSORBING_CONDITIONS": false,
-            "seis_prov:ELLIPTICITY": false,
-            "seis_prov:ANISOTROPIC_KL": false,
-            "seis_prov:OCEANS": false,
-            "seis_prov:TOPOGRAPHY": false,
-            "seis_prov:USE_LDDRK": false,
-            "seis_prov:SIMULATION_TYPE": {
-                "type": "xsd:int",
-                "$": 1
-            },
-            "prov:type": "seis_prov:input_parameters",
-            "seis_prov:ATTENUATION": false,
-            "seis_prov:EXACT_MASS_MATRIX_FOR_ROTATION": false,
-            "seis_prov:NPROC_XI": {
-                "type": "xsd:int",
-                "$": 5
-            },
             "prov:label": "Input Parameters",
-            "seis_prov:NEX_XI": {
-                "type": "xsd:int",
-                "$": 240
+            "prov:type": "seis_prov:input_parameters",
+            "seis_prov:ABSORBING_CONDITIONS": false,
+            "seis_prov:ANGULAR_WIDTH_ETA_IN_DEGREES": {
+                "$": 90.0,
+                "type": "xsd:double"
             },
             "seis_prov:ANGULAR_WIDTH_XI_IN_DEGREES": {
-                "type": "xsd:double",
-                "$": 90.0
+                "$": 90.0,
+                "type": "xsd:double"
             },
-            "seis_prov:GRAVITY": false,
-            "seis_prov:GAMMA_ROTATION_AZIMUTH": {
-                "type": "xsd:double",
-                "$": 20.0
-            },
-            "seis_prov:ROTATION": false,
-            "seis_prov:NCHUNKS": {
-                "type": "xsd:int",
-                "$": 1
-            },
-            "seis_prov:NPROC_ETA": {
-                "type": "xsd:int",
-                "$": 5
+            "seis_prov:ANISOTROPIC_KL": false,
+            "seis_prov:ATTENUATION": false,
+            "seis_prov:CENTER_LATITUDE_IN_DEGREES": {
+                "$": 40.0,
+                "type": "xsd:double"
             },
             "seis_prov:CENTER_LONGITUDE_IN_DEGREES": {
-                "type": "xsd:double",
-                "$": 10.0
+                "$": 10.0,
+                "type": "xsd:double"
             },
-            "seis_prov:CENTER_LATITUDE_IN_DEGREES": {
-                "type": "xsd:double",
-                "$": 40.0
+            "seis_prov:ELLIPTICITY": false,
+            "seis_prov:EXACT_MASS_MATRIX_FOR_ROTATION": false,
+            "seis_prov:GAMMA_ROTATION_AZIMUTH": {
+                "$": 20.0,
+                "type": "xsd:double"
+            },
+            "seis_prov:GRAVITY": false,
+            "seis_prov:NCHUNKS": {
+                "$": 1,
+                "type": "xsd:int"
+            },
+            "seis_prov:NEX_ETA": {
+                "$": 240,
+                "type": "xsd:int"
+            },
+            "seis_prov:NEX_XI": {
+                "$": 240,
+                "type": "xsd:int"
             },
             "seis_prov:NOISE_TOMOGRAPHY": {
-                "type": "xsd:int",
-                "$": 0
+                "$": 0,
+                "type": "xsd:int"
             },
-            "seis_prov:ANGULAR_WIDTH_ETA_IN_DEGREES": {
-                "type": "xsd:double",
-                "$": 90.0
+            "seis_prov:NPROC_ETA": {
+                "$": 5,
+                "type": "xsd:int"
             },
-            "seis_prov:RECEIVERS_CAN_BE_BURIED": true
-        },
-        "seis_prov:sp002_em_skfusjdoej": {
-            "seis_prov:model_type": "3D",
-            "seis_prov:model_name": "Random Model",
-            "prov:type": "seis_prov:earth_model",
-            "prov:label": "Earth Model",
-            "seis_prov:website": "http://random.org/model"
+            "seis_prov:NPROC_XI": {
+                "$": 5,
+                "type": "xsd:int"
+            },
+            "seis_prov:OCEANS": false,
+            "seis_prov:RECEIVERS_CAN_BE_BURIED": true,
+            "seis_prov:ROTATION": false,
+            "seis_prov:SIMULATION_TYPE": {
+                "$": 1,
+                "type": "xsd:int"
+            },
+            "seis_prov:TOPOGRAPHY": false,
+            "seis_prov:USE_LDDRK": false
         },
         "seis_prov:sp004_wf_a34j4didj3": {
             "prov:label": "Waveform Trace",
             "prov:type": "seis_prov:waveform_trace"
         }
     },
+    "prefix": {
+        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
+    },
     "used": {
-        "_:id5": {
-            "prov:activity": "seis_prov:sp005_ws_f87sf7sf78",
-            "prov:entity": "seis_prov:sp003_in_38jd89da8l"
-        },
         "_:id4": {
             "prov:activity": "seis_prov:sp005_ws_f87sf7sf78",
             "prov:entity": "seis_prov:sp002_em_skfusjdoej"
+        },
+        "_:id5": {
+            "prov:activity": "seis_prov:sp005_ws_f87sf7sf78",
+            "prov:entity": "seis_prov:sp003_in_38jd89da8l"
         }
     },
     "wasAssociatedWith": {
-        "_:id2": {
-            "prov:activity": "seis_prov:sp002_em_skfusjdoej",
-            "prov:agent": "seis_prov:pp_other"
-        },
         "_:id1": {
             "prov:activity": "seis_prov:sp005_ws_f87sf7sf78",
             "prov:agent": "seis_prov:sp001_sa_9dig8a-ta"
-        }
-    },
-    "activity": {
-        "seis_prov:sp005_ws_f87sf7sf78": {
-            "prov:label": "Waveform Simulation",
-            "prov:startTime": "2014-02-02T12:15:03",
-            "prov:type": "seis_prov:waveform_simulation",
-            "prov:endTime": "2014-02-02T14:07:13"
-        }
-    },
-    "actedOnBehalfOf": {
-        "_:id3": {
-            "prov:responsible": "seis_prov:pp_me",
-            "prov:delegate": "seis_prov:sp001_sa_9dig8a-ta"
+        },
+        "_:id2": {
+            "prov:activity": "seis_prov:sp002_em_skfusjdoej",
+            "prov:agent": "seis_prov:pp_other"
         }
     },
     "wasGeneratedBy": {

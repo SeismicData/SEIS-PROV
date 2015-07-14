@@ -1,24 +1,24 @@
 {
-    "prefix": {
-        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
-    },
     "activity": {
         "seis_prov:sp001_ip_450ad8a": {
+            "prov:label": "Interpolate",
+            "prov:type": "seis_prov:interpolate",
+            "seis_prov:interpolation_method": "cubic spline",
             "seis_prov:new_number_of_samples": {
-                "type": "xsd:positiveInteger",
-                "$": "5000"
+                "$": "5000",
+                "type": "xsd:positiveInteger"
+            },
+            "seis_prov:new_sampling_rate": {
+                "$": 10.0,
+                "type": "xsd:double"
             },
             "seis_prov:new_start_time": {
-                "type": "xsd:dateTime",
-                "$": "2012-04-23T18:25:43.511000+00:00"
-            },
-            "seis_prov:interpolation_method": "cubic spline",
-            "prov:label": "Interpolate",
-            "seis_prov:new_sampling_rate": {
-                "type": "xsd:double",
-                "$": 10.0
-            },
-            "prov:type": "seis_prov:interpolate"
+                "$": "2012-04-23T18:25:43.511000+00:00",
+                "type": "xsd:dateTime"
+            }
         }
+    },
+    "prefix": {
+        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
     }
 }

@@ -1,28 +1,28 @@
 {
-    "prefix": {
-        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
-    },
     "activity": {
         "seis_prov:sp001_bp_9d37dd4": {
-            "seis_prov:number_of_passes": {
-                "type": "xsd:positiveInteger",
-                "$": "1"
-            },
+            "prov:label": "Bandpass Filter",
             "prov:type": "seis_prov:bandpass_filter",
-            "seis_prov:lower_corner_frequency": {
-                "type": "xsd:double",
-                "$": 5.0
-            },
             "seis_prov:filter_order": {
-                "type": "xsd:positiveInteger",
-                "$": "2"
+                "$": "2",
+                "type": "xsd:positiveInteger"
             },
             "seis_prov:filter_type": "Butterworth",
-            "prov:label": "Bandpass Filter",
+            "seis_prov:lower_corner_frequency": {
+                "$": 5.0,
+                "type": "xsd:double"
+            },
+            "seis_prov:number_of_passes": {
+                "$": "1",
+                "type": "xsd:positiveInteger"
+            },
             "seis_prov:uppoer_corner_frequency": {
-                "type": "xsd:double",
-                "$": 15.0
+                "$": 15.0,
+                "type": "xsd:double"
             }
         }
+    },
+    "prefix": {
+        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
     }
 }

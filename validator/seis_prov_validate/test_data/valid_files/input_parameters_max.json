@@ -1,11 +1,11 @@
 {
-    "prefix": {
-        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
-    },
     "entity": {
         "seis_prov:sp001_in_a49316d": {
             "prov:label": "Input Parameters",
             "prov:type": "seis_prov:input_parameters"
         }
+    },
+    "prefix": {
+        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
     }
 }

@@ -1,33 +1,33 @@
 {
-    "prefix": {
-        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
-    },
     "entity": {
         "seis_prov:sp001_wf_8afb672": {
-            "seis_prov:seed_id": "BW.FURT..EHZ",
-            "seis_prov:number_of_samples": {
-                "type": "xsd:positiveInteger",
-                "$": "10000"
+            "prov:label": "Waveform Trace",
+            "prov:type": "seis_prov:waveform_trace",
+            "seis_prov:azimuth": {
+                "$": 90.0,
+                "type": "xsd:double"
             },
             "seis_prov:dip": {
-                "type": "xsd:double",
-                "$": 0.0
+                "$": 0.0,
+                "type": "xsd:double"
             },
-            "prov:type": "seis_prov:waveform_trace",
-            "seis_prov:units": "m/s",
-            "prov:label": "Waveform Trace",
+            "seis_prov:number_of_samples": {
+                "$": "10000",
+                "type": "xsd:positiveInteger"
+            },
             "seis_prov:sampling_rate": {
-                "type": "xsd:double",
-                "$": 20.0
+                "$": 20.0,
+                "type": "xsd:double"
             },
+            "seis_prov:seed_id": "BW.FURT..EHZ",
             "seis_prov:start_time": {
-                "type": "xsd:dateTime",
-                "$": "2012-04-23T18:25:43.511000+00:00"
+                "$": "2012-04-23T18:25:43.511000+00:00",
+                "type": "xsd:dateTime"
             },
-            "seis_prov:azimuth": {
-                "type": "xsd:double",
-                "$": 90.0
-            }
+            "seis_prov:units": "m/s"
         }
+    },
+    "prefix": {
+        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
     }
 }

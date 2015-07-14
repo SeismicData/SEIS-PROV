@@ -1,11 +1,11 @@
 {
-    "prefix": {
-        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
-    },
     "activity": {
         "seis_prov:sp001_ws_910a6ce": {
             "prov:label": "Waveform Simulation",
             "prov:type": "seis_prov:waveform_simulation"
         }
+    },
+    "prefix": {
+        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
     }
 }

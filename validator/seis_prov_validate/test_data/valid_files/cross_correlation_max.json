@@ -1,22 +1,22 @@
 {
-    "prefix": {
-        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
-    },
     "entity": {
         "seis_prov:sp001_cc_3356922": {
-            "seis_prov:correlation_type": "Phase Cross Correlation",
-            "prov:type": "seis_prov:cross_correlation",
-            "seis_prov:seed_id_b": "BW.ALTM..BHZ",
             "prov:label": "Cross Correlation",
+            "prov:type": "seis_prov:cross_correlation",
+            "seis_prov:correlation_type": "Phase Cross Correlation",
             "seis_prov:max_correlation_coefficient": {
-                "type": "xsd:double",
-                "$": 0.88
+                "$": 0.88,
+                "type": "xsd:double"
+            },
+            "seis_prov:max_lag_time_in_sec": {
+                "$": 60.0,
+                "type": "xsd:double"
             },
             "seis_prov:seed_id_a": "BW.FURT..BHZ",
-            "seis_prov:max_lag_time_in_sec": {
-                "type": "xsd:double",
-                "$": 60.0
-            }
+            "seis_prov:seed_id_b": "BW.ALTM..BHZ"
         }
+    },
+    "prefix": {
+        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
     }
 }

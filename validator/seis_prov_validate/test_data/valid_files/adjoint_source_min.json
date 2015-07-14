@@ -1,12 +1,12 @@
 {
-    "prefix": {
-        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
-    },
     "entity": {
         "seis_prov:sp001_as_cd84e87": {
             "prov:label": "Adjoint Source",
-            "seis_prov:adjoint_source_type": "Time Frequency Phase",
-            "prov:type": "seis_prov:adjoint_source"
+            "prov:type": "seis_prov:adjoint_source",
+            "seis_prov:adjoint_source_type": "Time Frequency Phase"
         }
+    },
+    "prefix": {
+        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
     }
 }
