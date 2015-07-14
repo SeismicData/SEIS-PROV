@@ -20,6 +20,8 @@ import os
 import uuid
 import sys
 
+from lxml import etree
+
 sys.path.append(".")
 
 from header import (NS_PREFIX, NS_URL, definitions_dir, json_files,
@@ -46,6 +48,14 @@ pr.{type}("{prefix}:sp001_{two_letter_code}_{short_hash}", other_attributes=((
 {contents}
 )))
 """).strip()
+
+
+def c14n_xml(filename):
+    """
+    Normalize the file.
+    """
+    tree = etree.parse(filename)
+    tree.write_c14n(filename)
 
 
 def generate_code():
@@ -183,12 +193,16 @@ def generate_code():
             get_filename(filename, node_type, "dot", "max"))
 
         # Same with the XML files.
+
+        filename = get_filename(filename, node_type, "xml", "min")
         exec(min_file_contents + "\n\n"
-             "pr.serialize('%s', format='xml')" %
-             get_filename(filename, node_type, "xml", "min"))
+             "pr.serialize('%s', format='xml')" % filename)
+        c14n_xml(filename)
+
+        filename = get_filename(filename, node_type, "xml", "max")
         exec(max_file_contents + "\n\n"
-             "pr.serialize('%s', format='xml')" %
-             get_filename(filename, node_type, "xml", "max"))
+             "pr.serialize('%s', format='xml')" % filename)
+        c14n_xml(filename)
 
         # And once again with JSON.
         jsonfile = get_filename(filename, node_type, "json", "min")
@@ -252,9 +266,10 @@ def generate_code_from_examples():
             get_filename(filename, "examples", "dot"))
 
         # Write XML.
+        filename = get_filename(filename, "examples", "xml")
         exec(code_str + "\n\n"
-             "pr.serialize('%s', format='xml')" %
-             get_filename(filename, "examples", "xml"))
+             "pr.serialize('%s', format='xml')" % filename)
+        c14n_xml(filename)
 
         # Write JSON.
         jsonfile = get_filename(filename, "examples", "json")
