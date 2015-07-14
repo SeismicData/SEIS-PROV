@@ -1,11 +1,11 @@
 {
-    "activity": {
-        "seis_prov:sp001_rr_8986e38": {
-            "prov:type": "seis_prov:remove_response",
-            "prov:label": "Remove Response"
-        }
-    },
     "prefix": {
         "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
+    },
+    "activity": {
+        "seis_prov:sp001_rr_8986e38": {
+            "prov:label": "Remove Response",
+            "prov:type": "seis_prov:remove_response"
+        }
     }
 }

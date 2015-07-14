@@ -1,12 +1,12 @@
 {
+    "prefix": {
+        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
+    },
     "activity": {
         "seis_prov:sp001_sc_f4dbee1": {
             "seis_prov:stacking_method": "mean",
-            "prov:type": "seis_prov:stack_cross_correlations",
-            "prov:label": "Stack Cross Correlations"
+            "prov:label": "Stack Cross Correlations",
+            "prov:type": "seis_prov:stack_cross_correlations"
         }
-    },
-    "prefix": {
-        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
     }
 }

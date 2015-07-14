@@ -1,5 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<prov:document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:seis_prov="http://seisprov.org/seis_prov/0.1/#">
+<prov:document xmlns:prov="http://www.w3.org/ns/prov#" xmlns:seis_prov="http://seisprov.org/seis_prov/0.1/#" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <prov:softwareAgent prov:id="seis_prov:sp001_sa_9dig8ata">
     <prov:label>ObsPy</prov:label>
     <seis_prov:doi>10.1785/gssrl.81.3.530</seis_prov:doi>
@@ -41,19 +40,19 @@
     <seis_prov:seed_id_b>BW.ALTM..BHZ</seis_prov:seed_id_b>
   </prov:entity>
   <prov:wasAssociatedWith>
-    <prov:activity prov:ref="seis_prov:sp004_co_f87sf7sf78"/>
-    <prov:agent prov:ref="seis_prov:sp001_sa_9dig8ata"/>
+    <prov:activity prov:ref="seis_prov:sp004_co_f87sf7sf78"></prov:activity>
+    <prov:agent prov:ref="seis_prov:sp001_sa_9dig8ata"></prov:agent>
   </prov:wasAssociatedWith>
   <prov:used>
-    <prov:activity prov:ref="seis_prov:sp004_co_f87sf7sf78"/>
-    <prov:entity prov:ref="seis_prov:sp002_wf_a34j4didj3"/>
+    <prov:activity prov:ref="seis_prov:sp004_co_f87sf7sf78"></prov:activity>
+    <prov:entity prov:ref="seis_prov:sp002_wf_a34j4didj3"></prov:entity>
   </prov:used>
   <prov:used>
-    <prov:activity prov:ref="seis_prov:sp004_co_f87sf7sf78"/>
-    <prov:entity prov:ref="seis_prov:sp003_wf_0034aiddj8"/>
+    <prov:activity prov:ref="seis_prov:sp004_co_f87sf7sf78"></prov:activity>
+    <prov:entity prov:ref="seis_prov:sp003_wf_0034aiddj8"></prov:entity>
   </prov:used>
   <prov:wasGeneratedBy>
-    <prov:entity prov:ref="seis_prov:sp005_cc_utakgh82hl"/>
-    <prov:activity prov:ref="seis_prov:sp004_co_f87sf7sf78"/>
+    <prov:entity prov:ref="seis_prov:sp005_cc_utakgh82hl"></prov:entity>
+    <prov:activity prov:ref="seis_prov:sp004_co_f87sf7sf78"></prov:activity>
   </prov:wasGeneratedBy>
 </prov:document>

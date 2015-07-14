@@ -1,5 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<prov:document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:seis_prov="http://seisprov.org/seis_prov/0.1/#">
+<prov:document xmlns:prov="http://www.w3.org/ns/prov#" xmlns:seis_prov="http://seisprov.org/seis_prov/0.1/#" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <prov:entity prov:id="seis_prov:sp001_wf_a34j4didj3">
     <prov:label>Waveform Trace</prov:label>
     <prov:type xsi:type="xsd:string">seis_prov:waveform_trace</prov:type>
@@ -35,27 +34,27 @@
     <prov:type xsi:type="xsd:string">seis_prov:waveform_trace</prov:type>
   </prov:entity>
   <prov:used>
-    <prov:activity prov:ref="seis_prov:sp002_dt_f87sf7sf78"/>
-    <prov:entity prov:ref="seis_prov:sp001_wf_a34j4didj3"/>
+    <prov:activity prov:ref="seis_prov:sp002_dt_f87sf7sf78"></prov:activity>
+    <prov:entity prov:ref="seis_prov:sp001_wf_a34j4didj3"></prov:entity>
   </prov:used>
   <prov:used>
-    <prov:activity prov:ref="seis_prov:sp004_lp_f87sf7sf78"/>
-    <prov:entity prov:ref="seis_prov:sp003_wf_js83hf34aj"/>
+    <prov:activity prov:ref="seis_prov:sp004_lp_f87sf7sf78"></prov:activity>
+    <prov:entity prov:ref="seis_prov:sp003_wf_js83hf34aj"></prov:entity>
   </prov:used>
   <prov:used>
-    <prov:activity prov:ref="seis_prov:sp006_dc_f87sf7sf78"/>
-    <prov:entity prov:ref="seis_prov:sp005_wf_378f8ks8kd"/>
+    <prov:activity prov:ref="seis_prov:sp006_dc_f87sf7sf78"></prov:activity>
+    <prov:entity prov:ref="seis_prov:sp005_wf_378f8ks8kd"></prov:entity>
   </prov:used>
   <prov:wasGeneratedBy>
-    <prov:entity prov:ref="seis_prov:sp003_wf_js83hf34aj"/>
-    <prov:activity prov:ref="seis_prov:sp002_dt_f87sf7sf78"/>
+    <prov:entity prov:ref="seis_prov:sp003_wf_js83hf34aj"></prov:entity>
+    <prov:activity prov:ref="seis_prov:sp002_dt_f87sf7sf78"></prov:activity>
   </prov:wasGeneratedBy>
   <prov:wasGeneratedBy>
-    <prov:entity prov:ref="seis_prov:sp005_wf_378f8ks8kd"/>
-    <prov:activity prov:ref="seis_prov:sp004_lp_f87sf7sf78"/>
+    <prov:entity prov:ref="seis_prov:sp005_wf_378f8ks8kd"></prov:entity>
+    <prov:activity prov:ref="seis_prov:sp004_lp_f87sf7sf78"></prov:activity>
   </prov:wasGeneratedBy>
   <prov:wasGeneratedBy>
-    <prov:entity prov:ref="seis_prov:sp007_wf_jude89du8l"/>
-    <prov:activity prov:ref="seis_prov:sp006_dc_f87sf7sf78"/>
+    <prov:entity prov:ref="seis_prov:sp007_wf_jude89du8l"></prov:entity>
+    <prov:activity prov:ref="seis_prov:sp006_dc_f87sf7sf78"></prov:activity>
   </prov:wasGeneratedBy>
 </prov:document>

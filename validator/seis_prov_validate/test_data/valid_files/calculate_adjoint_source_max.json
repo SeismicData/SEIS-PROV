@@ -1,16 +1,16 @@
 {
-    "activity": {
-        "seis_prov:sp001_ca_e1532cc": {
-            "seis_prov:adjoint_source_type": "Time Frequency Phase",
-            "prov:type": "seis_prov:calculate_adjoint_source",
-            "seis_prov:adjoint_source_type_uri": {
-                "$": "http://dx.doi.org/10.1111/j.1365-246X.2009.04368.x",
-                "type": "xsd:anyURI"
-            },
-            "prov:label": "Calculate Adjoint Source"
-        }
-    },
     "prefix": {
         "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
+    },
+    "activity": {
+        "seis_prov:sp001_ca_e1532cc": {
+            "seis_prov:adjoint_source_type_uri": {
+                "type": "xsd:anyURI",
+                "$": "http://dx.doi.org/10.1111/j.1365-246X.2009.04368.x"
+            },
+            "seis_prov:adjoint_source_type": "Time Frequency Phase",
+            "prov:label": "Calculate Adjoint Source",
+            "prov:type": "seis_prov:calculate_adjoint_source"
+        }
     }
 }

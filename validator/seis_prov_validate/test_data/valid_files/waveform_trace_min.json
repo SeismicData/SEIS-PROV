@@ -1,11 +1,11 @@
 {
-    "entity": {
-        "seis_prov:sp001_wf_c17dd1f": {
-            "prov:type": "seis_prov:waveform_trace",
-            "prov:label": "Waveform Trace"
-        }
-    },
     "prefix": {
         "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
+    },
+    "entity": {
+        "seis_prov:sp001_wf_c17dd1f": {
+            "prov:label": "Waveform Trace",
+            "prov:type": "seis_prov:waveform_trace"
+        }
     }
 }

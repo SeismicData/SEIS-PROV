@@ -1,12 +1,12 @@
 {
-    "activity": {
-        "seis_prov:sp001_dt_af30527": {
-            "prov:type": "seis_prov:detrend",
-            "seis_prov:detrending_method": "demean",
-            "prov:label": "Detrend"
-        }
-    },
     "prefix": {
         "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
+    },
+    "activity": {
+        "seis_prov:sp001_dt_af30527": {
+            "prov:label": "Detrend",
+            "prov:type": "seis_prov:detrend",
+            "seis_prov:detrending_method": "demean"
+        }
     }
 }

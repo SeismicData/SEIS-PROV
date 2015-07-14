@@ -1,166 +1,166 @@
 {
-    "activity": {
-        "seis_prov:sp007_dc_f87sf7sf78": {
-            "prov:type": "seis_prov:decimate",
-            "seis_prov:factor": {
-                "$": 2,
-                "type": "xsd:int"
+    "prefix": {
+        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
+    },
+    "agent": {
+        "seis_prov:sp001_sa_9dig8ata": {
+            "prov:type": {
+                "type": "prov:QualifiedName",
+                "$": "prov:SoftwareAgent"
             },
-            "prov:label": "Decimate"
-        },
-        "seis_prov:sp005_lp_f87sf7sf78": {
-            "prov:type": "seis_prov:lowpass_filter",
-            "seis_prov:filter_type": "Butterworth",
-            "prov:label": "Lowpass Filter",
-            "seis_prov:filter_order": {
-                "$": 4,
-                "type": "xsd:int"
+            "seis_prov:doi": "10.1785/gssrl.81.3.530",
+            "prov:label": "ObsPy",
+            "seis_prov:software_name": "ObsPy",
+            "seis_prov:software_version": "0.10.1",
+            "seis_prov:website": "http://www.obspy.org"
+        }
+    },
+    "entity": {
+        "seis_prov:sp002_wf_a34j4didj3": {
+            "seis_prov:seed_id": "BW.FURT.00.BHZ",
+            "seis_prov:number_of_samples": {
+                "type": "xsd:int",
+                "$": 6000
             },
-            "seis_prov:corner_frequency": {
-                "$": 10.0,
-                "type": "xsd:double"
+            "prov:type": "seis_prov:waveform_trace",
+            "seis_prov:units": "m/s",
+            "prov:label": "Waveform Trace",
+            "seis_prov:sampling_rate": {
+                "type": "xsd:double",
+                "$": 100.0
             },
-            "seis_prov:number_of_passes": {
-                "$": 1,
-                "type": "xsd:int"
+            "seis_prov:start_time": {
+                "type": "xsd:dateTime",
+                "$": "2013-01-02T12:10:11"
             }
         },
+        "seis_prov:sp004_wf_js83hf34aj": {
+            "seis_prov:seed_id": "BW.FURT.00.BHZ",
+            "seis_prov:number_of_samples": {
+                "type": "xsd:int",
+                "$": 6000
+            },
+            "prov:type": "seis_prov:waveform_trace",
+            "seis_prov:units": "m/s",
+            "prov:label": "Waveform Trace",
+            "seis_prov:sampling_rate": {
+                "type": "xsd:double",
+                "$": 100.0
+            },
+            "seis_prov:start_time": {
+                "type": "xsd:dateTime",
+                "$": "2013-01-02T12:10:11"
+            }
+        },
+        "seis_prov:sp006_wf_378f8ks8kd": {
+            "seis_prov:seed_id": "BW.FURT.00.BHZ",
+            "seis_prov:number_of_samples": {
+                "type": "xsd:int",
+                "$": 6000
+            },
+            "prov:type": "seis_prov:waveform_trace",
+            "seis_prov:units": "m/s",
+            "prov:label": "Waveform Trace",
+            "seis_prov:sampling_rate": {
+                "type": "xsd:double",
+                "$": 100.0
+            },
+            "seis_prov:start_time": {
+                "type": "xsd:dateTime",
+                "$": "2013-01-02T12:10:11"
+            }
+        },
+        "seis_prov:sp008_wf_jadz89du8l": {
+            "seis_prov:seed_id": "BW.FURT.00.BHZ",
+            "seis_prov:number_of_samples": {
+                "type": "xsd:int",
+                "$": 3000
+            },
+            "prov:type": "seis_prov:waveform_trace",
+            "seis_prov:units": "m/s",
+            "prov:label": "Waveform Trace",
+            "seis_prov:sampling_rate": {
+                "type": "xsd:double",
+                "$": 100.0
+            },
+            "seis_prov:start_time": {
+                "type": "xsd:dateTime",
+                "$": "2013-01-02T12:10:11"
+            }
+        }
+    },
+    "used": {
+        "_:id5": {
+            "prov:activity": "seis_prov:sp005_lp_f87sf7sf78",
+            "prov:entity": "seis_prov:sp004_wf_js83hf34aj"
+        },
+        "_:id6": {
+            "prov:activity": "seis_prov:sp007_dc_f87sf7sf78",
+            "prov:entity": "seis_prov:sp006_wf_378f8ks8kd"
+        },
+        "_:id4": {
+            "prov:activity": "seis_prov:sp003_dt_f87sf7sf78",
+            "prov:entity": "seis_prov:sp002_wf_a34j4didj3"
+        }
+    },
+    "wasAssociatedWith": {
+        "_:id2": {
+            "prov:activity": "seis_prov:sp005_lp_f87sf7sf78",
+            "prov:agent": "seis_prov:sp001_sa_9dig8ata"
+        },
+        "_:id3": {
+            "prov:activity": "seis_prov:sp007_dc_f87sf7sf78",
+            "prov:agent": "seis_prov:sp001_sa_9dig8ata"
+        },
+        "_:id1": {
+            "prov:activity": "seis_prov:sp003_dt_f87sf7sf78",
+            "prov:agent": "seis_prov:sp001_sa_9dig8ata"
+        }
+    },
+    "activity": {
         "seis_prov:sp003_dt_f87sf7sf78": {
+            "prov:label": "Detrend",
             "prov:type": "seis_prov:detrend",
-            "seis_prov:detrending_method": "demean",
-            "prov:label": "Detrend"
+            "seis_prov:detrending_method": "demean"
+        },
+        "seis_prov:sp005_lp_f87sf7sf78": {
+            "seis_prov:filter_type": "Butterworth",
+            "seis_prov:number_of_passes": {
+                "type": "xsd:int",
+                "$": 1
+            },
+            "prov:type": "seis_prov:lowpass_filter",
+            "seis_prov:filter_order": {
+                "type": "xsd:int",
+                "$": 4
+            },
+            "prov:label": "Lowpass Filter",
+            "seis_prov:corner_frequency": {
+                "type": "xsd:double",
+                "$": 10.0
+            }
+        },
+        "seis_prov:sp007_dc_f87sf7sf78": {
+            "prov:label": "Decimate",
+            "prov:type": "seis_prov:decimate",
+            "seis_prov:factor": {
+                "type": "xsd:int",
+                "$": 2
+            }
         }
     },
     "wasGeneratedBy": {
         "_:id7": {
-            "prov:entity": "seis_prov:sp004_wf_js83hf34aj",
-            "prov:activity": "seis_prov:sp003_dt_f87sf7sf78"
+            "prov:activity": "seis_prov:sp003_dt_f87sf7sf78",
+            "prov:entity": "seis_prov:sp004_wf_js83hf34aj"
         },
         "_:id8": {
-            "prov:entity": "seis_prov:sp006_wf_378f8ks8kd",
-            "prov:activity": "seis_prov:sp005_lp_f87sf7sf78"
+            "prov:activity": "seis_prov:sp005_lp_f87sf7sf78",
+            "prov:entity": "seis_prov:sp006_wf_378f8ks8kd"
         },
         "_:id9": {
-            "prov:entity": "seis_prov:sp008_wf_jadz89du8l",
-            "prov:activity": "seis_prov:sp007_dc_f87sf7sf78"
-        }
-    },
-    "wasAssociatedWith": {
-        "_:id3": {
-            "prov:agent": "seis_prov:sp001_sa_9dig8ata",
-            "prov:activity": "seis_prov:sp007_dc_f87sf7sf78"
-        },
-        "_:id2": {
-            "prov:agent": "seis_prov:sp001_sa_9dig8ata",
-            "prov:activity": "seis_prov:sp005_lp_f87sf7sf78"
-        },
-        "_:id1": {
-            "prov:agent": "seis_prov:sp001_sa_9dig8ata",
-            "prov:activity": "seis_prov:sp003_dt_f87sf7sf78"
-        }
-    },
-    "entity": {
-        "seis_prov:sp004_wf_js83hf34aj": {
-            "seis_prov:units": "m/s",
-            "seis_prov:number_of_samples": {
-                "$": 6000,
-                "type": "xsd:int"
-            },
-            "prov:type": "seis_prov:waveform_trace",
-            "seis_prov:start_time": {
-                "$": "2013-01-02T12:10:11",
-                "type": "xsd:dateTime"
-            },
-            "seis_prov:sampling_rate": {
-                "$": 100.0,
-                "type": "xsd:double"
-            },
-            "seis_prov:seed_id": "BW.FURT.00.BHZ",
-            "prov:label": "Waveform Trace"
-        },
-        "seis_prov:sp002_wf_a34j4didj3": {
-            "seis_prov:units": "m/s",
-            "seis_prov:number_of_samples": {
-                "$": 6000,
-                "type": "xsd:int"
-            },
-            "prov:type": "seis_prov:waveform_trace",
-            "seis_prov:start_time": {
-                "$": "2013-01-02T12:10:11",
-                "type": "xsd:dateTime"
-            },
-            "seis_prov:sampling_rate": {
-                "$": 100.0,
-                "type": "xsd:double"
-            },
-            "seis_prov:seed_id": "BW.FURT.00.BHZ",
-            "prov:label": "Waveform Trace"
-        },
-        "seis_prov:sp008_wf_jadz89du8l": {
-            "seis_prov:units": "m/s",
-            "seis_prov:number_of_samples": {
-                "$": 3000,
-                "type": "xsd:int"
-            },
-            "prov:type": "seis_prov:waveform_trace",
-            "seis_prov:start_time": {
-                "$": "2013-01-02T12:10:11",
-                "type": "xsd:dateTime"
-            },
-            "seis_prov:sampling_rate": {
-                "$": 100.0,
-                "type": "xsd:double"
-            },
-            "seis_prov:seed_id": "BW.FURT.00.BHZ",
-            "prov:label": "Waveform Trace"
-        },
-        "seis_prov:sp006_wf_378f8ks8kd": {
-            "seis_prov:units": "m/s",
-            "seis_prov:number_of_samples": {
-                "$": 6000,
-                "type": "xsd:int"
-            },
-            "prov:type": "seis_prov:waveform_trace",
-            "seis_prov:start_time": {
-                "$": "2013-01-02T12:10:11",
-                "type": "xsd:dateTime"
-            },
-            "seis_prov:sampling_rate": {
-                "$": 100.0,
-                "type": "xsd:double"
-            },
-            "seis_prov:seed_id": "BW.FURT.00.BHZ",
-            "prov:label": "Waveform Trace"
-        }
-    },
-    "agent": {
-        "seis_prov:sp001_sa_9dig8ata": {
-            "seis_prov:website": "http://www.obspy.org",
-            "prov:type": {
-                "$": "prov:SoftwareAgent",
-                "type": "prov:QualifiedName"
-            },
-            "seis_prov:software_version": "0.10.1",
-            "seis_prov:doi": "10.1785/gssrl.81.3.530",
-            "seis_prov:software_name": "ObsPy",
-            "prov:label": "ObsPy"
-        }
-    },
-    "prefix": {
-        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
-    },
-    "used": {
-        "_:id4": {
-            "prov:entity": "seis_prov:sp002_wf_a34j4didj3",
-            "prov:activity": "seis_prov:sp003_dt_f87sf7sf78"
-        },
-        "_:id5": {
-            "prov:entity": "seis_prov:sp004_wf_js83hf34aj",
-            "prov:activity": "seis_prov:sp005_lp_f87sf7sf78"
-        },
-        "_:id6": {
-            "prov:entity": "seis_prov:sp006_wf_378f8ks8kd",
-            "prov:activity": "seis_prov:sp007_dc_f87sf7sf78"
+            "prov:activity": "seis_prov:sp007_dc_f87sf7sf78",
+            "prov:entity": "seis_prov:sp008_wf_jadz89du8l"
         }
     }
 }

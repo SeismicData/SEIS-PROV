@@ -1,15 +1,15 @@
 {
-    "activity": {
-        "seis_prov:sp001_mp_1ec7fde": {
-            "prov:type": "seis_prov:multiply",
-            "seis_prov:factor": {
-                "$": 2.5,
-                "type": "xsd:double"
-            },
-            "prov:label": "Multiply"
-        }
-    },
     "prefix": {
         "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
+    },
+    "activity": {
+        "seis_prov:sp001_mp_1ec7fde": {
+            "prov:label": "Multiply",
+            "prov:type": "seis_prov:multiply",
+            "seis_prov:factor": {
+                "type": "xsd:double",
+                "$": 2.5
+            }
+        }
     }
 }

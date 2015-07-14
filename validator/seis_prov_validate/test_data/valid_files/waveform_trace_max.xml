@@ -1,5 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<prov:document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:seis_prov="http://seisprov.org/seis_prov/0.1/#">
+<prov:document xmlns:prov="http://www.w3.org/ns/prov#" xmlns:seis_prov="http://seisprov.org/seis_prov/0.1/#" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <prov:entity prov:id="seis_prov:sp001_wf_8afb672">
     <prov:label>Waveform Trace</prov:label>
     <prov:type xsi:type="xsd:string">seis_prov:waveform_trace</prov:type>

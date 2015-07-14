@@ -1,11 +1,11 @@
 {
-    "entity": {
-        "seis_prov:sp001_cs_67f9bf6": {
-            "prov:type": "seis_prov:cross_correlation_stack",
-            "prov:label": "Cross Correlation Stack"
-        }
-    },
     "prefix": {
         "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
+    },
+    "entity": {
+        "seis_prov:sp001_cs_67f9bf6": {
+            "prov:label": "Cross Correlation Stack",
+            "prov:type": "seis_prov:cross_correlation_stack"
+        }
     }
 }

@@ -1,19 +1,19 @@
 {
-    "entity": {
-        "seis_prov:sp001_cs_725f92c": {
-            "seis_prov:seed_id_a": "BW.FURT..BHZ",
-            "prov:type": "seis_prov:cross_correlation_stack",
-            "seis_prov:correlation_type": "Phase Cross Correlation",
-            "seis_prov:seed_id_b": "BW.ALTM..BHZ",
-            "seis_prov:correlation_count": {
-                "$": "48",
-                "type": "xsd:positiveInteger"
-            },
-            "prov:label": "Cross Correlation Stack",
-            "seis_prov:stacking_method": "mean"
-        }
-    },
     "prefix": {
         "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
+    },
+    "entity": {
+        "seis_prov:sp001_cs_725f92c": {
+            "seis_prov:stacking_method": "mean",
+            "seis_prov:seed_id_b": "BW.ALTM..BHZ",
+            "seis_prov:correlation_type": "Phase Cross Correlation",
+            "prov:type": "seis_prov:cross_correlation_stack",
+            "seis_prov:correlation_count": {
+                "type": "xsd:positiveInteger",
+                "$": "48"
+            },
+            "prov:label": "Cross Correlation Stack",
+            "seis_prov:seed_id_a": "BW.FURT..BHZ"
+        }
     }
 }

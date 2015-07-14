@@ -1,19 +1,19 @@
 {
-    "entity": {
-        "seis_prov:sp001_em_cb7d70a": {
-            "seis_prov:website": {
-                "$": "http://www.earth.lsa.umich.edu/~jritsema/research.html",
-                "type": "xsd:anyURI"
-            },
-            "seis_prov:description": "The famous S40RTS.",
-            "prov:type": "seis_prov:earth_model",
-            "seis_prov:model_name": "S40RTS",
-            "seis_prov:model_type": "3D",
-            "seis_prov:doi": "10.1111/j.1365-246X.2010.04884.x",
-            "prov:label": "Earth Model"
-        }
-    },
     "prefix": {
         "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
+    },
+    "entity": {
+        "seis_prov:sp001_em_cb7d70a": {
+            "seis_prov:description": "The famous S40RTS.",
+            "seis_prov:model_name": "S40RTS",
+            "prov:type": "seis_prov:earth_model",
+            "seis_prov:doi": "10.1111/j.1365-246X.2010.04884.x",
+            "seis_prov:model_type": "3D",
+            "prov:label": "Earth Model",
+            "seis_prov:website": {
+                "type": "xsd:anyURI",
+                "$": "http://www.earth.lsa.umich.edu/~jritsema/research.html"
+            }
+        }
     }
 }

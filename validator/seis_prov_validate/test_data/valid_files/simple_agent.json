@@ -1,18 +1,18 @@
 {
-    "agent": {
-        "seis_prov:sa_9DIG8AB": {
-            "seis_prov:website": "http://www.obspy.org",
-            "prov:type": {
-                "$": "prov:SoftwareAgent",
-                "type": "prov:QualifiedName"
-            },
-            "seis_prov:software_version": "0.10.1",
-            "seis_prov:doi": "10.1785/gssrl.81.3.530",
-            "seis_prov:software_name": "ObsPy",
-            "prov:label": "ObsPy"
-        }
-    },
     "prefix": {
         "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
+    },
+    "agent": {
+        "seis_prov:sa_9DIG8AB": {
+            "prov:type": {
+                "type": "prov:QualifiedName",
+                "$": "prov:SoftwareAgent"
+            },
+            "seis_prov:doi": "10.1785/gssrl.81.3.530",
+            "prov:label": "ObsPy",
+            "seis_prov:software_name": "ObsPy",
+            "seis_prov:software_version": "0.10.1",
+            "seis_prov:website": "http://www.obspy.org"
+        }
     }
 }

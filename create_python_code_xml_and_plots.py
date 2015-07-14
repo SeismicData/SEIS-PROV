@@ -194,15 +194,15 @@ def generate_code():
 
         # Same with the XML files.
 
-        filename = get_filename(filename, node_type, "xml", "min")
+        fname = get_filename(filename, node_type, "xml", "min")
         exec(min_file_contents + "\n\n"
-             "pr.serialize('%s', format='xml')" % filename)
-        c14n_xml(filename)
+             "pr.serialize('%s', format='xml')" % fname)
+        c14n_xml(fname)
 
-        filename = get_filename(filename, node_type, "xml", "max")
+        fname = get_filename(filename, node_type, "xml", "max")
         exec(max_file_contents + "\n\n"
-             "pr.serialize('%s', format='xml')" % filename)
-        c14n_xml(filename)
+             "pr.serialize('%s', format='xml')" % fname)
+        c14n_xml(fname)
 
         # And once again with JSON.
         jsonfile = get_filename(filename, node_type, "json", "min")
@@ -266,10 +266,10 @@ def generate_code_from_examples():
             get_filename(filename, "examples", "dot"))
 
         # Write XML.
-        filename = get_filename(filename, "examples", "xml")
+        fname = get_filename(filename, "examples", "xml")
         exec(code_str + "\n\n"
-             "pr.serialize('%s', format='xml')" % filename)
-        c14n_xml(filename)
+             "pr.serialize('%s', format='xml')" % fname)
+        c14n_xml(fname)
 
         # Write JSON.
         jsonfile = get_filename(filename, "examples", "json")
