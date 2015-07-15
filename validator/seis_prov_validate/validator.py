@@ -356,7 +356,7 @@ def _validate_prov_bundle(doc, json_schema, ns):
         # Validate the label.
         prov_label = [i for i in attrs if i[0] == prov.model.PROV_LABEL]
         if not prov_label:
-            _log_error("Record '%s' does have a prov:label set." %
+            _log_error("Record '%s' does not have a prov:label set." %
                        str(record.identifier))
         elif len(prov_label) > 1:
             _log_error("Record '%s' has %i prov:label's set. Only one is "

@@ -288,3 +288,13 @@ def test_unknown_seis_prov_type():
     assert result.errors == [
         "prov:type 'something_unknown' of record type 'prov:Entity' is not "
         "known to SEIS-PROV."]
+
+
+def test_no_prov_label():
+    filename = os.path.join(DATA_DIR, "invalid_files",
+                            "no_label.xml")
+    result = validate(filename)
+    assert result.is_valid is False
+    assert result.warnings == []
+    assert result.errors == [
+        "Record 'seis_prov:sp001_wf_c17dd1f' does not have a prov:label set."]

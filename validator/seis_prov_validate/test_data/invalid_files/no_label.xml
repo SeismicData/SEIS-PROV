@@ -1,0 +1,6 @@
+<prov:document xmlns:prov="http://www.w3.org/ns/prov#" xmlns:seis_prov="http://seisprov.org/seis_prov/0.1/#" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <!--This record has no label which is not allowed.-->
+  <prov:entity prov:id="seis_prov:sp001_wf_c17dd1f">
+    <prov:type xsi:type="xsd:string">seis_prov:waveform_trace</prov:type>
+  </prov:entity>
+</prov:document>
