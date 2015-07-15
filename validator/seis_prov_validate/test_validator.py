@@ -308,3 +308,14 @@ def test_many_prov_label():
     assert result.warnings == []
     assert result.errors == ["Record 'seis_prov:sp001_wf_c17dd1f' has 3 "
                              "prov:label's set. Only one is allowed."]
+
+
+def test_wrong_prov_label():
+    filename = os.path.join(DATA_DIR, "invalid_files",
+                            "wrong_label.xml")
+    result = validate(filename)
+    assert result.is_valid is False
+    assert result.warnings == []
+    assert result.errors == [
+        "Record 'seis_prov:sp001_wf_c17dd1f' has label 'Random Label' instead "
+        "of 'Waveform Trace'."]
