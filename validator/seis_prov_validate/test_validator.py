@@ -331,3 +331,15 @@ def test_additional_attribute():
         "Record 'seis_prov:sp001_wf_c17dd1f' has an additional attribute in "
         "the SEIS-PROV namespace: 'something'. This is not allowed for this "
         "record type."]
+
+
+def test_wrong_pattern_in_attribute():
+    filename = os.path.join(DATA_DIR, "invalid_files",
+                            "wrong_pattern_in_attribute.xml")
+    result = validate(filename)
+    assert result.is_valid is False
+    assert result.warnings == []
+    assert result.errors == [
+        "Attribute 'seed_id' in record 'seis_prov:sp001_wf_8afb672' with the "
+        "value '12BW.FURT..EHZ' does not match the regex "
+        "'^[A-Z0-9]{1,2}\\.[A-Z0-9]{1,5}\\.[A-Z0-9]{0,2}\\.[A-Z0-9]{3}$'."]
