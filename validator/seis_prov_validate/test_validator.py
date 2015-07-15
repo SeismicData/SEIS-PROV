@@ -89,7 +89,7 @@ def test_non_existent_path():
         "Path 'some/random/path/that/does/not/exist' does not exist."]
 
 
-def test_validatig_folder():
+def test_validating_folder():
     result = validate(DATA_DIR)
     assert result.is_valid is False
     assert result.warnings == []

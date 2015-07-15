@@ -62,6 +62,33 @@ def _check_json_schema():
     return __JSON_SCHEMA_CACHE[0]
 
 
+def _is_xml_file(filename):
+    """
+    Helper function testing if a file is an XML file.
+
+    :param filename: The file to test.
+    """
+    try:
+        etree.parse(filename)
+        return True
+    except:
+        return False
+
+
+def _is_json_file(filename):
+    """
+    Helper function testing if a file is valid JSON file.
+
+    :param filename: The file to test.
+    """
+    with io.open(filename, "rt") as fh:
+        try:
+            json.load(fh)
+            return True
+        except:
+            return False
+
+
 class SeisProvValidationException(Exception):
     def __init__(self, message):
         self.message = message
@@ -144,9 +171,23 @@ def _validate(filename):
     # Step 1: Check the JSON schema.
     json_schema = _check_json_schema()
 
+    # Determine file type.
+    is_json = _is_json_file(filename)
+    is_xml = _is_xml_file(filename)
+
+    if is_json is False and is_xml is False:
+        _log_error("File is neither a valid JSON nor a valid XML file.")
+    elif is_json is True and is_xml is True:
+        # Should not happen for obvious reasons...
+        raise NotImplementedError
+    elif is_json:
+        fileformat = "json"
+    elif is_xml:
+        fileformat = "xml"
+
     # Step 2: Attempt to read the provenance file with the prov Python package.
     try:
-        doc = prov.read(filename)
+        doc = prov.read(filename, format=fileformat)
     except Exception as e:
         _log_error("Could not parse the file with the prov Python library due"
                    " to: the following PROV error message: %s" % (str(e)))
