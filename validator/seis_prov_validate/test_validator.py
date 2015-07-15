@@ -57,3 +57,13 @@ def test_invalid_files(filename):
     Make sure all files that should be invalid are invalid.
     """
     assert validate(filename).is_valid is False
+
+
+def test_software_agent_missing_website():
+    result = validate(INVALID_FILES["software_agent_missing_website.xml"])
+    assert result.is_valid is False
+    assert result.errors == [
+        "Record 'seis_prov:sp001_sa_9345084' misses the following required "
+        "attributes in the SEIS-PROV namespace: 'website'"]
+
+    assert result.warnings == []

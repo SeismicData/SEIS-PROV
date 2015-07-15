@@ -299,8 +299,9 @@ def _validate_prov_bundle(doc, json_schema, ns):
 
         if missing_attributes:
             _log_error("Record '%s' misses the following required "
-                       "attributes:\n %s" % (str(record.identifier),
-                                             ", ".join(missing_attributes)))
+                       "attributes in the SEIS-PROV namespace: %s" %
+                       (str(record.identifier),
+                         ", ".join("'%s'" % _i for _i in missing_attributes)))
 
         # Validate each attribute.
         for attr in attrs:
