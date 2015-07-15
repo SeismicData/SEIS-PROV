@@ -228,3 +228,27 @@ def test_prov_document_with_two_types():
     assert result.errors == []
     assert result.warnings == ["The document is a valid W3C PROV document but "
                                "not a single SEIS-PROV record has been found."]
+
+
+def test_seis_prov_record_with_two_types_and_one_in_seis_prov_namespace():
+    filename = os.path.join(DATA_DIR, "invalid_files",
+                            "record_with_two_types_in_seis_prov_ns.xml")
+    result = validate(filename)
+    assert result.is_valid is False
+    assert result.warnings == []
+    assert result.errors == [
+        "Record 'tr:WD-prov-dm-20111215' has 2 prov:type's set. Only one is "
+        "allowed as soon as any prov:type or the record's id is in the "
+        "SEIS-PROV namespace."]
+
+
+def test_seis_prov_record_with_two_types_and_seis_prov_id():
+    filename = os.path.join(DATA_DIR, "invalid_files",
+                            "record_with_two_types_but_id_in_seis_prov.xml")
+    result = validate(filename)
+    assert result.is_valid is False
+    assert result.warnings == []
+    assert result.errors == [
+        "Record 'seis_prov:WD-prov-dm-20111215' has 2 prov:type's set. Only "
+        "one is allowed as soon as any prov:type or the record's id is in the "
+        "SEIS-PROV namespace."]

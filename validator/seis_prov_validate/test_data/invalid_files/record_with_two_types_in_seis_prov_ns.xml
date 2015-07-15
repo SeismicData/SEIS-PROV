@@ -1,0 +1,14 @@
+<prov:document
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:prov="http://www.w3.org/ns/prov#"
+    xmlns:tr="http://example.com/ns/tr#"
+    xmlns:seis_prov="http://seisprov.org/seis_prov/0.1/#">
+  <!--As soon as any type is in the SEIS-PROV namespace, it can no longer have two types -->
+
+  <prov:entity prov:id="tr:WD-prov-dm-20111215">
+    <prov:type xsi:type="xsd:QName">prov:Plan</prov:type>
+    <prov:type xsi:type="xsd:QName">seis_prov:Workflow</prov:type>
+  </prov:entity>
+
+</prov:document>
