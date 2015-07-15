@@ -319,3 +319,15 @@ def test_wrong_prov_label():
     assert result.errors == [
         "Record 'seis_prov:sp001_wf_c17dd1f' has label 'Random Label' instead "
         "of 'Waveform Trace'."]
+
+
+def test_additional_attribute():
+    filename = os.path.join(DATA_DIR, "invalid_files",
+                            "waveform_with_extra_attribute.xml")
+    result = validate(filename)
+    assert result.is_valid is False
+    assert result.warnings == []
+    assert result.errors == [
+        "Record 'seis_prov:sp001_wf_c17dd1f' has an additional attribute in "
+        "the SEIS-PROV namespace: 'something'. This is not allowed for this "
+        "record type."]
