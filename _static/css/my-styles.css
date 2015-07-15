@@ -95,3 +95,8 @@ table {
     width: 100%;
     margin-top: 10px;
 }
+
+/* Some padding on the logo in the side bar */
+.logo {
+    width: 85% !important
+}
