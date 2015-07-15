@@ -346,7 +346,7 @@ def _validate_prov_bundle(doc, json_schema, ns):
         json_def = json_schema_map[rec_type]
 
         if prov_type not in json_def:
-            _log_error("prov type '%s' of record type '%s' no  valid for "
+            _log_error("prov:type '%s' of record type '%s' is not known to "
                        "SEIS-PROV." % (prov_type, str(rec_type)))
 
         definition = json_def[prov_type]

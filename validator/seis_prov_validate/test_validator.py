@@ -277,3 +277,14 @@ def test_seis_prov_record_but_wrong_type():
         "namespace but its prov:type is neither in the SEIS-PROV "
         "namespace not is it a person or a software agent."
         " This is not allowed."]
+
+
+def test_unknown_seis_prov_type():
+    filename = os.path.join(DATA_DIR, "invalid_files",
+                            "unknown_seis_prov_type.xml")
+    result = validate(filename)
+    assert result.is_valid is False
+    assert result.warnings == []
+    assert result.errors == [
+        "prov:type 'something_unknown' of record type 'prov:Entity' is not "
+        "known to SEIS-PROV."]

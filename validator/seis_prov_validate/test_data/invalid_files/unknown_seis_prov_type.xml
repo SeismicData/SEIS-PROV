@@ -1,0 +1,7 @@
+<prov:document xmlns:prov="http://www.w3.org/ns/prov#" xmlns:seis_prov="http://seisprov.org/seis_prov/0.1/#" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <prov:entity prov:id="seis_prov:sp001_su_c17dd1f">
+    <!--This file has an unknown seis prov type.-->
+    <prov:label>Something Unknown</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:something_unknown</prov:type>
+  </prov:entity>
+</prov:document>
