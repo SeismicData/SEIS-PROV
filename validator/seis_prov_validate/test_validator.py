@@ -67,3 +67,31 @@ def test_software_agent_missing_website():
         "attributes in the SEIS-PROV namespace: 'website'"]
 
     assert result.warnings == []
+
+
+def test_software_agent_missing_multiple_attributes():
+    result = validate(
+        INVALID_FILES["software_agent_missing_multiple_attributes.xml"])
+    assert result.is_valid is False
+    assert result.errors == [
+        "Record 'seis_prov:sp001_sa_9345084' misses the following required "
+        "attributes in the SEIS-PROV namespace: 'software_name', "
+        "'software_version', 'website'"]
+
+    assert result.warnings == []
+
+
+def test_non_existent_path():
+    result = validate("some/random/path/that/does/not/exist")
+    assert result.is_valid is False
+    assert result.warnings == []
+    assert result.errors == [
+        "Path 'some/random/path/that/does/not/exist' does not exist."]
+
+
+def test_validatig_folder():
+    result = validate(DATA_DIR)
+    assert result.is_valid is False
+    assert result.warnings == []
+    assert result.errors == [
+        "Path '%s' is not a file." % DATA_DIR]

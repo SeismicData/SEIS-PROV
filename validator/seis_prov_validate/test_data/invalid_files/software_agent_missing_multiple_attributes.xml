@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<prov:document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:seis_prov="http://seisprov.org/seis_prov/0.1/#" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <!--This file is under the seis-prov namespace but lacks a number of attributes. This is not allowed.-->
+  <prov:softwareAgent prov:id="seis_prov:sp001_sa_9345084">
+    <prov:label>ObsPy</prov:label>
+  </prov:softwareAgent>
+</prov:document>

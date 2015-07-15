@@ -294,14 +294,14 @@ def _validate_prov_bundle(doc, json_schema, ns):
                                    for _i in definition["attributes"]
                                    if _i["required"]])
         available_attributes = set([_i[0].localpart for _i in attrs])
-        missing_attributes = required_attributes.difference(
-            available_attributes)
+        missing_attributes = sorted(required_attributes.difference(
+            available_attributes))
 
         if missing_attributes:
             _log_error("Record '%s' misses the following required "
                        "attributes in the SEIS-PROV namespace: %s" %
                        (str(record.identifier),
-                         ", ".join("'%s'" % _i for _i in missing_attributes)))
+                        ", ".join("'%s'" % _i for _i in missing_attributes)))
 
         # Validate each attribute.
         for attr in attrs:
