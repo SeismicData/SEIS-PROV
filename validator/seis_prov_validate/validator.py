@@ -360,7 +360,7 @@ def _validate_prov_bundle(doc, json_schema, ns):
                        str(record.identifier))
         elif len(prov_label) > 1:
             _log_error("Record '%s' has %i prov:label's set. Only one is "
-                       "allowed" % (str(record.identifier), len(prov_label)))
+                       "allowed." % (str(record.identifier), len(prov_label)))
         prov_label = prov_label[0][1]
 
         # '*' is a special label for agents.

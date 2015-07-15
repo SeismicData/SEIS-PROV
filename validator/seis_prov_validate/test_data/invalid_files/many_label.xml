@@ -1,0 +1,9 @@
+<prov:document xmlns:prov="http://www.w3.org/ns/prov#" xmlns:seis_prov="http://seisprov.org/seis_prov/0.1/#" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <prov:entity prov:id="seis_prov:sp001_wf_c17dd1f">
+    <!--Multiple Labels is also not allowed.-->
+    <prov:label>Waveform Trace</prov:label>
+    <prov:label>Something Else</prov:label>
+    <prov:label>Something Blue</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:waveform_trace</prov:type>
+  </prov:entity>
+</prov:document>
