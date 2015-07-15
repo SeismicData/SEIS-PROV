@@ -100,3 +100,9 @@ table {
 .logo {
     width: 85% !important
 }
+
+
+/* Padding of e logo on the index page */
+.align-center > img {
+    padding: 40px
+}

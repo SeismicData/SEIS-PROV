@@ -1,6 +1,10 @@
 SEIS-PROV: Provenance for Seismological Data
 ============================================
 
+.. image:: ./logo/seis_prov_logo.svg
+    :width: 50%
+    :align: center
+
 Welcome to the ``SEIS-PROV`` documentation and definition. This document is organized as follows:
 
 
