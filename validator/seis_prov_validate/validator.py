@@ -327,7 +327,7 @@ def _validate_prov_bundle(doc, json_schema, ns):
                         "Record '%s' has an id in the SEIS-PROV namespace "
                         "but its prov:type is neither in the SEIS-PROV "
                         "namespace not is it a person or a software agent."
-                        " This is not allowed.")
+                        " This is not allowed." % str(record.identifier))
             else:
                 # This should not be able to happen as we check for this
                 # combination a bit further up the code.

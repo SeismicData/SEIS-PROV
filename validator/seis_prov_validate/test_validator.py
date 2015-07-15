@@ -264,3 +264,16 @@ def test_normal_prov_record_but_seis_prov_type():
         "Record 'tr:sp001_wf_c17dd1f' has a prov:type attribute in the "
         "SEIS-PROV namespace but its id is not part of the namespace. This "
         "is not allowed."]
+
+
+def test_seis_prov_record_but_wrong_type():
+    filename = os.path.join(DATA_DIR, "invalid_files",
+                            "record_seis_prov_id_but_wrong_type.xml")
+    result = validate(filename)
+    assert result.is_valid is False
+    assert result.warnings == []
+    assert result.errors == [
+        "Record 'seis_prov:sp001_wf_c17dd1f' has an id in the SEIS-PROV "
+        "namespace but its prov:type is neither in the SEIS-PROV "
+        "namespace not is it a person or a software agent."
+        " This is not allowed."]
