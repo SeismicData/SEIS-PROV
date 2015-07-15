@@ -15,6 +15,7 @@ $ py.test test_validator.py
 """
 import glob
 import inspect
+import io
 import os
 import pytest
 
@@ -49,6 +50,17 @@ def test_valid_files(filename):
     Make sure all files that should be valid are valid.
     """
     assert validate(filename).is_valid is True
+
+
+@pytest.mark.parametrize("filename", sorted(VALID_FILES.values()))
+def test_valid_files_from_bytesio(filename):
+    """
+    Make sure all files that should be valid are valid if they are read from a
+    BytesIO file.
+    """
+    with open(filename, "rb") as fh:
+        with io.BytesIO(fh.read()) as buf:
+            assert validate(buf).is_valid is True
 
 
 @pytest.mark.parametrize("filename", sorted(INVALID_FILES.values()))
