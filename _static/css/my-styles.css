@@ -106,3 +106,29 @@ table {
 .align-center > img {
     padding: 40px
 }
+
+
+/* Change the color scheme */
+.wy-side-nav-search, .wy-nav-top, .wy-menu-vertical a:active {
+    background-color: #659872
+}
+
+a, a:visited {
+    color: #659872
+}
+
+a:hover {
+    color: #98BAA1
+}
+
+.wy-menu-vertical a, .wy-menu-vertical a:visited {
+    color: #B3B3B3
+}
+
+.admonition-title {
+    background: #93B09A none repeat scroll 0% 0% !important
+}
+
+.note {
+    background: #DBE4DE none repeat scroll 0% 0% !important
+}
