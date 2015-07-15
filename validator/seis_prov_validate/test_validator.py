@@ -95,3 +95,35 @@ def test_validating_folder():
     assert result.warnings == []
     assert result.errors == [
         "Path '%s' is not a file." % DATA_DIR]
+
+
+def test_validating_random_other_file():
+    filename = os.path.join(DATA_DIR, "invalid_files", "random_text_file.txt")
+    result = validate(filename)
+    assert result.is_valid is False
+    assert result.warnings == []
+    assert result.errors == [
+        "File is neither a valid JSON nor a valid XML file."]
+
+
+def test_validating_random_json_file():
+    filename = os.path.join(DATA_DIR, "invalid_files",
+                            "random_json_file.json")
+    result = validate(filename)
+    assert result.is_valid is False
+    assert result.warnings == []
+    assert len(result.errors) == 1
+    assert result.errors[0].startswith(
+        "Could not parse the file with the prov Python library due to: the "
+        "following PROV error message:")
+
+
+def test_validating_random_xml_file():
+    filename = os.path.join(DATA_DIR, "invalid_files",
+                            "random_xml_file.xml")
+    result = validate(filename)
+    assert result.is_valid is False
+    assert result.warnings == []
+    assert len(result.errors) == 1
+    assert result.errors[0].startswith(
+        "SEIS-PROV namespace not found in document!")

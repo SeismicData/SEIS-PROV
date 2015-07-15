@@ -190,7 +190,7 @@ def _validate(filename):
         doc = prov.read(filename, format=fileformat)
     except Exception as e:
         _log_error("Could not parse the file with the prov Python library due"
-                   " to: the following PROV error message: %s" % (str(e)))
+                   " to: the following PROV error message: %s" % (repr(e)))
 
     # Step 3: Validate against the PROV XML XSD Scheme.
     _validate_against_xsd_scheme(doc)
