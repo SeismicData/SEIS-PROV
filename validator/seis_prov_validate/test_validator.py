@@ -252,3 +252,15 @@ def test_seis_prov_record_with_two_types_and_seis_prov_id():
         "Record 'seis_prov:WD-prov-dm-20111215' has 2 prov:type's set. Only "
         "one is allowed as soon as any prov:type or the record's id is in the "
         "SEIS-PROV namespace."]
+
+
+def test_normal_prov_record_but_seis_prov_type():
+    filename = os.path.join(DATA_DIR, "invalid_files",
+                            "record_non_sp_ns_but_sp_type.xml")
+    result = validate(filename)
+    assert result.is_valid is False
+    assert result.warnings == []
+    assert result.errors == [
+        "Record 'tr:sp001_wf_c17dd1f' has a prov:type attribute in the "
+        "SEIS-PROV namespace but its id is not part of the namespace. This "
+        "is not allowed."]
