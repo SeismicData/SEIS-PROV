@@ -271,6 +271,10 @@ def _validate_prov_bundle(doc, json_schema, ns):
                 if t.startswith("%s:" % ns.prefix):
                     prov_type_in_ns = True
                     break
+            elif isinstance(t, prov.model.Literal):
+                if t.value.startswith("%s:" % ns.prefix):
+                    prov_type_in_ns = True
+                    break
             else:
                 if t.namespace == ns:
                     prov_type_in_ns = True

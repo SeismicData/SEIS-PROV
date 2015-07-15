@@ -193,7 +193,7 @@ def test_empty_seis_prov_documents():
                                "not a single SEIS-PROV record has been found."]
 
 
-def test_prov_document_with_two_types():
+def test_seis_prov_document_with_two_types():
     filename = os.path.join(DATA_DIR, "invalid_files",
                             "entity_with_two_prov_types.xml")
     result = validate(filename)
@@ -214,3 +214,17 @@ def test_prov_document_with_no_types():
     assert result.errors == [
         "Record 'seis_prov:sp001_wf_c17dd1f' has an id in the SEIS-PROV "
         "namespace but no prov:type attribute. This is not allowed."]
+
+
+def test_prov_document_with_two_types():
+    """
+    A pure PROV record can have two types. No problem.
+    """
+    filename = os.path.join(
+        DATA_DIR, "valid_files",
+        "record_with_two_types_but_not_in_seis_prov_ns.xml")
+    result = validate(filename)
+    assert result.is_valid is True
+    assert result.errors == []
+    assert result.warnings == ["The document is a valid W3C PROV document but "
+                               "not a single SEIS-PROV record has been found."]
