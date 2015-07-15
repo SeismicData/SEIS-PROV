@@ -8,8 +8,8 @@ import sys
 
 sys.path.append(".")
 
-from header import (NS_PREFIX, NS_URL, get_filename,
-                    current_dir, activity_dir, entity_dir, agent_dir)  # NOQA
+from header import (get_filename, current_dir, activity_dir, entity_dir,
+                    agent_dir)  # NOQA
 
 with io.open(os.path.join(current_dir, "details.rst.template"), "rt") as fh:
     DETAILS_TEMPLATE = fh.read()
@@ -143,12 +143,6 @@ In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
 
     </div>
     </div>
-""".strip()
-
-
-ATTRIBUTE_TEMPLATE = """
-``seis_prov:{name}`` {types}
-    {description}
 """.strip()
 
 

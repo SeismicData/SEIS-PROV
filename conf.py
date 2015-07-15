@@ -17,7 +17,7 @@ import sys
 
 sys.path.append(".")
 
-from header import  NS_PREFIX, NS_URL, VERSION
+from header import NS_PREFIX, NS_URL, VERSION  # NOQA
 
 # Some variables for all RST files.
 rst_epilog = """
@@ -29,8 +29,6 @@ rst_epilog = """
 
 filename = os.path.abspath(inspect.getfile(inspect.currentframe()))
 folder = os.path.dirname(filename)
-
-
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
