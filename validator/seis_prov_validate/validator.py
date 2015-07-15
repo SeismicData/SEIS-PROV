@@ -253,20 +253,41 @@ def _validate_prov_bundle(doc, json_schema, ns):
         # sets of attributes so we just create a union of them here.
         attrs = list(set(record.attributes).union(record.extra_attributes))
 
+        if record.identifier:
+            id_in_seis_prov_ns = record.identifier.namespace == ns
+        else:
+            id_in_seis_prov_ns = False
+
         # Find the prov type
         prov_type = [i[1] for i in attrs if i[0] == prov.model.PROV_TYPE]
-        if len(prov_type) > 1:
-            _log_error("Record '%s' has %i prov:type's set. Only one is "
-                       "allowed" % (str(record.identifier), len(prov_type)))
 
-        rec_type = record.get_type()
-        if rec_type not in (
-                prov.model.PROV_ENTITY, prov.model.PROV_ACTIVITY,
-                prov.model.PROV_AGENT) and record.identifier is None:
+        # Check if any of the prov:type's is in the SEIS-PROV namespace.
+        prov_type_in_ns = False
+        for t in prov_type:
+            # If neither the prov type nor the id are in the SEIS-PROV
+            # namespace it is not part of SEIS-PROV and so we don't validate
+            # it.
+            if isinstance(t, six.string_types):
+                if t.startswith("%s:" % ns.prefix):
+                    prov_type_in_ns = True
+                    break
+            else:
+                if t.namespace == ns:
+                    prov_type_in_ns = True
+                    break
+
+        # Neither id not prov type in SEIS-PROV namespace. We don't have to
+        # worry anymore.
+        if not id_in_seis_prov_ns and not prov_type_in_ns:
             continue
 
-        id_in_seis_prov_ns = record.identifier.namespace == ns
-
+        if len(prov_type) > 1:
+            # As soon as either the id or any type is in the SEIS_PROV
+            # namespace, this is no longer allowed.
+            _log_error("Record '%s' has %i prov:type's set. Only one is "
+                       "allowed as soon as any prov:type or the record's id "
+                       "is in the SEIS-PROV namespace." %
+                       (str(record.identifier), len(prov_type)))
         if not prov_type:
             # If the id is in the SEIS-PROV namespace, it must have a
             # prov_type.
@@ -277,14 +298,10 @@ def _validate_prov_bundle(doc, json_schema, ns):
             continue
         prov_type = prov_type[0]
 
-        # If neither the prov type nor the id are in the SEIS-PROV namespace it
-        # is not part of SEIS-PROV and so we don't validate it.
-        if isinstance(prov_type, six.string_types):
-            prov_type_in_ns = prov_type.startswith("%s:" % ns.prefix)
-        else:
-            prov_type_in_ns = prov_type.namespace == ns
-
-        if not prov_type_in_ns and not id_in_seis_prov_ns:
+        rec_type = record.get_type()
+        if rec_type not in (
+                prov.model.PROV_ENTITY, prov.model.PROV_ACTIVITY,
+                prov.model.PROV_AGENT) and record.identifier is None:
             continue
 
         # Now we need to deal with a couple of different failure cases.

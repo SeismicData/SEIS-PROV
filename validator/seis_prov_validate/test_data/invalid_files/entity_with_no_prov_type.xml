@@ -1,0 +1,6 @@
+<prov:document xmlns:prov="http://www.w3.org/ns/prov#" xmlns:seis_prov="http://seisprov.org/seis_prov/0.1/#" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <prov:entity prov:id="seis_prov:sp001_wf_c17dd1f">
+    <!--This entity has no prov:type set. This is not allowed as soon as it has an id under the SEIS-PROV namespace -->
+    <prov:label>Waveform Trace</prov:label>
+  </prov:entity>
+</prov:document>

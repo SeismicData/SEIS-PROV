@@ -192,3 +192,25 @@ def test_empty_seis_prov_documents():
     assert result.warnings == ["The document is a valid W3C PROV document but "
                                "not a single SEIS-PROV record has been found."]
 
+
+def test_prov_document_with_two_types():
+    filename = os.path.join(DATA_DIR, "invalid_files",
+                            "entity_with_two_prov_types.xml")
+    result = validate(filename)
+    assert result.is_valid is False
+    assert result.warnings == []
+    assert result.errors == [
+        "Record 'seis_prov:sp001_wf_c17dd1f' has 2 prov:type's set. Only one "
+        "is allowed as soon as any prov:type or the record's id is in the "
+        "SEIS-PROV namespace."]
+
+
+def test_prov_document_with_no_types():
+    filename = os.path.join(DATA_DIR, "invalid_files",
+                            "entity_with_no_prov_type.xml")
+    result = validate(filename)
+    assert result.is_valid is False
+    assert result.warnings == []
+    assert result.errors == [
+        "Record 'seis_prov:sp001_wf_c17dd1f' has an id in the SEIS-PROV "
+        "namespace but no prov:type attribute. This is not allowed."]
