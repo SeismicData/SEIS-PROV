@@ -62,26 +62,27 @@ def _check_json_schema():
     return __JSON_SCHEMA_CACHE[0]
 
 
-def _is_xml_file(filename):
+def _is_xml_file(file_object):
     """
     Helper function testing if a file is an XML file.
 
-    :param filename: The file to test.
+    :param file_object: Open file or file-like object to test.
     """
     try:
-        etree.parse(filename)
+        etree.parse(file_object)
         return True
     except:
         return False
 
 
-def _is_json_file(filename):
+def _is_json_file(file_object):
     """
     Helper function testing if a file is valid JSON file.
 
-    :param filename: The file to test.
+    :param file_object: Open file or file-like object to test.
     """
-    with io.open(filename, "rt") as fh:
+    # Has to be decoded to a string to work with json.
+    with io.StringIO(file_object.read().decode()) as fh:
         try:
             json.load(fh)
             return True
@@ -132,11 +133,11 @@ class SeisProvValidationResult(object):
         return ret_str.strip()
 
 
-def validate(filename):
+def validate(file_or_object):
     """
     Validate a given SEIS-PROV file.
 
-    :param filename: The filename to validate.
+    :param file_or_object: The filename or file-like object to validate.
     """
     errors = []
     warns = []
@@ -146,7 +147,7 @@ def validate(filename):
         warnings.simplefilter("always")
 
         try:
-            _validate(filename)
+            _validate(file_or_object)
         except SeisProvValidationException as e:
             errors.append(e.message)
 
@@ -160,20 +161,43 @@ def validate(filename):
                                     warnings=warns)
 
 
-def _validate(filename):
-    # Start with the very basic checks. Check if the file exists.
-    if not os.path.exists(filename):
-        _log_error("Path '%s' does not exist." % filename)
-    # Make sure its a file.
-    if not os.path.isfile(filename):
-        _log_error("Path '%s' is not a file." % filename)
+def _validate(file_or_object):
+    """
+    Validate a given SEIS-PROV file.
 
-    # Step 1: Check the JSON schema.
+    This function is a helper routine and either opens the file if necessary or
+    just passes the file pointer.
+
+    :param file_or_object: The filename or file-like object to validate.
+    """
+    if isinstance(file_or_object, six.string_types):
+        # Check if the file exists.
+        if not os.path.exists(file_or_object):
+            _log_error("Path '%s' does not exist." % file_or_object)
+        # Make sure its a file.
+        if not os.path.isfile(file_or_object):
+            _log_error("Path '%s' is not a file." % file_or_object)
+        with io.open(file_or_object, "rb") as fh:
+            return __validate_seis_prov(fh)
+    else:
+        return __validate_seis_prov(file_or_object)
+
+
+def __validate_seis_prov(file_object):
+    """
+    Core validation function.
+
+    :param file_object: Open file or file-like object.
+    """
+    original_position = file_object.tell()
+    # Step 1: Check and read the JSON schema.
     json_schema = _check_json_schema()
 
     # Determine file type.
-    is_json = _is_json_file(filename)
-    is_xml = _is_xml_file(filename)
+    is_json = _is_json_file(file_object)
+    file_object.seek(original_position, 0)
+    is_xml = _is_xml_file(file_object)
+    file_object.seek(original_position, 0)
 
     if is_json is False and is_xml is False:
         _log_error("File is neither a valid JSON nor a valid XML file.")
@@ -187,7 +211,7 @@ def _validate(filename):
 
     # Step 2: Attempt to read the provenance file with the prov Python package.
     try:
-        doc = prov.read(filename, format=fileformat)
+        doc = prov.read(file_object, format=fileformat)
     except Exception as e:
         _log_error("Could not parse the file with the prov Python library due"
                    " to: the following PROV error message: %s" % (repr(e)))
