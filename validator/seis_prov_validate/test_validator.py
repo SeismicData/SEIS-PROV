@@ -3,7 +3,7 @@
 """
 Test cases for the SEIS-PROV validator.
 
-Execute with (require pytest to be installed):
+Execute with (requires pytest to be installed):
 
 $ py.test test_validator.py
 
@@ -170,3 +170,25 @@ def test_validating_random_xml_file():
     assert len(result.errors) == 1
     assert result.errors[0].startswith(
         "SEIS-PROV namespace not found in document!")
+
+
+def test_empty_seis_prov_documents():
+    """
+    These are valid but at least a warning should be shown to alert the users.
+    """
+    filename = os.path.join(DATA_DIR, "valid_files",
+                            "empty_seis_prov_document.xml")
+    result = validate(filename)
+    assert result.is_valid is True
+    assert result.errors == []
+    assert result.warnings == ["The document is a valid W3C PROV document but "
+                               "not a single SEIS-PROV record has been found."]
+
+    filename = os.path.join(DATA_DIR, "valid_files",
+                            "empty_seis_prov_document.json")
+    result = validate(filename)
+    assert result.is_valid is True
+    assert result.errors == []
+    assert result.warnings == ["The document is a valid W3C PROV document but "
+                               "not a single SEIS-PROV record has been found."]
+
