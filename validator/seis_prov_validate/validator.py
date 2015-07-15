@@ -421,6 +421,8 @@ def _validate_prov_bundle(doc, json_schema, ns):
     return count
 
 
+# Collection of functions performing the actual type validation. Should return
+# True/False. If an error occurs it will be considered to not be of that type.
 TYPE_MAP = {
     "xsd:double": lambda x: isinstance(x, float),
     "xsd:decimal": lambda x: float(x.value) is not None,

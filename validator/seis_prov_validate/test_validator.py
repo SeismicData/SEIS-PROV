@@ -343,3 +343,24 @@ def test_wrong_pattern_in_attribute():
         "Attribute 'seed_id' in record 'seis_prov:sp001_wf_8afb672' with the "
         "value '12BW.FURT..EHZ' does not match the regex "
         "'^[A-Z0-9]{1,2}\\.[A-Z0-9]{1,5}\\.[A-Z0-9]{0,2}\\.[A-Z0-9]{3}$'."]
+
+
+def test_wrong_type_in_attr_string_instead_of_float():
+    filename = os.path.join(DATA_DIR, "invalid_files",
+                            "wrong_type_in_attribute_str_instead_of_float.xml")
+    result = validate(filename)
+    assert result.is_valid is False
+    assert result.warnings == []
+    assert len(result.errors) == 1
+    assert "could not convert string to float" in result.errors[0].lower()
+
+
+def test_wrong_type_in_attr_string_negative_instead_of_positive_integer():
+    filename = os.path.join(
+        DATA_DIR, "invalid_files",
+        "wrong_type_in_attribute_negative_instead_of_positive_integer.xml")
+    result = validate(filename)
+    assert result.is_valid is False
+    assert result.warnings == []
+    assert len(result.errors) == 1
+    assert "not a valid value of the atomic type" in result.errors[0].lower()
