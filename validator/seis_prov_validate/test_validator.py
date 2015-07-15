@@ -56,7 +56,7 @@ def test_valid_files(filename):
 def test_valid_files_from_bytesio(filename):
     """
     Make sure all files that should be valid are valid if they are read from a
-    BytesIO file.
+    BytesIO object.
     """
     with open(filename, "rb") as fh:
         with io.BytesIO(fh.read()) as buf:
@@ -69,6 +69,17 @@ def test_invalid_files(filename):
     Make sure all files that should be invalid are invalid.
     """
     assert validate(filename).is_valid is False
+
+
+@pytest.mark.parametrize("filename", sorted(INVALID_FILES.values()))
+def test_invalid_files_from_bytesio(filename):
+    """
+    Make sure all files that should be invalid are invalid if they are read
+    from a BytesIO object.
+    """
+    with open(filename, "rb") as fh:
+        with io.BytesIO(fh.read()) as buf:
+            assert validate(buf).is_valid is False
 
 
 def test_software_agent_missing_website():
