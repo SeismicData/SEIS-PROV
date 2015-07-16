@@ -1,6 +1,5 @@
-_generated
-_build
-_generated_details.rst
-validator/seis_prov_validate/schemas/seis_prov.json
+definition/_generated
+definition/_build
+definition/_generated_details.rst
 validator/seis_prov_validate.egg-info
 validator/dist

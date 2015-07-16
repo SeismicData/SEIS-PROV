@@ -139,7 +139,8 @@ def validate():
 
     jsonfile = os.path.join(generated_dir, "seis_prov.json")
     with io.open(jsonfile, "wt") as fh:
-        json.dump(collective_definition, fh, indent=4, separators=(',', ': '))
+        json.dump(collective_definition, fh, indent=4, separators=(',', ': '),
+                  sort_keys=True)
 
 
 if __name__ == "__main__":

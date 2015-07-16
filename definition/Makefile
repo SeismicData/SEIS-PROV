@@ -51,15 +51,14 @@ clean:
 	rm -f _generated_details.rst
 	rm -rf $(BUILDDIR)
 	rm -rf __pycache__
-	rm -f validator/seis_prov_validate/schemas/seis_prov.json
 
 generate_stuff:
 	python ./validate_definitions.py
 	python ./create_python_code_xml_and_plots.py
 	python ./generate_details_doc.py
-	cp ./_generated/seis_prov.json ./validator/seis_prov_validate/schemas/seis_prov.json
-	cp ./_generated/xml/*/*.xml ./validator/seis_prov_validate/test_data/valid_files
-	cp ./_generated/json/*/*.json ./validator/seis_prov_validate/test_data/valid_files
+	cp ./_generated/seis_prov.json ../validator/seis_prov_validate/schemas/seis_prov.json
+	cp ./_generated/xml/*/*.xml ../validator/seis_prov_validate/test_data/valid_files
+	cp ./_generated/json/*/*.json ../validator/seis_prov_validate/test_data/valid_files
 
 html: generate_stuff
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
