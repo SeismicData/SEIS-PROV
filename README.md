@@ -1,13 +1,35 @@
 # SEIS-PROV Definition
 
-This repository contains the sources to build the `SEIS-PROV` definitions and
-documentation.
+This repository contains the sources to build the `SEIS-PROV` definition and
+documentation. Additionally it contains a reference implementation of a
+`SEIS-PROV` validator.
 
 
-## Files
+## Structure
 
-* `definitions/schema.json`: JSON Schema file for the entity and activity
-  definitions.
-* `validate_definitions.py`: Python script used to validate all entity and
-  activity JSON definitions. It validates it against the schema and performs
-  some other consistency and sanity checks.
+* `definition`: `SEIS-PROV` definition in form of a partially auto generated
+  Sphinx documentation.
+* `validator`: A reference implementation of a `SEIS-PROV` validator written in
+  Python.
+
+## How to Build the Documentation
+
+The documentation should be built with Python 3. Additionally the following
+modules are required to successfully build it:
+
+* `sphinx`
+* `sphinx_rtd_theme`
+* `colorama`
+* `prov`
+* `jsonschema`
+* `lxml`
+
+Then it is simply a matter of
+
+```bash
+$ cd definition
+$ make html
+```
+
+An HTML version of the documentation will be generated in
+`definition/_build/html`.
