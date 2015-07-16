@@ -4,7 +4,7 @@
     "name": "earth_model",
     "two_letter_code": "em",
     "label": "Earth Model",
-    "description": "An earth model.",
+    "description": "An earth model. Its main use is to illustrate the origin of synthetic seismograms.",
     "other_seis_prov_attributes_allowed": false,
     "attributes": [
         {

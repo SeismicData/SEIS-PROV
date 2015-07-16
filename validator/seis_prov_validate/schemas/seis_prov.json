@@ -1287,7 +1287,7 @@
                     ]
                 }
             ],
-            "description": "An earth model.",
+            "description": "An earth model. Its main use is to illustrate the origin of synthetic seismograms.",
             "label": "Earth Model",
             "name": "earth_model",
             "other_seis_prov_attributes_allowed": false,
