@@ -62,4 +62,4 @@ The final section illustrates some more complex use cases and scenarios.
     :maxdepth: 2
     :glob:
 
-    usage_examples
+    _generated_usage_examples

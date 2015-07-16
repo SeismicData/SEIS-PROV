@@ -49,6 +49,7 @@ help:
 clean:
 	rm -rf _generated
 	rm -f _generated_details.rst
+	rm -f _generated_usage_examples.rst
 	rm -rf $(BUILDDIR)
 	rm -rf __pycache__
 
@@ -56,6 +57,7 @@ generate_stuff:
 	python ./auto_generating_code/validate_definitions.py
 	python ./auto_generating_code/create_python_code_xml_and_plots.py
 	python ./auto_generating_code/generate_details_doc.py
+	python ./auto_generating_code/generate_usage_examples.py
 	cp ./_generated/seis_prov.json ../validator/seis_prov_validate/schemas/seis_prov.json
 	cp ./_generated/xml/*/*.xml ../validator/seis_prov_validate/test_data/valid_files
 	cp ./_generated/json/*/*.json ../validator/seis_prov_validate/test_data/valid_files

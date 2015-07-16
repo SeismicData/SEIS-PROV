@@ -1,5 +1,6 @@
 definition/_generated
 definition/_build
 definition/_generated_details.rst
+definition/_generated_usage_examples.rst
 validator/seis_prov_validate.egg-info
 validator/dist
