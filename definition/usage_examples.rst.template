@@ -68,4 +68,9 @@ dynamically. No need to incorporate an actual XML library.
 Cross Correlation
 ^^^^^^^^^^^^^^^^^
 
+This is a simplistic example of two waveforms that are cross correlated to
+produce a cross correlation. It is of course also possible to store the
+processing steps that have been applied to the waveforms prior to the
+correlation.
+
 {example_cross_correlation}
