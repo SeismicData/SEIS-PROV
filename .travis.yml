@@ -24,6 +24,8 @@ before_install:
   # pydot on 3.4 is a bit tricky.
   - if [[ $TRAVIS_PYTHON_VERSION == '3.4' ]]; then pip install https://github.com/nlhepler/pydot/archive/master.zip ; fi
   - if [[ $TRAVIS_PYTHON_VERSION == '3.4' ]]; then pip install sphinx_rtd_theme ; fi
+  # Graphviz is needed for the documentation as well.
+  - if [[ $TRAVIS_PYTHON_VERSION == '3.4' ]]; then sudo apt-get -qq install graphviz ; fi
 
 install:
   # Test installing the source distribution to make sure everything is packages correctly.
