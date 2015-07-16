@@ -371,6 +371,17 @@ def test_wrong_type_in_attr_string_negative_instead_of_positive_integer():
     assert "not a valid value of the atomic type" in result.errors[0].lower()
 
 
+def test_detrending_with_wrong_method():
+    filename = INVALID_FILES["detrend_wrong_method.xml"]
+    result = validate(filename)
+    assert result.is_valid is False
+    assert result.warnings == []
+    assert result.errors == [
+        "Attribute 'detrending_method' in record 'seis_prov:sp001_dt_4e3a746' "
+        "with the value 'random' does not match the regex "
+        "'detrend|demean|simple'."]
+
+
 if __name__ == "__main__":
     PATH = os.path.dirname(os.path.abspath(inspect.getfile(
                            inspect.currentframe())))

@@ -262,9 +262,10 @@
         "detrend": {
             "attributes": [
                 {
-                    "description": "The method used to remove the trend from the data.",
+                    "description": "The method used to remove the trend from the data. ``detrend`` means substracting the best fitting linear line, ``demean`` removes the mean, and ``simple`` subtracts a line through the first and last point.",
                     "example_value": "demean",
                     "name": "detrending_method",
+                    "pattern": "detrend|demean|simple",
                     "required": true,
                     "types": [
                         "xsd:string"

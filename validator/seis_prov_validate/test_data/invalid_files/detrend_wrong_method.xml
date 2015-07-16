@@ -1,0 +1,8 @@
+<prov:document xmlns:prov="http://www.w3.org/ns/prov#" xmlns:seis_prov="http://seisprov.org/seis_prov/0.1/#" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <prov:activity prov:id="seis_prov:sp001_dt_4e3a746">
+    <prov:label>Detrend</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:detrend</prov:type>
+    <!--random is not a supported detrending method-->
+    <seis_prov:detrending_method>random</seis_prov:detrending_method>
+  </prov:activity>
+</prov:document>
