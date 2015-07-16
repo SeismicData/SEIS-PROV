@@ -49,18 +49,25 @@
     <seis_prov:TOPOGRAPHY xsi:type="xsd:boolean">false</seis_prov:TOPOGRAPHY>
     <seis_prov:USE_LDDRK xsi:type="xsd:boolean">false</seis_prov:USE_LDDRK>
   </prov:entity>
-  <prov:entity prov:id="seis_prov:sp004_wf_a34j4didj3">
+  <prov:entity prov:id="seis_prov:sp004_fi_d49dh0h4">
+    <prov:label>File</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:file</prov:type>
+    <seis_prov:filename>constants.h</seis_prov:filename>
+    <seis_prov:location>/AuxiliaryData/Files/constants.h</seis_prov:location>
+    <seis_prov:location_type>HDF5 Data Set</seis_prov:location_type>
+  </prov:entity>
+  <prov:entity prov:id="seis_prov:sp005_wf_a34j4didj3">
     <prov:label>Waveform Trace</prov:label>
     <prov:type xsi:type="xsd:string">seis_prov:waveform_trace</prov:type>
   </prov:entity>
-  <prov:activity prov:id="seis_prov:sp005_ws_f87sf7sf78">
+  <prov:activity prov:id="seis_prov:sp006_ws_f87sf7sf78">
     <prov:startTime>2014-02-02T12:15:03</prov:startTime>
     <prov:endTime>2014-02-02T14:07:13</prov:endTime>
     <prov:label>Waveform Simulation</prov:label>
     <prov:type xsi:type="xsd:string">seis_prov:waveform_simulation</prov:type>
   </prov:activity>
   <prov:wasAssociatedWith>
-    <prov:activity prov:ref="seis_prov:sp005_ws_f87sf7sf78"></prov:activity>
+    <prov:activity prov:ref="seis_prov:sp006_ws_f87sf7sf78"></prov:activity>
     <prov:agent prov:ref="seis_prov:sp001_sa_9dig8a-ta"></prov:agent>
   </prov:wasAssociatedWith>
   <prov:wasAssociatedWith>
@@ -72,15 +79,19 @@
     <prov:responsible prov:ref="seis_prov:pp_me"></prov:responsible>
   </prov:actedOnBehalfOf>
   <prov:used>
-    <prov:activity prov:ref="seis_prov:sp005_ws_f87sf7sf78"></prov:activity>
+    <prov:activity prov:ref="seis_prov:sp006_ws_f87sf7sf78"></prov:activity>
     <prov:entity prov:ref="seis_prov:sp002_em_skfusjdoej"></prov:entity>
   </prov:used>
   <prov:used>
-    <prov:activity prov:ref="seis_prov:sp005_ws_f87sf7sf78"></prov:activity>
+    <prov:activity prov:ref="seis_prov:sp006_ws_f87sf7sf78"></prov:activity>
     <prov:entity prov:ref="seis_prov:sp003_in_38jd89da8l"></prov:entity>
   </prov:used>
+  <prov:used>
+    <prov:activity prov:ref="seis_prov:sp006_ws_f87sf7sf78"></prov:activity>
+    <prov:entity prov:ref="seis_prov:sp004_fi_d49dh0h4"></prov:entity>
+  </prov:used>
   <prov:wasGeneratedBy>
-    <prov:entity prov:ref="seis_prov:sp004_wf_a34j4didj3"></prov:entity>
-    <prov:activity prov:ref="seis_prov:sp005_ws_f87sf7sf78"></prov:activity>
+    <prov:entity prov:ref="seis_prov:sp005_wf_a34j4didj3"></prov:entity>
+    <prov:activity prov:ref="seis_prov:sp006_ws_f87sf7sf78"></prov:activity>
   </prov:wasGeneratedBy>
 </prov:document>

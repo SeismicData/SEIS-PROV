@@ -61,12 +61,21 @@ param = pr.entity("seis_prov:sp003_in_38jd89da8l", other_attributes=(
 ))
 
 
-trace = pr.entity("seis_prov:sp004_wf_a34j4didj3", other_attributes=(
+file_object = pr.entity("seis_prov:sp004_fi_d49dh0h4", other_attributes=(
+    ("prov:label", "File"),
+    ("prov:type", "seis_prov:file"),
+    ("seis_prov:filename", "constants.h"),
+    ("seis_prov:location", "/AuxiliaryData/Files/constants.h"),
+    ("seis_prov:location_type", "HDF5 Data Set")
+))
+
+
+trace = pr.entity("seis_prov:sp005_wf_a34j4didj3", other_attributes=(
     ("prov:label", "Waveform Trace"),
     ("prov:type", "seis_prov:waveform_trace"),
 ))
 
-simulation = pr.activity("seis_prov:sp005_ws_f87sf7sf78",
+simulation = pr.activity("seis_prov:sp006_ws_f87sf7sf78",
     startTime=datetime(2014, 2, 2, 12, 15, 3),
     endTime=datetime(2014, 2, 2, 14, 7, 13),
     other_attributes=(
@@ -81,5 +90,6 @@ pr.delegation(specfem, me)
 
 pr.usage(simulation, model)
 pr.usage(simulation, param)
+pr.usage(simulation, file_object)
 
 pr.generation(trace, simulation)

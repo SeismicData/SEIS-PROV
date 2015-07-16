@@ -6,7 +6,7 @@
         }
     },
     "activity": {
-        "seis_prov:sp005_ws_f87sf7sf78": {
+        "seis_prov:sp006_ws_f87sf7sf78": {
             "prov:endTime": "2014-02-02T14:07:13",
             "prov:label": "Waveform Simulation",
             "prov:startTime": "2014-02-02T12:15:03",
@@ -114,7 +114,14 @@
             "seis_prov:TOPOGRAPHY": false,
             "seis_prov:USE_LDDRK": false
         },
-        "seis_prov:sp004_wf_a34j4didj3": {
+        "seis_prov:sp004_fi_d49dh0h4": {
+            "prov:label": "File",
+            "prov:type": "seis_prov:file",
+            "seis_prov:filename": "constants.h",
+            "seis_prov:location": "/AuxiliaryData/Files/constants.h",
+            "seis_prov:location_type": "HDF5 Data Set"
+        },
+        "seis_prov:sp005_wf_a34j4didj3": {
             "prov:label": "Waveform Trace",
             "prov:type": "seis_prov:waveform_trace"
         }
@@ -124,17 +131,21 @@
     },
     "used": {
         "_:id4": {
-            "prov:activity": "seis_prov:sp005_ws_f87sf7sf78",
+            "prov:activity": "seis_prov:sp006_ws_f87sf7sf78",
             "prov:entity": "seis_prov:sp002_em_skfusjdoej"
         },
         "_:id5": {
-            "prov:activity": "seis_prov:sp005_ws_f87sf7sf78",
+            "prov:activity": "seis_prov:sp006_ws_f87sf7sf78",
             "prov:entity": "seis_prov:sp003_in_38jd89da8l"
+        },
+        "_:id6": {
+            "prov:activity": "seis_prov:sp006_ws_f87sf7sf78",
+            "prov:entity": "seis_prov:sp004_fi_d49dh0h4"
         }
     },
     "wasAssociatedWith": {
         "_:id1": {
-            "prov:activity": "seis_prov:sp005_ws_f87sf7sf78",
+            "prov:activity": "seis_prov:sp006_ws_f87sf7sf78",
             "prov:agent": "seis_prov:sp001_sa_9dig8a-ta"
         },
         "_:id2": {
@@ -143,9 +154,9 @@
         }
     },
     "wasGeneratedBy": {
-        "_:id6": {
-            "prov:activity": "seis_prov:sp005_ws_f87sf7sf78",
-            "prov:entity": "seis_prov:sp004_wf_a34j4didj3"
+        "_:id7": {
+            "prov:activity": "seis_prov:sp006_ws_f87sf7sf78",
+            "prov:entity": "seis_prov:sp005_wf_a34j4didj3"
         }
     }
 }

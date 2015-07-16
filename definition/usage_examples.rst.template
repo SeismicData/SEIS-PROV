@@ -2,10 +2,10 @@ Usage Examples
 --------------
 
 This section shows some more extensive examples demonstrating that
-``SEIS-PROV`` can be used to capture provenance for a wide of seismological
-relevant applications. Keep in mind that these diagrams describe the history of
-some piece of data, not a workflow.  The **arrows point towards the past**,
-e.g. to the origin/history of any piece of data.
+``SEIS-PROV`` can be used to capture provenance for a wide range of
+seismological relevant applications. Keep in mind that these diagrams describe
+the history of some piece of data, not a workflow. The **arrows point towards
+the past**, e.g. to the origin/history of any piece of data.
 
 .. note::
     `Right click -> View Image` to see the graphs in more detail.
@@ -53,6 +53,10 @@ The amount of information to store has to be decided by the given application.
 The general idea is to store those input file parameters that actually have an
 effect on the output. It might also be useful to store information about the
 machine is was run on in the provenance information but that is not shown here.
+
+Additionally in this case the provenance also contains a reference to a source
+code file which might often be user defined and thus is crucial to the final
+result of the simulation.
 
 The implementation of this in a waveform solver is fairly simple by just using
 an existing SEIS PROV XML file as a template and adjusting the information
