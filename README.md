@@ -23,6 +23,8 @@ modules are required to successfully build it:
 * `prov`
 * `jsonschema`
 * `lxml`
+* `pydot` (On Python 3, install this: https://github.com/nlhepler/pydot/archive/master.zip)
+
 
 Then it is simply a matter of
 

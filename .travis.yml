@@ -1,0 +1,38 @@
+language: python
+
+python:
+  - "2.7"
+  - "3.3"
+  - "3.4"
+
+env:
+  global:
+    secure: "KVT7xIJ7hdxARdXtACqD1fnVo95667Hiw1G2ClqQ4eziFrVA7y+8oAxrJSsSCBSx7WEP4wkCIvHyOHFtV6DwJJZfdV8VwgaqhHtAJXt0pnlH1RPDLaEXtRmuHh67dS0/qD/k2jMF3pMux+KkXry+XOZUn28MdcE9WqdefIGIykg="
+
+before_install:
+  - wget http://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh -O miniconda.sh
+  - chmod +x miniconda.sh
+  - ./miniconda.sh -b
+  - export PATH=/home/travis/miniconda/bin:$PATH
+  - conda update --yes conda
+  - conda create --yes -n condaenv python=$TRAVIS_PYTHON_VERSION
+  - conda install --yes -n condaenv pip
+  - source activate condaenv
+  - conda install --yes python=$TRAVIS_PYTHON_VERSION pytest lxml jsonschema six python-dateutil networkx
+  # Build docs on Python 3.4.
+  - if [[ $TRAVIS_PYTHON_VERSION == '3.4' ]]; then conda install --yes sphinx ; fi
+  # pydot on 3.4 is a bit tricky.
+  - if [[ $TRAVIS_PYTHON_VERSION == '3.4' ]]; then pip install https://github.com/nlhepler/pydot/archive/master.zip ; fi
+  - if [[ $TRAVIS_PYTHON_VERSION == '3.4' ]]; then pip install sphinx_rtd_theme ; fi
+
+install:
+  - pip install --no-deps -v -e .
+  # Test installing the source distribution to make sure everything is packages correctly.
+  - cd validator; python setup.py sdist --formats=zip; cd dist; pip install seis_*.zip
+
+script:
+  - python -m seis_prov_validate.test_validator
+  - if [[ $TRAVIS_PYTHON_VERSION == '3.4' ]]; then cd $TRAVIS_BUILD_DIR/definition; make html ; fi
+
+after_success:
+  - if [[ $TRAVIS_PYTHON_VERSION == '3.4' ]]; then bash $TRAVIS_BUILD_DIR/.travis-update-gh-pages.sh ; fi
