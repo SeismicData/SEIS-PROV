@@ -876,6 +876,35 @@
         }
     },
     "agents": {
+        "organization": {
+            "attributes": [
+                {
+                    "description": "The name of the organization.",
+                    "example_value": "Example Organization",
+                    "name": "name",
+                    "required": true,
+                    "types": [
+                        "xsd:string"
+                    ]
+                },
+                {
+                    "description": "The website of the organization.",
+                    "example_value": "http://example.com",
+                    "name": "website",
+                    "required": false,
+                    "types": [
+                        "xsd:anyURI"
+                    ]
+                }
+            ],
+            "description": "An agent useful to denote who is associated with what organization (``wasAssociatedWith``). This can either be a person, a computer, and a number of other things. An organization can also have any number of additional attributes in the ``SEIS-PROV`` namespace to describe it in more detail.",
+            "label": "*",
+            "name": "organization",
+            "other_seis_prov_attributes_allowed": true,
+            "package": "seis_prov",
+            "two_letter_code": "og",
+            "type": "agent"
+        },
         "person": {
             "attributes": [
                 {

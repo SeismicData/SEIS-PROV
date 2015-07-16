@@ -1,0 +1,15 @@
+{
+    "agent": {
+        "seis_prov:sp001_og_f06b02d": {
+            "prov:label": "Example Organization",
+            "prov:type": {
+                "$": "prov:Organization",
+                "type": "prov:QualifiedName"
+            },
+            "seis_prov:name": "Example Organization"
+        }
+    },
+    "prefix": {
+        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
+    }
+}

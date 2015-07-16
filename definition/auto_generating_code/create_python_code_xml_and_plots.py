@@ -120,6 +120,11 @@ def generate_code():
                         '"Person")')
                 label = [_i for _i in definition["attributes"]
                          if _i["name"] == "name"][0]["example_value"]
+            elif definition["name"] == "organization":
+                name = ('prov.identifier.QualifiedName(prov.constants.PROV, '
+                        '"Organization")')
+                label = [_i for _i in definition["attributes"]
+                         if _i["name"] == "name"][0]["example_value"]
             else:
                 raise ValueError
         else:

@@ -1,0 +1,7 @@
+<prov:document xmlns:prov="http://www.w3.org/ns/prov#" xmlns:seis_prov="http://seisprov.org/seis_prov/0.1/#" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <prov:organization prov:id="seis_prov:sp001_og_0773673">
+    <prov:label>Example Organization</prov:label>
+    <seis_prov:name>Example Organization</seis_prov:name>
+    <seis_prov:website xsi:type="xsd:anyURI">http://example.com</seis_prov:website>
+  </prov:organization>
+</prov:document>

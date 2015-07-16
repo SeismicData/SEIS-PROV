@@ -228,6 +228,8 @@ def create_rst_representation(json_file):
         title = "Person"
     elif data["name"] == "software_agent":
         title = "Software Agent"
+    elif data["name"] == "organization":
+        title = "Organization"
     else:
         title = "%s" % (data["label"])
 
