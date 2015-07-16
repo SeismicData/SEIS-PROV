@@ -1,8 +1,12 @@
+[![Build Status](https://travis-ci.org/SeismicData/SEIS-PROV.svg?branch=master)](https://travis-ci.org/SeismicData/SEIS-PROV)
+
 # SEIS-PROV Definition
 
 This repository contains the sources to build the `SEIS-PROV` definition and
 documentation. Additionally it contains a reference implementation of a
 `SEIS-PROV` validator.
+
+Rendered version of the definition: http://seismicdata.github.io/SEIS-PROV
 
 
 ## Structure
