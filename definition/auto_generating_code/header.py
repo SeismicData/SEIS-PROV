@@ -22,14 +22,14 @@ NS_URL = "http://seisprov.org/seis_prov/%s/#" % VERSION
 current_dir = os.path.dirname(os.path.abspath(inspect.getfile(
     inspect.currentframe())))
 
-definitions_dir = os.path.join(current_dir, "definitions")
+definitions_dir = os.path.join(current_dir, os.pardir, "definitions")
 agent_dir = os.path.join(definitions_dir, "agents")
 entity_dir = os.path.join(definitions_dir, "entities")
 activity_dir = os.path.join(definitions_dir, "activities")
 schema_filename = os.path.abspath(
     os.path.join(definitions_dir, "schema.json"))
-generated_dir = os.path.join(current_dir, "_generated")
-examples_dir = os.path.join(current_dir, "examples")
+generated_dir = os.path.join(current_dir, os.pardir, "_generated")
+examples_dir = os.path.join(current_dir, os.pardir, "examples")
 
 if not os.path.exists(generated_dir):
     os.makedirs(generated_dir)

@@ -11,7 +11,8 @@ sys.path.append(".")
 from header import (get_filename, current_dir, activity_dir, entity_dir,
                     agent_dir)  # NOQA
 
-with io.open(os.path.join(current_dir, "details.rst.template"), "rt") as fh:
+with io.open(os.path.join(current_dir, os.pardir,
+                          "details.rst.template"), "rt") as fh:
     DETAILS_TEMPLATE = fh.read()
 
 TEMPLATE = """
@@ -176,8 +177,8 @@ def create_details_rst():
         activities.append(create_rst_representation(filename))
     activities = "\n\n\n".join(activities)
 
-    with io.open(os.path.join(current_dir, "_generated_details.rst"), "wt") \
-            as fh:
+    with io.open(os.path.join(current_dir, os.pardir,
+                              "_generated_details.rst"), "wt") as fh:
         fh.write(DETAILS_TEMPLATE.format(
             entities=entities,
             activities=activities,

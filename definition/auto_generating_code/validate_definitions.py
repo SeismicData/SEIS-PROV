@@ -42,7 +42,7 @@ class ValidationError(Exception):
 
 current_dir = os.path.dirname(os.path.abspath(inspect.getfile(
     inspect.currentframe())))
-definitions_dir = os.path.join(current_dir, "definitions")
+definitions_dir = os.path.join(current_dir, os.pardir, "definitions")
 
 schema_filename = os.path.abspath(
     os.path.join(definitions_dir, "schema.json"))

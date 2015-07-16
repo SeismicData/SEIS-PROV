@@ -15,7 +15,7 @@ import inspect
 import os
 import sys
 
-sys.path.append(".")
+sys.path.append("auto_generating_code")
 
 from header import NS_PREFIX, NS_URL, VERSION  # NOQA
 
