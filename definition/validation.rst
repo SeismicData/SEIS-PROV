@@ -1,6 +1,9 @@
 Validation
 ==========
 
+How to Validate a SEIS-PROV Document
+------------------------------------
+
 With a format as complex as ``SEIS-PROV``, validation, e.g. assuring any given
 file is a valid ``SEIS-PROV`` file, is crucial. As ``SEIS-PROV`` is W3C PROV
 with some additional constraints, this is a two step procedure:
