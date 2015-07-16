@@ -15,75 +15,78 @@ with io.open(os.path.join(current_dir, os.pardir,
                           "usage_examples.rst.template"), "rt") as fh:
     GENERATED_USAGE_EXAMPLES_TEMPLATE = fh.read()
 
-EXAMPLE_TEMPLATE = """
-**{example_title}**
+# Examples to include
+EXAMPLES = ["example_detailed_processing_chain",
+            "example_schematic_processing_chain",
+            "example_waveform_simulation",
+            "example_cross_correlation"]
 
-{description}
 
+TEMPLATE = """
 .. raw:: html
 
     <div id="tab-container" class="tab-container">
       <ul class='etabs'>
         <li class='tab'>
-            <a href="#tabs-{node_type}-{name}-{ex}-graph">Graph</a>
+            <a href="#tabs-{filename}-graph">Graph</a>
         </li>
         <li class='tab'>
-            <a href="#tabs-{node_type}-{name}-{ex}-python">Python Code</a>
+            <a href="#tabs-{filename}-python">Python Code</a>
         </li>
         <li class='tab'>
-            <a href="#tabs-{node_type}-{name}-{ex}-xml">PROV-XML</a>
+            <a href="#tabs-{filename}-xml">PROV-XML</a>
         </li>
         <li class='tab'>
-            <a href="#tabs-{node_type}-{name}-{ex}-json">PROV-JSON</a>
+            <a href="#tabs-{filename}-json">PROV-JSON</a>
         </li>
         <li class='tab'>
-            <a href="#tabs-{node_type}-{name}-{ex}-provn">PROV-N</a>
+            <a href="#tabs-{filename}-provn">PROV-N</a>
         </li>
       </ul>
-      <div class="tab-contents" id="tabs-{node_type}-{name}-{ex}-graph">
+      <div class="tab-contents" id="tabs-{filename}-graph">
 
-.. graphviz:: {dotfile}
+.. graphviz:: _generated/dot/examples/{filename}.dot
 
 .. raw:: html
 
     </div>
-    <div class="tab-contents" id="tabs-{node_type}-{name}-{ex}-python">
+    <div class="tab-contents" id="tabs-{filename}-python">
 
 Python code utilizing the `prov <http://prov.readthedocs.org/>`_ package.
 
-.. literalinclude:: {pythonfile}
+.. literalinclude:: _generated/python/examples/{filename}.py
     :language: python
 
 .. raw:: html
 
     </div>
-    <div class="tab-contents" id="tabs-{node_type}-{name}-{ex}-xml">
+    <div class="tab-contents" id="tabs-{filename}-xml">
 
 In the `PROV-XML <http://www.w3.org/TR/prov-xml/>`_ serialization.
 
-.. literalinclude:: {xmlfile}
+.. literalinclude:: _generated/xml/examples/{filename}.xml
     :language: xml
 
 .. raw:: html
 
     </div>
-    <div class="tab-contents" id="tabs-{node_type}-{name}-{ex}-json">
+    <div class="tab-contents" id="tabs-{filename}-json">
 
 In the
 `PROV-JSON <http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/>`_
 serialization.
 
-.. literalinclude:: {jsonfile}
+.. literalinclude:: _generated/json/examples/{filename}.json
     :language: json
 
 .. raw:: html
 
     </div>
-    <div class="tab-contents" id="tabs-{node_type}-{name}-{ex}-provn">
+    <div class="tab-contents" id="tabs-{filename}-provn">
 
 In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
 
-.. literalinclude:: {provnfile}
+.. literalinclude:: _generated/provn/examples/{filename}.provn
 
 .. raw:: html
 
@@ -92,39 +95,14 @@ In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
 """.strip()
 
 
-def json_files(folder):
-    """
-    Generator yielding all JSON definition files as absolute paths.
-
-    :param folder: Folder to recursively search into.
-    """
-    for dirpath, _, filenames in os.walk(folder):
-        for filename in filenames:
-            if os.path.splitext(filename)[-1].lower() != ".json":
-                continue
-            filename = os.path.abspath(os.path.join(dirpath, filename))
-            yield filename
-
-
 def create_generated_details_rst():
-    #agents = []
-    #for filename in json_files(folder=agent_dir):
-        #agents.append(create_rst_representation(filename))
-    #agents = "\n\n\n".join(agents)
-
-    #entities = []
-    #for filename in json_files(folder=entity_dir):
-        #entities.append(create_rst_representation(filename))
-    #entities = "\n\n\n".join(entities)
-
-    #activities = []
-    #for filename in json_files(folder=activity_dir):
-        #activities.append(create_rst_representation(filename))
-    #activities = "\n\n\n".join(activities)
+    kwargs = {}
+    for example in EXAMPLES:
+        kwargs[example] = TEMPLATE.format(filename=example)
 
     with io.open(os.path.join(current_dir, os.pardir,
                               "_generated_usage_examples.rst"), "wt") as fh:
-        fh.write(GENERATED_USAGE_EXAMPLES_TEMPLATE)
+        fh.write(GENERATED_USAGE_EXAMPLES_TEMPLATE.format(**kwargs))
 
 
 def create_rst_representation(json_file):
