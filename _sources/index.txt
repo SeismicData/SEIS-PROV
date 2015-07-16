@@ -1,7 +1,18 @@
 SEIS-PROV: Provenance for Seismological Data
 ============================================
 
-Welcome to the ``SEIS-PROV`` documentation and definition. This document is organized as follows:
+.. image:: ./logo/seis_prov_logo.svg
+    :width: 50%
+    :align: center
+
+.. note::
+
+    While fairly fleshed out this is still a draft. Discuss any potential changes on
+    `GitHub <https://github.com/SeismicData/SEIS-PROV>`_.
+
+Welcome to the ``SEIS-PROV`` documentation and definition - a draft for a
+standardized description of data history for seismology. This document is
+organized as follows:
 
 
 The first part introduces the concept of provenance and why it matters for our science.
@@ -23,7 +34,7 @@ overview of the design of ``SEIS-PROV``.
     seis_prov
 
 
-The actual definitions are then detailed in this section.
+Subsequently the actual definitions are detailed.
 
 .. toctree::
     :maxdepth: 2
@@ -32,17 +43,11 @@ The actual definitions are then detailed in this section.
     _generated_details
 
 
-The technical definition is provided by a JSON file which acts as a kind of
-schema.
-
-.. toctree::
-    :maxdepth: 2
-    :glob:
-
-    schema
-
-``SEIS-PROV`` documents must be validated and verified to be correct to be of
-any use. This section details this process and which steps must be performed.
+``SEIS-PROV`` documents must be validateable and verified to be correct to be
+of any use. This section details this process and which steps must be
+performed in order to make sure a given SEIS-PROV file is valid. It also
+documents the usage of a reference implementation for a ``SEIS-PROV``
+validator.
 
 .. toctree::
     :maxdepth: 2
