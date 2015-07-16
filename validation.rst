@@ -83,7 +83,7 @@ hopefully give hints on how to fix it.
 Library Usage
 ^^^^^^^^^^^^^
 
-Usage as a library is also possible. The module exports a single, relevant
+Usage as a library is also possible. The module exports a single relevant
 function: ``seis_prov_validate.validate()``
 
 .. code-block:: python
