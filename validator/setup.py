@@ -1,5 +1,11 @@
 #!/usr/bin/env python
 # -*- encoding: utf8 -*-
+"""
+:copyright:
+    Lion Krischer (krischer@geophysik.uni-muenchen.de), 2015
+:license:
+    BSD 3-Clause ("BSD New" or "BSD Simplified")
+"""
 from setuptools import setup
 
 long_description = """

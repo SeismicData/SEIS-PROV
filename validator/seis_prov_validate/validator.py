@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-Validator for the SEIS-PROV files.
+Validator for SEIS-PROV files.
 
 :copyright:
     Lion Krischer (krischer@geophysik.uni-muenchen.de), 2015

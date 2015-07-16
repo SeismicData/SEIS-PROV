@@ -7,6 +7,10 @@ Execute with (requires pytest to be installed):
 
 $ py.test test_validator.py
 
+or
+
+$ python -m seis_prov_validate.test_validator
+
 
 :copyright:
     Lion Krischer (krischer@geophysik.uni-muenchen.de), 2015
@@ -18,6 +22,7 @@ import inspect
 import io
 import os
 import pytest
+import sys
 
 from seis_prov_validate.validator import validate
 
@@ -364,3 +369,9 @@ def test_wrong_type_in_attr_string_negative_instead_of_positive_integer():
     assert result.warnings == []
     assert len(result.errors) == 1
     assert "not a valid value of the atomic type" in result.errors[0].lower()
+
+
+if __name__ == "__main__":
+    PATH = os.path.dirname(os.path.abspath(inspect.getfile(
+                           inspect.currentframe())))
+    sys.exit(pytest.main(PATH))
