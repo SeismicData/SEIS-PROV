@@ -55,6 +55,18 @@ As it is  not yet released, you will have to install from GitHub:
      $ pip install -v -e .
 
 
+You can test your installation with
+
+.. code-block:: bash
+
+    $ python -m seis_prov_validate.tests
+    ................................................................
+    ................................................................
+    ...........................................................
+    ================== 500 passed in 0.91 seconds ==================
+
+
+
 Command Line Usage
 ^^^^^^^^^^^^^^^^^^
 
@@ -121,4 +133,4 @@ The following is a sequence of actions the official validator performs. A valid
    4. Make sure the given ``SEIS-PROV`` type is valid and exists.
    5. Validate each ``SEIS-PROV`` id against the regular expression.
    6. Make sure the **prov:label** is correct.
-   7. Validate the attributes against the definition in the JSON schema.
+   7. Validate the attributes against the definitions in the JSON schema.
