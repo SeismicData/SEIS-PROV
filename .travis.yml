@@ -26,7 +26,6 @@ before_install:
   - if [[ $TRAVIS_PYTHON_VERSION == '3.4' ]]; then pip install sphinx_rtd_theme ; fi
 
 install:
-  - pip install --no-deps -v -e .
   # Test installing the source distribution to make sure everything is packages correctly.
   - cd validator; python setup.py sdist --formats=zip; cd dist; pip install seis_*.zip
 
