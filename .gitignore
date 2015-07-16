@@ -3,3 +3,4 @@ _build
 _generated_details.rst
 validator/seis_prov_validate/schemas/seis_prov.json
 validator/seis_prov_validate.egg-info
+validator/dist
