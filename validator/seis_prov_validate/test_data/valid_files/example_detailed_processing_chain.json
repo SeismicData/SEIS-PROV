@@ -1,11 +1,11 @@
 {
     "activity": {
-        "seis_prov:sp003_dt_f87sf7sf78": {
+        "seis_prov:sp002_dt_f87sf7sf78": {
             "prov:label": "Detrend",
             "prov:type": "seis_prov:detrend",
             "seis_prov:detrending_method": "demean"
         },
-        "seis_prov:sp005_lp_f87sf7sf78": {
+        "seis_prov:sp004_lp_f87sf7sf78": {
             "prov:label": "Lowpass Filter",
             "prov:type": "seis_prov:lowpass_filter",
             "seis_prov:corner_frequency": {
@@ -22,7 +22,7 @@
                 "type": "xsd:int"
             }
         },
-        "seis_prov:sp007_dc_f87sf7sf78": {
+        "seis_prov:sp006_dc_f87sf7sf78": {
             "prov:label": "Decimate",
             "prov:type": "seis_prov:decimate",
             "seis_prov:factor": {
@@ -32,7 +32,7 @@
         }
     },
     "agent": {
-        "seis_prov:sp001_sa_9dig8ata": {
+        "seis_prov:sp000_sa_9dig8ata": {
             "prov:label": "ObsPy",
             "prov:type": {
                 "$": "prov:SoftwareAgent",
@@ -45,7 +45,7 @@
         }
     },
     "entity": {
-        "seis_prov:sp002_wf_a34j4didj3": {
+        "seis_prov:sp001_wf_a34j4didj3": {
             "prov:label": "Waveform Trace",
             "prov:type": "seis_prov:waveform_trace",
             "seis_prov:number_of_samples": {
@@ -63,7 +63,7 @@
             },
             "seis_prov:units": "m/s"
         },
-        "seis_prov:sp004_wf_js83hf34aj": {
+        "seis_prov:sp003_wf_js83hf34aj": {
             "prov:label": "Waveform Trace",
             "prov:type": "seis_prov:waveform_trace",
             "seis_prov:number_of_samples": {
@@ -81,7 +81,7 @@
             },
             "seis_prov:units": "m/s"
         },
-        "seis_prov:sp006_wf_378f8ks8kd": {
+        "seis_prov:sp005_wf_378f8ks8kd": {
             "prov:label": "Waveform Trace",
             "prov:type": "seis_prov:waveform_trace",
             "seis_prov:number_of_samples": {
@@ -99,7 +99,7 @@
             },
             "seis_prov:units": "m/s"
         },
-        "seis_prov:sp008_wf_jadz89du8l": {
+        "seis_prov:sp007_wf_jadz89du8l": {
             "prov:label": "Waveform Trace",
             "prov:type": "seis_prov:waveform_trace",
             "seis_prov:number_of_samples": {
@@ -123,44 +123,44 @@
     },
     "used": {
         "_:id4": {
-            "prov:activity": "seis_prov:sp003_dt_f87sf7sf78",
-            "prov:entity": "seis_prov:sp002_wf_a34j4didj3"
+            "prov:activity": "seis_prov:sp002_dt_f87sf7sf78",
+            "prov:entity": "seis_prov:sp001_wf_a34j4didj3"
         },
         "_:id5": {
-            "prov:activity": "seis_prov:sp005_lp_f87sf7sf78",
-            "prov:entity": "seis_prov:sp004_wf_js83hf34aj"
+            "prov:activity": "seis_prov:sp004_lp_f87sf7sf78",
+            "prov:entity": "seis_prov:sp003_wf_js83hf34aj"
         },
         "_:id6": {
-            "prov:activity": "seis_prov:sp007_dc_f87sf7sf78",
-            "prov:entity": "seis_prov:sp006_wf_378f8ks8kd"
+            "prov:activity": "seis_prov:sp006_dc_f87sf7sf78",
+            "prov:entity": "seis_prov:sp005_wf_378f8ks8kd"
         }
     },
     "wasAssociatedWith": {
         "_:id1": {
-            "prov:activity": "seis_prov:sp003_dt_f87sf7sf78",
-            "prov:agent": "seis_prov:sp001_sa_9dig8ata"
+            "prov:activity": "seis_prov:sp002_dt_f87sf7sf78",
+            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
         },
         "_:id2": {
-            "prov:activity": "seis_prov:sp005_lp_f87sf7sf78",
-            "prov:agent": "seis_prov:sp001_sa_9dig8ata"
+            "prov:activity": "seis_prov:sp004_lp_f87sf7sf78",
+            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
         },
         "_:id3": {
-            "prov:activity": "seis_prov:sp007_dc_f87sf7sf78",
-            "prov:agent": "seis_prov:sp001_sa_9dig8ata"
+            "prov:activity": "seis_prov:sp006_dc_f87sf7sf78",
+            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
         }
     },
     "wasGeneratedBy": {
         "_:id7": {
-            "prov:activity": "seis_prov:sp003_dt_f87sf7sf78",
-            "prov:entity": "seis_prov:sp004_wf_js83hf34aj"
+            "prov:activity": "seis_prov:sp002_dt_f87sf7sf78",
+            "prov:entity": "seis_prov:sp003_wf_js83hf34aj"
         },
         "_:id8": {
-            "prov:activity": "seis_prov:sp005_lp_f87sf7sf78",
-            "prov:entity": "seis_prov:sp006_wf_378f8ks8kd"
+            "prov:activity": "seis_prov:sp004_lp_f87sf7sf78",
+            "prov:entity": "seis_prov:sp005_wf_378f8ks8kd"
         },
         "_:id9": {
-            "prov:activity": "seis_prov:sp007_dc_f87sf7sf78",
-            "prov:entity": "seis_prov:sp008_wf_jadz89du8l"
+            "prov:activity": "seis_prov:sp006_dc_f87sf7sf78",
+            "prov:entity": "seis_prov:sp007_wf_jadz89du8l"
         }
     }
 }

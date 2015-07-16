@@ -1,4 +1,4 @@
-obspy = pr.agent("seis_prov:sp001_sa_9dig8ata", other_attributes=(
+obspy = pr.agent("seis_prov:sp000_sa_9dig8ata", other_attributes=(
     ("prov:type",
         prov.identifier.QualifiedName(prov.constants.PROV, "SoftwareAgent")),
     ("prov:label", "ObsPy"),
@@ -8,7 +8,7 @@ obspy = pr.agent("seis_prov:sp001_sa_9dig8ata", other_attributes=(
     ("seis_prov:doi", "10.1785/gssrl.81.3.530"))
 )
 
-trace_1 = pr.entity("seis_prov:sp002_wf_a34j4didj3", other_attributes=(
+trace_1 = pr.entity("seis_prov:sp001_wf_a34j4didj3", other_attributes=(
     ("prov:label", "Waveform Trace"),
     ("prov:type", "seis_prov:waveform_trace"),
     ("seis_prov:seed_id", "BW.FURT.00.BHZ"),
@@ -23,13 +23,13 @@ trace_1 = pr.entity("seis_prov:sp002_wf_a34j4didj3", other_attributes=(
     )
 )
 
-detrend = pr.activity("seis_prov:sp003_dt_f87sf7sf78", other_attributes=(
+detrend = pr.activity("seis_prov:sp002_dt_f87sf7sf78", other_attributes=(
     ("prov:label", "Detrend"),
     ("prov:type", "seis_prov:detrend"),
     ("seis_prov:detrending_method", "demean"),
 ))
 
-trace_2 = pr.entity("seis_prov:sp004_wf_js83hf34aj", other_attributes=(
+trace_2 = pr.entity("seis_prov:sp003_wf_js83hf34aj", other_attributes=(
     ("prov:label", "Waveform Trace"),
     ("prov:type", "seis_prov:waveform_trace"),
     ("seis_prov:seed_id", "BW.FURT.00.BHZ"),
@@ -45,7 +45,7 @@ trace_2 = pr.entity("seis_prov:sp004_wf_js83hf34aj", other_attributes=(
 )
 
 
-lowpass = pr.activity("seis_prov:sp005_lp_f87sf7sf78", other_attributes=(
+lowpass = pr.activity("seis_prov:sp004_lp_f87sf7sf78", other_attributes=(
     ("prov:label", "Lowpass Filter"),
     ("prov:type", "seis_prov:lowpass_filter"),
     ("seis_prov:filter_type", "Butterworth"),
@@ -55,7 +55,7 @@ lowpass = pr.activity("seis_prov:sp005_lp_f87sf7sf78", other_attributes=(
 ))
 
 
-trace_3 = pr.entity("seis_prov:sp006_wf_378f8ks8kd", other_attributes=(
+trace_3 = pr.entity("seis_prov:sp005_wf_378f8ks8kd", other_attributes=(
     ("prov:label", "Waveform Trace"),
     ("prov:type", "seis_prov:waveform_trace"),
     ("seis_prov:seed_id", "BW.FURT.00.BHZ"),
@@ -70,13 +70,13 @@ trace_3 = pr.entity("seis_prov:sp006_wf_378f8ks8kd", other_attributes=(
     )
 )
 
-decimate = pr.activity("seis_prov:sp007_dc_f87sf7sf78", other_attributes=(
+decimate = pr.activity("seis_prov:sp006_dc_f87sf7sf78", other_attributes=(
     ("prov:label", "Decimate"),
     ("prov:type", "seis_prov:decimate"),
     ("seis_prov:factor", 2))
 )
 
-trace_4 = pr.entity("seis_prov:sp008_wf_jadz89du8l", other_attributes=(
+trace_4 = pr.entity("seis_prov:sp007_wf_jadz89du8l", other_attributes=(
     ("prov:label", "Waveform Trace"),
     ("prov:type", "seis_prov:waveform_trace"),
     ("seis_prov:seed_id", "BW.FURT.00.BHZ"),

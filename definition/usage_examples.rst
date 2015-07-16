@@ -1,14 +1,14 @@
 Usage Examples
 --------------
 
-This section shows some more extensive examples demonstrating that SEIS PROV
-can be used to capture provenance for a wide of seismological relevant
-applications. Keep in mind that these diagrams describe the history of some
-piece of data, not a workflow.  The **arrows point towards the past**, e.g. to
-the origin of the data.
+This section shows some more extensive examples demonstrating that
+``SEIS-PROV`` can be used to capture provenance for a wide of seismological
+relevant applications. Keep in mind that these diagrams describe the history of
+some piece of data, not a workflow.  The **arrows point towards the past**,
+e.g. to the origin/history of any piece of data.
 
 .. note::
-    `Right click -> View Image` to see graphs in more detail.
+    `Right click -> View Image` to see the graphs in more detail.
 
 .. contents::
     :local:
@@ -23,7 +23,7 @@ be described.  The data has been detrended with a linear fit, then a
 Butterworth lowpass filter has been applied and finally some integer decimation
 has been performed. All of these operations where performed by a certain
 version of ObsPy. Toolboxes can be adapted to provide this kind of provenance
-fully automatic.
+information fully automatic.
 
 .. graphviz:: _generated/dot/examples/example_detailed_processing_chain.dot
 
