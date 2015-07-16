@@ -24,8 +24,8 @@ possibilities for a record to be considered part of ``SEIS-PROV``:
    under the ``SEIS-PROV`` namespace.
 2. An agent with a **prov:type** equal to **prov:Person** and an id under the
    ``SEIS-PROV`` namespace.
-3. An entity with a **prov:type** under the ``SEIS-PROV`` namespace.
-4. An activity with a **prov:type** under the ``SEIS-PROV`` namespace.
+3. An entity with a **prov:type** and id under the ``SEIS-PROV`` namespace.
+4. An activity with a **prov:type** and id under the ``SEIS-PROV`` namespace.
 
 All other records must just be valid according to the W3C PROV specification.
 It is forbidden to use an identifier under the ``SEIS-PROV`` namespace for any
@@ -64,25 +64,6 @@ identifier:
    definition of each node for the corresponding two letter code.
 3. A 7 to 12 letter lowercase alphanumeric hash to ensure uniqueness of
    ids.
-
-
-
-2. It must have a certain ``prov:type`` depending on the precise activity or
-   entity. Please see the detailed definitions further down for examples.
-
-3. It must have a corresponding human readable ``prov:label`` depending on the
-   precise activity or entity. Please see the detailed definitions further down
-   for examples.
-
-4. It must have all required attributes depending on the precise activity or
-   entity.
-
-5. It may have optional attributes from the ``SEIS-PROV`` namespace if they are
-   defined as optional attributes for the corresponding entity or activity.If
-   further attribute are required they must not be in the ``SEIS-PROV``
-   namespace.
-
-6. The types of all required and optional attributes must match the definition.
 
 -----
 

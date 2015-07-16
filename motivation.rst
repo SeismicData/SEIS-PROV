@@ -30,7 +30,7 @@ different processing steps that created it.
 
 Provenance is a kind of metainformation but there is metainformation that is
 not considered to be provenance. For example the physical location of a seismic
-data recording is metadata but not provenance.
+data recording is metadata, but not provenance.
 
 
 Why it matters

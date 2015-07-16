@@ -132,3 +132,7 @@ a:hover {
 .note {
     background: #DBE4DE none repeat scroll 0% 0% !important
 }
+
+.wy-side-nav-search input[type="text"] {
+    border-color: #659872
+}

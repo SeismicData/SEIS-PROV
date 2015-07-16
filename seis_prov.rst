@@ -18,10 +18,10 @@ to use the `PROV-XML <http://www.w3.org/TR/prov-xml>`_ serialization to ease
 adoption. Nonetheless you are free to use any serialization format you desire.
 
 This section aims to give a short introduction to ``SEIS-PROV`` and ``W3C
-PROV``.  Later sections will focus on the XML and graphical representations. We
-will use examples familiar to seismologists where appropriate. The XML
-representation is fairly verbose and tool support will be vital for its
-success.
+PROV``. Later sections will detail the available records and text and graphical
+representations. We will use examples familiar to seismologists where
+appropriate. The PROV W3C representations are fairly verbose and tool support
+will be vital for its success.
 
 SEIS-PROV Namespace
 -------------------
@@ -41,17 +41,18 @@ Approach to the Extension of W3C PROV
 -------------------------------------
 
 ``W3C PROV`` in theory offers ways to properly extend it with new entity types
-and relations. The downside of that approach is that most tools will not be
-able to deal with. Since we strive towards a usable and practical provenance
-description tool support is vital and should be facilitated by any means
+and relations. The downside of that approach is that most tools are not able to
+deal with it. Since we strive towards a usable and practical provenance
+description, tool support is vital and should be facilitated by any means
 possible.
 
 ``SEIS-PROV`` extends ``W3C PROV`` in a fairly non-intrusive fashion mainly by
-adding new attributes to records under the |NS_PREFIX| namespace. This has the
-big advantage of working with existing tools for ``W3C PROV``. The downside is
-that no standard tools like XML schemas can be used to validate ``SEIS-PROV``
+adding new attributes to records under the |NS_PREFIX| namespace. This can be
+seen as a set of new constraints on top of ``W3C PROV``.  It has the big
+advantage of working with existing tools for ``W3C PROV``. The downside is that
+no standard tools like XML schemas can be used to fully validate ``SEIS-PROV``
 files. It follows that other ways to validate ``SEIS-PROV`` files are needed
-which are detailed in a different section.
+which are detailed in the :doc:`validation` section.
 
 
 Provenance Records
@@ -88,14 +89,14 @@ All ``SEIS-PROV`` entities are normal ``prov:entity`` records with a special
 
 The most used entity in ``SEIS-PROV`` is the ``seis_prov:waveform_trace``
 entity, describing a single continuous piece of waveform data. ``SEIS-PROV``
-furthermore defines ``seis_prov::cross_correlation``,
+furthermore defines ``seis_prov:cross_correlation``,
 ``seis_prov:adjoint_source``, and other entities. More entities will be added
 as the need arises.
 
 Each type of entity has a set of (optional) attributes, the
 ``seis_prov:waveform_trace`` entity for example has attributes denoting the
 network, station, location, and channel SEED identifies, the start time,
-sampling rate, the number of samples, and some more things.
+sampling rate, the number of samples, and other things.
 
 
 Activities
@@ -172,5 +173,4 @@ data model, the important ones for ``SEIS-PROV`` are:
 * ``Delegation (actedOnBehalfOf)``: Mostly used to show what person was
   responsible for steering a piece of software.
 
-If that is confusing it should be clearer by looking at the examples at the end
-of this page.
+If that is confusing it should become clearer in the following sections.

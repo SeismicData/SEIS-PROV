@@ -4,6 +4,15 @@ Validation
 How to validate if something is a valid ``SEIS-PROV`` record.
 
 
+
+The schema can be found here
+
+.. toctree::
+    :maxdepth: 2
+    :glob:
+
+    schema
+
 Actions the Validator Performs
 ------------------------------
 
