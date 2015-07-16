@@ -4,7 +4,7 @@
     "name": "organization",
     "two_letter_code": "og",
     "label": "*",
-    "description": "An agent useful to denote who is associated with what organization (``wasAssociatedWith``). This can either be a person, a computer, and a number of other things. An organization can also have any number of additional attributes in the ``SEIS-PROV`` namespace to describe it in more detail.",
+    "description": "An agent denoting an organization. This is useful to describe who is associated with what organization (``wasAssociatedWith``). An organization can also have any number of additional attributes in the ``SEIS-PROV`` namespace to describe it in more detail.",
     "other_seis_prov_attributes_allowed": true,
     "attributes": [
         {
