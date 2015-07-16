@@ -4,8 +4,8 @@
     "name": "person",
     "two_letter_code": "pp",
     "label": "*",
-    "description": "This agent describes the person associated with a certain task.",
-    "other_seis_prov_attributes_allowed": false,
+    "description": "A person is an agent either denoting who is responsible for a certain activity (``wasAssociatedWith``) or who is responsible for the actions of another agent (``actedOnBehalfOf``). This is useful to state who performed a particular task. A person in the ``SEIS-PROV`` namespace must have a name and can have an email address. A person can also have any number of additional attributes in the ``SEIS-PROV`` namespace to describe it in more detail.",
+    "other_seis_prov_attributes_allowed": true,
     "attributes": [
         {
             "name": "name",

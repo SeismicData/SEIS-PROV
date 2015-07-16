@@ -898,10 +898,10 @@
                     ]
                 }
             ],
-            "description": "This agent describes the person associated with a certain task.",
+            "description": "A person is an agent either denoting who is responsible for a certain activity (``wasAssociatedWith``) or who is responsible for the actions of another agent (``actedOnBehalfOf``). This is useful to state who performed a particular task. A person in the ``SEIS-PROV`` namespace must have a name and can have an email address. A person can also have any number of additional attributes in the ``SEIS-PROV`` namespace to describe it in more detail.",
             "label": "*",
             "name": "person",
-            "other_seis_prov_attributes_allowed": false,
+            "other_seis_prov_attributes_allowed": true,
             "package": "seis_prov",
             "two_letter_code": "pp",
             "type": "agent"
@@ -946,7 +946,7 @@
                     ]
                 }
             ],
-            "description": "This agent describes the software used for a particular task.",
+            "description": "This agent describes the software used for a particular task. It requires some attributes to be able to uniquely determine the used software including the version. If you use the development version of a particular software you should reflect that in the version number.",
             "label": "*",
             "name": "software_agent",
             "other_seis_prov_attributes_allowed": false,
