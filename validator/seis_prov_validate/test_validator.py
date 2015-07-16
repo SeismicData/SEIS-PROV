@@ -280,7 +280,7 @@ def test_seis_prov_record_but_wrong_type():
     assert result.errors == [
         "Record 'seis_prov:sp001_wf_c17dd1f' has an id in the SEIS-PROV "
         "namespace but its prov:type is neither in the SEIS-PROV "
-        "namespace not is it a person or a software agent."
+        "namespace nor is it a person, an organization, or a software agent."
         " This is not allowed."]
 
 

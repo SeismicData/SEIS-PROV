@@ -45,6 +45,8 @@ __XSD_SCHEMA_CACHE = []
 _PERSON = prov.identifier.QualifiedName(prov.constants.PROV, "Person")
 _SOFTWARE_AGENT = prov.identifier.QualifiedName(prov.constants.PROV,
                                                 "SoftwareAgent")
+_ORGANIZATION = prov.identifier.QualifiedName(prov.constants.PROV,
+                                              "Organization")
 
 
 def _check_json_schema():
@@ -322,12 +324,13 @@ def _validate_prov_bundle(doc, json_schema, ns):
             #    is, then it must either be a software agent or a person.
             #    Anything else is not allowed.
             if id_in_seis_prov_ns:
-                if prov_type not in (_PERSON, _SOFTWARE_AGENT):
+                if prov_type not in (_PERSON, _SOFTWARE_AGENT, _ORGANIZATION):
                     _log_error(
                         "Record '%s' has an id in the SEIS-PROV namespace "
                         "but its prov:type is neither in the SEIS-PROV "
-                        "namespace not is it a person or a software agent."
-                        " This is not allowed." % str(record.identifier))
+                        "namespace nor is it a person, an organization, or a "
+                        "software agent. This is not allowed." %
+                        str(record.identifier))
             else:
                 # This should not be able to happen as we check for this
                 # combination a bit further up the code.
@@ -337,6 +340,8 @@ def _validate_prov_bundle(doc, json_schema, ns):
             prov_type = "person"
         elif prov_type == _SOFTWARE_AGENT:
             prov_type = "software_agent"
+        elif prov_type == _ORGANIZATION:
+            prov_type = "organization"
         else:
             prov_type = assert_ns_and_extract(prov_type, ns)
 
