@@ -4,7 +4,7 @@
     "name": "input_parameters",
     "two_letter_code": "in",
     "label": "Input Parameters",
-    "description": "The input parameters for a program like a waveform solvers.",
+    "description": "The input parameters for a program like a waveform solvers as a list of key, value pairs. Each key can live in the ``SEIS-PROV`` namespace.",
     "other_seis_prov_attributes_allowed": true,
     "attributes": [
     ]
