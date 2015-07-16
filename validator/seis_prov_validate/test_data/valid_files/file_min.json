@@ -1,0 +1,14 @@
+{
+    "entity": {
+        "seis_prov:sp001_fi_3a81cd9": {
+            "prov:label": "File",
+            "prov:type": "seis_prov:file",
+            "seis_prov:filename": "random_file.txt",
+            "seis_prov:location": "/path/to/random_file.txt",
+            "seis_prov:location_type": "Filename"
+        }
+    },
+    "prefix": {
+        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
+    }
+}

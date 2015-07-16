@@ -1295,6 +1295,44 @@
             "two_letter_code": "em",
             "type": "entity"
         },
+        "file": {
+            "attributes": [
+                {
+                    "description": "The name of the file.",
+                    "example_value": "random_file.txt",
+                    "name": "filename",
+                    "required": true,
+                    "types": [
+                        "xsd:string"
+                    ]
+                },
+                {
+                    "description": "The location of the file in a way that can be discovered. Can be a URL, a file path, or something similar.",
+                    "example_value": "/path/to/random_file.txt",
+                    "name": "location",
+                    "required": true,
+                    "types": [
+                        "xsd:string"
+                    ]
+                },
+                {
+                    "description": "The type of location. Examples include ``Filename``, ``URL``, ``HDF5 Data Set``, ``SFTP Address``, ...",
+                    "example_value": "Filename",
+                    "name": "location_type",
+                    "required": true,
+                    "types": [
+                        "xsd:string"
+                    ]
+                }
+            ],
+            "description": "In some cases arbitrary files are needed to describe the provenance of something. Examples are special source code files who's information cannot be represented in the ``Input Parameter`` entity. This entity allows to refer to arbitrary files. Each file is represented by a filename, a location, and a location type. The location might be a URL; then provenance discovery is simple. It might also be a filename or a path in a container format. Users are responsible to either ship the files alongside the provenance information or provide access by other means.",
+            "label": "File",
+            "name": "file",
+            "other_seis_prov_attributes_allowed": true,
+            "package": "seis_prov",
+            "two_letter_code": "fi",
+            "type": "entity"
+        },
         "input_parameters": {
             "attributes": [],
             "description": "The input parameters for a program like a waveform solvers as a list of key, value pairs. Each key can live in the ``SEIS-PROV`` namespace.",

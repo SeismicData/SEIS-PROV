@@ -1,0 +1,9 @@
+<prov:document xmlns:prov="http://www.w3.org/ns/prov#" xmlns:seis_prov="http://seisprov.org/seis_prov/0.1/#" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <prov:entity prov:id="seis_prov:sp001_fi_3a81cd9">
+    <prov:label>File</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:file</prov:type>
+    <seis_prov:filename>random_file.txt</seis_prov:filename>
+    <seis_prov:location>/path/to/random_file.txt</seis_prov:location>
+    <seis_prov:location_type>Filename</seis_prov:location_type>
+  </prov:entity>
+</prov:document>
