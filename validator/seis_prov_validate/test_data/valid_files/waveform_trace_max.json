@@ -8,6 +8,7 @@
                 "type": "xsd:double"
             },
             "seis_prov:component": "Z",
+            "seis_prov:description": "Synthetic Data",
             "seis_prov:dip": {
                 "$": 0.0,
                 "type": "xsd:double"

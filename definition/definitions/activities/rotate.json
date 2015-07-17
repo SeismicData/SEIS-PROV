@@ -4,8 +4,16 @@
     "name": "rotate",
     "two_letter_code": "rt",
     "label": "Rotate",
-    "description": "Rotate multi-component data. This activity has no other attributes. The rotation angles are described by input and output activities.",
+    "description": "Rotate multi-component data. The precise rotation angles could be inferred by comparing the dip and azimuth of inputs and outputs. Alternatively the rotation method can be specified.",
     "other_seis_prov_attributes_allowed": false,
     "attributes": [
+        {
+            "name": "method",
+            "types": ["xsd:string"],
+            "description": "The rotation method.",
+            "pattern": "NE->RT|RT->NE|ZNE->LQT|LQT->ZNE",
+            "required": false,
+            "example_value": "NE->RT"
+        }
     ]
 }

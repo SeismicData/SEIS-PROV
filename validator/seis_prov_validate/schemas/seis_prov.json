@@ -752,8 +752,19 @@
             "type": "activity"
         },
         "rotate": {
-            "attributes": [],
-            "description": "Rotate multi-component data. This activity has no other attributes. The rotation angles are described by input and output activities.",
+            "attributes": [
+                {
+                    "description": "The rotation method.",
+                    "example_value": "NE->RT",
+                    "name": "method",
+                    "pattern": "NE->RT|RT->NE|ZNE->LQT|LQT->ZNE",
+                    "required": false,
+                    "types": [
+                        "xsd:string"
+                    ]
+                }
+            ],
+            "description": "Rotate multi-component data. The precise rotation angles could be inferred by comparing the dip and azimuth of inputs and outputs. Alternatively the rotation method can be specified.",
             "label": "Rotate",
             "name": "rotate",
             "other_seis_prov_attributes_allowed": false,
@@ -1343,6 +1354,15 @@
                     "example_value": "BW.FURT..EHZ",
                     "name": "seed_id",
                     "pattern": "^[A-Z0-9]{1,2}\\.[A-Z0-9]{1,5}\\.[A-Z0-9]{0,2}\\.[A-Z0-9]{3}$",
+                    "required": false,
+                    "types": [
+                        "xsd:string"
+                    ]
+                },
+                {
+                    "description": "An optional description of the waveform trace. This has no technical meaning but serves to make the provenance documents easier to understand.",
+                    "example_value": "Synthetic Data",
+                    "name": "description",
                     "required": false,
                     "types": [
                         "xsd:string"

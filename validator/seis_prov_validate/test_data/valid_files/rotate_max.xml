@@ -2,5 +2,6 @@
   <prov:activity prov:id="seis_prov:sp001_rt_302b1ab">
     <prov:label>Rotate</prov:label>
     <prov:type xsi:type="xsd:string">seis_prov:rotate</prov:type>
+    <seis_prov:method>NE-&gt;RT</seis_prov:method>
   </prov:activity>
 </prov:document>

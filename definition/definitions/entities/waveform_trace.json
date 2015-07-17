@@ -16,6 +16,13 @@
             "example_value": "BW.FURT..EHZ"
         },
         {
+            "name": "description",
+            "types": ["xsd:string"],
+            "description": "An optional description of the waveform trace. This has no technical meaning but serves to make the provenance documents easier to understand.",
+            "required": false,
+            "example_value": "Synthetic Data"
+        },
+        {
             "name": "component",
             "types": ["xsd:string"],
             "pattern": "Z|N|E|R|T",

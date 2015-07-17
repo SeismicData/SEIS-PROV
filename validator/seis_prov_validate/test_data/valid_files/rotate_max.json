@@ -2,7 +2,8 @@
     "activity": {
         "seis_prov:sp001_rt_302b1ab": {
             "prov:label": "Rotate",
-            "prov:type": "seis_prov:rotate"
+            "prov:type": "seis_prov:rotate",
+            "seis_prov:method": "NE->RT"
         }
     },
     "prefix": {
