@@ -33,7 +33,7 @@ import colorama
 import jsonschema
 
 sys.path.append(".")
-from header import generated_dir  # NOQA
+from header import generated_dir, VERSION, NS_PREFIX, NS_URL  # NOQA
 
 
 class ValidationError(Exception):
@@ -74,6 +74,14 @@ def validate():
         "entities": {},
         "activities": {},
         "agents": {}}
+
+    # Also add information about the SEIS-PROV namespace and version.
+    collective_definition["_metainformation"] = {
+        "format": "SEIS-PROV",
+        "recommended_namespace_prefix": NS_PREFIX,
+        "namespace": NS_URL,
+        "version": VERSION
+    }
 
     for filename in json_files(folder=definitions_dir,
                                exclude_filenames=[schema_filename]):

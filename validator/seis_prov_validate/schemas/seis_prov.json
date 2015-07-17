@@ -1,4 +1,10 @@
 {
+    "_metainformation": {
+        "format": "SEIS-PROV",
+        "namespace": "http://seisprov.org/seis_prov/0.1/#",
+        "recommended_namespace_prefix": "seis_prov",
+        "version": "0.1"
+    },
     "activities": {
         "bandpass_filter": {
             "attributes": [
