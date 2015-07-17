@@ -107,14 +107,14 @@ pr.usage(simulation, model)
 pr.usage(simulation, input_parameters)
 pr.usage(simulation, file_object)
 
-synthetic_trace_N_original = pr.entity("seis_prov:sp005_wf_a34j4didj3", other_attributes=(
+synthetic_trace_N_original = pr.entity("seis_prov:sp001_wf_a34j4didj3", other_attributes=(
     ("prov:label", "Waveform Trace"),
     ("prov:type", "seis_prov:waveform_trace"),
     ("seis_prov:component", "N"),
     ("seis_prov:description", "Synthetic Data")
 ))
 
-synthetic_trace_E_original = pr.entity("seis_prov:sp005_wf_kd9404hd04h", other_attributes=(
+synthetic_trace_E_original = pr.entity("seis_prov:sp001_wf_kd9404hd04h", other_attributes=(
     ("prov:label", "Waveform Trace"),
     ("prov:type", "seis_prov:waveform_trace"),
     ("seis_prov:component", "E"),
@@ -129,13 +129,13 @@ pr.generation(synthetic_trace_E_original, simulation)
 # again everything.
 
 # First detrend.
-detrend_1_syn_N = pr.activity("seis_prov:sp011_dt_4ijf0dfo0", other_attributes=((
+detrend_1_syn_N = pr.activity("seis_prov:sp002_dt_4ijf0dfo0", other_attributes=((
     ("prov:label", "Detrend"),
     ("prov:type", "seis_prov:detrend"),
     ("seis_prov:detrending_method", "linear fit")
 )))
 pr.association(detrend_1_syn_N, obspy)
-detrend_1_syn_E = pr.activity("seis_prov:sp011_dt_ir0dfk409", other_attributes=((
+detrend_1_syn_E = pr.activity("seis_prov:sp002_dt_ir0dfk409", other_attributes=((
     ("prov:label", "Detrend"),
     ("prov:type", "seis_prov:detrend"),
     ("seis_prov:detrending_method", "linear fit")
@@ -143,13 +143,13 @@ detrend_1_syn_E = pr.activity("seis_prov:sp011_dt_ir0dfk409", other_attributes=(
 pr.association(detrend_1_syn_E, obspy)
 
 # First demean.
-demean_1_syn_N = pr.activity("seis_prov:sp012_dt_4834f0dj0", other_attributes=((
+demean_1_syn_N = pr.activity("seis_prov:sp003_dt_4834f0dj0", other_attributes=((
     ("prov:label", "Detrend"),
     ("prov:type", "seis_prov:detrend"),
     ("seis_prov:detrending_method", "demean")
 )))
 pr.association(demean_1_syn_N, obspy)
-demean_1_syn_E = pr.activity("seis_prov:sp012_dt_vj3urc943", other_attributes=((
+demean_1_syn_E = pr.activity("seis_prov:sp003_dt_vj3urc943", other_attributes=((
     ("prov:label", "Detrend"),
     ("prov:type", "seis_prov:detrend"),
     ("seis_prov:detrending_method", "demean")
@@ -157,7 +157,7 @@ demean_1_syn_E = pr.activity("seis_prov:sp012_dt_vj3urc943", other_attributes=((
 pr.association(demean_1_syn_E, obspy)
 
 # First taper
-taper_1_syn_N = pr.activity("seis_prov:sp013_tp_dsfj43e4j", other_attributes=((
+taper_1_syn_N = pr.activity("seis_prov:sp004_tp_dsfj43e4j", other_attributes=((
     ("prov:label", "Taper"),
     ("prov:type", "seis_prov:taper"),
     ("seis_prov:window_type", "Hanning"),
@@ -167,7 +167,7 @@ taper_1_syn_N = pr.activity("seis_prov:sp013_tp_dsfj43e4j", other_attributes=((
     ("seis_prov:side", "both")
 )))
 pr.association(taper_1_syn_N, obspy)
-taper_1_syn_E = pr.activity("seis_prov:sp013_tp_dk430f834", other_attributes=((
+taper_1_syn_E = pr.activity("seis_prov:sp004_tp_dk430f834", other_attributes=((
     ("prov:label", "Taper"),
     ("prov:type", "seis_prov:taper"),
     ("seis_prov:window_type", "Hanning"),
@@ -179,7 +179,7 @@ taper_1_syn_E = pr.activity("seis_prov:sp013_tp_dk430f834", other_attributes=((
 pr.association(taper_1_syn_E, obspy)
 
 # Pre filter.
-pre_filt_syn_N = pr.activity("seis_prov:sp014_bp_qzprtj48r", other_attributes=((
+pre_filt_syn_N = pr.activity("seis_prov:sp005_bp_qzprtj48r", other_attributes=((
     ("prov:label", "Bandpass Filter"),
     ("prov:type", "seis_prov:bandpass_filter"),
     ("seis_prov:filter_type", "Cosine SAC Taper"),
@@ -187,7 +187,7 @@ pre_filt_syn_N = pr.activity("seis_prov:sp014_bp_qzprtj48r", other_attributes=((
      "0.013333333,0.016666667,0.037037037,0.044444444")
 )))
 pr.association(pre_filt_syn_N, obspy)
-pre_filt_syn_E = pr.activity("seis_prov:sp014_bp_843ijdfskjgr", other_attributes=((
+pre_filt_syn_E = pr.activity("seis_prov:sp005_bp_843ijdfskjgr", other_attributes=((
     ("prov:label", "Bandpass Filter"),
     ("prov:type", "seis_prov:bandpass_filter"),
     ("seis_prov:filter_type", "Cosine SAC Taper"),
@@ -197,13 +197,13 @@ pre_filt_syn_E = pr.activity("seis_prov:sp014_bp_843ijdfskjgr", other_attributes
 pr.association(pre_filt_syn_E, obspy)
 
 # Second detrend.
-detrend_2_syn_N = pr.activity("seis_prov:sp011_dt_893ndidh", other_attributes=((
+detrend_2_syn_N = pr.activity("seis_prov:sp006_dt_893ndidh", other_attributes=((
     ("prov:label", "Detrend"),
     ("prov:type", "seis_prov:detrend"),
     ("seis_prov:detrending_method", "linear fit")
 )))
 pr.association(detrend_2_syn_N, obspy)
-detrend_2_syn_E = pr.activity("seis_prov:sp011_dt_jk340du34j", other_attributes=((
+detrend_2_syn_E = pr.activity("seis_prov:sp006_dt_jk340du34j", other_attributes=((
     ("prov:label", "Detrend"),
     ("prov:type", "seis_prov:detrend"),
     ("seis_prov:detrending_method", "linear fit")
@@ -211,13 +211,13 @@ detrend_2_syn_E = pr.activity("seis_prov:sp011_dt_jk340du34j", other_attributes=
 pr.association(detrend_2_syn_E, obspy)
 
 # Second demean.
-demean_2_syn_N = pr.activity("seis_prov:sp012_dt_dko349dfj", other_attributes=((
+demean_2_syn_N = pr.activity("seis_prov:sp007_dt_dko349dfj", other_attributes=((
     ("prov:label", "Detrend"),
     ("prov:type", "seis_prov:detrend"),
     ("seis_prov:detrending_method", "demean")
 )))
 pr.association(demean_2_syn_N, obspy)
-demean_2_syn_E = pr.activity("seis_prov:sp012_dt_9djldfj", other_attributes=((
+demean_2_syn_E = pr.activity("seis_prov:sp007_dt_9djldfj", other_attributes=((
     ("prov:label", "Detrend"),
     ("prov:type", "seis_prov:detrend"),
     ("seis_prov:detrending_method", "demean")
@@ -225,7 +225,7 @@ demean_2_syn_E = pr.activity("seis_prov:sp012_dt_9djldfj", other_attributes=((
 pr.association(demean_2_syn_E, obspy)
 
 # Second taper
-taper_2_syn_N = pr.activity("seis_prov:sp013_tp_iojdf9834j", other_attributes=((
+taper_2_syn_N = pr.activity("seis_prov:sp008_tp_iojdf9834j", other_attributes=((
     ("prov:label", "Taper"),
     ("prov:type", "seis_prov:taper"),
     ("seis_prov:window_type", "Hanning"),
@@ -235,7 +235,7 @@ taper_2_syn_N = pr.activity("seis_prov:sp013_tp_iojdf9834j", other_attributes=((
     ("seis_prov:side", "both")
 )))
 pr.association(taper_2_syn_N, obspy)
-taper_2_syn_E = pr.activity("seis_prov:sp013_tp_834jd0h", other_attributes=((
+taper_2_syn_E = pr.activity("seis_prov:sp008_tp_834jd0h", other_attributes=((
     ("prov:label", "Taper"),
     ("prov:type", "seis_prov:taper"),
     ("seis_prov:window_type", "Hanning"),
@@ -247,7 +247,7 @@ taper_2_syn_E = pr.activity("seis_prov:sp013_tp_834jd0h", other_attributes=((
 pr.association(taper_2_syn_E, obspy)
 
 # Interpolation.
-interpolation_syn_N = pr.activity("seis_prov:sp001_ip_iadsf3490j", other_attributes=((
+interpolation_syn_N = pr.activity("seis_prov:sp009_ip_iadsf3490j", other_attributes=((
     ("prov:label", "Interpolate"),
     ("prov:type", "seis_prov:interpolate"),
     ("seis_prov:interpolation_method", "weighted average slopes"),
@@ -256,7 +256,7 @@ interpolation_syn_N = pr.activity("seis_prov:sp001_ip_iadsf3490j", other_attribu
         prov.constants.XSD_DOUBLE))
 )))
 pr.association(interpolation_syn_N, obspy)
-interpolation_syn_E = pr.activity("seis_prov:sp001_ip_diajsdf80", other_attributes=((
+interpolation_syn_E = pr.activity("seis_prov:sp009_ip_diajsdf80", other_attributes=((
     ("prov:label", "Interpolate"),
     ("prov:type", "seis_prov:interpolate"),
     ("seis_prov:interpolation_method", "weighted average slopes"),
@@ -266,7 +266,7 @@ interpolation_syn_E = pr.activity("seis_prov:sp001_ip_diajsdf80", other_attribut
 )))
 pr.association(interpolation_syn_E, obspy)
 
-rotate_syn = pr.activity("seis_prov:sp001_rt_asdfkj4034", other_attributes=((
+rotate_syn = pr.activity("seis_prov:sp010_rt_asdfkj4034", other_attributes=((
     ("prov:label", "Rotate"),
     ("prov:type", "seis_prov:rotate"),
     ("seis_prov:method", "NE->RT")
@@ -274,7 +274,7 @@ rotate_syn = pr.activity("seis_prov:sp001_rt_asdfkj4034", other_attributes=((
 pr.association(rotate_syn, obspy)
 
 # The final trace has been rotated to transverse.
-final_synthetic_trace = pr.entity("seis_prov:sp005_wf_43ptb430df", other_attributes=(
+final_synthetic_trace = pr.entity("seis_prov:sp010_wf_43ptb430df", other_attributes=(
     ("prov:label", "Waveform Trace"),
     ("prov:type", "seis_prov:waveform_trace"),
     ("seis_prov:component", "T"),
@@ -282,19 +282,19 @@ final_synthetic_trace = pr.entity("seis_prov:sp005_wf_43ptb430df", other_attribu
 ))
 
 # Create a lot of in between trace.
-synthetic_trace_E_1 = pr.entity("seis_prov:sp005_wf_asdklfj93ef", other_attributes=(
+synthetic_trace_E_1 = pr.entity("seis_prov:sp002_wf_asdklfj93ef", other_attributes=(
     ("prov:label", "Waveform Trace"),
     ("prov:type", "seis_prov:waveform_trace"),
     ("seis_prov:component", "E"),
     ("seis_prov:description", "Synthetic Data")
 ))
-synthetic_trace_E_2 = pr.entity("seis_prov:sp005_wf_wasdf34439", other_attributes=(
+synthetic_trace_E_2 = pr.entity("seis_prov:sp003_wf_wasdf34439", other_attributes=(
     ("prov:label", "Waveform Trace"),
     ("prov:type", "seis_prov:waveform_trace"),
     ("seis_prov:component", "E"),
     ("seis_prov:description", "Synthetic Data")
 ))
-synthetic_trace_E_3 = pr.entity("seis_prov:sp005_wf_ds934jdafkj", other_attributes=(
+synthetic_trace_E_3 = pr.entity("seis_prov:sp004_wf_ds934jdafkj", other_attributes=(
     ("prov:label", "Waveform Trace"),
     ("prov:type", "seis_prov:waveform_trace"),
     ("seis_prov:component", "E"),
@@ -306,43 +306,43 @@ synthetic_trace_E_4 = pr.entity("seis_prov:sp005_wf_zdkja894dioj", other_attribu
     ("seis_prov:component", "E"),
     ("seis_prov:description", "Synthetic Data")
 ))
-synthetic_trace_E_5 = pr.entity("seis_prov:sp005_wf_349df9j0", other_attributes=(
+synthetic_trace_E_5 = pr.entity("seis_prov:sp006_wf_349df9j0", other_attributes=(
     ("prov:label", "Waveform Trace"),
     ("prov:type", "seis_prov:waveform_trace"),
     ("seis_prov:component", "E"),
     ("seis_prov:description", "Synthetic Data")
 ))
-synthetic_trace_E_6 = pr.entity("seis_prov:sp005_wf_ijd0934j0", other_attributes=(
+synthetic_trace_E_6 = pr.entity("seis_prov:sp007_wf_ijd0934j0", other_attributes=(
     ("prov:label", "Waveform Trace"),
     ("prov:type", "seis_prov:waveform_trace"),
     ("seis_prov:component", "E"),
     ("seis_prov:description", "Synthetic Data")
 ))
-synthetic_trace_E_7 = pr.entity("seis_prov:sp005_wf_idj30949j", other_attributes=(
+synthetic_trace_E_7 = pr.entity("seis_prov:sp008_wf_idj30949j", other_attributes=(
     ("prov:label", "Waveform Trace"),
     ("prov:type", "seis_prov:waveform_trace"),
     ("seis_prov:component", "E"),
     ("seis_prov:description", "Synthetic Data")
 ))
-synthetic_trace_E_8 = pr.entity("seis_prov:sp005_wf_09j3kjdi", other_attributes=(
+synthetic_trace_E_8 = pr.entity("seis_prov:sp009_wf_09j3kjdi", other_attributes=(
     ("prov:label", "Waveform Trace"),
     ("prov:type", "seis_prov:waveform_trace"),
     ("seis_prov:component", "E"),
     ("seis_prov:description", "Synthetic Data")
 ))
-synthetic_trace_N_1 = pr.entity("seis_prov:sp005_wf_eioasdf0934j", other_attributes=(
+synthetic_trace_N_1 = pr.entity("seis_prov:sp002_wf_eioasdf0934j", other_attributes=(
     ("prov:label", "Waveform Trace"),
     ("prov:type", "seis_prov:waveform_trace"),
     ("seis_prov:component", "N"),
     ("seis_prov:description", "Synthetic Data")
 ))
-synthetic_trace_N_2 = pr.entity("seis_prov:sp005_wf_kajoi4309j", other_attributes=(
+synthetic_trace_N_2 = pr.entity("seis_prov:sp003_wf_kajoi4309j", other_attributes=(
     ("prov:label", "Waveform Trace"),
     ("prov:type", "seis_prov:waveform_trace"),
     ("seis_prov:component", "N"),
     ("seis_prov:description", "Synthetic Data")
 ))
-synthetic_trace_N_3 = pr.entity("seis_prov:sp005_wf_ija09j43l", other_attributes=(
+synthetic_trace_N_3 = pr.entity("seis_prov:sp004_wf_ija09j43l", other_attributes=(
     ("prov:label", "Waveform Trace"),
     ("prov:type", "seis_prov:waveform_trace"),
     ("seis_prov:component", "N"),
@@ -354,25 +354,25 @@ synthetic_trace_N_4 = pr.entity("seis_prov:sp005_wf_lkjaoi9034j", other_attribut
     ("seis_prov:component", "N"),
     ("seis_prov:description", "Synthetic Data")
 ))
-synthetic_trace_N_5 = pr.entity("seis_prov:sp005_wf_3oijoi904j", other_attributes=(
+synthetic_trace_N_5 = pr.entity("seis_prov:sp006_wf_3oijoi904j", other_attributes=(
     ("prov:label", "Waveform Trace"),
     ("prov:type", "seis_prov:waveform_trace"),
     ("seis_prov:component", "N"),
     ("seis_prov:description", "Synthetic Data")
 ))
-synthetic_trace_N_6 = pr.entity("seis_prov:sp005_wf_iajsdfje", other_attributes=(
+synthetic_trace_N_6 = pr.entity("seis_prov:sp007_wf_iajsdfje", other_attributes=(
     ("prov:label", "Waveform Trace"),
     ("prov:type", "seis_prov:waveform_trace"),
     ("seis_prov:component", "N"),
     ("seis_prov:description", "Synthetic Data")
 ))
-synthetic_trace_N_7 = pr.entity("seis_prov:sp005_wf_oij09adfj", other_attributes=(
+synthetic_trace_N_7 = pr.entity("seis_prov:sp008_wf_oij09adfj", other_attributes=(
     ("prov:label", "Waveform Trace"),
     ("prov:type", "seis_prov:waveform_trace"),
     ("seis_prov:component", "N"),
     ("seis_prov:description", "Synthetic Data")
 ))
-synthetic_trace_N_8 = pr.entity("seis_prov:sp005_wf_jasdfj09032j", other_attributes=(
+synthetic_trace_N_8 = pr.entity("seis_prov:sp009_wf_jasdfj09032j", other_attributes=(
     ("prov:label", "Waveform Trace"),
     ("prov:type", "seis_prov:waveform_trace"),
     ("seis_prov:component", "N"),
@@ -436,14 +436,14 @@ pr.generation(final_synthetic_trace, rotate_syn)
 
 # Real data processing chain.
 
-real_trace_N_original = pr.entity("seis_prov:sp005_wf_0askjdf0", other_attributes=(
+real_trace_N_original = pr.entity("seis_prov:sp001_wf_0askjdf0", other_attributes=(
     ("prov:label", "Waveform Trace"),
     ("prov:type", "seis_prov:waveform_trace"),
     ("seis_prov:component", "N"),
     ("seis_prov:description", "Observed Data")
 ))
 
-real_trace_E_original = pr.entity("seis_prov:sp005_wf_asdfoij0", other_attributes=(
+real_trace_E_original = pr.entity("seis_prov:sp001_wf_asdfoij0", other_attributes=(
     ("prov:label", "Waveform Trace"),
     ("prov:type", "seis_prov:waveform_trace"),
     ("seis_prov:component", "E"),
@@ -454,13 +454,13 @@ real_trace_E_original = pr.entity("seis_prov:sp005_wf_asdfoij0", other_attribute
 # again everything.
 
 # First detrend.
-detrend_1_real_N = pr.activity("seis_prov:sp011_dt_o3ijasdfuh", other_attributes=((
+detrend_1_real_N = pr.activity("seis_prov:sp001_dt_o3ijasdfuh", other_attributes=((
     ("prov:label", "Detrend"),
     ("prov:type", "seis_prov:detrend"),
     ("seis_prov:detrending_method", "linear fit")
 )))
 pr.association(detrend_1_real_N, obspy)
-detrend_1_real_E = pr.activity("seis_prov:sp011_dt_ij2390jdl", other_attributes=((
+detrend_1_real_E = pr.activity("seis_prov:sp001_dt_ij2390jdl", other_attributes=((
     ("prov:label", "Detrend"),
     ("prov:type", "seis_prov:detrend"),
     ("seis_prov:detrending_method", "linear fit")
@@ -468,13 +468,13 @@ detrend_1_real_E = pr.activity("seis_prov:sp011_dt_ij2390jdl", other_attributes=
 pr.association(detrend_1_real_E, obspy)
 
 # First demean.
-demean_1_real_N = pr.activity("seis_prov:sp012_dt_3809adlkjo", other_attributes=((
+demean_1_real_N = pr.activity("seis_prov:sp002_dt_3809adlkjo", other_attributes=((
     ("prov:label", "Detrend"),
     ("prov:type", "seis_prov:detrend"),
     ("seis_prov:detrending_method", "demean")
 )))
 pr.association(demean_1_real_N, obspy)
-demean_1_real_E = pr.activity("seis_prov:sp012_dt_ij09328j", other_attributes=((
+demean_1_real_E = pr.activity("seis_prov:sp002_dt_ij09328j", other_attributes=((
     ("prov:label", "Detrend"),
     ("prov:type", "seis_prov:detrend"),
     ("seis_prov:detrending_method", "demean")
@@ -482,7 +482,7 @@ demean_1_real_E = pr.activity("seis_prov:sp012_dt_ij09328j", other_attributes=((
 pr.association(demean_1_real_E, obspy)
 
 # First taper
-taper_1_real_N = pr.activity("seis_prov:sp013_tp_kio390jf", other_attributes=((
+taper_1_real_N = pr.activity("seis_prov:sp003_tp_kio390jf", other_attributes=((
     ("prov:label", "Taper"),
     ("prov:type", "seis_prov:taper"),
     ("seis_prov:window_type", "Hanning"),
@@ -492,7 +492,7 @@ taper_1_real_N = pr.activity("seis_prov:sp013_tp_kio390jf", other_attributes=((
     ("seis_prov:side", "both")
 )))
 pr.association(taper_1_real_N, obspy)
-taper_1_real_E = pr.activity("seis_prov:sp013_tp_aioj309j", other_attributes=((
+taper_1_real_E = pr.activity("seis_prov:sp003_tp_aioj309j", other_attributes=((
     ("prov:label", "Taper"),
     ("prov:type", "seis_prov:taper"),
     ("seis_prov:window_type", "Hanning"),
@@ -504,7 +504,7 @@ taper_1_real_E = pr.activity("seis_prov:sp013_tp_aioj309j", other_attributes=((
 pr.association(taper_1_real_E, obspy)
 
 # Pre filter.
-pre_filt_real_N = pr.activity("seis_prov:sp014_bp_lij09jel", other_attributes=((
+pre_filt_real_N = pr.activity("seis_prov:sp004_bp_lij09jel", other_attributes=((
     ("prov:label", "Bandpass Filter"),
     ("prov:type", "seis_prov:bandpass_filter"),
     ("seis_prov:filter_type", "Cosine SAC Taper"),
@@ -512,7 +512,7 @@ pre_filt_real_N = pr.activity("seis_prov:sp014_bp_lij09jel", other_attributes=((
      "0.013333333,0.016666667,0.037037037,0.044444444")
 )))
 pr.association(pre_filt_real_N, obspy)
-pre_filt_real_E = pr.activity("seis_prov:sp014_bp_ijasdoij4l", other_attributes=((
+pre_filt_real_E = pr.activity("seis_prov:sp004_bp_ijasdoij4l", other_attributes=((
     ("prov:label", "Bandpass Filter"),
     ("prov:type", "seis_prov:bandpass_filter"),
     ("seis_prov:filter_type", "Cosine SAC Taper"),
@@ -522,7 +522,7 @@ pre_filt_real_E = pr.activity("seis_prov:sp014_bp_ijasdoij4l", other_attributes=
 pr.association(pre_filt_real_E, obspy)
 
 # instrument correction
-remove_response_N = pr.activity("seis_prov:sp001_rr_ddcc155", other_attributes=((
+remove_response_N = pr.activity("seis_prov:sp005_rr_ddcc155", other_attributes=((
     ("prov:label", "Remove Response"),
     ("prov:type", "seis_prov:remove_response"),
     ("seis_prov:water_level", prov.model.Literal(
@@ -532,7 +532,7 @@ remove_response_N = pr.activity("seis_prov:sp001_rr_ddcc155", other_attributes=(
     ("seis_prov:output_units", "m")
 )))
 pr.association(pre_filt_real_N, obspy)
-remove_response_E = pr.activity("seis_prov:sp001_rr_asdf34034", other_attributes=((
+remove_response_E = pr.activity("seis_prov:sp005_rr_asdf34034", other_attributes=((
     ("prov:label", "Remove Response"),
     ("prov:type", "seis_prov:remove_response"),
     ("seis_prov:water_level", prov.model.Literal(
@@ -544,13 +544,13 @@ remove_response_E = pr.activity("seis_prov:sp001_rr_asdf34034", other_attributes
 pr.association(pre_filt_real_E, obspy)
 
 # Second detrend.
-detrend_2_real_N = pr.activity("seis_prov:sp011_dt_as034lkjo", other_attributes=((
+detrend_2_real_N = pr.activity("seis_prov:sp006_dt_as034lkjo", other_attributes=((
     ("prov:label", "Detrend"),
     ("prov:type", "seis_prov:detrend"),
     ("seis_prov:detrending_method", "linear fit")
 )))
 pr.association(detrend_2_real_N, obspy)
-detrend_2_real_E = pr.activity("seis_prov:sp011_dt_asdfoij4", other_attributes=((
+detrend_2_real_E = pr.activity("seis_prov:sp006_dt_asdfoij4", other_attributes=((
     ("prov:label", "Detrend"),
     ("prov:type", "seis_prov:detrend"),
     ("seis_prov:detrending_method", "linear fit")
@@ -558,13 +558,13 @@ detrend_2_real_E = pr.activity("seis_prov:sp011_dt_asdfoij4", other_attributes=(
 pr.association(detrend_2_real_E, obspy)
 
 # Second demean.
-demean_2_real_N = pr.activity("seis_prov:sp012_dt_340jdflioj", other_attributes=((
+demean_2_real_N = pr.activity("seis_prov:sp007_dt_340jdflioj", other_attributes=((
     ("prov:label", "Detrend"),
     ("prov:type", "seis_prov:detrend"),
     ("seis_prov:detrending_method", "demean")
 )))
 pr.association(demean_2_real_N, obspy)
-demean_2_real_E = pr.activity("seis_prov:sp014_dt_inv3l90o", other_attributes=((
+demean_2_real_E = pr.activity("seis_prov:sp007_dt_inv3l90o", other_attributes=((
     ("prov:label", "Detrend"),
     ("prov:type", "seis_prov:detrend"),
     ("seis_prov:detrending_method", "demean")
@@ -572,7 +572,7 @@ demean_2_real_E = pr.activity("seis_prov:sp014_dt_inv3l90o", other_attributes=((
 pr.association(demean_2_real_E, obspy)
 
 # Second taper
-taper_2_real_N = pr.activity("seis_prov:sp013_tp_io34oic83", other_attributes=((
+taper_2_real_N = pr.activity("seis_prov:sp008_tp_io34oic83", other_attributes=((
     ("prov:label", "Taper"),
     ("prov:type", "seis_prov:taper"),
     ("seis_prov:window_type", "Hanning"),
@@ -582,7 +582,7 @@ taper_2_real_N = pr.activity("seis_prov:sp013_tp_io34oic83", other_attributes=((
     ("seis_prov:side", "both")
 )))
 pr.association(taper_2_real_N, obspy)
-taper_2_real_E = pr.activity("seis_prov:sp013_tp_9304jlkmio", other_attributes=((
+taper_2_real_E = pr.activity("seis_prov:sp008_tp_9304jlkmio", other_attributes=((
     ("prov:label", "Taper"),
     ("prov:type", "seis_prov:taper"),
     ("seis_prov:window_type", "Hanning"),
@@ -594,7 +594,7 @@ taper_2_real_E = pr.activity("seis_prov:sp013_tp_9304jlkmio", other_attributes=(
 pr.association(taper_2_real_E, obspy)
 
 # Interpolation.
-interpolation_real_N = pr.activity("seis_prov:sp001_ip_i34j09d", other_attributes=((
+interpolation_real_N = pr.activity("seis_prov:sp009_ip_i34j09d", other_attributes=((
     ("prov:label", "Interpolate"),
     ("prov:type", "seis_prov:interpolate"),
     ("seis_prov:interpolation_method", "weighted average slopes"),
@@ -603,7 +603,7 @@ interpolation_real_N = pr.activity("seis_prov:sp001_ip_i34j09d", other_attribute
         prov.constants.XSD_DOUBLE))
 )))
 pr.association(interpolation_real_N, obspy)
-interpolation_real_E = pr.activity("seis_prov:sp001_ip_4309jlkjn", other_attributes=((
+interpolation_real_E = pr.activity("seis_prov:sp009_ip_4309jlkjn", other_attributes=((
     ("prov:label", "Interpolate"),
     ("prov:type", "seis_prov:interpolate"),
     ("seis_prov:interpolation_method", "weighted average slopes"),
@@ -613,7 +613,7 @@ interpolation_real_E = pr.activity("seis_prov:sp001_ip_4309jlkjn", other_attribu
 )))
 pr.association(interpolation_real_E, obspy)
 
-rotate_real = pr.activity("seis_prov:sp001_rt_039jznwmp", other_attributes=((
+rotate_real = pr.activity("seis_prov:sp010_rt_039jznwmp", other_attributes=((
     ("prov:label", "Rotate"),
     ("prov:type", "seis_prov:rotate"),
     ("seis_prov:method", "NE->RT")
@@ -621,7 +621,7 @@ rotate_real = pr.activity("seis_prov:sp001_rt_039jznwmp", other_attributes=((
 pr.association(rotate_real, obspy)
 
 # The final trace has been rotated to transverse.
-final_real_trace = pr.entity("seis_prov:sp005_wf_aj0934mjh", other_attributes=(
+final_real_trace = pr.entity("seis_prov:sp011_wf_aj0934mjh", other_attributes=(
     ("prov:label", "Waveform Trace"),
     ("prov:type", "seis_prov:waveform_trace"),
     ("seis_prov:component", "T"),
@@ -629,19 +629,19 @@ final_real_trace = pr.entity("seis_prov:sp005_wf_aj0934mjh", other_attributes=(
 ))
 
 # Create a lot of in between trace.
-real_trace_E_1 = pr.entity("seis_prov:sp005_wf_asdjf043m", other_attributes=(
+real_trace_E_1 = pr.entity("seis_prov:sp002_wf_asdjf043m", other_attributes=(
     ("prov:label", "Waveform Trace"),
     ("prov:type", "seis_prov:waveform_trace"),
     ("seis_prov:component", "E"),
     ("seis_prov:description", "Observed Data")
 ))
-real_trace_E_2 = pr.entity("seis_prov:sp005_wf_9034jfzq", other_attributes=(
+real_trace_E_2 = pr.entity("seis_prov:sp003_wf_9034jfzq", other_attributes=(
     ("prov:label", "Waveform Trace"),
     ("prov:type", "seis_prov:waveform_trace"),
     ("seis_prov:component", "E"),
     ("seis_prov:description", "Observed Data")
 ))
-real_trace_E_3 = pr.entity("seis_prov:sp005_wf_w90jasdfh", other_attributes=(
+real_trace_E_3 = pr.entity("seis_prov:sp004_wf_w90jasdfh", other_attributes=(
     ("prov:label", "Waveform Trace"),
     ("prov:type", "seis_prov:waveform_trace"),
     ("seis_prov:component", "E"),
@@ -653,49 +653,49 @@ real_trace_E_4 = pr.entity("seis_prov:sp005_wf_j0asdfm9", other_attributes=(
     ("seis_prov:component", "E"),
     ("seis_prov:description", "Observed Data")
 ))
-real_trace_E_5 = pr.entity("seis_prov:sp005_wf_wasdfjme", other_attributes=(
+real_trace_E_5 = pr.entity("seis_prov:sp006_wf_wasdfjme", other_attributes=(
     ("prov:label", "Waveform Trace"),
     ("prov:type", "seis_prov:waveform_trace"),
     ("seis_prov:component", "E"),
     ("seis_prov:description", "Observed Data")
 ))
-real_trace_E_6 = pr.entity("seis_prov:sp005_wf_j09boija", other_attributes=(
+real_trace_E_6 = pr.entity("seis_prov:sp007_wf_j09boija", other_attributes=(
     ("prov:label", "Waveform Trace"),
     ("prov:type", "seis_prov:waveform_trace"),
     ("seis_prov:component", "E"),
     ("seis_prov:description", "Observed Data")
 ))
-real_trace_E_7 = pr.entity("seis_prov:sp005_wf_jasdf943", other_attributes=(
+real_trace_E_7 = pr.entity("seis_prov:sp008_wf_jasdf943", other_attributes=(
     ("prov:label", "Waveform Trace"),
     ("prov:type", "seis_prov:waveform_trace"),
     ("seis_prov:component", "E"),
     ("seis_prov:description", "Observed Data")
 ))
-real_trace_E_8 = pr.entity("seis_prov:sp005_wf_wj9hljo", other_attributes=(
+real_trace_E_8 = pr.entity("seis_prov:sp009_wf_wj9hljo", other_attributes=(
     ("prov:label", "Waveform Trace"),
     ("prov:type", "seis_prov:waveform_trace"),
     ("seis_prov:component", "E"),
     ("seis_prov:description", "Observed Data")
 ))
-real_trace_E_9 = pr.entity("seis_prov:sp005_wf_fijioj345", other_attributes=(
+real_trace_E_9 = pr.entity("seis_prov:sp010_wf_fijioj345", other_attributes=(
     ("prov:label", "Waveform Trace"),
     ("prov:type", "seis_prov:waveform_trace"),
     ("seis_prov:component", "E"),
     ("seis_prov:description", "Observed Data")
 ))
-real_trace_N_1 = pr.entity("seis_prov:sp005_wf_wlkjsdf094", other_attributes=(
+real_trace_N_1 = pr.entity("seis_prov:sp002_wf_wlkjsdf094", other_attributes=(
     ("prov:label", "Waveform Trace"),
     ("prov:type", "seis_prov:waveform_trace"),
     ("seis_prov:component", "N"),
     ("seis_prov:description", "Observed Data")
 ))
-real_trace_N_2 = pr.entity("seis_prov:sp005_wf_wjasdf4380", other_attributes=(
+real_trace_N_2 = pr.entity("seis_prov:sp003_wf_wjasdf4380", other_attributes=(
     ("prov:label", "Waveform Trace"),
     ("prov:type", "seis_prov:waveform_trace"),
     ("seis_prov:component", "N"),
     ("seis_prov:description", "Observed Data")
 ))
-real_trace_N_3 = pr.entity("seis_prov:sp005_wf_ncbeirp", other_attributes=(
+real_trace_N_3 = pr.entity("seis_prov:sp004_wf_ncbeirp", other_attributes=(
     ("prov:label", "Waveform Trace"),
     ("prov:type", "seis_prov:waveform_trace"),
     ("seis_prov:component", "N"),
@@ -707,31 +707,31 @@ real_trace_N_4 = pr.entity("seis_prov:sp005_wf_wkjasdfio", other_attributes=(
     ("seis_prov:component", "N"),
     ("seis_prov:description", "Observed Data")
 ))
-real_trace_N_5 = pr.entity("seis_prov:sp005_wf_wjasd9043", other_attributes=(
+real_trace_N_5 = pr.entity("seis_prov:sp006_wf_wjasd9043", other_attributes=(
     ("prov:label", "Waveform Trace"),
     ("prov:type", "seis_prov:waveform_trace"),
     ("seis_prov:component", "N"),
     ("seis_prov:description", "Observed Data")
 ))
-real_trace_N_6 = pr.entity("seis_prov:sp005_wf_jasdfh4", other_attributes=(
+real_trace_N_6 = pr.entity("seis_prov:sp007_wf_jasdfh4", other_attributes=(
     ("prov:label", "Waveform Trace"),
     ("prov:type", "seis_prov:waveform_trace"),
     ("seis_prov:component", "N"),
     ("seis_prov:description", "Observed Data")
 ))
-real_trace_N_7 = pr.entity("seis_prov:sp005_wf_asdfj9043", other_attributes=(
+real_trace_N_7 = pr.entity("seis_prov:sp008_wf_asdfj9043", other_attributes=(
     ("prov:label", "Waveform Trace"),
     ("prov:type", "seis_prov:waveform_trace"),
     ("seis_prov:component", "N"),
     ("seis_prov:description", "Observed Data")
 ))
-real_trace_N_8 = pr.entity("seis_prov:sp005_wf_niasdf043", other_attributes=(
+real_trace_N_8 = pr.entity("seis_prov:sp009_wf_niasdf043", other_attributes=(
     ("prov:label", "Waveform Trace"),
     ("prov:type", "seis_prov:waveform_trace"),
     ("seis_prov:component", "N"),
     ("seis_prov:description", "Observed Data")
 ))
-real_trace_N_9 = pr.entity("seis_prov:sp005_wf_9043594j", other_attributes=(
+real_trace_N_9 = pr.entity("seis_prov:sp010_wf_9043594j", other_attributes=(
     ("prov:label", "Waveform Trace"),
     ("prov:type", "seis_prov:waveform_trace"),
     ("seis_prov:component", "N"),
@@ -794,11 +794,11 @@ pr.generation(real_trace_N_8, taper_2_real_N)
 pr.usage(interpolation_real_N, real_trace_N_8)
 pr.generation(real_trace_N_9, interpolation_real_N)
 
-pr.usage(rotate_real, real_trace_N_8)
-pr.usage(rotate_real, real_trace_E_8)
+pr.usage(rotate_real, real_trace_N_9)
+pr.usage(rotate_real, real_trace_E_9)
 pr.generation(final_real_trace, rotate_real)
 
-calc_adjoint_source = pr.activity("seis_prov:sp001_ca_c7540fc", other_attributes=((
+calc_adjoint_source = pr.activity("seis_prov:sp011_ca_c7540fc", other_attributes=((
     ("prov:label", "Calculate Adjoint Source"),
     ("prov:type", "seis_prov:calculate_adjoint_source"),
     ("seis_prov:adjoint_source_type", "Time Frequency Phase")
@@ -808,7 +808,7 @@ pr.association(calc_adjoint_source, pyadjoint)
 pr.usage(calc_adjoint_source, final_real_trace)
 pr.usage(calc_adjoint_source, final_synthetic_trace)
 
-adjoint_source = pr.entity("seis_prov:sp001_as_cd84e87", other_attributes=((
+adjoint_source = pr.entity("seis_prov:sp012_as_cd84e87", other_attributes=((
     ("prov:label", "Adjoint Source"),
     ("prov:type", "seis_prov:adjoint_source"),
     ("seis_prov:adjoint_source_type", "Time Frequency Phase")
