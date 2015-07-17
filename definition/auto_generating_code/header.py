@@ -27,7 +27,7 @@ agent_dir = os.path.join(definitions_dir, "agents")
 entity_dir = os.path.join(definitions_dir, "entities")
 activity_dir = os.path.join(definitions_dir, "activities")
 schema_filename = os.path.abspath(
-    os.path.join(definitions_dir, "schema.json"))
+    os.path.join(definitions_dir, "record_schema.json"))
 generated_dir = os.path.join(current_dir, os.pardir, "_generated")
 examples_dir = os.path.join(current_dir, os.pardir, "examples")
 

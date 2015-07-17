@@ -45,7 +45,7 @@ current_dir = os.path.dirname(os.path.abspath(inspect.getfile(
 definitions_dir = os.path.join(current_dir, os.pardir, "definitions")
 
 schema_filename = os.path.abspath(
-    os.path.join(definitions_dir, "schema.json"))
+    os.path.join(definitions_dir, "record_schema.json"))
 with io.open(schema_filename, "rt") as fh:
     schema = json.load(fh)
 
