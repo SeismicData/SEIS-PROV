@@ -58,6 +58,12 @@ def _check_json_schema():
         with io.open(_SEIS_PROV_SCHEMA, "rt") as fh:
             schema = json.load(fh)
 
+        # Make sure the namespace in the scheme checks out to be identical
+        # to the one used here.
+        if schema["_metainformation"]["namespace"] != SEIS_PROV_NAMESPACE:
+            raise ValueError("Internal problem. The SEIS-PROV namespace in "
+                             "the schema is not equal to the expected one.")
+
         jsonschema.Draft4Validator.check_schema(schema)
         __JSON_SCHEMA_CACHE.append(schema)
 
