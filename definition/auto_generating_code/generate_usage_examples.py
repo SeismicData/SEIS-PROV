@@ -10,14 +10,12 @@ from __future__ import (absolute_import, division, print_function,
                         unicode_literals)
 
 import io
-import json
 import os
 import sys
 
 sys.path.append(".")
 
-from header import (get_filename, current_dir, activity_dir, entity_dir,
-                    agent_dir)  # NOQA
+from header import current_dir  # NOQA
 
 with io.open(os.path.join(current_dir, os.pardir,
                           "usage_examples.rst.template"), "rt") as fh:
