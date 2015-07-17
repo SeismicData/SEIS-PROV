@@ -181,17 +181,17 @@ Waveform Simulation
 
 This fairly realistic example demonstrates how the waveform files resulting
 from a numerical simulation can be described. This example does use some of the
-more advanced future of the W3C PROV data model which are useful in many
-contexts. Note that the waveform simulation activity has start- and endtimes
+more advanced features of the W3C PROV data model which are useful in many
+contexts. Note that the waveform simulation activity has start and end times
 and that SPECFEM in this example actually has been steered by a certain person.
 
 The amount of information to store has to be decided by the given application.
 The general idea is to store those input file parameters that actually have an
 effect on the output. It might also be useful to store information about the
-machine is was run on in the provenance information but that is not shown here.
+machine it was run on in the provenance information but that is not shown here.
 
 Additionally in this case the provenance also contains a reference to a source
-code file which might often be user defined and thus is crucial to the final
+code file which might often be user defined and thus influences the final
 result of the simulation.
 
 The implementation of this in a waveform solver is fairly simple by just using
@@ -272,6 +272,11 @@ In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
 Cross Correlation
 ^^^^^^^^^^^^^^^^^
 
+This is a simplistic example of two waveforms that are cross correlated to
+produce a cross correlation. It is of course also possible to store the
+processing steps that have been applied to the waveforms prior to the
+correlation.
+
 .. raw:: html
 
     <div id="tab-container" class="tab-container">
@@ -336,6 +341,105 @@ serialization.
 In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
 
 .. literalinclude:: _generated/provn/examples/example_cross_correlation.provn
+
+.. raw:: html
+
+    </div>
+    </div>
+
+
+Adjoint Source Calculation
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Last but not least is a fairly extreme example describing the provenance
+history of a more complex operation - the calculation of an adjoint source
+for transverse component seismograms. Nobody will create such a graph by
+hand so this is only feasible if is happens automatically but it
+demonstrates the power and scope of the concepts behind W3C PROV and
+``SEIS-PROV``. In practice most programs and tools will likely choose to
+create simpler descriptions.
+
+This ``SEIS-PROV`` document here describes:
+
+1. The generation of north and east component synthetic seismograms with
+   SPECFEM3D GLOBE.
+2. These seismograms are detrended, demeaned, tapered, bandpass filtered,
+   detrended, demeaned, tapered, interpolated to new sampling rates, and
+   finally rotated to a transverse component seismogram.
+3. The same is done to the observed waveforms and additionally their
+   instrument response is deconvolved at a certain point in the chain.
+4. The difference between these two processed transverse component
+   seismograms is then encoded in an adjoint source.
+
+In this particular example the graph generating code already has a hard to
+time to produce a nice and clean graph and it is kind of hard to interpret
+visually. Different ways to visualize such complex provenance descriptions
+might have to be devised in the future.
+
+.. raw:: html
+
+    <div id="tab-container" class="tab-container">
+      <ul class='etabs'>
+        <li class='tab'>
+            <a href="#tabs-example_adjoint_source-graph">Graph</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-example_adjoint_source-python">Python Code</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-example_adjoint_source-xml">PROV-XML</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-example_adjoint_source-json">PROV-JSON</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-example_adjoint_source-provn">PROV-N</a>
+        </li>
+      </ul>
+      <div class="tab-contents" id="tabs-example_adjoint_source-graph">
+
+.. graphviz:: _generated/dot/examples/example_adjoint_source.dot
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-example_adjoint_source-python">
+
+Python code utilizing the `prov <http://prov.readthedocs.org/>`_ package.
+
+.. literalinclude:: _generated/py/examples/example_adjoint_source.py
+    :language: python
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-example_adjoint_source-xml">
+
+In the `PROV-XML <http://www.w3.org/TR/prov-xml/>`_ serialization.
+
+.. literalinclude:: _generated/xml/examples/example_adjoint_source.xml
+    :language: xml
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-example_adjoint_source-json">
+
+In the
+`PROV-JSON <http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/>`_
+serialization.
+
+.. literalinclude:: _generated/json/examples/example_adjoint_source.json
+    :language: json
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-example_adjoint_source-provn">
+
+In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
+
+.. literalinclude:: _generated/provn/examples/example_adjoint_source.provn
 
 .. raw:: html
 
