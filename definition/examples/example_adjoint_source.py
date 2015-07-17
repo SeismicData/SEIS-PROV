@@ -26,7 +26,7 @@ specfem = pr.agent("seis_prov:sp000_sa_9dig8ata", other_attributes=(
 # Specfem in this case has been steered by a certain person.
 pr.delegation(specfem, me)
 
-obspy = pr.agent("seis_prov:sp000_sa_9dig8ata", other_attributes=(
+obspy = pr.agent("seis_prov:sp000_sa_9dasdfih", other_attributes=(
     ("prov:type",
         prov.identifier.QualifiedName(prov.constants.PROV, "SoftwareAgent")),
     ("prov:label", "ObsPy"),

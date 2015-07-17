@@ -297,29 +297,27 @@
             "seis_prov:software_version": "0.0.1dev",
             "seis_prov:website": "http://krischer.github.io/pyadjoint"
         },
-        "seis_prov:sp000_sa_9dig8ata": [
-            {
-                "prov:label": "SPECFEM3D GLOBE",
-                "prov:type": {
-                    "$": "prov:SoftwareAgent",
-                    "type": "prov:QualifiedName"
-                },
-                "seis_prov:software_name": "SPECFEM3D GLOBE",
-                "seis_prov:software_version": "7.0.0",
-                "seis_prov:website": "http://geodynamics.org/cig/software/specfem3d"
+        "seis_prov:sp000_sa_9dasdfih": {
+            "prov:label": "ObsPy",
+            "prov:type": {
+                "$": "prov:SoftwareAgent",
+                "type": "prov:QualifiedName"
             },
-            {
-                "prov:label": "ObsPy",
-                "prov:type": {
-                    "$": "prov:SoftwareAgent",
-                    "type": "prov:QualifiedName"
-                },
-                "seis_prov:doi": "10.5281/zenodo.17641",
-                "seis_prov:software_name": "ObsPy",
-                "seis_prov:software_version": "0.10.2",
-                "seis_prov:website": "http://www.obspy.org"
-            }
-        ]
+            "seis_prov:doi": "10.5281/zenodo.17641",
+            "seis_prov:software_name": "ObsPy",
+            "seis_prov:software_version": "0.10.2",
+            "seis_prov:website": "http://www.obspy.org"
+        },
+        "seis_prov:sp000_sa_9dig8ata": {
+            "prov:label": "SPECFEM3D GLOBE",
+            "prov:type": {
+                "$": "prov:SoftwareAgent",
+                "type": "prov:QualifiedName"
+            },
+            "seis_prov:software_name": "SPECFEM3D GLOBE",
+            "seis_prov:software_version": "7.0.0",
+            "seis_prov:website": "http://geodynamics.org/cig/software/specfem3d"
+        }
     },
     "entity": {
         "seis_prov:sp000_em_skfusjdoej": {
@@ -825,11 +823,11 @@
     "wasAssociatedWith": {
         "_:id10": {
             "prov:activity": "seis_prov:sp002_dt_ir0dfk409",
-            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+            "prov:agent": "seis_prov:sp000_sa_9dasdfih"
         },
         "_:id11": {
             "prov:activity": "seis_prov:sp003_dt_4834f0dj0",
-            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+            "prov:agent": "seis_prov:sp000_sa_9dasdfih"
         },
         "_:id117": {
             "prov:activity": "seis_prov:sp011_ca_c7540fc",
@@ -837,35 +835,35 @@
         },
         "_:id12": {
             "prov:activity": "seis_prov:sp003_dt_vj3urc943",
-            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+            "prov:agent": "seis_prov:sp000_sa_9dasdfih"
         },
         "_:id13": {
             "prov:activity": "seis_prov:sp004_tp_dsfj43e4j",
-            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+            "prov:agent": "seis_prov:sp000_sa_9dasdfih"
         },
         "_:id14": {
             "prov:activity": "seis_prov:sp004_tp_dk430f834",
-            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+            "prov:agent": "seis_prov:sp000_sa_9dasdfih"
         },
         "_:id15": {
             "prov:activity": "seis_prov:sp005_bp_qzprtj48r",
-            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+            "prov:agent": "seis_prov:sp000_sa_9dasdfih"
         },
         "_:id16": {
             "prov:activity": "seis_prov:sp005_bp_843ijdfskjgr",
-            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+            "prov:agent": "seis_prov:sp000_sa_9dasdfih"
         },
         "_:id17": {
             "prov:activity": "seis_prov:sp006_dt_893ndidh",
-            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+            "prov:agent": "seis_prov:sp000_sa_9dasdfih"
         },
         "_:id18": {
             "prov:activity": "seis_prov:sp006_dt_jk340du34j",
-            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+            "prov:agent": "seis_prov:sp000_sa_9dasdfih"
         },
         "_:id19": {
             "prov:activity": "seis_prov:sp007_dt_dko349dfj",
-            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+            "prov:agent": "seis_prov:sp000_sa_9dasdfih"
         },
         "_:id2": {
             "prov:activity": "seis_prov:sp000_em_skfusjdoej",
@@ -873,27 +871,27 @@
         },
         "_:id20": {
             "prov:activity": "seis_prov:sp007_dt_9djldfj",
-            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+            "prov:agent": "seis_prov:sp000_sa_9dasdfih"
         },
         "_:id21": {
             "prov:activity": "seis_prov:sp008_tp_iojdf9834j",
-            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+            "prov:agent": "seis_prov:sp000_sa_9dasdfih"
         },
         "_:id22": {
             "prov:activity": "seis_prov:sp008_tp_834jd0h",
-            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+            "prov:agent": "seis_prov:sp000_sa_9dasdfih"
         },
         "_:id23": {
             "prov:activity": "seis_prov:sp009_ip_iadsf3490j",
-            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+            "prov:agent": "seis_prov:sp000_sa_9dasdfih"
         },
         "_:id24": {
             "prov:activity": "seis_prov:sp009_ip_diajsdf80",
-            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+            "prov:agent": "seis_prov:sp000_sa_9dasdfih"
         },
         "_:id25": {
             "prov:activity": "seis_prov:sp010_rt_asdfkj4034",
-            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+            "prov:agent": "seis_prov:sp000_sa_9dasdfih"
         },
         "_:id3": {
             "prov:activity": "seis_prov:sp001_ws_f87sf7sf78",
@@ -901,87 +899,87 @@
         },
         "_:id61": {
             "prov:activity": "seis_prov:sp001_dt_o3ijasdfuh",
-            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+            "prov:agent": "seis_prov:sp000_sa_9dasdfih"
         },
         "_:id62": {
             "prov:activity": "seis_prov:sp001_dt_ij2390jdl",
-            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+            "prov:agent": "seis_prov:sp000_sa_9dasdfih"
         },
         "_:id63": {
             "prov:activity": "seis_prov:sp002_dt_3809adlkjo",
-            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+            "prov:agent": "seis_prov:sp000_sa_9dasdfih"
         },
         "_:id64": {
             "prov:activity": "seis_prov:sp002_dt_ij09328j",
-            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+            "prov:agent": "seis_prov:sp000_sa_9dasdfih"
         },
         "_:id65": {
             "prov:activity": "seis_prov:sp003_tp_kio390jf",
-            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+            "prov:agent": "seis_prov:sp000_sa_9dasdfih"
         },
         "_:id66": {
             "prov:activity": "seis_prov:sp003_tp_aioj309j",
-            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+            "prov:agent": "seis_prov:sp000_sa_9dasdfih"
         },
         "_:id67": [
             {
                 "prov:activity": "seis_prov:sp004_bp_lij09jel",
-                "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+                "prov:agent": "seis_prov:sp000_sa_9dasdfih"
             },
             {
                 "prov:activity": "seis_prov:sp004_bp_lij09jel",
-                "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+                "prov:agent": "seis_prov:sp000_sa_9dasdfih"
             }
         ],
         "_:id68": [
             {
                 "prov:activity": "seis_prov:sp004_bp_ijasdoij4l",
-                "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+                "prov:agent": "seis_prov:sp000_sa_9dasdfih"
             },
             {
                 "prov:activity": "seis_prov:sp004_bp_ijasdoij4l",
-                "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+                "prov:agent": "seis_prov:sp000_sa_9dasdfih"
             }
         ],
         "_:id69": {
             "prov:activity": "seis_prov:sp006_dt_as034lkjo",
-            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+            "prov:agent": "seis_prov:sp000_sa_9dasdfih"
         },
         "_:id70": {
             "prov:activity": "seis_prov:sp006_dt_asdfoij4",
-            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+            "prov:agent": "seis_prov:sp000_sa_9dasdfih"
         },
         "_:id71": {
             "prov:activity": "seis_prov:sp007_dt_340jdflioj",
-            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+            "prov:agent": "seis_prov:sp000_sa_9dasdfih"
         },
         "_:id72": {
             "prov:activity": "seis_prov:sp007_dt_inv3l90o",
-            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+            "prov:agent": "seis_prov:sp000_sa_9dasdfih"
         },
         "_:id73": {
             "prov:activity": "seis_prov:sp008_tp_io34oic83",
-            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+            "prov:agent": "seis_prov:sp000_sa_9dasdfih"
         },
         "_:id74": {
             "prov:activity": "seis_prov:sp008_tp_9304jlkmio",
-            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+            "prov:agent": "seis_prov:sp000_sa_9dasdfih"
         },
         "_:id75": {
             "prov:activity": "seis_prov:sp009_ip_i34j09d",
-            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+            "prov:agent": "seis_prov:sp000_sa_9dasdfih"
         },
         "_:id76": {
             "prov:activity": "seis_prov:sp009_ip_4309jlkjn",
-            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+            "prov:agent": "seis_prov:sp000_sa_9dasdfih"
         },
         "_:id77": {
             "prov:activity": "seis_prov:sp010_rt_039jznwmp",
-            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+            "prov:agent": "seis_prov:sp000_sa_9dasdfih"
         },
         "_:id9": {
             "prov:activity": "seis_prov:sp002_dt_4ijf0dfo0",
-            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+            "prov:agent": "seis_prov:sp000_sa_9dasdfih"
         }
     },
     "wasGeneratedBy": {

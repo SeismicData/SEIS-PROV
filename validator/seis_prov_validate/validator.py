@@ -230,20 +230,29 @@ def __validate_seis_prov(file_object):
 
     # Step 4: Custom validation against the JSON schema. Validate the root
     # document as well as any bundles.
-    seis_prov_elements = _validate_prov_bundle(doc, json_schema, ns=ns)
+    seis_prov_ids = _validate_prov_bundle(doc, json_schema, ns=ns)
     for bundle in doc.bundles:
-        seis_prov_elements += _validate_prov_bundle(bundle, json_schema, ns=ns)
+        seis_prov_ids.extend(
+            _validate_prov_bundle(bundle, json_schema, ns=ns))
 
-    if not seis_prov_elements:
+    if not seis_prov_ids:
         _log_warning("The document is a valid W3C PROV document but not a "
                      "single SEIS-PROV record has been found.")
+
+
+    # Find duplicate ids.
+    duplicates = set([i for i in seis_prov_ids
+                      if sum([1 for a in seis_prov_ids if a == i]) > 1])
+    if duplicates:
+        _log_error("One or more ids have been used more than once: %s" %
+                   ", ".join(['%s' % _i for _i in duplicates]))
 
 
 def _validate_prov_bundle(doc, json_schema, ns):
     """
     Custom validator for SEIS-PROV.
     """
-    count = 0
+    id_collector = []
 
     json_schema_map = {
         prov.model.PROV_ENTITY: json_schema["entities"],
@@ -366,7 +375,8 @@ def _validate_prov_bundle(doc, json_schema, ns):
                            "match the regular expression '%s' as is required "
                            "by the standard."
                            % (str(record.identifier), id_regex))
-        count += 1
+
+        id_collector.append(record.identifier.localpart)
 
         # Validate the label.
         prov_label = [i for i in attrs if i[0] == prov.model.PROV_LABEL]
@@ -433,7 +443,7 @@ def _validate_prov_bundle(doc, json_schema, ns):
                                "'%s' does not match the regex '%s'." % (
                                 name, str(record.identifier), value,
                                 this_def["pattern"]))
-    return count
+    return id_collector
 
 
 # Collection of functions performing the actual type validation. Should return
