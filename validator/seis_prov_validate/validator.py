@@ -239,7 +239,6 @@ def __validate_seis_prov(file_object):
         _log_warning("The document is a valid W3C PROV document but not a "
                      "single SEIS-PROV record has been found.")
 
-
     # Find duplicate ids.
     duplicates = set([i for i in seis_prov_ids
                       if sum([1 for a in seis_prov_ids if a == i]) > 1])
