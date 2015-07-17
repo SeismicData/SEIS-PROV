@@ -56,7 +56,8 @@ identifier:
    to further illustrate the sequence of processing steps and events.
    ``001`` for example is the first step in a processing chain, whereas
    ``017`` is the seventeenth step. This is not enforced anywhere but nice
-   to have so users are encouraged to adopt this. The ``sp`` prefix is
+   to have so users are encouraged to adopt this. In case there is no
+   inherent order to things, feel free to use ``000``. The ``sp`` prefix is
    needed to provide a valid qualified name attribute according the XML
    specification and stands for ``SEIS-PROV``.
 2. A two letter code depending on the type of entity or activity. This

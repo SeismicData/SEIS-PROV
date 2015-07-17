@@ -46,16 +46,16 @@ Waveform Simulation
 This fairly realistic example demonstrates how the waveform files resulting
 from a numerical simulation can be described. This example does use some of the
 more advanced future of the W3C PROV data model which are useful in many
-contexts. Note that the waveform simulation activity has start- and endtimes
+contexts. Note that the waveform simulation activity has start and end times
 and that SPECFEM in this example actually has been steered by a certain person.
 
 The amount of information to store has to be decided by the given application.
 The general idea is to store those input file parameters that actually have an
 effect on the output. It might also be useful to store information about the
-machine is was run on in the provenance information but that is not shown here.
+machine it was run on in the provenance information but that is not shown here.
 
 Additionally in this case the provenance also contains a reference to a source
-code file which might often be user defined and thus is crucial to the final
+code file which might often be user defined and thus influences the final
 result of the simulation.
 
 The implementation of this in a waveform solver is fairly simple by just using
