@@ -1,0 +1,7 @@
+<prov:document xmlns:prov="http://www.w3.org/ns/prov#" xmlns:seis_prov="http://seisprov.org/seis_prov/0.1/#" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <!--The id is not valid according to the SEIS-PROV definition-->
+  <prov:person prov:id="seis_prov:pp_me">
+    <prov:label>Susanna Musterfrau</prov:label>
+    <seis_prov:name>Susanna Musterfrau</seis_prov:name>
+  </prov:person>
+</prov:document>
