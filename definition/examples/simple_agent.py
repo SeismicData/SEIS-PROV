@@ -1,4 +1,4 @@
-pr.agent("seis_prov:sa_9DIG8AB", other_attributes=(
+pr.agent("seis_prov:sp000_sa_asdfklj904", other_attributes=(
     ("prov:type",
         prov.identifier.QualifiedName(prov.constants.PROV, "SoftwareAgent")),
     ("prov:label", "ObsPy"),

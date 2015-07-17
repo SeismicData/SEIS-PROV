@@ -1,6 +1,6 @@
 {
     "agent": {
-        "seis_prov:sa_9DIG8AB": {
+        "seis_prov:sp000_sa_asdfklj904": {
             "prov:label": "ObsPy",
             "prov:type": {
                 "$": "prov:SoftwareAgent",

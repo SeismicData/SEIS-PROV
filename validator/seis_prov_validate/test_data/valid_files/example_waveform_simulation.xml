@@ -1,15 +1,15 @@
 <prov:document xmlns:prov="http://www.w3.org/ns/prov#" xmlns:seis_prov="http://seisprov.org/seis_prov/0.1/#" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <prov:person prov:id="seis_prov:pp_me">
+  <prov:person prov:id="seis_prov:sp000_pp_dj89345j">
     <prov:label>Hans Mustermann</prov:label>
     <seis_prov:email>hans.mustermann@email.com</seis_prov:email>
     <seis_prov:name>Hans Mustermann</seis_prov:name>
   </prov:person>
-  <prov:person prov:id="seis_prov:pp_other">
+  <prov:person prov:id="seis_prov:sp000_pp_9034j90df">
     <prov:label>Susanna Musterfrau</prov:label>
     <seis_prov:email>susanna.musterfrau@email.com</seis_prov:email>
     <seis_prov:name>Susanna Musterfrau</seis_prov:name>
   </prov:person>
-  <prov:softwareAgent prov:id="seis_prov:sp001_sa_9dig8a-ta">
+  <prov:softwareAgent prov:id="seis_prov:sp001_sa_9dig8ata">
     <prov:label>SPECFEM3D GLOBE</prov:label>
     <seis_prov:software_name>SPECFEM3D GLOBE</seis_prov:software_name>
     <seis_prov:software_version>7.0.0</seis_prov:software_version>
@@ -68,15 +68,15 @@
   </prov:activity>
   <prov:wasAssociatedWith>
     <prov:activity prov:ref="seis_prov:sp006_ws_f87sf7sf78"></prov:activity>
-    <prov:agent prov:ref="seis_prov:sp001_sa_9dig8a-ta"></prov:agent>
+    <prov:agent prov:ref="seis_prov:sp001_sa_9dig8ata"></prov:agent>
   </prov:wasAssociatedWith>
   <prov:wasAssociatedWith>
     <prov:activity prov:ref="seis_prov:sp002_em_skfusjdoej"></prov:activity>
-    <prov:agent prov:ref="seis_prov:pp_other"></prov:agent>
+    <prov:agent prov:ref="seis_prov:sp000_pp_9034j90df"></prov:agent>
   </prov:wasAssociatedWith>
   <prov:actedOnBehalfOf>
-    <prov:delegate prov:ref="seis_prov:sp001_sa_9dig8a-ta"></prov:delegate>
-    <prov:responsible prov:ref="seis_prov:pp_me"></prov:responsible>
+    <prov:delegate prov:ref="seis_prov:sp001_sa_9dig8ata"></prov:delegate>
+    <prov:responsible prov:ref="seis_prov:sp000_pp_dj89345j"></prov:responsible>
   </prov:actedOnBehalfOf>
   <prov:used>
     <prov:activity prov:ref="seis_prov:sp006_ws_f87sf7sf78"></prov:activity>

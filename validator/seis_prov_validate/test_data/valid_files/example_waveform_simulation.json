@@ -1,8 +1,8 @@
 {
     "actedOnBehalfOf": {
         "_:id3": {
-            "prov:delegate": "seis_prov:sp001_sa_9dig8a-ta",
-            "prov:responsible": "seis_prov:pp_me"
+            "prov:delegate": "seis_prov:sp001_sa_9dig8ata",
+            "prov:responsible": "seis_prov:sp000_pp_dj89345j"
         }
     },
     "activity": {
@@ -14,16 +14,7 @@
         }
     },
     "agent": {
-        "seis_prov:pp_me": {
-            "prov:label": "Hans Mustermann",
-            "prov:type": {
-                "$": "prov:Person",
-                "type": "prov:QualifiedName"
-            },
-            "seis_prov:email": "hans.mustermann@email.com",
-            "seis_prov:name": "Hans Mustermann"
-        },
-        "seis_prov:pp_other": {
+        "seis_prov:sp000_pp_9034j90df": {
             "prov:label": "Susanna Musterfrau",
             "prov:type": {
                 "$": "prov:Person",
@@ -32,7 +23,16 @@
             "seis_prov:email": "susanna.musterfrau@email.com",
             "seis_prov:name": "Susanna Musterfrau"
         },
-        "seis_prov:sp001_sa_9dig8a-ta": {
+        "seis_prov:sp000_pp_dj89345j": {
+            "prov:label": "Hans Mustermann",
+            "prov:type": {
+                "$": "prov:Person",
+                "type": "prov:QualifiedName"
+            },
+            "seis_prov:email": "hans.mustermann@email.com",
+            "seis_prov:name": "Hans Mustermann"
+        },
+        "seis_prov:sp001_sa_9dig8ata": {
             "prov:label": "SPECFEM3D GLOBE",
             "prov:type": {
                 "$": "prov:SoftwareAgent",
@@ -146,11 +146,11 @@
     "wasAssociatedWith": {
         "_:id1": {
             "prov:activity": "seis_prov:sp006_ws_f87sf7sf78",
-            "prov:agent": "seis_prov:sp001_sa_9dig8a-ta"
+            "prov:agent": "seis_prov:sp001_sa_9dig8ata"
         },
         "_:id2": {
             "prov:activity": "seis_prov:sp002_em_skfusjdoej",
-            "prov:agent": "seis_prov:pp_other"
+            "prov:agent": "seis_prov:sp000_pp_9034j90df"
         }
     },
     "wasGeneratedBy": {
