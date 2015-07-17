@@ -382,6 +382,17 @@ def test_detrending_with_wrong_method():
         "'linear fit|demean|simple'."]
 
 
+def test_non_valid_id():
+    filename = INVALID_FILES["person_with_invalid_id.xml"]
+    result = validate(filename)
+    assert result.is_valid is False
+    assert result.warnings == []
+    assert result.errors == [
+        "The local part of the identifier 'seis_prov:pp_me' does not match "
+        "the regular expression '^sp\\d{3,5}_pp_[a-z0-9]{7,12}$' as is "
+        "required by the standard."]
+
+
 if __name__ == "__main__":
     PATH = os.path.dirname(os.path.abspath(inspect.getfile(
                            inspect.currentframe())))
