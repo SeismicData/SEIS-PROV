@@ -15,9 +15,9 @@ Requires Python 2.7 or 3.4 and the following non-standard library modules:
 * jsonschema
 
 :copyright:
-    Lion Krischer (lion.krischer@geophysik.uni-muenchen.de), 2015
+    Lion Krischer (lion.krischer@googlemail.com), 2015
 :license:
-    The MIT License (MIT)
+    BSD 3-Clause ("BSD New" or "BSD Simplified")
 """
 from __future__ import (absolute_import, division, print_function,
                         unicode_literals)

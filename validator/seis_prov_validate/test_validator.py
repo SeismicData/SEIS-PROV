@@ -13,7 +13,7 @@ $ python -m seis_prov_validate.test_validator
 
 
 :copyright:
-    Lion Krischer (krischer@geophysik.uni-muenchen.de), 2015
+    Lion Krischer (lion.krischer@googlemail.com), 2015
 :license:
     BSD 3-Clause ("BSD New" or "BSD Simplified")
 """

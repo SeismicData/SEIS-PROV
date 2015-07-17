@@ -5,9 +5,9 @@ Script generating Python code, PROV-XML examples, and plots from the JSON
 definitions.
 
 :copyright:
-    Lion Krischer (lion.krischer@geophysik.uni-muenchen.de), 2015
+    Lion Krischer (lion.krischer@googlemail.com), 2015
 :license:
-    The MIT License (MIT)
+    BSD 3-Clause ("BSD New" or "BSD Simplified")
 """
 from __future__ import (absolute_import, division, print_function,
                         unicode_literals)
