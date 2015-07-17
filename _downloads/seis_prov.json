@@ -1,0 +1,1451 @@
+{
+    "_metainformation": {
+        "format": "SEIS-PROV",
+        "namespace": "http://seisprov.org/seis_prov/0.1/#",
+        "recommended_namespace_prefix": "seis_prov",
+        "version": "0.1"
+    },
+    "activities": {
+        "bandpass_filter": {
+            "attributes": [
+                {
+                    "description": "The type of filter, one of ``Butterworth``, ``FIR``, ``IIR``, ``Bessel``, ``Cosine SAC Taper``. Please give some more information with one or more of the other attributes. ``Cosine SAC Taper`` describes the frequency domain taper the SAC software package employs during instrument deconvolution.",
+                    "example_value": "Butterworth",
+                    "name": "filter_type",
+                    "pattern": "Butterworth|FIR|IIR|Bessel|Cosine SAC Taper",
+                    "required": true,
+                    "types": [
+                        "xsd:string"
+                    ]
+                },
+                {
+                    "description": "The lower corner frequency of the filter if applicable in Hz.",
+                    "example_value": 5.0,
+                    "name": "lower_corner_frequency",
+                    "required": false,
+                    "types": [
+                        "xsd:double"
+                    ]
+                },
+                {
+                    "description": "The upper corner frequency of the filter if applicable in Hz.",
+                    "example_value": 15.0,
+                    "name": "upper_corner_frequency",
+                    "required": false,
+                    "types": [
+                        "xsd:double"
+                    ]
+                },
+                {
+                    "description": "The order of the filter if applicable.",
+                    "example_value": 2,
+                    "name": "filter_order",
+                    "required": false,
+                    "types": [
+                        "xsd:positiveInteger"
+                    ]
+                },
+                {
+                    "description": "The number of filter passes if applicable.",
+                    "example_value": 1,
+                    "name": "number_of_passes",
+                    "required": false,
+                    "types": [
+                        "xsd:positiveInteger"
+                    ]
+                },
+                {
+                    "description": "The frequency limits of the SAC frequency domain cosine taper in Hz from lowest to highest.",
+                    "example_value": "0.02,0.1,1,5",
+                    "name": "sac_cosine_taper_frequency_limits",
+                    "pattern": "^[+-]?(\\d*\\.)?\\d+,[+-]?(\\d*\\.)?\\d+,[+-]?(\\d*\\.)?\\d+,[+-]?(\\d*\\.)?\\d+$",
+                    "required": false,
+                    "types": [
+                        "xsd:string"
+                    ]
+                }
+            ],
+            "description": "A Bandpass filter. There is a huge variety of bandpass filters out there and this activity cannot capture them all in full detail.",
+            "label": "Bandpass Filter",
+            "name": "bandpass_filter",
+            "other_seis_prov_attributes_allowed": false,
+            "package": "seis_prov",
+            "two_letter_code": "bp",
+            "type": "activity"
+        },
+        "bandstop_filter": {
+            "attributes": [
+                {
+                    "description": "The type of filter, e.g. `Butterworth`, `FIR`, `Chebyshev Type I/II`, `Bessel`, ...",
+                    "example_value": "Butterworth",
+                    "name": "filter_type",
+                    "required": true,
+                    "types": [
+                        "xsd:string"
+                    ]
+                },
+                {
+                    "description": "The lower corner frequency of the filter if applicable in Hz",
+                    "example_value": 5.0,
+                    "name": "lower_corner_frequency",
+                    "required": false,
+                    "types": [
+                        "xsd:double"
+                    ]
+                },
+                {
+                    "description": "The upper corner frequency of the filter if applicable in Hz",
+                    "example_value": 15.0,
+                    "name": "uppoer_corner_frequency",
+                    "required": false,
+                    "types": [
+                        "xsd:double"
+                    ]
+                },
+                {
+                    "description": "The order of the filter if applicable.",
+                    "example_value": 2,
+                    "name": "filter_order",
+                    "required": false,
+                    "types": [
+                        "xsd:positiveInteger"
+                    ]
+                },
+                {
+                    "description": "The number of filter passes if applicable.",
+                    "example_value": 1,
+                    "name": "number_of_passes",
+                    "required": false,
+                    "types": [
+                        "xsd:positiveInteger"
+                    ]
+                },
+                {
+                    "description": "The transition band width in the case of a Chebychev filter.",
+                    "example_value": 10.0,
+                    "name": "chebychev_transition_bw",
+                    "required": false,
+                    "skip_example_in_doc": true,
+                    "types": [
+                        "xsd:double"
+                    ]
+                },
+                {
+                    "description": "The attenuation factor in the case of a Chebychev filter.",
+                    "example_value": 20.0,
+                    "name": "chebychev_attenuation_factor",
+                    "required": false,
+                    "skip_example_in_doc": true,
+                    "types": [
+                        "xsd:double"
+                    ]
+                }
+            ],
+            "description": "Bandstop the data.",
+            "label": "Bandstop Filter",
+            "name": "bandstop_filter",
+            "other_seis_prov_attributes_allowed": false,
+            "package": "seis_prov",
+            "two_letter_code": "bs",
+            "type": "activity"
+        },
+        "calculate_adjoint_source": {
+            "attributes": [
+                {
+                    "description": "A string denoting the type of adjoint source.",
+                    "example_value": "Time Frequency Phase",
+                    "name": "adjoint_source_type",
+                    "required": true,
+                    "types": [
+                        "xsd:string"
+                    ]
+                },
+                {
+                    "description": "A URI pointing to a detailed description of the adjoint source, for example a DOI link to a publication.",
+                    "example_value": "http://dx.doi.org/10.1111/j.1365-246X.2009.04368.x",
+                    "name": "adjoint_source_type_uri",
+                    "required": false,
+                    "types": [
+                        "xsd:anyURI"
+                    ]
+                }
+            ],
+            "description": "Calculate an adjoint source.",
+            "label": "Calculate Adjoint Source",
+            "name": "calculate_adjoint_source",
+            "other_seis_prov_attributes_allowed": false,
+            "package": "seis_prov",
+            "two_letter_code": "ca",
+            "type": "activity"
+        },
+        "cross_correlate": {
+            "attributes": [
+                {
+                    "description": "The type of performed cross correlation as a string.",
+                    "example_value": "Phase Cross Correlation",
+                    "name": "correlation_type",
+                    "required": true,
+                    "types": [
+                        "xsd:string"
+                    ]
+                },
+                {
+                    "description": "The type of performed cross correlation as a string.",
+                    "example_value": 60.0,
+                    "name": "max_lag_time_in_sec",
+                    "required": false,
+                    "types": [
+                        "xsd:double"
+                    ]
+                }
+            ],
+            "description": "Cross correlate data of two stations. This does not contain information about the used data as that is captured by the incoming entities.",
+            "label": "Cross Correlate",
+            "name": "cross_correlate",
+            "other_seis_prov_attributes_allowed": false,
+            "package": "seis_prov",
+            "two_letter_code": "co",
+            "type": "activity"
+        },
+        "cut": {
+            "attributes": [
+                {
+                    "description": "The time of the first sample in UTC after cutting it.",
+                    "example_value": "2012-04-23T18:25:43.511Z",
+                    "name": "new_start_time",
+                    "required": false,
+                    "types": [
+                        "xsd:dateTime"
+                    ]
+                },
+                {
+                    "description": "The time of the last sample in UTC after cutting it.",
+                    "example_value": "2012-04-23T20:25:43.511Z",
+                    "name": "new_end_time",
+                    "required": false,
+                    "types": [
+                        "xsd:dateTime"
+                    ]
+                }
+            ],
+            "description": "Cut the data resulting in a shorter trace.",
+            "label": "Cut",
+            "name": "cut",
+            "other_seis_prov_attributes_allowed": false,
+            "package": "seis_prov",
+            "two_letter_code": "ct",
+            "type": "activity"
+        },
+        "decimate": {
+            "attributes": [
+                {
+                    "description": "The decimation factor",
+                    "example_value": 5,
+                    "name": "factor",
+                    "required": true,
+                    "types": [
+                        "xsd:positiveInteger"
+                    ]
+                }
+            ],
+            "description": "Downsample the waveform data by an integer factor. Any applied anti-alias filtering has to be described by a filtering activity.",
+            "label": "Decimate",
+            "name": "decimate",
+            "other_seis_prov_attributes_allowed": false,
+            "package": "seis_prov",
+            "two_letter_code": "dc",
+            "type": "activity"
+        },
+        "detrend": {
+            "attributes": [
+                {
+                    "description": "The method used to remove the trend from the data. ``detrend`` means substracting the best fitting linear line, ``demean`` removes the mean, and ``simple`` subtracts a line through the first and last point.",
+                    "example_value": "demean",
+                    "name": "detrending_method",
+                    "pattern": "linear fit|demean|simple",
+                    "required": true,
+                    "types": [
+                        "xsd:string"
+                    ]
+                }
+            ],
+            "description": "Remove trend from the data.",
+            "label": "Detrend",
+            "name": "detrend",
+            "other_seis_prov_attributes_allowed": false,
+            "package": "seis_prov",
+            "two_letter_code": "dt",
+            "type": "activity"
+        },
+        "differentiate": {
+            "attributes": [
+                {
+                    "description": "The order of the derivative, e.g. the nth derivative.",
+                    "example_value": 1,
+                    "name": "order",
+                    "required": true,
+                    "types": [
+                        "xsd:positiveInteger"
+                    ]
+                },
+                {
+                    "description": "The differentiation method.",
+                    "example_value": "three point centered differences",
+                    "name": "differentiation_method",
+                    "required": false,
+                    "types": [
+                        "xsd:string"
+                    ]
+                },
+                {
+                    "description": "Units of the input data in a common abbreviation, e.g. `m`, `m/s`, `nm/s^2`, ...",
+                    "example_value": "m",
+                    "name": "input_units",
+                    "required": false,
+                    "types": [
+                        "xsd:string"
+                    ]
+                },
+                {
+                    "description": "Units of the output data in a common abbreviation, e.g. `m`, `m/s`, `nm/s^2`, ...",
+                    "example_value": "m/s",
+                    "name": "output_units",
+                    "required": false,
+                    "types": [
+                        "xsd:string"
+                    ]
+                }
+            ],
+            "description": "Differentiate the data with respect to time.",
+            "label": "Differentiate",
+            "name": "differentiate",
+            "other_seis_prov_attributes_allowed": false,
+            "package": "seis_prov",
+            "two_letter_code": "df",
+            "type": "activity"
+        },
+        "divide": {
+            "attributes": [
+                {
+                    "description": "The factor by which to divide.",
+                    "example_value": 2.5,
+                    "name": "divisor",
+                    "required": true,
+                    "types": [
+                        "xsd:double"
+                    ]
+                }
+            ],
+            "description": "Divide each value of the data by a certain factor. This is implied by many operations but sometimes useful to capture in its own right.",
+            "label": "Divide",
+            "name": "divide",
+            "other_seis_prov_attributes_allowed": false,
+            "package": "seis_prov",
+            "two_letter_code": "dv",
+            "type": "activity"
+        },
+        "highpass_filter": {
+            "attributes": [
+                {
+                    "description": "The type of filter, e.g. `Butterworth`, `FIR`, `Chebyshev Type I/II`, `Bessel`, ...",
+                    "example_value": "Butterworth",
+                    "name": "filter_type",
+                    "required": true,
+                    "types": [
+                        "xsd:string"
+                    ]
+                },
+                {
+                    "description": "The corner frequency of the filter if applicable in Hz",
+                    "example_value": 5.0,
+                    "name": "corner_frequency",
+                    "required": false,
+                    "types": [
+                        "xsd:double"
+                    ]
+                },
+                {
+                    "description": "The order of the filter if applicable.",
+                    "example_value": 2,
+                    "name": "filter_order",
+                    "required": false,
+                    "types": [
+                        "xsd:positiveInteger"
+                    ]
+                },
+                {
+                    "description": "The number of filter passes if applicable.",
+                    "example_value": 1,
+                    "name": "number_of_passes",
+                    "required": false,
+                    "types": [
+                        "xsd:positiveInteger"
+                    ]
+                },
+                {
+                    "description": "The transition band width in the case of a Chebychev filter.",
+                    "example_value": 10.0,
+                    "name": "chebychev_transition_bw",
+                    "required": false,
+                    "skip_example_in_doc": true,
+                    "types": [
+                        "xsd:double"
+                    ]
+                },
+                {
+                    "description": "The attenuation factor in the case of a Chebychev filter.",
+                    "example_value": 20.0,
+                    "name": "chebychev_attenuation_factor",
+                    "required": false,
+                    "skip_example_in_doc": true,
+                    "types": [
+                        "xsd:double"
+                    ]
+                }
+            ],
+            "description": "Highpass the data.",
+            "label": "Highpass Filter",
+            "name": "highpass_filter",
+            "other_seis_prov_attributes_allowed": false,
+            "package": "seis_prov",
+            "two_letter_code": "hp",
+            "type": "activity"
+        },
+        "integrate": {
+            "attributes": [
+                {
+                    "description": "The order of the integration, e.g. the nth anti-derivative.",
+                    "example_value": 1,
+                    "name": "order",
+                    "required": true,
+                    "types": [
+                        "xsd:positiveInteger"
+                    ]
+                },
+                {
+                    "description": "The integration method.",
+                    "example_value": "Composite trapezoidal rule.",
+                    "name": "integration_method",
+                    "required": false,
+                    "types": [
+                        "xsd:string"
+                    ]
+                },
+                {
+                    "description": "Units of the input data in a common abbreviation, e.g. `m`, `m/s`, `nm/s^2`, ...",
+                    "example_value": "m/s",
+                    "name": "input_units",
+                    "required": false,
+                    "types": [
+                        "xsd:string"
+                    ]
+                },
+                {
+                    "description": "Units of the output data in a common abbreviation, e.g. `m`, `m/s`, `nm/s^2`, ...",
+                    "example_value": "m",
+                    "name": "output_units",
+                    "required": false,
+                    "types": [
+                        "xsd:string"
+                    ]
+                }
+            ],
+            "description": "Integrate the data with respect to time.",
+            "label": "Integrate",
+            "name": "integrate",
+            "other_seis_prov_attributes_allowed": false,
+            "package": "seis_prov",
+            "two_letter_code": "ig",
+            "type": "activity"
+        },
+        "interpolate": {
+            "attributes": [
+                {
+                    "description": "The method used to interpolate the samples. ``weighted average slopes`` is the interpolation method use by SAC and detailed in a 1976 paper by Wiggins. This is in wide use and thus offered as a special option here.",
+                    "example_value": "cubic spline",
+                    "name": "interpolation_method",
+                    "pattern": "weighted average slopes|linear spline|quadratic spline|cubic spline|linear|nearest",
+                    "required": true,
+                    "types": [
+                        "xsd:string"
+                    ]
+                },
+                {
+                    "description": "The time of the first sample in UTC after the interpolation.",
+                    "example_value": "2012-04-23T18:25:43.511Z",
+                    "name": "new_start_time",
+                    "required": false,
+                    "types": [
+                        "xsd:dateTime"
+                    ]
+                },
+                {
+                    "description": "The number of samples after the interpolation.",
+                    "example_value": 5000,
+                    "name": "new_number_of_samples",
+                    "required": false,
+                    "types": [
+                        "xsd:positiveInteger"
+                    ]
+                },
+                {
+                    "description": "The sampling rate after the interpolation.",
+                    "example_value": 10.0,
+                    "name": "new_sampling_rate",
+                    "required": true,
+                    "types": [
+                        "xsd:double"
+                    ]
+                }
+            ],
+            "description": "Interpolate the data to new sampling points.",
+            "label": "Interpolate",
+            "name": "interpolate",
+            "other_seis_prov_attributes_allowed": false,
+            "package": "seis_prov",
+            "two_letter_code": "ip",
+            "type": "activity"
+        },
+        "lowpass_filter": {
+            "attributes": [
+                {
+                    "description": "The type of filter, e.g. `Butterworth`, `FIR`, `Chebyshev Type I/II`, `Bessel`, ...",
+                    "example_value": "Butterworth",
+                    "name": "filter_type",
+                    "required": true,
+                    "types": [
+                        "xsd:string"
+                    ]
+                },
+                {
+                    "description": "The corner frequency of the filter if applicable in Hz",
+                    "example_value": 5.0,
+                    "name": "corner_frequency",
+                    "required": false,
+                    "types": [
+                        "xsd:double"
+                    ]
+                },
+                {
+                    "description": "The order of the filter if applicable.",
+                    "example_value": 2,
+                    "name": "filter_order",
+                    "required": false,
+                    "types": [
+                        "xsd:positiveInteger"
+                    ]
+                },
+                {
+                    "description": "The number of filter passes if applicable.",
+                    "example_value": 1,
+                    "name": "number_of_passes",
+                    "required": false,
+                    "types": [
+                        "xsd:positiveInteger"
+                    ]
+                },
+                {
+                    "description": "The transition band width in the case of a Chebychev filter.",
+                    "example_value": 10.0,
+                    "name": "chebychev_transition_bw",
+                    "required": false,
+                    "skip_example_in_doc": true,
+                    "types": [
+                        "xsd:double"
+                    ]
+                },
+                {
+                    "description": "The attenuation factor in the case of a Chebychev filter.",
+                    "example_value": 20.0,
+                    "name": "chebychev_attenuation_factor",
+                    "required": false,
+                    "skip_example_in_doc": true,
+                    "types": [
+                        "xsd:double"
+                    ]
+                }
+            ],
+            "description": "Lowpass the data.",
+            "label": "Lowpass Filter",
+            "name": "lowpass_filter",
+            "other_seis_prov_attributes_allowed": false,
+            "package": "seis_prov",
+            "two_letter_code": "lp",
+            "type": "activity"
+        },
+        "merge": {
+            "attributes": [
+                {
+                    "description": "A string describing the applied merging strategy.",
+                    "example_value": "discard overlaps",
+                    "name": "merging_strategy",
+                    "required": true,
+                    "types": [
+                        "xsd:string"
+                    ]
+                }
+            ],
+            "description": "Merge several traces into one. This is very implementation dependent and thus the activity should be associated with a software agent.",
+            "label": "Merge",
+            "name": "merge",
+            "other_seis_prov_attributes_allowed": false,
+            "package": "seis_prov",
+            "two_letter_code": "mg",
+            "type": "activity"
+        },
+        "multiply": {
+            "attributes": [
+                {
+                    "description": "The factor by which to multiply.",
+                    "example_value": 2.5,
+                    "name": "factor",
+                    "required": true,
+                    "types": [
+                        "xsd:double"
+                    ]
+                }
+            ],
+            "description": "Multiply each value of the data with a certain factor. This is implied by many operations but sometimes useful to capture in its own right.",
+            "label": "Multiply",
+            "name": "multiply",
+            "other_seis_prov_attributes_allowed": false,
+            "package": "seis_prov",
+            "two_letter_code": "mp",
+            "type": "activity"
+        },
+        "normalize": {
+            "attributes": [
+                {
+                    "description": "The used normalization method.",
+                    "example_value": "Amplitude",
+                    "name": "normalization_method",
+                    "required": true,
+                    "types": [
+                        "xsd:string"
+                    ]
+                }
+            ],
+            "description": "Normalize the data.",
+            "label": "Normalize",
+            "name": "normalize",
+            "other_seis_prov_attributes_allowed": false,
+            "package": "seis_prov",
+            "two_letter_code": "nm",
+            "type": "activity"
+        },
+        "pad": {
+            "attributes": [
+                {
+                    "description": "The value that will be used to fill missing values with.",
+                    "example_value": 0.0,
+                    "name": "fill_value",
+                    "required": true,
+                    "types": [
+                        "xsd:decimal",
+                        "xsd:integer"
+                    ]
+                },
+                {
+                    "description": "The time of the first sample in UTC after padding it.",
+                    "example_value": "2012-04-23T18:25:43.511Z",
+                    "name": "new_start_time",
+                    "required": false,
+                    "types": [
+                        "xsd:dateTime"
+                    ]
+                },
+                {
+                    "description": "The time of the last sample in UTC after padding it.",
+                    "example_value": "2012-04-23T20:25:43.511Z",
+                    "name": "new_end_time",
+                    "required": false,
+                    "types": [
+                        "xsd:dateTime"
+                    ]
+                }
+            ],
+            "description": "Pad the data resulting in a longer trace.",
+            "label": "Pad",
+            "name": "pad",
+            "other_seis_prov_attributes_allowed": false,
+            "package": "seis_prov",
+            "two_letter_code": "pd",
+            "type": "activity"
+        },
+        "remove_response": {
+            "attributes": [
+                {
+                    "description": "The applied water level in dB.",
+                    "example_value": 60,
+                    "name": "water_level",
+                    "required": false,
+                    "types": [
+                        "xsd:double"
+                    ]
+                },
+                {
+                    "description": "Units of the input data in a common abbreviation, e.g. `m`, `m/s`, `nm/s^2`, ...",
+                    "example_value": "counts",
+                    "name": "input_units",
+                    "required": false,
+                    "types": [
+                        "xsd:string"
+                    ]
+                },
+                {
+                    "description": "Units of the output data in a common abbreviation, e.g. `m`, `m/s`, `nm/s^2`, ...",
+                    "example_value": "m/s",
+                    "name": "output_units",
+                    "required": false,
+                    "types": [
+                        "xsd:string"
+                    ]
+                }
+            ],
+            "description": "Remove an instrument's response.",
+            "label": "Remove Response",
+            "name": "remove_response",
+            "other_seis_prov_attributes_allowed": false,
+            "package": "seis_prov",
+            "two_letter_code": "rr",
+            "type": "activity"
+        },
+        "resample": {
+            "attributes": [
+                {
+                    "description": "The window applied to the signal in the Fourier domain.",
+                    "example_value": "Hanning",
+                    "name": "frequency_domain_window",
+                    "required": false,
+                    "types": [
+                        "xsd:string"
+                    ]
+                },
+                {
+                    "description": "The time of the first sample in UTC after the interpolation.",
+                    "example_value": "2012-04-23T18:25:43.511Z",
+                    "name": "new_start_time",
+                    "required": false,
+                    "types": [
+                        "xsd:dateTime"
+                    ]
+                },
+                {
+                    "description": "The number of samples after the interpolation.",
+                    "example_value": 5000,
+                    "name": "new_number_of_samples",
+                    "required": false,
+                    "types": [
+                        "xsd:positiveInteger"
+                    ]
+                },
+                {
+                    "description": "The sampling rate after the interpolation.",
+                    "example_value": 10.0,
+                    "name": "new_sampling_rate",
+                    "required": true,
+                    "types": [
+                        "xsd:double"
+                    ]
+                }
+            ],
+            "description": "Resample the data in the frequency domain.",
+            "label": "Resample",
+            "name": "resample",
+            "other_seis_prov_attributes_allowed": false,
+            "package": "seis_prov",
+            "two_letter_code": "rs",
+            "type": "activity"
+        },
+        "rotate": {
+            "attributes": [
+                {
+                    "description": "The rotation method.",
+                    "example_value": "NE->RT",
+                    "name": "method",
+                    "pattern": "NE->RT|RT->NE|ZNE->LQT|LQT->ZNE",
+                    "required": false,
+                    "types": [
+                        "xsd:string"
+                    ]
+                }
+            ],
+            "description": "Rotate multi-component data. The precise rotation angles could be inferred by comparing the dip and azimuth of inputs and outputs. Alternatively the rotation method can be specified.",
+            "label": "Rotate",
+            "name": "rotate",
+            "other_seis_prov_attributes_allowed": false,
+            "package": "seis_prov",
+            "two_letter_code": "rt",
+            "type": "activity"
+        },
+        "simulate_response": {
+            "attributes": [
+                {
+                    "description": "Textual description of the added response. If more details are needed, then this activity should use an entity that points to the used response.",
+                    "example_value": "Wood-Anderson Seismometer",
+                    "name": "description",
+                    "required": false,
+                    "types": [
+                        "xsd:string"
+                    ]
+                },
+                {
+                    "description": "Units of the input data in a common abbreviation, e.g. `m`, `m/s`, `nm/s^2`, ...",
+                    "example_value": "m/",
+                    "name": "input_units",
+                    "required": false,
+                    "types": [
+                        "xsd:string"
+                    ]
+                },
+                {
+                    "description": "Units of the output data in a common abbreviation, e.g. `m`, `m/s`, `nm/s^2`, ...",
+                    "example_value": "m/s",
+                    "name": "output_units",
+                    "required": false,
+                    "types": [
+                        "xsd:string"
+                    ]
+                }
+            ],
+            "description": "Add an instrument\u2019s response.",
+            "label": "Simulate Response",
+            "name": "simulate_response",
+            "other_seis_prov_attributes_allowed": false,
+            "package": "seis_prov",
+            "two_letter_code": "sr",
+            "type": "activity"
+        },
+        "stack_cross_correlations": {
+            "attributes": [
+                {
+                    "description": "A string describing the method used to create the stack.",
+                    "example_value": "mean",
+                    "name": "stacking_method",
+                    "required": true,
+                    "types": [
+                        "xsd:string"
+                    ]
+                }
+            ],
+            "description": "Stack a number of cross correlations.",
+            "label": "Stack Cross Correlations",
+            "name": "stack_cross_correlations",
+            "other_seis_prov_attributes_allowed": false,
+            "package": "seis_prov",
+            "two_letter_code": "sc",
+            "type": "activity"
+        },
+        "taper": {
+            "attributes": [
+                {
+                    "description": "The type applied window.",
+                    "example_value": "Hanning",
+                    "name": "window_type",
+                    "required": true,
+                    "types": [
+                        "xsd:string"
+                    ]
+                },
+                {
+                    "description": "The width of the taper at each end. Must be between 0.0 and 0.5.",
+                    "example_value": 0.05,
+                    "name": "taper_width",
+                    "required": true,
+                    "types": [
+                        "xsd:double"
+                    ]
+                },
+                {
+                    "description": "`'left'`, `'right'`, or `'both'`",
+                    "example_value": "both",
+                    "name": "side",
+                    "required": true,
+                    "types": [
+                        "xsd:string"
+                    ]
+                }
+            ],
+            "description": "Apply a taper window to the data.",
+            "label": "Taper",
+            "name": "taper",
+            "other_seis_prov_attributes_allowed": false,
+            "package": "seis_prov",
+            "two_letter_code": "tp",
+            "type": "activity"
+        },
+        "waveform_simulation": {
+            "attributes": [],
+            "description": "Generate data by running some numerical or analytic code. Must be associated with one or more agents and use some entities to achieve a useful description.",
+            "label": "Waveform Simulation",
+            "name": "waveform_simulation",
+            "other_seis_prov_attributes_allowed": false,
+            "package": "seis_prov",
+            "two_letter_code": "ws",
+            "type": "activity"
+        }
+    },
+    "agents": {
+        "organization": {
+            "attributes": [
+                {
+                    "description": "The name of the organization.",
+                    "example_value": "Example Organization",
+                    "name": "name",
+                    "required": true,
+                    "types": [
+                        "xsd:string"
+                    ]
+                },
+                {
+                    "description": "The website of the organization.",
+                    "example_value": "http://example.com",
+                    "name": "website",
+                    "required": false,
+                    "types": [
+                        "xsd:anyURI"
+                    ]
+                }
+            ],
+            "description": "An agent denoting an organization. This is useful to describe who is associated with what organization (``wasAssociatedWith``). An organization can also have any number of additional attributes in the ``SEIS-PROV`` namespace to describe it in more detail.",
+            "label": "*",
+            "name": "organization",
+            "other_seis_prov_attributes_allowed": true,
+            "package": "seis_prov",
+            "two_letter_code": "og",
+            "type": "agent"
+        },
+        "person": {
+            "attributes": [
+                {
+                    "description": "The name of the person.",
+                    "example_value": "Susanna Musterfrau",
+                    "name": "name",
+                    "required": true,
+                    "types": [
+                        "xsd:string"
+                    ]
+                },
+                {
+                    "description": "The email address of the person.",
+                    "example_value": "susanna.musterfrau@email.com",
+                    "name": "email",
+                    "pattern": "[^@]+@[^@]+\\.[^@]+",
+                    "required": false,
+                    "types": [
+                        "xsd:string"
+                    ]
+                }
+            ],
+            "description": "A person is an agent either denoting who is responsible for a certain activity (``wasAssociatedWith``) or who is responsible for the actions of another agent (``actedOnBehalfOf``). This is useful to state who performed a particular task. A person in the ``SEIS-PROV`` namespace must have a name and can have an email address. A person can also have any number of additional attributes in the ``SEIS-PROV`` namespace to describe it in more detail.",
+            "label": "*",
+            "name": "person",
+            "other_seis_prov_attributes_allowed": true,
+            "package": "seis_prov",
+            "two_letter_code": "pp",
+            "type": "agent"
+        },
+        "software_agent": {
+            "attributes": [
+                {
+                    "description": "The name of the software.",
+                    "example_value": "ObsPy",
+                    "name": "software_name",
+                    "required": true,
+                    "types": [
+                        "xsd:string"
+                    ]
+                },
+                {
+                    "description": "The version number of the used software.",
+                    "example_value": "0.10.2",
+                    "name": "software_version",
+                    "required": true,
+                    "types": [
+                        "xsd:string"
+                    ]
+                },
+                {
+                    "description": "The website where one can find further information.",
+                    "example_value": "http://obspy.org",
+                    "name": "website",
+                    "required": true,
+                    "types": [
+                        "xsd:anyURI"
+                    ]
+                },
+                {
+                    "description": "The digital object identifier for the software.",
+                    "example_value": "10.5281/zenodo.17641",
+                    "name": "doi",
+                    "pattern": "(10[.][0-9]{4,}(?:[.][0-9]+)*/(?:(?![%\"#? ])\\S)+)",
+                    "required": false,
+                    "types": [
+                        "xsd:string"
+                    ]
+                }
+            ],
+            "description": "This agent describes the software used for a particular task. It requires some attributes to be able to uniquely determine the used software including the version. If you use the development version of a particular software you should reflect that in the version number.",
+            "label": "*",
+            "name": "software_agent",
+            "other_seis_prov_attributes_allowed": false,
+            "package": "seis_prov",
+            "two_letter_code": "sa",
+            "type": "agent"
+        }
+    },
+    "entities": {
+        "adjoint_source": {
+            "attributes": [
+                {
+                    "description": "The latitude of the station in WGS84.",
+                    "example_value": 48.0,
+                    "name": "latitude",
+                    "required": false,
+                    "types": [
+                        "xsd:double"
+                    ]
+                },
+                {
+                    "description": "The longitude of the station in WGS84.",
+                    "example_value": 12.1,
+                    "name": "longitude",
+                    "required": false,
+                    "types": [
+                        "xsd:double"
+                    ]
+                },
+                {
+                    "description": "The elevation of the station in meter above the null level on WGS84.",
+                    "example_value": 658.0,
+                    "name": "elevation_in_m",
+                    "required": false,
+                    "types": [
+                        "xsd:double"
+                    ]
+                },
+                {
+                    "description": "The burial of the station in meter.",
+                    "example_value": 0.0,
+                    "name": "local_depth_in_m",
+                    "required": false,
+                    "types": [
+                        "xsd:double"
+                    ]
+                },
+                {
+                    "description": "The orientation of the adjoint source, either N (north), E (east), Z (up), T (transverse), or R (radial). If that is not sufficient, please use the dip and azimuth attributes.",
+                    "example_value": "N",
+                    "name": "orientation",
+                    "required": false,
+                    "types": [
+                        "xsd:string"
+                    ]
+                },
+                {
+                    "description": "Dip of the component in degrees, down from horizontal, same definition as in StationXML.",
+                    "example_value": 0.0,
+                    "name": "dip",
+                    "required": false,
+                    "types": [
+                        "xsd:double"
+                    ]
+                },
+                {
+                    "description": "Azimuth of the component in degrees from north, clockwise, same definition as in StationXML.",
+                    "example_value": 90.0,
+                    "name": "azimuth",
+                    "required": false,
+                    "types": [
+                        "xsd:double"
+                    ]
+                },
+                {
+                    "description": "The id of the recording station.",
+                    "example_value": "BW.FURT..BHZ",
+                    "name": "station_id",
+                    "pattern": "^[A-Z0-9]{1,2}\\.[A-Z0-9]{1,5}\\.[A-Z0-9]{0,2}\\.[A-Z0-9]{3}$",
+                    "required": false,
+                    "types": [
+                        "xsd:string"
+                    ]
+                },
+                {
+                    "description": "The number of samples in the trace.",
+                    "example_value": 20000,
+                    "name": "number_of_samples",
+                    "required": false,
+                    "types": [
+                        "xsd:positiveInteger"
+                    ]
+                },
+                {
+                    "description": "The sampling rate of the data.",
+                    "example_value": 20.0,
+                    "name": "sampling_rate",
+                    "required": false,
+                    "types": [
+                        "xsd:double"
+                    ]
+                },
+                {
+                    "description": "Units of the adjoint source as a common abbreviation, e.g. m, m/s, nm/s^2, ...",
+                    "example_value": "m/s",
+                    "name": "units",
+                    "required": false,
+                    "types": [
+                        "xsd:string"
+                    ]
+                },
+                {
+                    "description": "A string denoting the type of adjoint source.",
+                    "example_value": "Time Frequency Phase",
+                    "name": "adjoint_source_type",
+                    "required": true,
+                    "types": [
+                        "xsd:string"
+                    ]
+                },
+                {
+                    "description": "A URI pointing to a detailed description of the adjoint source, for example a DOI link to a publication.",
+                    "example_value": "http://dx.doi.org/10.1111/j.1365-246X.2009.04368.x",
+                    "name": "adjoint_source_type_uri",
+                    "required": false,
+                    "types": [
+                        "xsd:anyURI"
+                    ]
+                },
+                {
+                    "description": "The calculation of many types of adjoint sources will automatically yield a misfit value denoting the similarity of usually observed and synthetic seismograms.",
+                    "example_value": 0.08,
+                    "name": "misfit_value",
+                    "required": false,
+                    "types": [
+                        "xsd:double"
+                    ]
+                }
+            ],
+            "description": "One component of an adjoint source used in adjoint simulations. The location can be specified either in geographical coordinates (WGS84) or as the SEED identifier of the corresponding station. The definition of geographic coordinates is the same as in StationXML. Any processing applied to the data before the adjoint source has been calculated (window picking, filtering, ...) has to be described by provenance records on the waveform entities.",
+            "label": "Adjoint Source",
+            "name": "adjoint_source",
+            "other_seis_prov_attributes_allowed": false,
+            "package": "seis_prov",
+            "two_letter_code": "as",
+            "type": "entity"
+        },
+        "cross_correlation": {
+            "attributes": [
+                {
+                    "description": "The type of performed cross correlation as a string.",
+                    "example_value": "Phase Cross Correlation",
+                    "name": "correlation_type",
+                    "required": true,
+                    "types": [
+                        "xsd:string"
+                    ]
+                },
+                {
+                    "description": "The maximum lag time used during the calculation in seconds.",
+                    "example_value": 60.0,
+                    "name": "max_lag_time_in_sec",
+                    "required": false,
+                    "types": [
+                        "xsd:double"
+                    ]
+                },
+                {
+                    "description": "The maximum correlation coefficient",
+                    "example_value": 0.88,
+                    "name": "max_correlation_coefficient",
+                    "required": false,
+                    "types": [
+                        "xsd:double"
+                    ]
+                },
+                {
+                    "description": "The SEED identifier of station A.",
+                    "example_value": "BW.FURT..BHZ",
+                    "name": "seed_id_a",
+                    "pattern": "^[A-Z0-9]{1,2}\\.[A-Z0-9]{1,5}\\.[A-Z0-9]{0,2}\\.[A-Z0-9]{3}$",
+                    "required": false,
+                    "types": [
+                        "xsd:string"
+                    ]
+                },
+                {
+                    "description": "The SEED identifier of station B.",
+                    "example_value": "BW.ALTM..BHZ",
+                    "name": "seed_id_b",
+                    "pattern": "^[A-Z0-9]{1,2}\\.[A-Z0-9]{1,5}\\.[A-Z0-9]{0,2}\\.[A-Z0-9]{3}$",
+                    "required": false,
+                    "types": [
+                        "xsd:string"
+                    ]
+                }
+            ],
+            "description": "A cross correlation between two stations A and B. Station metadata is not recorded here as it is part of either SEED or StationXML files. Any previously applied processing is also not part of the entity but rather of the entity used by the activity generating this one.",
+            "label": "Cross Correlation",
+            "name": "cross_correlation",
+            "other_seis_prov_attributes_allowed": false,
+            "package": "seis_prov",
+            "two_letter_code": "cc",
+            "type": "entity"
+        },
+        "cross_correlation_stack": {
+            "attributes": [
+                {
+                    "description": "The type of performed cross correlations as a string. Only useful if the same for all cross correlations, otherwise that information must be stored in the provenance records of the single cross correlations.",
+                    "example_value": "Phase Cross Correlation",
+                    "name": "correlation_type",
+                    "required": false,
+                    "types": [
+                        "xsd:string"
+                    ]
+                },
+                {
+                    "description": "The number of cross correlations used to calculate the stack.",
+                    "example_value": 48,
+                    "name": "correlation_count",
+                    "required": false,
+                    "types": [
+                        "xsd:positiveInteger"
+                    ]
+                },
+                {
+                    "description": "The method used to create the stack.",
+                    "example_value": "mean",
+                    "name": "stacking_method",
+                    "required": false,
+                    "types": [
+                        "xsd:string"
+                    ]
+                },
+                {
+                    "description": "The SEED identifier of station A.",
+                    "example_value": "BW.FURT..BHZ",
+                    "name": "seed_id_a",
+                    "pattern": "^[A-Z0-9]{1,2}\\.[A-Z0-9]{1,5}\\.[A-Z0-9]{0,2}\\.[A-Z0-9]{3}$",
+                    "required": false,
+                    "types": [
+                        "xsd:string"
+                    ]
+                },
+                {
+                    "description": "The SEED identifier of station B.",
+                    "example_value": "BW.ALTM..BHZ",
+                    "name": "seed_id_b",
+                    "pattern": "^[A-Z0-9]{1,2}\\.[A-Z0-9]{1,5}\\.[A-Z0-9]{0,2}\\.[A-Z0-9]{3}$",
+                    "required": false,
+                    "types": [
+                        "xsd:string"
+                    ]
+                }
+            ],
+            "description": "A stack of cross correlations.",
+            "label": "Cross Correlation Stack",
+            "name": "cross_correlation_stack",
+            "other_seis_prov_attributes_allowed": false,
+            "package": "seis_prov",
+            "two_letter_code": "cs",
+            "type": "entity"
+        },
+        "earth_model": {
+            "attributes": [
+                {
+                    "description": "The name of the model.",
+                    "example_value": "S40RTS",
+                    "name": "model_name",
+                    "required": true,
+                    "types": [
+                        "xsd:string"
+                    ]
+                },
+                {
+                    "description": "The type of model as a short, descriptive string, e.g. ``'1D'``, ``'3D'``, ``'axially symmetric'``, ...",
+                    "example_value": "3D",
+                    "name": "model_type",
+                    "required": true,
+                    "types": [
+                        "xsd:string"
+                    ]
+                },
+                {
+                    "description": "A DOI pointing to a publication of the model.",
+                    "example_value": "10.1111/j.1365-246X.2010.04884.x",
+                    "name": "doi",
+                    "required": false,
+                    "types": [
+                        "xsd:string"
+                    ]
+                },
+                {
+                    "description": "URL to a website with more information.",
+                    "example_value": "http://www.earth.lsa.umich.edu/~jritsema/research.html",
+                    "name": "website",
+                    "required": false,
+                    "types": [
+                        "xsd:anyURI"
+                    ]
+                },
+                {
+                    "description": "A short description of the model.",
+                    "example_value": "The famous S40RTS.",
+                    "name": "description",
+                    "required": false,
+                    "types": [
+                        "xsd:string"
+                    ]
+                }
+            ],
+            "description": "An earth model. Its main use is to illustrate the origin of synthetic seismograms.",
+            "label": "Earth Model",
+            "name": "earth_model",
+            "other_seis_prov_attributes_allowed": false,
+            "package": "seis_prov",
+            "two_letter_code": "em",
+            "type": "entity"
+        },
+        "file": {
+            "attributes": [
+                {
+                    "description": "The name of the file.",
+                    "example_value": "random_file.txt",
+                    "name": "filename",
+                    "required": true,
+                    "types": [
+                        "xsd:string"
+                    ]
+                },
+                {
+                    "description": "The location of the file in a way that can be discovered. Can be a URL, a file path, or something similar.",
+                    "example_value": "/path/to/random_file.txt",
+                    "name": "location",
+                    "required": true,
+                    "types": [
+                        "xsd:string"
+                    ]
+                },
+                {
+                    "description": "The type of location. Examples include ``Filename``, ``URL``, ``HDF5 Data Set``, ``SFTP Address``, ...",
+                    "example_value": "Filename",
+                    "name": "location_type",
+                    "required": true,
+                    "types": [
+                        "xsd:string"
+                    ]
+                }
+            ],
+            "description": "In some cases arbitrary files are needed to describe the provenance of something. Examples are special source code files who's information cannot be represented in the ``Input Parameter`` entity. This entity allows to refer to arbitrary files. Each file is represented by a filename, a location, and a location type. The location might be a URL; then provenance discovery is simple. It might also be a filename or a path in a container format. Users are responsible to either ship the files alongside the provenance information or provide access by other means.",
+            "label": "File",
+            "name": "file",
+            "other_seis_prov_attributes_allowed": true,
+            "package": "seis_prov",
+            "two_letter_code": "fi",
+            "type": "entity"
+        },
+        "input_parameters": {
+            "attributes": [],
+            "description": "The input parameters for a program like a waveform solvers as a list of key, value pairs. Each key can live in the ``SEIS-PROV`` namespace.",
+            "label": "Input Parameters",
+            "name": "input_parameters",
+            "other_seis_prov_attributes_allowed": true,
+            "package": "seis_prov",
+            "two_letter_code": "in",
+            "type": "entity"
+        },
+        "waveform_trace": {
+            "attributes": [
+                {
+                    "description": "The SEED id of the recording station.",
+                    "example_value": "BW.FURT..EHZ",
+                    "name": "seed_id",
+                    "pattern": "^[A-Z0-9]{1,2}\\.[A-Z0-9]{1,5}\\.[A-Z0-9]{0,2}\\.[A-Z0-9]{3}$",
+                    "required": false,
+                    "types": [
+                        "xsd:string"
+                    ]
+                },
+                {
+                    "description": "An optional description of the waveform trace. This has no technical meaning but serves to make the provenance documents easier to understand.",
+                    "example_value": "Synthetic Data",
+                    "name": "description",
+                    "required": false,
+                    "types": [
+                        "xsd:string"
+                    ]
+                },
+                {
+                    "description": "The component of the recording. Many algorithms require a specific component and this attribute enables the description of these algorithms without using a specific SEED id.",
+                    "example_value": "Z",
+                    "name": "component",
+                    "pattern": "Z|N|E|R|T",
+                    "required": false,
+                    "types": [
+                        "xsd:string"
+                    ]
+                },
+                {
+                    "description": "The time of the first sample in UTC.",
+                    "example_value": "2012-04-23T18:25:43.511Z",
+                    "name": "start_time",
+                    "required": false,
+                    "types": [
+                        "xsd:dateTime"
+                    ]
+                },
+                {
+                    "description": "The number of samples in the waveform trace.",
+                    "example_value": 10000,
+                    "name": "number_of_samples",
+                    "required": false,
+                    "types": [
+                        "xsd:positiveInteger"
+                    ]
+                },
+                {
+                    "description": "The sampling rate of the data.",
+                    "example_value": 20.0,
+                    "name": "sampling_rate",
+                    "required": false,
+                    "types": [
+                        "xsd:double"
+                    ]
+                },
+                {
+                    "description": "Units of the waveform data in a common abbreviation, e.g. `m`, `m/s`, `nm/s^2`, ...",
+                    "example_value": "m/s",
+                    "name": "units",
+                    "required": false,
+                    "types": [
+                        "xsd:string"
+                    ]
+                },
+                {
+                    "description": "Azimuth of the component in degrees from north, clockwise, same definition as in StationXML.",
+                    "example_value": 90.0,
+                    "name": "azimuth",
+                    "required": false,
+                    "types": [
+                        "xsd:double"
+                    ]
+                },
+                {
+                    "description": "Dip of the component in degrees, down from horizontal, same definition as in StationXML.",
+                    "example_value": 0.0,
+                    "name": "dip",
+                    "required": false,
+                    "types": [
+                        "xsd:double"
+                    ]
+                }
+            ],
+            "description": "Represents a continuous, equally sampled observed or synthetic waveform trace. Most attributes are optional and can be used to describe either very detailed or fairly general provenance information.",
+            "label": "Waveform Trace",
+            "name": "waveform_trace",
+            "other_seis_prov_attributes_allowed": false,
+            "package": "seis_prov",
+            "two_letter_code": "wf",
+            "type": "entity"
+        }
+    }
+}
