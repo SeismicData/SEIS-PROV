@@ -45,7 +45,7 @@ Waveform Simulation
 
 This fairly realistic example demonstrates how the waveform files resulting
 from a numerical simulation can be described. This example does use some of the
-more advanced future of the W3C PROV data model which are useful in many
+more advanced features of the W3C PROV data model which are useful in many
 contexts. Note that the waveform simulation activity has start and end times
 and that SPECFEM in this example actually has been steered by a certain person.
 
@@ -78,5 +78,30 @@ correlation.
 
 Adjoint Source Calculation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Last but not least is a fairly extreme example describing the provenance
+history of a more complex operation - the calculation of an adjoint source
+for transverse component seismograms. Nobody will create such a graph by
+hand so this is only feasible if is happens automatically but it
+demonstrates the power and scope of the concepts behind W3C PROV and
+``SEIS-PROV``. In practice most programs and tools will likely choose to
+create simpler descriptions.
+
+This ``SEIS-PROV`` document here describes:
+
+1. The generation of north and east component synthetic seismograms with
+   SPECFEM3D GLOBE.
+2. These seismograms are detrended, demeaned, tapered, bandpass filtered,
+   detrended, demeaned, tapered, interpolated to new sampling rates, and
+   finally rotated to a transverse component seismogram.
+3. The same is done to the observed waveforms and additionally their
+   instrument response is deconvolved at a certain point in the chain.
+4. The difference between these two processed transverse component
+   seismograms is then encoded in an adjoint source.
+
+In this particular example the graph generating code already has a hard to
+time to produce a nice and clean graph and it is kind of hard to interpret
+visually. Different ways to visualize such complex provenance descriptions
+might have to be devised in the future.
 
 {example_adjoint_source}

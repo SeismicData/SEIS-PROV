@@ -1,0 +1,1145 @@
+{
+    "actedOnBehalfOf": {
+        "_:id1": {
+            "prov:delegate": "seis_prov:sp000_sa_9dig8ata",
+            "prov:responsible": "seis_prov:sp000_pp_me09234j"
+        }
+    },
+    "activity": {
+        "seis_prov:sp001_ca_c7540fc": {
+            "prov:label": "Calculate Adjoint Source",
+            "prov:type": "seis_prov:calculate_adjoint_source",
+            "seis_prov:adjoint_source_type": "Time Frequency Phase"
+        },
+        "seis_prov:sp001_ip_4309jlkjn": {
+            "prov:label": "Interpolate",
+            "prov:type": "seis_prov:interpolate",
+            "seis_prov:interpolation_method": "weighted average slopes",
+            "seis_prov:new_sampling_rate": {
+                "$": 1.0,
+                "type": "xsd:double"
+            }
+        },
+        "seis_prov:sp001_ip_diajsdf80": {
+            "prov:label": "Interpolate",
+            "prov:type": "seis_prov:interpolate",
+            "seis_prov:interpolation_method": "weighted average slopes",
+            "seis_prov:new_sampling_rate": {
+                "$": 1.0,
+                "type": "xsd:double"
+            }
+        },
+        "seis_prov:sp001_ip_i34j09d": {
+            "prov:label": "Interpolate",
+            "prov:type": "seis_prov:interpolate",
+            "seis_prov:interpolation_method": "weighted average slopes",
+            "seis_prov:new_sampling_rate": {
+                "$": 1.0,
+                "type": "xsd:double"
+            }
+        },
+        "seis_prov:sp001_ip_iadsf3490j": {
+            "prov:label": "Interpolate",
+            "prov:type": "seis_prov:interpolate",
+            "seis_prov:interpolation_method": "weighted average slopes",
+            "seis_prov:new_sampling_rate": {
+                "$": 1.0,
+                "type": "xsd:double"
+            }
+        },
+        "seis_prov:sp001_rr_asdf34034": {
+            "prov:label": "Remove Response",
+            "prov:type": "seis_prov:remove_response",
+            "seis_prov:input_units": "counts",
+            "seis_prov:output_units": "m",
+            "seis_prov:water_level": {
+                "$": 600.0,
+                "type": "xsd:double"
+            }
+        },
+        "seis_prov:sp001_rr_ddcc155": {
+            "prov:label": "Remove Response",
+            "prov:type": "seis_prov:remove_response",
+            "seis_prov:input_units": "counts",
+            "seis_prov:output_units": "m",
+            "seis_prov:water_level": {
+                "$": 600.0,
+                "type": "xsd:double"
+            }
+        },
+        "seis_prov:sp001_rt_039jznwmp": {
+            "prov:label": "Rotate",
+            "prov:type": "seis_prov:rotate",
+            "seis_prov:method": "NE->RT"
+        },
+        "seis_prov:sp001_rt_asdfkj4034": {
+            "prov:label": "Rotate",
+            "prov:type": "seis_prov:rotate",
+            "seis_prov:method": "NE->RT"
+        },
+        "seis_prov:sp001_ws_f87sf7sf78": {
+            "prov:endTime": "2014-02-02T14:07:13",
+            "prov:label": "Waveform Simulation",
+            "prov:startTime": "2014-02-02T12:15:03",
+            "prov:type": "seis_prov:waveform_simulation"
+        },
+        "seis_prov:sp011_dt_4ijf0dfo0": {
+            "prov:label": "Detrend",
+            "prov:type": "seis_prov:detrend",
+            "seis_prov:detrending_method": "linear fit"
+        },
+        "seis_prov:sp011_dt_893ndidh": {
+            "prov:label": "Detrend",
+            "prov:type": "seis_prov:detrend",
+            "seis_prov:detrending_method": "linear fit"
+        },
+        "seis_prov:sp011_dt_as034lkjo": {
+            "prov:label": "Detrend",
+            "prov:type": "seis_prov:detrend",
+            "seis_prov:detrending_method": "linear fit"
+        },
+        "seis_prov:sp011_dt_asdfoij4": {
+            "prov:label": "Detrend",
+            "prov:type": "seis_prov:detrend",
+            "seis_prov:detrending_method": "linear fit"
+        },
+        "seis_prov:sp011_dt_ij2390jdl": {
+            "prov:label": "Detrend",
+            "prov:type": "seis_prov:detrend",
+            "seis_prov:detrending_method": "linear fit"
+        },
+        "seis_prov:sp011_dt_ir0dfk409": {
+            "prov:label": "Detrend",
+            "prov:type": "seis_prov:detrend",
+            "seis_prov:detrending_method": "linear fit"
+        },
+        "seis_prov:sp011_dt_jk340du34j": {
+            "prov:label": "Detrend",
+            "prov:type": "seis_prov:detrend",
+            "seis_prov:detrending_method": "linear fit"
+        },
+        "seis_prov:sp011_dt_o3ijasdfuh": {
+            "prov:label": "Detrend",
+            "prov:type": "seis_prov:detrend",
+            "seis_prov:detrending_method": "linear fit"
+        },
+        "seis_prov:sp012_dt_340jdflioj": {
+            "prov:label": "Detrend",
+            "prov:type": "seis_prov:detrend",
+            "seis_prov:detrending_method": "demean"
+        },
+        "seis_prov:sp012_dt_3809adlkjo": {
+            "prov:label": "Detrend",
+            "prov:type": "seis_prov:detrend",
+            "seis_prov:detrending_method": "demean"
+        },
+        "seis_prov:sp012_dt_4834f0dj0": {
+            "prov:label": "Detrend",
+            "prov:type": "seis_prov:detrend",
+            "seis_prov:detrending_method": "demean"
+        },
+        "seis_prov:sp012_dt_9djldfj": {
+            "prov:label": "Detrend",
+            "prov:type": "seis_prov:detrend",
+            "seis_prov:detrending_method": "demean"
+        },
+        "seis_prov:sp012_dt_dko349dfj": {
+            "prov:label": "Detrend",
+            "prov:type": "seis_prov:detrend",
+            "seis_prov:detrending_method": "demean"
+        },
+        "seis_prov:sp012_dt_ij09328j": {
+            "prov:label": "Detrend",
+            "prov:type": "seis_prov:detrend",
+            "seis_prov:detrending_method": "demean"
+        },
+        "seis_prov:sp012_dt_vj3urc943": {
+            "prov:label": "Detrend",
+            "prov:type": "seis_prov:detrend",
+            "seis_prov:detrending_method": "demean"
+        },
+        "seis_prov:sp013_tp_834jd0h": {
+            "prov:label": "Taper",
+            "prov:type": "seis_prov:taper",
+            "seis_prov:side": "both",
+            "seis_prov:taper_width": {
+                "$": 0.05,
+                "type": "xsd:double"
+            },
+            "seis_prov:window_type": "Hanning"
+        },
+        "seis_prov:sp013_tp_9304jlkmio": {
+            "prov:label": "Taper",
+            "prov:type": "seis_prov:taper",
+            "seis_prov:side": "both",
+            "seis_prov:taper_width": {
+                "$": 0.05,
+                "type": "xsd:double"
+            },
+            "seis_prov:window_type": "Hanning"
+        },
+        "seis_prov:sp013_tp_aioj309j": {
+            "prov:label": "Taper",
+            "prov:type": "seis_prov:taper",
+            "seis_prov:side": "both",
+            "seis_prov:taper_width": {
+                "$": 0.05,
+                "type": "xsd:double"
+            },
+            "seis_prov:window_type": "Hanning"
+        },
+        "seis_prov:sp013_tp_dk430f834": {
+            "prov:label": "Taper",
+            "prov:type": "seis_prov:taper",
+            "seis_prov:side": "both",
+            "seis_prov:taper_width": {
+                "$": 0.05,
+                "type": "xsd:double"
+            },
+            "seis_prov:window_type": "Hanning"
+        },
+        "seis_prov:sp013_tp_dsfj43e4j": {
+            "prov:label": "Taper",
+            "prov:type": "seis_prov:taper",
+            "seis_prov:side": "both",
+            "seis_prov:taper_width": {
+                "$": 0.05,
+                "type": "xsd:double"
+            },
+            "seis_prov:window_type": "Hanning"
+        },
+        "seis_prov:sp013_tp_io34oic83": {
+            "prov:label": "Taper",
+            "prov:type": "seis_prov:taper",
+            "seis_prov:side": "both",
+            "seis_prov:taper_width": {
+                "$": 0.05,
+                "type": "xsd:double"
+            },
+            "seis_prov:window_type": "Hanning"
+        },
+        "seis_prov:sp013_tp_iojdf9834j": {
+            "prov:label": "Taper",
+            "prov:type": "seis_prov:taper",
+            "seis_prov:side": "both",
+            "seis_prov:taper_width": {
+                "$": 0.05,
+                "type": "xsd:double"
+            },
+            "seis_prov:window_type": "Hanning"
+        },
+        "seis_prov:sp013_tp_kio390jf": {
+            "prov:label": "Taper",
+            "prov:type": "seis_prov:taper",
+            "seis_prov:side": "both",
+            "seis_prov:taper_width": {
+                "$": 0.05,
+                "type": "xsd:double"
+            },
+            "seis_prov:window_type": "Hanning"
+        },
+        "seis_prov:sp014_bp_843ijdfskjgr": {
+            "prov:label": "Bandpass Filter",
+            "prov:type": "seis_prov:bandpass_filter",
+            "seis_prov:filter_type": "Cosine SAC Taper",
+            "seis_prov:sac_cosine_taper_frequency_limits": "0.013333333,0.016666667,0.037037037,0.044444444"
+        },
+        "seis_prov:sp014_bp_ijasdoij4l": {
+            "prov:label": "Bandpass Filter",
+            "prov:type": "seis_prov:bandpass_filter",
+            "seis_prov:filter_type": "Cosine SAC Taper",
+            "seis_prov:sac_cosine_taper_frequency_limits": "0.013333333,0.016666667,0.037037037,0.044444444"
+        },
+        "seis_prov:sp014_bp_lij09jel": {
+            "prov:label": "Bandpass Filter",
+            "prov:type": "seis_prov:bandpass_filter",
+            "seis_prov:filter_type": "Cosine SAC Taper",
+            "seis_prov:sac_cosine_taper_frequency_limits": "0.013333333,0.016666667,0.037037037,0.044444444"
+        },
+        "seis_prov:sp014_bp_qzprtj48r": {
+            "prov:label": "Bandpass Filter",
+            "prov:type": "seis_prov:bandpass_filter",
+            "seis_prov:filter_type": "Cosine SAC Taper",
+            "seis_prov:sac_cosine_taper_frequency_limits": "0.013333333,0.016666667,0.037037037,0.044444444"
+        },
+        "seis_prov:sp014_dt_inv3l90o": {
+            "prov:label": "Detrend",
+            "prov:type": "seis_prov:detrend",
+            "seis_prov:detrending_method": "demean"
+        }
+    },
+    "agent": {
+        "seis_prov:sp000_pp_j3j4loikj90": {
+            "prov:label": "Susanna Musterfrau",
+            "prov:type": {
+                "$": "prov:Person",
+                "type": "prov:QualifiedName"
+            },
+            "seis_prov:email": "susanna.musterfrau@email.com",
+            "seis_prov:name": "Susanna Musterfrau"
+        },
+        "seis_prov:sp000_pp_me09234j": {
+            "prov:label": "Hans Mustermann",
+            "prov:type": {
+                "$": "prov:Person",
+                "type": "prov:QualifiedName"
+            },
+            "seis_prov:email": "hans.mustermann@email.com",
+            "seis_prov:name": "Hans Mustermann"
+        },
+        "seis_prov:sp000_sa_9d0h43a": {
+            "prov:label": "pyadjoint",
+            "prov:type": {
+                "$": "prov:SoftwareAgent",
+                "type": "prov:QualifiedName"
+            },
+            "seis_prov:software_name": "pyadjoint",
+            "seis_prov:software_version": "0.0.1dev",
+            "seis_prov:website": "http://krischer.github.io/pyadjoint"
+        },
+        "seis_prov:sp000_sa_9dig8ata": [
+            {
+                "prov:label": "SPECFEM3D GLOBE",
+                "prov:type": {
+                    "$": "prov:SoftwareAgent",
+                    "type": "prov:QualifiedName"
+                },
+                "seis_prov:software_name": "SPECFEM3D GLOBE",
+                "seis_prov:software_version": "7.0.0",
+                "seis_prov:website": "http://geodynamics.org/cig/software/specfem3d"
+            },
+            {
+                "prov:label": "ObsPy",
+                "prov:type": {
+                    "$": "prov:SoftwareAgent",
+                    "type": "prov:QualifiedName"
+                },
+                "seis_prov:doi": "10.5281/zenodo.17641",
+                "seis_prov:software_name": "ObsPy",
+                "seis_prov:software_version": "0.10.2",
+                "seis_prov:website": "http://www.obspy.org"
+            }
+        ]
+    },
+    "entity": {
+        "seis_prov:sp000_em_skfusjdoej": {
+            "prov:label": "Earth Model",
+            "prov:type": "seis_prov:earth_model",
+            "seis_prov:model_name": "Random Model",
+            "seis_prov:model_type": "3D",
+            "seis_prov:website": "http://random.org/model"
+        },
+        "seis_prov:sp000_fi_d49dh0h4": {
+            "prov:label": "File",
+            "prov:type": "seis_prov:file",
+            "seis_prov:filename": "constants.h",
+            "seis_prov:location": "/AuxiliaryData/Files/constants.h",
+            "seis_prov:location_type": "HDF5 Data Set"
+        },
+        "seis_prov:sp000_in_38jd89da8l": {
+            "prov:label": "Input Parameters",
+            "prov:type": "seis_prov:input_parameters",
+            "seis_prov:ABSORBING_CONDITIONS": false,
+            "seis_prov:ANGULAR_WIDTH_ETA_IN_DEGREES": {
+                "$": 90.0,
+                "type": "xsd:double"
+            },
+            "seis_prov:ANGULAR_WIDTH_XI_IN_DEGREES": {
+                "$": 90.0,
+                "type": "xsd:double"
+            },
+            "seis_prov:ANISOTROPIC_KL": false,
+            "seis_prov:ATTENUATION": false,
+            "seis_prov:CENTER_LATITUDE_IN_DEGREES": {
+                "$": 40.0,
+                "type": "xsd:double"
+            },
+            "seis_prov:CENTER_LONGITUDE_IN_DEGREES": {
+                "$": 10.0,
+                "type": "xsd:double"
+            },
+            "seis_prov:ELLIPTICITY": false,
+            "seis_prov:EXACT_MASS_MATRIX_FOR_ROTATION": false,
+            "seis_prov:GAMMA_ROTATION_AZIMUTH": {
+                "$": 20.0,
+                "type": "xsd:double"
+            },
+            "seis_prov:GRAVITY": false,
+            "seis_prov:NCHUNKS": {
+                "$": 1,
+                "type": "xsd:int"
+            },
+            "seis_prov:NEX_ETA": {
+                "$": 240,
+                "type": "xsd:int"
+            },
+            "seis_prov:NEX_XI": {
+                "$": 240,
+                "type": "xsd:int"
+            },
+            "seis_prov:NOISE_TOMOGRAPHY": {
+                "$": 0,
+                "type": "xsd:int"
+            },
+            "seis_prov:NPROC_ETA": {
+                "$": 5,
+                "type": "xsd:int"
+            },
+            "seis_prov:NPROC_XI": {
+                "$": 5,
+                "type": "xsd:int"
+            },
+            "seis_prov:OCEANS": false,
+            "seis_prov:RECEIVERS_CAN_BE_BURIED": true,
+            "seis_prov:ROTATION": false,
+            "seis_prov:SIMULATION_TYPE": {
+                "$": 1,
+                "type": "xsd:int"
+            },
+            "seis_prov:TOPOGRAPHY": false,
+            "seis_prov:USE_LDDRK": false
+        },
+        "seis_prov:sp001_as_cd84e87": {
+            "prov:label": "Adjoint Source",
+            "prov:type": "seis_prov:adjoint_source",
+            "seis_prov:adjoint_source_type": "Time Frequency Phase"
+        },
+        "seis_prov:sp005_wf_09j3kjdi": {
+            "prov:label": "Waveform Trace",
+            "prov:type": "seis_prov:waveform_trace",
+            "seis_prov:component": "E",
+            "seis_prov:description": "Synthetic Data"
+        },
+        "seis_prov:sp005_wf_0askjdf0": {
+            "prov:label": "Waveform Trace",
+            "prov:type": "seis_prov:waveform_trace",
+            "seis_prov:component": "N",
+            "seis_prov:description": "Observed Data"
+        },
+        "seis_prov:sp005_wf_349df9j0": {
+            "prov:label": "Waveform Trace",
+            "prov:type": "seis_prov:waveform_trace",
+            "seis_prov:component": "E",
+            "seis_prov:description": "Synthetic Data"
+        },
+        "seis_prov:sp005_wf_3oijoi904j": {
+            "prov:label": "Waveform Trace",
+            "prov:type": "seis_prov:waveform_trace",
+            "seis_prov:component": "N",
+            "seis_prov:description": "Synthetic Data"
+        },
+        "seis_prov:sp005_wf_43ptb430df": {
+            "prov:label": "Waveform Trace",
+            "prov:type": "seis_prov:waveform_trace",
+            "seis_prov:component": "T",
+            "seis_prov:description": "Synthetic Data"
+        },
+        "seis_prov:sp005_wf_9034jfzq": {
+            "prov:label": "Waveform Trace",
+            "prov:type": "seis_prov:waveform_trace",
+            "seis_prov:component": "E",
+            "seis_prov:description": "Observed Data"
+        },
+        "seis_prov:sp005_wf_9043594j": {
+            "prov:label": "Waveform Trace",
+            "prov:type": "seis_prov:waveform_trace",
+            "seis_prov:component": "N",
+            "seis_prov:description": "Observed Data"
+        },
+        "seis_prov:sp005_wf_a34j4didj3": {
+            "prov:label": "Waveform Trace",
+            "prov:type": "seis_prov:waveform_trace",
+            "seis_prov:component": "N",
+            "seis_prov:description": "Synthetic Data"
+        },
+        "seis_prov:sp005_wf_aj0934mjh": {
+            "prov:label": "Waveform Trace",
+            "prov:type": "seis_prov:waveform_trace",
+            "seis_prov:component": "T",
+            "seis_prov:description": "Observed Data"
+        },
+        "seis_prov:sp005_wf_asdfj9043": {
+            "prov:label": "Waveform Trace",
+            "prov:type": "seis_prov:waveform_trace",
+            "seis_prov:component": "N",
+            "seis_prov:description": "Observed Data"
+        },
+        "seis_prov:sp005_wf_asdfoij0": {
+            "prov:label": "Waveform Trace",
+            "prov:type": "seis_prov:waveform_trace",
+            "seis_prov:component": "E",
+            "seis_prov:description": "Observed Data"
+        },
+        "seis_prov:sp005_wf_asdjf043m": {
+            "prov:label": "Waveform Trace",
+            "prov:type": "seis_prov:waveform_trace",
+            "seis_prov:component": "E",
+            "seis_prov:description": "Observed Data"
+        },
+        "seis_prov:sp005_wf_asdklfj93ef": {
+            "prov:label": "Waveform Trace",
+            "prov:type": "seis_prov:waveform_trace",
+            "seis_prov:component": "E",
+            "seis_prov:description": "Synthetic Data"
+        },
+        "seis_prov:sp005_wf_ds934jdafkj": {
+            "prov:label": "Waveform Trace",
+            "prov:type": "seis_prov:waveform_trace",
+            "seis_prov:component": "E",
+            "seis_prov:description": "Synthetic Data"
+        },
+        "seis_prov:sp005_wf_eioasdf0934j": {
+            "prov:label": "Waveform Trace",
+            "prov:type": "seis_prov:waveform_trace",
+            "seis_prov:component": "N",
+            "seis_prov:description": "Synthetic Data"
+        },
+        "seis_prov:sp005_wf_fijioj345": {
+            "prov:label": "Waveform Trace",
+            "prov:type": "seis_prov:waveform_trace",
+            "seis_prov:component": "E",
+            "seis_prov:description": "Observed Data"
+        },
+        "seis_prov:sp005_wf_iajsdfje": {
+            "prov:label": "Waveform Trace",
+            "prov:type": "seis_prov:waveform_trace",
+            "seis_prov:component": "N",
+            "seis_prov:description": "Synthetic Data"
+        },
+        "seis_prov:sp005_wf_idj30949j": {
+            "prov:label": "Waveform Trace",
+            "prov:type": "seis_prov:waveform_trace",
+            "seis_prov:component": "E",
+            "seis_prov:description": "Synthetic Data"
+        },
+        "seis_prov:sp005_wf_ija09j43l": {
+            "prov:label": "Waveform Trace",
+            "prov:type": "seis_prov:waveform_trace",
+            "seis_prov:component": "N",
+            "seis_prov:description": "Synthetic Data"
+        },
+        "seis_prov:sp005_wf_ijd0934j0": {
+            "prov:label": "Waveform Trace",
+            "prov:type": "seis_prov:waveform_trace",
+            "seis_prov:component": "E",
+            "seis_prov:description": "Synthetic Data"
+        },
+        "seis_prov:sp005_wf_j09boija": {
+            "prov:label": "Waveform Trace",
+            "prov:type": "seis_prov:waveform_trace",
+            "seis_prov:component": "E",
+            "seis_prov:description": "Observed Data"
+        },
+        "seis_prov:sp005_wf_j0asdfm9": {
+            "prov:label": "Waveform Trace",
+            "prov:type": "seis_prov:waveform_trace",
+            "seis_prov:component": "E",
+            "seis_prov:description": "Observed Data"
+        },
+        "seis_prov:sp005_wf_jasdf943": {
+            "prov:label": "Waveform Trace",
+            "prov:type": "seis_prov:waveform_trace",
+            "seis_prov:component": "E",
+            "seis_prov:description": "Observed Data"
+        },
+        "seis_prov:sp005_wf_jasdfh4": {
+            "prov:label": "Waveform Trace",
+            "prov:type": "seis_prov:waveform_trace",
+            "seis_prov:component": "N",
+            "seis_prov:description": "Observed Data"
+        },
+        "seis_prov:sp005_wf_jasdfj09032j": {
+            "prov:label": "Waveform Trace",
+            "prov:type": "seis_prov:waveform_trace",
+            "seis_prov:component": "N",
+            "seis_prov:description": "Synthetic Data"
+        },
+        "seis_prov:sp005_wf_kajoi4309j": {
+            "prov:label": "Waveform Trace",
+            "prov:type": "seis_prov:waveform_trace",
+            "seis_prov:component": "N",
+            "seis_prov:description": "Synthetic Data"
+        },
+        "seis_prov:sp005_wf_kd9404hd04h": {
+            "prov:label": "Waveform Trace",
+            "prov:type": "seis_prov:waveform_trace",
+            "seis_prov:component": "E",
+            "seis_prov:description": "Synthetic Data"
+        },
+        "seis_prov:sp005_wf_lkjaoi9034j": {
+            "prov:label": "Waveform Trace",
+            "prov:type": "seis_prov:waveform_trace",
+            "seis_prov:component": "N",
+            "seis_prov:description": "Synthetic Data"
+        },
+        "seis_prov:sp005_wf_ncbeirp": {
+            "prov:label": "Waveform Trace",
+            "prov:type": "seis_prov:waveform_trace",
+            "seis_prov:component": "N",
+            "seis_prov:description": "Observed Data"
+        },
+        "seis_prov:sp005_wf_niasdf043": {
+            "prov:label": "Waveform Trace",
+            "prov:type": "seis_prov:waveform_trace",
+            "seis_prov:component": "N",
+            "seis_prov:description": "Observed Data"
+        },
+        "seis_prov:sp005_wf_oij09adfj": {
+            "prov:label": "Waveform Trace",
+            "prov:type": "seis_prov:waveform_trace",
+            "seis_prov:component": "N",
+            "seis_prov:description": "Synthetic Data"
+        },
+        "seis_prov:sp005_wf_w90jasdfh": {
+            "prov:label": "Waveform Trace",
+            "prov:type": "seis_prov:waveform_trace",
+            "seis_prov:component": "E",
+            "seis_prov:description": "Observed Data"
+        },
+        "seis_prov:sp005_wf_wasdf34439": {
+            "prov:label": "Waveform Trace",
+            "prov:type": "seis_prov:waveform_trace",
+            "seis_prov:component": "E",
+            "seis_prov:description": "Synthetic Data"
+        },
+        "seis_prov:sp005_wf_wasdfjme": {
+            "prov:label": "Waveform Trace",
+            "prov:type": "seis_prov:waveform_trace",
+            "seis_prov:component": "E",
+            "seis_prov:description": "Observed Data"
+        },
+        "seis_prov:sp005_wf_wj9hljo": {
+            "prov:label": "Waveform Trace",
+            "prov:type": "seis_prov:waveform_trace",
+            "seis_prov:component": "E",
+            "seis_prov:description": "Observed Data"
+        },
+        "seis_prov:sp005_wf_wjasd9043": {
+            "prov:label": "Waveform Trace",
+            "prov:type": "seis_prov:waveform_trace",
+            "seis_prov:component": "N",
+            "seis_prov:description": "Observed Data"
+        },
+        "seis_prov:sp005_wf_wjasdf4380": {
+            "prov:label": "Waveform Trace",
+            "prov:type": "seis_prov:waveform_trace",
+            "seis_prov:component": "N",
+            "seis_prov:description": "Observed Data"
+        },
+        "seis_prov:sp005_wf_wkjasdfio": {
+            "prov:label": "Waveform Trace",
+            "prov:type": "seis_prov:waveform_trace",
+            "seis_prov:component": "N",
+            "seis_prov:description": "Observed Data"
+        },
+        "seis_prov:sp005_wf_wlkjsdf094": {
+            "prov:label": "Waveform Trace",
+            "prov:type": "seis_prov:waveform_trace",
+            "seis_prov:component": "N",
+            "seis_prov:description": "Observed Data"
+        },
+        "seis_prov:sp005_wf_zdkja894dioj": {
+            "prov:label": "Waveform Trace",
+            "prov:type": "seis_prov:waveform_trace",
+            "seis_prov:component": "E",
+            "seis_prov:description": "Synthetic Data"
+        }
+    },
+    "prefix": {
+        "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
+    },
+    "used": {
+        "_:id100": {
+            "prov:activity": "seis_prov:sp013_tp_kio390jf",
+            "prov:entity": "seis_prov:sp005_wf_wjasdf4380"
+        },
+        "_:id102": {
+            "prov:activity": "seis_prov:sp014_bp_lij09jel",
+            "prov:entity": "seis_prov:sp005_wf_ncbeirp"
+        },
+        "_:id104": {
+            "prov:activity": "seis_prov:sp001_rr_ddcc155",
+            "prov:entity": "seis_prov:sp005_wf_wkjasdfio"
+        },
+        "_:id106": {
+            "prov:activity": "seis_prov:sp011_dt_as034lkjo",
+            "prov:entity": "seis_prov:sp005_wf_wjasd9043"
+        },
+        "_:id108": {
+            "prov:activity": "seis_prov:sp012_dt_340jdflioj",
+            "prov:entity": "seis_prov:sp005_wf_jasdfh4"
+        },
+        "_:id110": {
+            "prov:activity": "seis_prov:sp013_tp_io34oic83",
+            "prov:entity": "seis_prov:sp005_wf_asdfj9043"
+        },
+        "_:id112": {
+            "prov:activity": "seis_prov:sp001_ip_i34j09d",
+            "prov:entity": "seis_prov:sp005_wf_niasdf043"
+        },
+        "_:id114": {
+            "prov:activity": "seis_prov:sp001_rt_039jznwmp",
+            "prov:entity": "seis_prov:sp005_wf_niasdf043"
+        },
+        "_:id115": {
+            "prov:activity": "seis_prov:sp001_rt_039jznwmp",
+            "prov:entity": "seis_prov:sp005_wf_wj9hljo"
+        },
+        "_:id118": {
+            "prov:activity": "seis_prov:sp001_ca_c7540fc",
+            "prov:entity": "seis_prov:sp005_wf_aj0934mjh"
+        },
+        "_:id119": {
+            "prov:activity": "seis_prov:sp001_ca_c7540fc",
+            "prov:entity": "seis_prov:sp005_wf_43ptb430df"
+        },
+        "_:id26": {
+            "prov:activity": "seis_prov:sp011_dt_ir0dfk409",
+            "prov:entity": "seis_prov:sp005_wf_kd9404hd04h"
+        },
+        "_:id28": {
+            "prov:activity": "seis_prov:sp012_dt_vj3urc943",
+            "prov:entity": "seis_prov:sp005_wf_asdklfj93ef"
+        },
+        "_:id30": {
+            "prov:activity": "seis_prov:sp013_tp_dk430f834",
+            "prov:entity": "seis_prov:sp005_wf_wasdf34439"
+        },
+        "_:id32": {
+            "prov:activity": "seis_prov:sp014_bp_843ijdfskjgr",
+            "prov:entity": "seis_prov:sp005_wf_ds934jdafkj"
+        },
+        "_:id34": {
+            "prov:activity": "seis_prov:sp011_dt_jk340du34j",
+            "prov:entity": "seis_prov:sp005_wf_zdkja894dioj"
+        },
+        "_:id36": {
+            "prov:activity": "seis_prov:sp012_dt_9djldfj",
+            "prov:entity": "seis_prov:sp005_wf_349df9j0"
+        },
+        "_:id38": {
+            "prov:activity": "seis_prov:sp013_tp_834jd0h",
+            "prov:entity": "seis_prov:sp005_wf_ijd0934j0"
+        },
+        "_:id4": {
+            "prov:activity": "seis_prov:sp001_ws_f87sf7sf78",
+            "prov:entity": "seis_prov:sp000_em_skfusjdoej"
+        },
+        "_:id40": {
+            "prov:activity": "seis_prov:sp001_ip_diajsdf80",
+            "prov:entity": "seis_prov:sp005_wf_idj30949j"
+        },
+        "_:id42": {
+            "prov:activity": "seis_prov:sp011_dt_4ijf0dfo0",
+            "prov:entity": "seis_prov:sp005_wf_a34j4didj3"
+        },
+        "_:id44": {
+            "prov:activity": "seis_prov:sp012_dt_4834f0dj0",
+            "prov:entity": "seis_prov:sp005_wf_eioasdf0934j"
+        },
+        "_:id46": {
+            "prov:activity": "seis_prov:sp013_tp_dsfj43e4j",
+            "prov:entity": "seis_prov:sp005_wf_kajoi4309j"
+        },
+        "_:id48": {
+            "prov:activity": "seis_prov:sp014_bp_qzprtj48r",
+            "prov:entity": "seis_prov:sp005_wf_ija09j43l"
+        },
+        "_:id5": {
+            "prov:activity": "seis_prov:sp001_ws_f87sf7sf78",
+            "prov:entity": "seis_prov:sp000_in_38jd89da8l"
+        },
+        "_:id50": {
+            "prov:activity": "seis_prov:sp011_dt_893ndidh",
+            "prov:entity": "seis_prov:sp005_wf_lkjaoi9034j"
+        },
+        "_:id52": {
+            "prov:activity": "seis_prov:sp012_dt_dko349dfj",
+            "prov:entity": "seis_prov:sp005_wf_3oijoi904j"
+        },
+        "_:id54": {
+            "prov:activity": "seis_prov:sp013_tp_iojdf9834j",
+            "prov:entity": "seis_prov:sp005_wf_iajsdfje"
+        },
+        "_:id56": {
+            "prov:activity": "seis_prov:sp001_ip_iadsf3490j",
+            "prov:entity": "seis_prov:sp005_wf_oij09adfj"
+        },
+        "_:id58": {
+            "prov:activity": "seis_prov:sp001_rt_asdfkj4034",
+            "prov:entity": "seis_prov:sp005_wf_jasdfj09032j"
+        },
+        "_:id59": {
+            "prov:activity": "seis_prov:sp001_rt_asdfkj4034",
+            "prov:entity": "seis_prov:sp005_wf_09j3kjdi"
+        },
+        "_:id6": {
+            "prov:activity": "seis_prov:sp001_ws_f87sf7sf78",
+            "prov:entity": "seis_prov:sp000_fi_d49dh0h4"
+        },
+        "_:id78": {
+            "prov:activity": "seis_prov:sp011_dt_ij2390jdl",
+            "prov:entity": "seis_prov:sp005_wf_asdfoij0"
+        },
+        "_:id80": {
+            "prov:activity": "seis_prov:sp012_dt_ij09328j",
+            "prov:entity": "seis_prov:sp005_wf_asdjf043m"
+        },
+        "_:id82": {
+            "prov:activity": "seis_prov:sp013_tp_aioj309j",
+            "prov:entity": "seis_prov:sp005_wf_9034jfzq"
+        },
+        "_:id84": {
+            "prov:activity": "seis_prov:sp014_bp_ijasdoij4l",
+            "prov:entity": "seis_prov:sp005_wf_w90jasdfh"
+        },
+        "_:id86": {
+            "prov:activity": "seis_prov:sp001_rr_asdf34034",
+            "prov:entity": "seis_prov:sp005_wf_j0asdfm9"
+        },
+        "_:id88": {
+            "prov:activity": "seis_prov:sp011_dt_asdfoij4",
+            "prov:entity": "seis_prov:sp005_wf_wasdfjme"
+        },
+        "_:id90": {
+            "prov:activity": "seis_prov:sp014_dt_inv3l90o",
+            "prov:entity": "seis_prov:sp005_wf_j09boija"
+        },
+        "_:id92": {
+            "prov:activity": "seis_prov:sp013_tp_9304jlkmio",
+            "prov:entity": "seis_prov:sp005_wf_jasdf943"
+        },
+        "_:id94": {
+            "prov:activity": "seis_prov:sp001_ip_4309jlkjn",
+            "prov:entity": "seis_prov:sp005_wf_wj9hljo"
+        },
+        "_:id96": {
+            "prov:activity": "seis_prov:sp011_dt_o3ijasdfuh",
+            "prov:entity": "seis_prov:sp005_wf_0askjdf0"
+        },
+        "_:id98": {
+            "prov:activity": "seis_prov:sp012_dt_3809adlkjo",
+            "prov:entity": "seis_prov:sp005_wf_wlkjsdf094"
+        }
+    },
+    "wasAssociatedWith": {
+        "_:id10": {
+            "prov:activity": "seis_prov:sp011_dt_ir0dfk409",
+            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+        },
+        "_:id11": {
+            "prov:activity": "seis_prov:sp012_dt_4834f0dj0",
+            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+        },
+        "_:id117": {
+            "prov:activity": "seis_prov:sp001_ca_c7540fc",
+            "prov:agent": "seis_prov:sp000_sa_9d0h43a"
+        },
+        "_:id12": {
+            "prov:activity": "seis_prov:sp012_dt_vj3urc943",
+            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+        },
+        "_:id13": {
+            "prov:activity": "seis_prov:sp013_tp_dsfj43e4j",
+            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+        },
+        "_:id14": {
+            "prov:activity": "seis_prov:sp013_tp_dk430f834",
+            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+        },
+        "_:id15": {
+            "prov:activity": "seis_prov:sp014_bp_qzprtj48r",
+            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+        },
+        "_:id16": {
+            "prov:activity": "seis_prov:sp014_bp_843ijdfskjgr",
+            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+        },
+        "_:id17": {
+            "prov:activity": "seis_prov:sp011_dt_893ndidh",
+            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+        },
+        "_:id18": {
+            "prov:activity": "seis_prov:sp011_dt_jk340du34j",
+            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+        },
+        "_:id19": {
+            "prov:activity": "seis_prov:sp012_dt_dko349dfj",
+            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+        },
+        "_:id2": {
+            "prov:activity": "seis_prov:sp000_em_skfusjdoej",
+            "prov:agent": "seis_prov:sp000_pp_j3j4loikj90"
+        },
+        "_:id20": {
+            "prov:activity": "seis_prov:sp012_dt_9djldfj",
+            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+        },
+        "_:id21": {
+            "prov:activity": "seis_prov:sp013_tp_iojdf9834j",
+            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+        },
+        "_:id22": {
+            "prov:activity": "seis_prov:sp013_tp_834jd0h",
+            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+        },
+        "_:id23": {
+            "prov:activity": "seis_prov:sp001_ip_iadsf3490j",
+            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+        },
+        "_:id24": {
+            "prov:activity": "seis_prov:sp001_ip_diajsdf80",
+            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+        },
+        "_:id25": {
+            "prov:activity": "seis_prov:sp001_rt_asdfkj4034",
+            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+        },
+        "_:id3": {
+            "prov:activity": "seis_prov:sp001_ws_f87sf7sf78",
+            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+        },
+        "_:id61": {
+            "prov:activity": "seis_prov:sp011_dt_o3ijasdfuh",
+            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+        },
+        "_:id62": {
+            "prov:activity": "seis_prov:sp011_dt_ij2390jdl",
+            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+        },
+        "_:id63": {
+            "prov:activity": "seis_prov:sp012_dt_3809adlkjo",
+            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+        },
+        "_:id64": {
+            "prov:activity": "seis_prov:sp012_dt_ij09328j",
+            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+        },
+        "_:id65": {
+            "prov:activity": "seis_prov:sp013_tp_kio390jf",
+            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+        },
+        "_:id66": {
+            "prov:activity": "seis_prov:sp013_tp_aioj309j",
+            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+        },
+        "_:id67": [
+            {
+                "prov:activity": "seis_prov:sp014_bp_lij09jel",
+                "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+            },
+            {
+                "prov:activity": "seis_prov:sp014_bp_lij09jel",
+                "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+            }
+        ],
+        "_:id68": [
+            {
+                "prov:activity": "seis_prov:sp014_bp_ijasdoij4l",
+                "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+            },
+            {
+                "prov:activity": "seis_prov:sp014_bp_ijasdoij4l",
+                "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+            }
+        ],
+        "_:id69": {
+            "prov:activity": "seis_prov:sp011_dt_as034lkjo",
+            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+        },
+        "_:id70": {
+            "prov:activity": "seis_prov:sp011_dt_asdfoij4",
+            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+        },
+        "_:id71": {
+            "prov:activity": "seis_prov:sp012_dt_340jdflioj",
+            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+        },
+        "_:id72": {
+            "prov:activity": "seis_prov:sp014_dt_inv3l90o",
+            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+        },
+        "_:id73": {
+            "prov:activity": "seis_prov:sp013_tp_io34oic83",
+            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+        },
+        "_:id74": {
+            "prov:activity": "seis_prov:sp013_tp_9304jlkmio",
+            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+        },
+        "_:id75": {
+            "prov:activity": "seis_prov:sp001_ip_i34j09d",
+            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+        },
+        "_:id76": {
+            "prov:activity": "seis_prov:sp001_ip_4309jlkjn",
+            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+        },
+        "_:id77": {
+            "prov:activity": "seis_prov:sp001_rt_039jznwmp",
+            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+        },
+        "_:id9": {
+            "prov:activity": "seis_prov:sp011_dt_4ijf0dfo0",
+            "prov:agent": "seis_prov:sp000_sa_9dig8ata"
+        }
+    },
+    "wasGeneratedBy": {
+        "_:id101": {
+            "prov:activity": "seis_prov:sp013_tp_kio390jf",
+            "prov:entity": "seis_prov:sp005_wf_ncbeirp"
+        },
+        "_:id103": {
+            "prov:activity": "seis_prov:sp014_bp_lij09jel",
+            "prov:entity": "seis_prov:sp005_wf_wkjasdfio"
+        },
+        "_:id105": {
+            "prov:activity": "seis_prov:sp001_rr_ddcc155",
+            "prov:entity": "seis_prov:sp005_wf_wjasd9043"
+        },
+        "_:id107": {
+            "prov:activity": "seis_prov:sp011_dt_as034lkjo",
+            "prov:entity": "seis_prov:sp005_wf_jasdfh4"
+        },
+        "_:id109": {
+            "prov:activity": "seis_prov:sp012_dt_340jdflioj",
+            "prov:entity": "seis_prov:sp005_wf_asdfj9043"
+        },
+        "_:id111": {
+            "prov:activity": "seis_prov:sp013_tp_io34oic83",
+            "prov:entity": "seis_prov:sp005_wf_niasdf043"
+        },
+        "_:id113": {
+            "prov:activity": "seis_prov:sp001_ip_i34j09d",
+            "prov:entity": "seis_prov:sp005_wf_9043594j"
+        },
+        "_:id116": {
+            "prov:activity": "seis_prov:sp001_rt_039jznwmp",
+            "prov:entity": "seis_prov:sp005_wf_aj0934mjh"
+        },
+        "_:id120": {
+            "prov:activity": "seis_prov:sp001_ca_c7540fc",
+            "prov:entity": "seis_prov:sp001_as_cd84e87"
+        },
+        "_:id27": {
+            "prov:activity": "seis_prov:sp011_dt_ir0dfk409",
+            "prov:entity": "seis_prov:sp005_wf_asdklfj93ef"
+        },
+        "_:id29": {
+            "prov:activity": "seis_prov:sp012_dt_vj3urc943",
+            "prov:entity": "seis_prov:sp005_wf_wasdf34439"
+        },
+        "_:id31": {
+            "prov:activity": "seis_prov:sp013_tp_dk430f834",
+            "prov:entity": "seis_prov:sp005_wf_ds934jdafkj"
+        },
+        "_:id33": {
+            "prov:activity": "seis_prov:sp014_bp_843ijdfskjgr",
+            "prov:entity": "seis_prov:sp005_wf_zdkja894dioj"
+        },
+        "_:id35": {
+            "prov:activity": "seis_prov:sp011_dt_jk340du34j",
+            "prov:entity": "seis_prov:sp005_wf_349df9j0"
+        },
+        "_:id37": {
+            "prov:activity": "seis_prov:sp012_dt_9djldfj",
+            "prov:entity": "seis_prov:sp005_wf_ijd0934j0"
+        },
+        "_:id39": {
+            "prov:activity": "seis_prov:sp013_tp_834jd0h",
+            "prov:entity": "seis_prov:sp005_wf_idj30949j"
+        },
+        "_:id41": {
+            "prov:activity": "seis_prov:sp001_ip_diajsdf80",
+            "prov:entity": "seis_prov:sp005_wf_09j3kjdi"
+        },
+        "_:id43": {
+            "prov:activity": "seis_prov:sp011_dt_4ijf0dfo0",
+            "prov:entity": "seis_prov:sp005_wf_eioasdf0934j"
+        },
+        "_:id45": {
+            "prov:activity": "seis_prov:sp012_dt_4834f0dj0",
+            "prov:entity": "seis_prov:sp005_wf_kajoi4309j"
+        },
+        "_:id47": {
+            "prov:activity": "seis_prov:sp013_tp_dsfj43e4j",
+            "prov:entity": "seis_prov:sp005_wf_ija09j43l"
+        },
+        "_:id49": {
+            "prov:activity": "seis_prov:sp014_bp_qzprtj48r",
+            "prov:entity": "seis_prov:sp005_wf_lkjaoi9034j"
+        },
+        "_:id51": {
+            "prov:activity": "seis_prov:sp011_dt_893ndidh",
+            "prov:entity": "seis_prov:sp005_wf_3oijoi904j"
+        },
+        "_:id53": {
+            "prov:activity": "seis_prov:sp012_dt_dko349dfj",
+            "prov:entity": "seis_prov:sp005_wf_iajsdfje"
+        },
+        "_:id55": {
+            "prov:activity": "seis_prov:sp013_tp_iojdf9834j",
+            "prov:entity": "seis_prov:sp005_wf_oij09adfj"
+        },
+        "_:id57": {
+            "prov:activity": "seis_prov:sp001_ip_iadsf3490j",
+            "prov:entity": "seis_prov:sp005_wf_jasdfj09032j"
+        },
+        "_:id60": {
+            "prov:activity": "seis_prov:sp001_rt_asdfkj4034",
+            "prov:entity": "seis_prov:sp005_wf_43ptb430df"
+        },
+        "_:id7": {
+            "prov:activity": "seis_prov:sp001_ws_f87sf7sf78",
+            "prov:entity": "seis_prov:sp005_wf_a34j4didj3"
+        },
+        "_:id79": {
+            "prov:activity": "seis_prov:sp011_dt_ij2390jdl",
+            "prov:entity": "seis_prov:sp005_wf_asdjf043m"
+        },
+        "_:id8": {
+            "prov:activity": "seis_prov:sp001_ws_f87sf7sf78",
+            "prov:entity": "seis_prov:sp005_wf_kd9404hd04h"
+        },
+        "_:id81": {
+            "prov:activity": "seis_prov:sp012_dt_ij09328j",
+            "prov:entity": "seis_prov:sp005_wf_9034jfzq"
+        },
+        "_:id83": {
+            "prov:activity": "seis_prov:sp013_tp_aioj309j",
+            "prov:entity": "seis_prov:sp005_wf_w90jasdfh"
+        },
+        "_:id85": {
+            "prov:activity": "seis_prov:sp014_bp_ijasdoij4l",
+            "prov:entity": "seis_prov:sp005_wf_j0asdfm9"
+        },
+        "_:id87": {
+            "prov:activity": "seis_prov:sp001_rr_asdf34034",
+            "prov:entity": "seis_prov:sp005_wf_wasdfjme"
+        },
+        "_:id89": {
+            "prov:activity": "seis_prov:sp011_dt_asdfoij4",
+            "prov:entity": "seis_prov:sp005_wf_j09boija"
+        },
+        "_:id91": {
+            "prov:activity": "seis_prov:sp014_dt_inv3l90o",
+            "prov:entity": "seis_prov:sp005_wf_jasdf943"
+        },
+        "_:id93": {
+            "prov:activity": "seis_prov:sp013_tp_9304jlkmio",
+            "prov:entity": "seis_prov:sp005_wf_wj9hljo"
+        },
+        "_:id95": {
+            "prov:activity": "seis_prov:sp001_ip_4309jlkjn",
+            "prov:entity": "seis_prov:sp005_wf_fijioj345"
+        },
+        "_:id97": {
+            "prov:activity": "seis_prov:sp011_dt_o3ijasdfuh",
+            "prov:entity": "seis_prov:sp005_wf_wlkjsdf094"
+        },
+        "_:id99": {
+            "prov:activity": "seis_prov:sp012_dt_3809adlkjo",
+            "prov:entity": "seis_prov:sp005_wf_wjasdf4380"
+        }
+    }
+}

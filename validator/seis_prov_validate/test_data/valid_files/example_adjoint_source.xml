@@ -1,0 +1,1024 @@
+<prov:document xmlns:prov="http://www.w3.org/ns/prov#" xmlns:seis_prov="http://seisprov.org/seis_prov/0.1/#" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <prov:person prov:id="seis_prov:sp000_pp_me09234j">
+    <prov:label>Hans Mustermann</prov:label>
+    <seis_prov:email>hans.mustermann@email.com</seis_prov:email>
+    <seis_prov:name>Hans Mustermann</seis_prov:name>
+  </prov:person>
+  <prov:person prov:id="seis_prov:sp000_pp_j3j4loikj90">
+    <prov:label>Susanna Musterfrau</prov:label>
+    <seis_prov:email>susanna.musterfrau@email.com</seis_prov:email>
+    <seis_prov:name>Susanna Musterfrau</seis_prov:name>
+  </prov:person>
+  <prov:softwareAgent prov:id="seis_prov:sp000_sa_9dig8ata">
+    <prov:label>SPECFEM3D GLOBE</prov:label>
+    <seis_prov:software_name>SPECFEM3D GLOBE</seis_prov:software_name>
+    <seis_prov:software_version>7.0.0</seis_prov:software_version>
+    <seis_prov:website>http://geodynamics.org/cig/software/specfem3d</seis_prov:website>
+  </prov:softwareAgent>
+  <prov:actedOnBehalfOf>
+    <prov:delegate prov:ref="seis_prov:sp000_sa_9dig8ata"></prov:delegate>
+    <prov:responsible prov:ref="seis_prov:sp000_pp_me09234j"></prov:responsible>
+  </prov:actedOnBehalfOf>
+  <prov:softwareAgent prov:id="seis_prov:sp000_sa_9dig8ata">
+    <prov:label>ObsPy</prov:label>
+    <seis_prov:doi>10.5281/zenodo.17641</seis_prov:doi>
+    <seis_prov:software_name>ObsPy</seis_prov:software_name>
+    <seis_prov:software_version>0.10.2</seis_prov:software_version>
+    <seis_prov:website>http://www.obspy.org</seis_prov:website>
+  </prov:softwareAgent>
+  <prov:softwareAgent prov:id="seis_prov:sp000_sa_9d0h43a">
+    <prov:label>pyadjoint</prov:label>
+    <seis_prov:software_name>pyadjoint</seis_prov:software_name>
+    <seis_prov:software_version>0.0.1dev</seis_prov:software_version>
+    <seis_prov:website>http://krischer.github.io/pyadjoint</seis_prov:website>
+  </prov:softwareAgent>
+  <prov:entity prov:id="seis_prov:sp000_em_skfusjdoej">
+    <prov:label>Earth Model</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:earth_model</prov:type>
+    <seis_prov:model_name>Random Model</seis_prov:model_name>
+    <seis_prov:model_type>3D</seis_prov:model_type>
+    <seis_prov:website>http://random.org/model</seis_prov:website>
+  </prov:entity>
+  <prov:wasAssociatedWith>
+    <prov:activity prov:ref="seis_prov:sp000_em_skfusjdoej"></prov:activity>
+    <prov:agent prov:ref="seis_prov:sp000_pp_j3j4loikj90"></prov:agent>
+  </prov:wasAssociatedWith>
+  <prov:entity prov:id="seis_prov:sp000_in_38jd89da8l">
+    <prov:label>Input Parameters</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:input_parameters</prov:type>
+    <seis_prov:ABSORBING_CONDITIONS xsi:type="xsd:boolean">false</seis_prov:ABSORBING_CONDITIONS>
+    <seis_prov:ANGULAR_WIDTH_ETA_IN_DEGREES xsi:type="xsd:double">90.0</seis_prov:ANGULAR_WIDTH_ETA_IN_DEGREES>
+    <seis_prov:ANGULAR_WIDTH_XI_IN_DEGREES xsi:type="xsd:double">90.0</seis_prov:ANGULAR_WIDTH_XI_IN_DEGREES>
+    <seis_prov:ANISOTROPIC_KL xsi:type="xsd:boolean">false</seis_prov:ANISOTROPIC_KL>
+    <seis_prov:ATTENUATION xsi:type="xsd:boolean">false</seis_prov:ATTENUATION>
+    <seis_prov:CENTER_LATITUDE_IN_DEGREES xsi:type="xsd:double">40.0</seis_prov:CENTER_LATITUDE_IN_DEGREES>
+    <seis_prov:CENTER_LONGITUDE_IN_DEGREES xsi:type="xsd:double">10.0</seis_prov:CENTER_LONGITUDE_IN_DEGREES>
+    <seis_prov:ELLIPTICITY xsi:type="xsd:boolean">false</seis_prov:ELLIPTICITY>
+    <seis_prov:EXACT_MASS_MATRIX_FOR_ROTATION xsi:type="xsd:boolean">false</seis_prov:EXACT_MASS_MATRIX_FOR_ROTATION>
+    <seis_prov:GAMMA_ROTATION_AZIMUTH xsi:type="xsd:double">20.0</seis_prov:GAMMA_ROTATION_AZIMUTH>
+    <seis_prov:GRAVITY xsi:type="xsd:boolean">false</seis_prov:GRAVITY>
+    <seis_prov:NCHUNKS xsi:type="xsd:int">1</seis_prov:NCHUNKS>
+    <seis_prov:NEX_ETA xsi:type="xsd:int">240</seis_prov:NEX_ETA>
+    <seis_prov:NEX_XI xsi:type="xsd:int">240</seis_prov:NEX_XI>
+    <seis_prov:NOISE_TOMOGRAPHY xsi:type="xsd:int">0</seis_prov:NOISE_TOMOGRAPHY>
+    <seis_prov:NPROC_ETA xsi:type="xsd:int">5</seis_prov:NPROC_ETA>
+    <seis_prov:NPROC_XI xsi:type="xsd:int">5</seis_prov:NPROC_XI>
+    <seis_prov:OCEANS xsi:type="xsd:boolean">false</seis_prov:OCEANS>
+    <seis_prov:RECEIVERS_CAN_BE_BURIED xsi:type="xsd:boolean">true</seis_prov:RECEIVERS_CAN_BE_BURIED>
+    <seis_prov:ROTATION xsi:type="xsd:boolean">false</seis_prov:ROTATION>
+    <seis_prov:SIMULATION_TYPE xsi:type="xsd:int">1</seis_prov:SIMULATION_TYPE>
+    <seis_prov:TOPOGRAPHY xsi:type="xsd:boolean">false</seis_prov:TOPOGRAPHY>
+    <seis_prov:USE_LDDRK xsi:type="xsd:boolean">false</seis_prov:USE_LDDRK>
+  </prov:entity>
+  <prov:entity prov:id="seis_prov:sp000_fi_d49dh0h4">
+    <prov:label>File</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:file</prov:type>
+    <seis_prov:filename>constants.h</seis_prov:filename>
+    <seis_prov:location>/AuxiliaryData/Files/constants.h</seis_prov:location>
+    <seis_prov:location_type>HDF5 Data Set</seis_prov:location_type>
+  </prov:entity>
+  <prov:activity prov:id="seis_prov:sp001_ws_f87sf7sf78">
+    <prov:startTime>2014-02-02T12:15:03</prov:startTime>
+    <prov:endTime>2014-02-02T14:07:13</prov:endTime>
+    <prov:label>Waveform Simulation</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:waveform_simulation</prov:type>
+  </prov:activity>
+  <prov:wasAssociatedWith>
+    <prov:activity prov:ref="seis_prov:sp001_ws_f87sf7sf78"></prov:activity>
+    <prov:agent prov:ref="seis_prov:sp000_sa_9dig8ata"></prov:agent>
+  </prov:wasAssociatedWith>
+  <prov:used>
+    <prov:activity prov:ref="seis_prov:sp001_ws_f87sf7sf78"></prov:activity>
+    <prov:entity prov:ref="seis_prov:sp000_em_skfusjdoej"></prov:entity>
+  </prov:used>
+  <prov:used>
+    <prov:activity prov:ref="seis_prov:sp001_ws_f87sf7sf78"></prov:activity>
+    <prov:entity prov:ref="seis_prov:sp000_in_38jd89da8l"></prov:entity>
+  </prov:used>
+  <prov:used>
+    <prov:activity prov:ref="seis_prov:sp001_ws_f87sf7sf78"></prov:activity>
+    <prov:entity prov:ref="seis_prov:sp000_fi_d49dh0h4"></prov:entity>
+  </prov:used>
+  <prov:entity prov:id="seis_prov:sp005_wf_a34j4didj3">
+    <prov:label>Waveform Trace</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:waveform_trace</prov:type>
+    <seis_prov:component>N</seis_prov:component>
+    <seis_prov:description>Synthetic Data</seis_prov:description>
+  </prov:entity>
+  <prov:entity prov:id="seis_prov:sp005_wf_kd9404hd04h">
+    <prov:label>Waveform Trace</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:waveform_trace</prov:type>
+    <seis_prov:component>E</seis_prov:component>
+    <seis_prov:description>Synthetic Data</seis_prov:description>
+  </prov:entity>
+  <prov:wasGeneratedBy>
+    <prov:entity prov:ref="seis_prov:sp005_wf_a34j4didj3"></prov:entity>
+    <prov:activity prov:ref="seis_prov:sp001_ws_f87sf7sf78"></prov:activity>
+  </prov:wasGeneratedBy>
+  <prov:wasGeneratedBy>
+    <prov:entity prov:ref="seis_prov:sp005_wf_kd9404hd04h"></prov:entity>
+    <prov:activity prov:ref="seis_prov:sp001_ws_f87sf7sf78"></prov:activity>
+  </prov:wasGeneratedBy>
+  <prov:activity prov:id="seis_prov:sp011_dt_4ijf0dfo0">
+    <prov:label>Detrend</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:detrend</prov:type>
+    <seis_prov:detrending_method>linear fit</seis_prov:detrending_method>
+  </prov:activity>
+  <prov:wasAssociatedWith>
+    <prov:activity prov:ref="seis_prov:sp011_dt_4ijf0dfo0"></prov:activity>
+    <prov:agent prov:ref="seis_prov:sp000_sa_9dig8ata"></prov:agent>
+  </prov:wasAssociatedWith>
+  <prov:activity prov:id="seis_prov:sp011_dt_ir0dfk409">
+    <prov:label>Detrend</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:detrend</prov:type>
+    <seis_prov:detrending_method>linear fit</seis_prov:detrending_method>
+  </prov:activity>
+  <prov:wasAssociatedWith>
+    <prov:activity prov:ref="seis_prov:sp011_dt_ir0dfk409"></prov:activity>
+    <prov:agent prov:ref="seis_prov:sp000_sa_9dig8ata"></prov:agent>
+  </prov:wasAssociatedWith>
+  <prov:activity prov:id="seis_prov:sp012_dt_4834f0dj0">
+    <prov:label>Detrend</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:detrend</prov:type>
+    <seis_prov:detrending_method>demean</seis_prov:detrending_method>
+  </prov:activity>
+  <prov:wasAssociatedWith>
+    <prov:activity prov:ref="seis_prov:sp012_dt_4834f0dj0"></prov:activity>
+    <prov:agent prov:ref="seis_prov:sp000_sa_9dig8ata"></prov:agent>
+  </prov:wasAssociatedWith>
+  <prov:activity prov:id="seis_prov:sp012_dt_vj3urc943">
+    <prov:label>Detrend</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:detrend</prov:type>
+    <seis_prov:detrending_method>demean</seis_prov:detrending_method>
+  </prov:activity>
+  <prov:wasAssociatedWith>
+    <prov:activity prov:ref="seis_prov:sp012_dt_vj3urc943"></prov:activity>
+    <prov:agent prov:ref="seis_prov:sp000_sa_9dig8ata"></prov:agent>
+  </prov:wasAssociatedWith>
+  <prov:activity prov:id="seis_prov:sp013_tp_dsfj43e4j">
+    <prov:label>Taper</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:taper</prov:type>
+    <seis_prov:side>both</seis_prov:side>
+    <seis_prov:taper_width xsi:type="xsd:double">0.05</seis_prov:taper_width>
+    <seis_prov:window_type>Hanning</seis_prov:window_type>
+  </prov:activity>
+  <prov:wasAssociatedWith>
+    <prov:activity prov:ref="seis_prov:sp013_tp_dsfj43e4j"></prov:activity>
+    <prov:agent prov:ref="seis_prov:sp000_sa_9dig8ata"></prov:agent>
+  </prov:wasAssociatedWith>
+  <prov:activity prov:id="seis_prov:sp013_tp_dk430f834">
+    <prov:label>Taper</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:taper</prov:type>
+    <seis_prov:side>both</seis_prov:side>
+    <seis_prov:taper_width xsi:type="xsd:double">0.05</seis_prov:taper_width>
+    <seis_prov:window_type>Hanning</seis_prov:window_type>
+  </prov:activity>
+  <prov:wasAssociatedWith>
+    <prov:activity prov:ref="seis_prov:sp013_tp_dk430f834"></prov:activity>
+    <prov:agent prov:ref="seis_prov:sp000_sa_9dig8ata"></prov:agent>
+  </prov:wasAssociatedWith>
+  <prov:activity prov:id="seis_prov:sp014_bp_qzprtj48r">
+    <prov:label>Bandpass Filter</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:bandpass_filter</prov:type>
+    <seis_prov:filter_type>Cosine SAC Taper</seis_prov:filter_type>
+    <seis_prov:sac_cosine_taper_frequency_limits>0.013333333,0.016666667,0.037037037,0.044444444</seis_prov:sac_cosine_taper_frequency_limits>
+  </prov:activity>
+  <prov:wasAssociatedWith>
+    <prov:activity prov:ref="seis_prov:sp014_bp_qzprtj48r"></prov:activity>
+    <prov:agent prov:ref="seis_prov:sp000_sa_9dig8ata"></prov:agent>
+  </prov:wasAssociatedWith>
+  <prov:activity prov:id="seis_prov:sp014_bp_843ijdfskjgr">
+    <prov:label>Bandpass Filter</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:bandpass_filter</prov:type>
+    <seis_prov:filter_type>Cosine SAC Taper</seis_prov:filter_type>
+    <seis_prov:sac_cosine_taper_frequency_limits>0.013333333,0.016666667,0.037037037,0.044444444</seis_prov:sac_cosine_taper_frequency_limits>
+  </prov:activity>
+  <prov:wasAssociatedWith>
+    <prov:activity prov:ref="seis_prov:sp014_bp_843ijdfskjgr"></prov:activity>
+    <prov:agent prov:ref="seis_prov:sp000_sa_9dig8ata"></prov:agent>
+  </prov:wasAssociatedWith>
+  <prov:activity prov:id="seis_prov:sp011_dt_893ndidh">
+    <prov:label>Detrend</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:detrend</prov:type>
+    <seis_prov:detrending_method>linear fit</seis_prov:detrending_method>
+  </prov:activity>
+  <prov:wasAssociatedWith>
+    <prov:activity prov:ref="seis_prov:sp011_dt_893ndidh"></prov:activity>
+    <prov:agent prov:ref="seis_prov:sp000_sa_9dig8ata"></prov:agent>
+  </prov:wasAssociatedWith>
+  <prov:activity prov:id="seis_prov:sp011_dt_jk340du34j">
+    <prov:label>Detrend</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:detrend</prov:type>
+    <seis_prov:detrending_method>linear fit</seis_prov:detrending_method>
+  </prov:activity>
+  <prov:wasAssociatedWith>
+    <prov:activity prov:ref="seis_prov:sp011_dt_jk340du34j"></prov:activity>
+    <prov:agent prov:ref="seis_prov:sp000_sa_9dig8ata"></prov:agent>
+  </prov:wasAssociatedWith>
+  <prov:activity prov:id="seis_prov:sp012_dt_dko349dfj">
+    <prov:label>Detrend</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:detrend</prov:type>
+    <seis_prov:detrending_method>demean</seis_prov:detrending_method>
+  </prov:activity>
+  <prov:wasAssociatedWith>
+    <prov:activity prov:ref="seis_prov:sp012_dt_dko349dfj"></prov:activity>
+    <prov:agent prov:ref="seis_prov:sp000_sa_9dig8ata"></prov:agent>
+  </prov:wasAssociatedWith>
+  <prov:activity prov:id="seis_prov:sp012_dt_9djldfj">
+    <prov:label>Detrend</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:detrend</prov:type>
+    <seis_prov:detrending_method>demean</seis_prov:detrending_method>
+  </prov:activity>
+  <prov:wasAssociatedWith>
+    <prov:activity prov:ref="seis_prov:sp012_dt_9djldfj"></prov:activity>
+    <prov:agent prov:ref="seis_prov:sp000_sa_9dig8ata"></prov:agent>
+  </prov:wasAssociatedWith>
+  <prov:activity prov:id="seis_prov:sp013_tp_iojdf9834j">
+    <prov:label>Taper</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:taper</prov:type>
+    <seis_prov:side>both</seis_prov:side>
+    <seis_prov:taper_width xsi:type="xsd:double">0.05</seis_prov:taper_width>
+    <seis_prov:window_type>Hanning</seis_prov:window_type>
+  </prov:activity>
+  <prov:wasAssociatedWith>
+    <prov:activity prov:ref="seis_prov:sp013_tp_iojdf9834j"></prov:activity>
+    <prov:agent prov:ref="seis_prov:sp000_sa_9dig8ata"></prov:agent>
+  </prov:wasAssociatedWith>
+  <prov:activity prov:id="seis_prov:sp013_tp_834jd0h">
+    <prov:label>Taper</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:taper</prov:type>
+    <seis_prov:side>both</seis_prov:side>
+    <seis_prov:taper_width xsi:type="xsd:double">0.05</seis_prov:taper_width>
+    <seis_prov:window_type>Hanning</seis_prov:window_type>
+  </prov:activity>
+  <prov:wasAssociatedWith>
+    <prov:activity prov:ref="seis_prov:sp013_tp_834jd0h"></prov:activity>
+    <prov:agent prov:ref="seis_prov:sp000_sa_9dig8ata"></prov:agent>
+  </prov:wasAssociatedWith>
+  <prov:activity prov:id="seis_prov:sp001_ip_iadsf3490j">
+    <prov:label>Interpolate</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:interpolate</prov:type>
+    <seis_prov:interpolation_method>weighted average slopes</seis_prov:interpolation_method>
+    <seis_prov:new_sampling_rate xsi:type="xsd:double">1.0</seis_prov:new_sampling_rate>
+  </prov:activity>
+  <prov:wasAssociatedWith>
+    <prov:activity prov:ref="seis_prov:sp001_ip_iadsf3490j"></prov:activity>
+    <prov:agent prov:ref="seis_prov:sp000_sa_9dig8ata"></prov:agent>
+  </prov:wasAssociatedWith>
+  <prov:activity prov:id="seis_prov:sp001_ip_diajsdf80">
+    <prov:label>Interpolate</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:interpolate</prov:type>
+    <seis_prov:interpolation_method>weighted average slopes</seis_prov:interpolation_method>
+    <seis_prov:new_sampling_rate xsi:type="xsd:double">1.0</seis_prov:new_sampling_rate>
+  </prov:activity>
+  <prov:wasAssociatedWith>
+    <prov:activity prov:ref="seis_prov:sp001_ip_diajsdf80"></prov:activity>
+    <prov:agent prov:ref="seis_prov:sp000_sa_9dig8ata"></prov:agent>
+  </prov:wasAssociatedWith>
+  <prov:activity prov:id="seis_prov:sp001_rt_asdfkj4034">
+    <prov:label>Rotate</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:rotate</prov:type>
+    <seis_prov:method>NE-&gt;RT</seis_prov:method>
+  </prov:activity>
+  <prov:wasAssociatedWith>
+    <prov:activity prov:ref="seis_prov:sp001_rt_asdfkj4034"></prov:activity>
+    <prov:agent prov:ref="seis_prov:sp000_sa_9dig8ata"></prov:agent>
+  </prov:wasAssociatedWith>
+  <prov:entity prov:id="seis_prov:sp005_wf_43ptb430df">
+    <prov:label>Waveform Trace</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:waveform_trace</prov:type>
+    <seis_prov:component>T</seis_prov:component>
+    <seis_prov:description>Synthetic Data</seis_prov:description>
+  </prov:entity>
+  <prov:entity prov:id="seis_prov:sp005_wf_asdklfj93ef">
+    <prov:label>Waveform Trace</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:waveform_trace</prov:type>
+    <seis_prov:component>E</seis_prov:component>
+    <seis_prov:description>Synthetic Data</seis_prov:description>
+  </prov:entity>
+  <prov:entity prov:id="seis_prov:sp005_wf_wasdf34439">
+    <prov:label>Waveform Trace</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:waveform_trace</prov:type>
+    <seis_prov:component>E</seis_prov:component>
+    <seis_prov:description>Synthetic Data</seis_prov:description>
+  </prov:entity>
+  <prov:entity prov:id="seis_prov:sp005_wf_ds934jdafkj">
+    <prov:label>Waveform Trace</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:waveform_trace</prov:type>
+    <seis_prov:component>E</seis_prov:component>
+    <seis_prov:description>Synthetic Data</seis_prov:description>
+  </prov:entity>
+  <prov:entity prov:id="seis_prov:sp005_wf_zdkja894dioj">
+    <prov:label>Waveform Trace</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:waveform_trace</prov:type>
+    <seis_prov:component>E</seis_prov:component>
+    <seis_prov:description>Synthetic Data</seis_prov:description>
+  </prov:entity>
+  <prov:entity prov:id="seis_prov:sp005_wf_349df9j0">
+    <prov:label>Waveform Trace</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:waveform_trace</prov:type>
+    <seis_prov:component>E</seis_prov:component>
+    <seis_prov:description>Synthetic Data</seis_prov:description>
+  </prov:entity>
+  <prov:entity prov:id="seis_prov:sp005_wf_ijd0934j0">
+    <prov:label>Waveform Trace</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:waveform_trace</prov:type>
+    <seis_prov:component>E</seis_prov:component>
+    <seis_prov:description>Synthetic Data</seis_prov:description>
+  </prov:entity>
+  <prov:entity prov:id="seis_prov:sp005_wf_idj30949j">
+    <prov:label>Waveform Trace</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:waveform_trace</prov:type>
+    <seis_prov:component>E</seis_prov:component>
+    <seis_prov:description>Synthetic Data</seis_prov:description>
+  </prov:entity>
+  <prov:entity prov:id="seis_prov:sp005_wf_09j3kjdi">
+    <prov:label>Waveform Trace</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:waveform_trace</prov:type>
+    <seis_prov:component>E</seis_prov:component>
+    <seis_prov:description>Synthetic Data</seis_prov:description>
+  </prov:entity>
+  <prov:entity prov:id="seis_prov:sp005_wf_eioasdf0934j">
+    <prov:label>Waveform Trace</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:waveform_trace</prov:type>
+    <seis_prov:component>N</seis_prov:component>
+    <seis_prov:description>Synthetic Data</seis_prov:description>
+  </prov:entity>
+  <prov:entity prov:id="seis_prov:sp005_wf_kajoi4309j">
+    <prov:label>Waveform Trace</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:waveform_trace</prov:type>
+    <seis_prov:component>N</seis_prov:component>
+    <seis_prov:description>Synthetic Data</seis_prov:description>
+  </prov:entity>
+  <prov:entity prov:id="seis_prov:sp005_wf_ija09j43l">
+    <prov:label>Waveform Trace</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:waveform_trace</prov:type>
+    <seis_prov:component>N</seis_prov:component>
+    <seis_prov:description>Synthetic Data</seis_prov:description>
+  </prov:entity>
+  <prov:entity prov:id="seis_prov:sp005_wf_lkjaoi9034j">
+    <prov:label>Waveform Trace</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:waveform_trace</prov:type>
+    <seis_prov:component>N</seis_prov:component>
+    <seis_prov:description>Synthetic Data</seis_prov:description>
+  </prov:entity>
+  <prov:entity prov:id="seis_prov:sp005_wf_3oijoi904j">
+    <prov:label>Waveform Trace</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:waveform_trace</prov:type>
+    <seis_prov:component>N</seis_prov:component>
+    <seis_prov:description>Synthetic Data</seis_prov:description>
+  </prov:entity>
+  <prov:entity prov:id="seis_prov:sp005_wf_iajsdfje">
+    <prov:label>Waveform Trace</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:waveform_trace</prov:type>
+    <seis_prov:component>N</seis_prov:component>
+    <seis_prov:description>Synthetic Data</seis_prov:description>
+  </prov:entity>
+  <prov:entity prov:id="seis_prov:sp005_wf_oij09adfj">
+    <prov:label>Waveform Trace</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:waveform_trace</prov:type>
+    <seis_prov:component>N</seis_prov:component>
+    <seis_prov:description>Synthetic Data</seis_prov:description>
+  </prov:entity>
+  <prov:entity prov:id="seis_prov:sp005_wf_jasdfj09032j">
+    <prov:label>Waveform Trace</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:waveform_trace</prov:type>
+    <seis_prov:component>N</seis_prov:component>
+    <seis_prov:description>Synthetic Data</seis_prov:description>
+  </prov:entity>
+  <prov:used>
+    <prov:activity prov:ref="seis_prov:sp011_dt_ir0dfk409"></prov:activity>
+    <prov:entity prov:ref="seis_prov:sp005_wf_kd9404hd04h"></prov:entity>
+  </prov:used>
+  <prov:wasGeneratedBy>
+    <prov:entity prov:ref="seis_prov:sp005_wf_asdklfj93ef"></prov:entity>
+    <prov:activity prov:ref="seis_prov:sp011_dt_ir0dfk409"></prov:activity>
+  </prov:wasGeneratedBy>
+  <prov:used>
+    <prov:activity prov:ref="seis_prov:sp012_dt_vj3urc943"></prov:activity>
+    <prov:entity prov:ref="seis_prov:sp005_wf_asdklfj93ef"></prov:entity>
+  </prov:used>
+  <prov:wasGeneratedBy>
+    <prov:entity prov:ref="seis_prov:sp005_wf_wasdf34439"></prov:entity>
+    <prov:activity prov:ref="seis_prov:sp012_dt_vj3urc943"></prov:activity>
+  </prov:wasGeneratedBy>
+  <prov:used>
+    <prov:activity prov:ref="seis_prov:sp013_tp_dk430f834"></prov:activity>
+    <prov:entity prov:ref="seis_prov:sp005_wf_wasdf34439"></prov:entity>
+  </prov:used>
+  <prov:wasGeneratedBy>
+    <prov:entity prov:ref="seis_prov:sp005_wf_ds934jdafkj"></prov:entity>
+    <prov:activity prov:ref="seis_prov:sp013_tp_dk430f834"></prov:activity>
+  </prov:wasGeneratedBy>
+  <prov:used>
+    <prov:activity prov:ref="seis_prov:sp014_bp_843ijdfskjgr"></prov:activity>
+    <prov:entity prov:ref="seis_prov:sp005_wf_ds934jdafkj"></prov:entity>
+  </prov:used>
+  <prov:wasGeneratedBy>
+    <prov:entity prov:ref="seis_prov:sp005_wf_zdkja894dioj"></prov:entity>
+    <prov:activity prov:ref="seis_prov:sp014_bp_843ijdfskjgr"></prov:activity>
+  </prov:wasGeneratedBy>
+  <prov:used>
+    <prov:activity prov:ref="seis_prov:sp011_dt_jk340du34j"></prov:activity>
+    <prov:entity prov:ref="seis_prov:sp005_wf_zdkja894dioj"></prov:entity>
+  </prov:used>
+  <prov:wasGeneratedBy>
+    <prov:entity prov:ref="seis_prov:sp005_wf_349df9j0"></prov:entity>
+    <prov:activity prov:ref="seis_prov:sp011_dt_jk340du34j"></prov:activity>
+  </prov:wasGeneratedBy>
+  <prov:used>
+    <prov:activity prov:ref="seis_prov:sp012_dt_9djldfj"></prov:activity>
+    <prov:entity prov:ref="seis_prov:sp005_wf_349df9j0"></prov:entity>
+  </prov:used>
+  <prov:wasGeneratedBy>
+    <prov:entity prov:ref="seis_prov:sp005_wf_ijd0934j0"></prov:entity>
+    <prov:activity prov:ref="seis_prov:sp012_dt_9djldfj"></prov:activity>
+  </prov:wasGeneratedBy>
+  <prov:used>
+    <prov:activity prov:ref="seis_prov:sp013_tp_834jd0h"></prov:activity>
+    <prov:entity prov:ref="seis_prov:sp005_wf_ijd0934j0"></prov:entity>
+  </prov:used>
+  <prov:wasGeneratedBy>
+    <prov:entity prov:ref="seis_prov:sp005_wf_idj30949j"></prov:entity>
+    <prov:activity prov:ref="seis_prov:sp013_tp_834jd0h"></prov:activity>
+  </prov:wasGeneratedBy>
+  <prov:used>
+    <prov:activity prov:ref="seis_prov:sp001_ip_diajsdf80"></prov:activity>
+    <prov:entity prov:ref="seis_prov:sp005_wf_idj30949j"></prov:entity>
+  </prov:used>
+  <prov:wasGeneratedBy>
+    <prov:entity prov:ref="seis_prov:sp005_wf_09j3kjdi"></prov:entity>
+    <prov:activity prov:ref="seis_prov:sp001_ip_diajsdf80"></prov:activity>
+  </prov:wasGeneratedBy>
+  <prov:used>
+    <prov:activity prov:ref="seis_prov:sp011_dt_4ijf0dfo0"></prov:activity>
+    <prov:entity prov:ref="seis_prov:sp005_wf_a34j4didj3"></prov:entity>
+  </prov:used>
+  <prov:wasGeneratedBy>
+    <prov:entity prov:ref="seis_prov:sp005_wf_eioasdf0934j"></prov:entity>
+    <prov:activity prov:ref="seis_prov:sp011_dt_4ijf0dfo0"></prov:activity>
+  </prov:wasGeneratedBy>
+  <prov:used>
+    <prov:activity prov:ref="seis_prov:sp012_dt_4834f0dj0"></prov:activity>
+    <prov:entity prov:ref="seis_prov:sp005_wf_eioasdf0934j"></prov:entity>
+  </prov:used>
+  <prov:wasGeneratedBy>
+    <prov:entity prov:ref="seis_prov:sp005_wf_kajoi4309j"></prov:entity>
+    <prov:activity prov:ref="seis_prov:sp012_dt_4834f0dj0"></prov:activity>
+  </prov:wasGeneratedBy>
+  <prov:used>
+    <prov:activity prov:ref="seis_prov:sp013_tp_dsfj43e4j"></prov:activity>
+    <prov:entity prov:ref="seis_prov:sp005_wf_kajoi4309j"></prov:entity>
+  </prov:used>
+  <prov:wasGeneratedBy>
+    <prov:entity prov:ref="seis_prov:sp005_wf_ija09j43l"></prov:entity>
+    <prov:activity prov:ref="seis_prov:sp013_tp_dsfj43e4j"></prov:activity>
+  </prov:wasGeneratedBy>
+  <prov:used>
+    <prov:activity prov:ref="seis_prov:sp014_bp_qzprtj48r"></prov:activity>
+    <prov:entity prov:ref="seis_prov:sp005_wf_ija09j43l"></prov:entity>
+  </prov:used>
+  <prov:wasGeneratedBy>
+    <prov:entity prov:ref="seis_prov:sp005_wf_lkjaoi9034j"></prov:entity>
+    <prov:activity prov:ref="seis_prov:sp014_bp_qzprtj48r"></prov:activity>
+  </prov:wasGeneratedBy>
+  <prov:used>
+    <prov:activity prov:ref="seis_prov:sp011_dt_893ndidh"></prov:activity>
+    <prov:entity prov:ref="seis_prov:sp005_wf_lkjaoi9034j"></prov:entity>
+  </prov:used>
+  <prov:wasGeneratedBy>
+    <prov:entity prov:ref="seis_prov:sp005_wf_3oijoi904j"></prov:entity>
+    <prov:activity prov:ref="seis_prov:sp011_dt_893ndidh"></prov:activity>
+  </prov:wasGeneratedBy>
+  <prov:used>
+    <prov:activity prov:ref="seis_prov:sp012_dt_dko349dfj"></prov:activity>
+    <prov:entity prov:ref="seis_prov:sp005_wf_3oijoi904j"></prov:entity>
+  </prov:used>
+  <prov:wasGeneratedBy>
+    <prov:entity prov:ref="seis_prov:sp005_wf_iajsdfje"></prov:entity>
+    <prov:activity prov:ref="seis_prov:sp012_dt_dko349dfj"></prov:activity>
+  </prov:wasGeneratedBy>
+  <prov:used>
+    <prov:activity prov:ref="seis_prov:sp013_tp_iojdf9834j"></prov:activity>
+    <prov:entity prov:ref="seis_prov:sp005_wf_iajsdfje"></prov:entity>
+  </prov:used>
+  <prov:wasGeneratedBy>
+    <prov:entity prov:ref="seis_prov:sp005_wf_oij09adfj"></prov:entity>
+    <prov:activity prov:ref="seis_prov:sp013_tp_iojdf9834j"></prov:activity>
+  </prov:wasGeneratedBy>
+  <prov:used>
+    <prov:activity prov:ref="seis_prov:sp001_ip_iadsf3490j"></prov:activity>
+    <prov:entity prov:ref="seis_prov:sp005_wf_oij09adfj"></prov:entity>
+  </prov:used>
+  <prov:wasGeneratedBy>
+    <prov:entity prov:ref="seis_prov:sp005_wf_jasdfj09032j"></prov:entity>
+    <prov:activity prov:ref="seis_prov:sp001_ip_iadsf3490j"></prov:activity>
+  </prov:wasGeneratedBy>
+  <prov:used>
+    <prov:activity prov:ref="seis_prov:sp001_rt_asdfkj4034"></prov:activity>
+    <prov:entity prov:ref="seis_prov:sp005_wf_jasdfj09032j"></prov:entity>
+  </prov:used>
+  <prov:used>
+    <prov:activity prov:ref="seis_prov:sp001_rt_asdfkj4034"></prov:activity>
+    <prov:entity prov:ref="seis_prov:sp005_wf_09j3kjdi"></prov:entity>
+  </prov:used>
+  <prov:wasGeneratedBy>
+    <prov:entity prov:ref="seis_prov:sp005_wf_43ptb430df"></prov:entity>
+    <prov:activity prov:ref="seis_prov:sp001_rt_asdfkj4034"></prov:activity>
+  </prov:wasGeneratedBy>
+  <prov:entity prov:id="seis_prov:sp005_wf_0askjdf0">
+    <prov:label>Waveform Trace</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:waveform_trace</prov:type>
+    <seis_prov:component>N</seis_prov:component>
+    <seis_prov:description>Observed Data</seis_prov:description>
+  </prov:entity>
+  <prov:entity prov:id="seis_prov:sp005_wf_asdfoij0">
+    <prov:label>Waveform Trace</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:waveform_trace</prov:type>
+    <seis_prov:component>E</seis_prov:component>
+    <seis_prov:description>Observed Data</seis_prov:description>
+  </prov:entity>
+  <prov:activity prov:id="seis_prov:sp011_dt_o3ijasdfuh">
+    <prov:label>Detrend</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:detrend</prov:type>
+    <seis_prov:detrending_method>linear fit</seis_prov:detrending_method>
+  </prov:activity>
+  <prov:wasAssociatedWith>
+    <prov:activity prov:ref="seis_prov:sp011_dt_o3ijasdfuh"></prov:activity>
+    <prov:agent prov:ref="seis_prov:sp000_sa_9dig8ata"></prov:agent>
+  </prov:wasAssociatedWith>
+  <prov:activity prov:id="seis_prov:sp011_dt_ij2390jdl">
+    <prov:label>Detrend</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:detrend</prov:type>
+    <seis_prov:detrending_method>linear fit</seis_prov:detrending_method>
+  </prov:activity>
+  <prov:wasAssociatedWith>
+    <prov:activity prov:ref="seis_prov:sp011_dt_ij2390jdl"></prov:activity>
+    <prov:agent prov:ref="seis_prov:sp000_sa_9dig8ata"></prov:agent>
+  </prov:wasAssociatedWith>
+  <prov:activity prov:id="seis_prov:sp012_dt_3809adlkjo">
+    <prov:label>Detrend</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:detrend</prov:type>
+    <seis_prov:detrending_method>demean</seis_prov:detrending_method>
+  </prov:activity>
+  <prov:wasAssociatedWith>
+    <prov:activity prov:ref="seis_prov:sp012_dt_3809adlkjo"></prov:activity>
+    <prov:agent prov:ref="seis_prov:sp000_sa_9dig8ata"></prov:agent>
+  </prov:wasAssociatedWith>
+  <prov:activity prov:id="seis_prov:sp012_dt_ij09328j">
+    <prov:label>Detrend</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:detrend</prov:type>
+    <seis_prov:detrending_method>demean</seis_prov:detrending_method>
+  </prov:activity>
+  <prov:wasAssociatedWith>
+    <prov:activity prov:ref="seis_prov:sp012_dt_ij09328j"></prov:activity>
+    <prov:agent prov:ref="seis_prov:sp000_sa_9dig8ata"></prov:agent>
+  </prov:wasAssociatedWith>
+  <prov:activity prov:id="seis_prov:sp013_tp_kio390jf">
+    <prov:label>Taper</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:taper</prov:type>
+    <seis_prov:side>both</seis_prov:side>
+    <seis_prov:taper_width xsi:type="xsd:double">0.05</seis_prov:taper_width>
+    <seis_prov:window_type>Hanning</seis_prov:window_type>
+  </prov:activity>
+  <prov:wasAssociatedWith>
+    <prov:activity prov:ref="seis_prov:sp013_tp_kio390jf"></prov:activity>
+    <prov:agent prov:ref="seis_prov:sp000_sa_9dig8ata"></prov:agent>
+  </prov:wasAssociatedWith>
+  <prov:activity prov:id="seis_prov:sp013_tp_aioj309j">
+    <prov:label>Taper</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:taper</prov:type>
+    <seis_prov:side>both</seis_prov:side>
+    <seis_prov:taper_width xsi:type="xsd:double">0.05</seis_prov:taper_width>
+    <seis_prov:window_type>Hanning</seis_prov:window_type>
+  </prov:activity>
+  <prov:wasAssociatedWith>
+    <prov:activity prov:ref="seis_prov:sp013_tp_aioj309j"></prov:activity>
+    <prov:agent prov:ref="seis_prov:sp000_sa_9dig8ata"></prov:agent>
+  </prov:wasAssociatedWith>
+  <prov:activity prov:id="seis_prov:sp014_bp_lij09jel">
+    <prov:label>Bandpass Filter</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:bandpass_filter</prov:type>
+    <seis_prov:filter_type>Cosine SAC Taper</seis_prov:filter_type>
+    <seis_prov:sac_cosine_taper_frequency_limits>0.013333333,0.016666667,0.037037037,0.044444444</seis_prov:sac_cosine_taper_frequency_limits>
+  </prov:activity>
+  <prov:wasAssociatedWith>
+    <prov:activity prov:ref="seis_prov:sp014_bp_lij09jel"></prov:activity>
+    <prov:agent prov:ref="seis_prov:sp000_sa_9dig8ata"></prov:agent>
+  </prov:wasAssociatedWith>
+  <prov:activity prov:id="seis_prov:sp014_bp_ijasdoij4l">
+    <prov:label>Bandpass Filter</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:bandpass_filter</prov:type>
+    <seis_prov:filter_type>Cosine SAC Taper</seis_prov:filter_type>
+    <seis_prov:sac_cosine_taper_frequency_limits>0.013333333,0.016666667,0.037037037,0.044444444</seis_prov:sac_cosine_taper_frequency_limits>
+  </prov:activity>
+  <prov:wasAssociatedWith>
+    <prov:activity prov:ref="seis_prov:sp014_bp_ijasdoij4l"></prov:activity>
+    <prov:agent prov:ref="seis_prov:sp000_sa_9dig8ata"></prov:agent>
+  </prov:wasAssociatedWith>
+  <prov:activity prov:id="seis_prov:sp001_rr_ddcc155">
+    <prov:label>Remove Response</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:remove_response</prov:type>
+    <seis_prov:input_units>counts</seis_prov:input_units>
+    <seis_prov:output_units>m</seis_prov:output_units>
+    <seis_prov:water_level xsi:type="xsd:double">600.0</seis_prov:water_level>
+  </prov:activity>
+  <prov:wasAssociatedWith>
+    <prov:activity prov:ref="seis_prov:sp014_bp_lij09jel"></prov:activity>
+    <prov:agent prov:ref="seis_prov:sp000_sa_9dig8ata"></prov:agent>
+  </prov:wasAssociatedWith>
+  <prov:activity prov:id="seis_prov:sp001_rr_asdf34034">
+    <prov:label>Remove Response</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:remove_response</prov:type>
+    <seis_prov:input_units>counts</seis_prov:input_units>
+    <seis_prov:output_units>m</seis_prov:output_units>
+    <seis_prov:water_level xsi:type="xsd:double">600.0</seis_prov:water_level>
+  </prov:activity>
+  <prov:wasAssociatedWith>
+    <prov:activity prov:ref="seis_prov:sp014_bp_ijasdoij4l"></prov:activity>
+    <prov:agent prov:ref="seis_prov:sp000_sa_9dig8ata"></prov:agent>
+  </prov:wasAssociatedWith>
+  <prov:activity prov:id="seis_prov:sp011_dt_as034lkjo">
+    <prov:label>Detrend</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:detrend</prov:type>
+    <seis_prov:detrending_method>linear fit</seis_prov:detrending_method>
+  </prov:activity>
+  <prov:wasAssociatedWith>
+    <prov:activity prov:ref="seis_prov:sp011_dt_as034lkjo"></prov:activity>
+    <prov:agent prov:ref="seis_prov:sp000_sa_9dig8ata"></prov:agent>
+  </prov:wasAssociatedWith>
+  <prov:activity prov:id="seis_prov:sp011_dt_asdfoij4">
+    <prov:label>Detrend</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:detrend</prov:type>
+    <seis_prov:detrending_method>linear fit</seis_prov:detrending_method>
+  </prov:activity>
+  <prov:wasAssociatedWith>
+    <prov:activity prov:ref="seis_prov:sp011_dt_asdfoij4"></prov:activity>
+    <prov:agent prov:ref="seis_prov:sp000_sa_9dig8ata"></prov:agent>
+  </prov:wasAssociatedWith>
+  <prov:activity prov:id="seis_prov:sp012_dt_340jdflioj">
+    <prov:label>Detrend</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:detrend</prov:type>
+    <seis_prov:detrending_method>demean</seis_prov:detrending_method>
+  </prov:activity>
+  <prov:wasAssociatedWith>
+    <prov:activity prov:ref="seis_prov:sp012_dt_340jdflioj"></prov:activity>
+    <prov:agent prov:ref="seis_prov:sp000_sa_9dig8ata"></prov:agent>
+  </prov:wasAssociatedWith>
+  <prov:activity prov:id="seis_prov:sp014_dt_inv3l90o">
+    <prov:label>Detrend</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:detrend</prov:type>
+    <seis_prov:detrending_method>demean</seis_prov:detrending_method>
+  </prov:activity>
+  <prov:wasAssociatedWith>
+    <prov:activity prov:ref="seis_prov:sp014_dt_inv3l90o"></prov:activity>
+    <prov:agent prov:ref="seis_prov:sp000_sa_9dig8ata"></prov:agent>
+  </prov:wasAssociatedWith>
+  <prov:activity prov:id="seis_prov:sp013_tp_io34oic83">
+    <prov:label>Taper</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:taper</prov:type>
+    <seis_prov:side>both</seis_prov:side>
+    <seis_prov:taper_width xsi:type="xsd:double">0.05</seis_prov:taper_width>
+    <seis_prov:window_type>Hanning</seis_prov:window_type>
+  </prov:activity>
+  <prov:wasAssociatedWith>
+    <prov:activity prov:ref="seis_prov:sp013_tp_io34oic83"></prov:activity>
+    <prov:agent prov:ref="seis_prov:sp000_sa_9dig8ata"></prov:agent>
+  </prov:wasAssociatedWith>
+  <prov:activity prov:id="seis_prov:sp013_tp_9304jlkmio">
+    <prov:label>Taper</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:taper</prov:type>
+    <seis_prov:side>both</seis_prov:side>
+    <seis_prov:taper_width xsi:type="xsd:double">0.05</seis_prov:taper_width>
+    <seis_prov:window_type>Hanning</seis_prov:window_type>
+  </prov:activity>
+  <prov:wasAssociatedWith>
+    <prov:activity prov:ref="seis_prov:sp013_tp_9304jlkmio"></prov:activity>
+    <prov:agent prov:ref="seis_prov:sp000_sa_9dig8ata"></prov:agent>
+  </prov:wasAssociatedWith>
+  <prov:activity prov:id="seis_prov:sp001_ip_i34j09d">
+    <prov:label>Interpolate</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:interpolate</prov:type>
+    <seis_prov:interpolation_method>weighted average slopes</seis_prov:interpolation_method>
+    <seis_prov:new_sampling_rate xsi:type="xsd:double">1.0</seis_prov:new_sampling_rate>
+  </prov:activity>
+  <prov:wasAssociatedWith>
+    <prov:activity prov:ref="seis_prov:sp001_ip_i34j09d"></prov:activity>
+    <prov:agent prov:ref="seis_prov:sp000_sa_9dig8ata"></prov:agent>
+  </prov:wasAssociatedWith>
+  <prov:activity prov:id="seis_prov:sp001_ip_4309jlkjn">
+    <prov:label>Interpolate</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:interpolate</prov:type>
+    <seis_prov:interpolation_method>weighted average slopes</seis_prov:interpolation_method>
+    <seis_prov:new_sampling_rate xsi:type="xsd:double">1.0</seis_prov:new_sampling_rate>
+  </prov:activity>
+  <prov:wasAssociatedWith>
+    <prov:activity prov:ref="seis_prov:sp001_ip_4309jlkjn"></prov:activity>
+    <prov:agent prov:ref="seis_prov:sp000_sa_9dig8ata"></prov:agent>
+  </prov:wasAssociatedWith>
+  <prov:activity prov:id="seis_prov:sp001_rt_039jznwmp">
+    <prov:label>Rotate</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:rotate</prov:type>
+    <seis_prov:method>NE-&gt;RT</seis_prov:method>
+  </prov:activity>
+  <prov:wasAssociatedWith>
+    <prov:activity prov:ref="seis_prov:sp001_rt_039jznwmp"></prov:activity>
+    <prov:agent prov:ref="seis_prov:sp000_sa_9dig8ata"></prov:agent>
+  </prov:wasAssociatedWith>
+  <prov:entity prov:id="seis_prov:sp005_wf_aj0934mjh">
+    <prov:label>Waveform Trace</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:waveform_trace</prov:type>
+    <seis_prov:component>T</seis_prov:component>
+    <seis_prov:description>Observed Data</seis_prov:description>
+  </prov:entity>
+  <prov:entity prov:id="seis_prov:sp005_wf_asdjf043m">
+    <prov:label>Waveform Trace</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:waveform_trace</prov:type>
+    <seis_prov:component>E</seis_prov:component>
+    <seis_prov:description>Observed Data</seis_prov:description>
+  </prov:entity>
+  <prov:entity prov:id="seis_prov:sp005_wf_9034jfzq">
+    <prov:label>Waveform Trace</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:waveform_trace</prov:type>
+    <seis_prov:component>E</seis_prov:component>
+    <seis_prov:description>Observed Data</seis_prov:description>
+  </prov:entity>
+  <prov:entity prov:id="seis_prov:sp005_wf_w90jasdfh">
+    <prov:label>Waveform Trace</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:waveform_trace</prov:type>
+    <seis_prov:component>E</seis_prov:component>
+    <seis_prov:description>Observed Data</seis_prov:description>
+  </prov:entity>
+  <prov:entity prov:id="seis_prov:sp005_wf_j0asdfm9">
+    <prov:label>Waveform Trace</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:waveform_trace</prov:type>
+    <seis_prov:component>E</seis_prov:component>
+    <seis_prov:description>Observed Data</seis_prov:description>
+  </prov:entity>
+  <prov:entity prov:id="seis_prov:sp005_wf_wasdfjme">
+    <prov:label>Waveform Trace</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:waveform_trace</prov:type>
+    <seis_prov:component>E</seis_prov:component>
+    <seis_prov:description>Observed Data</seis_prov:description>
+  </prov:entity>
+  <prov:entity prov:id="seis_prov:sp005_wf_j09boija">
+    <prov:label>Waveform Trace</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:waveform_trace</prov:type>
+    <seis_prov:component>E</seis_prov:component>
+    <seis_prov:description>Observed Data</seis_prov:description>
+  </prov:entity>
+  <prov:entity prov:id="seis_prov:sp005_wf_jasdf943">
+    <prov:label>Waveform Trace</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:waveform_trace</prov:type>
+    <seis_prov:component>E</seis_prov:component>
+    <seis_prov:description>Observed Data</seis_prov:description>
+  </prov:entity>
+  <prov:entity prov:id="seis_prov:sp005_wf_wj9hljo">
+    <prov:label>Waveform Trace</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:waveform_trace</prov:type>
+    <seis_prov:component>E</seis_prov:component>
+    <seis_prov:description>Observed Data</seis_prov:description>
+  </prov:entity>
+  <prov:entity prov:id="seis_prov:sp005_wf_fijioj345">
+    <prov:label>Waveform Trace</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:waveform_trace</prov:type>
+    <seis_prov:component>E</seis_prov:component>
+    <seis_prov:description>Observed Data</seis_prov:description>
+  </prov:entity>
+  <prov:entity prov:id="seis_prov:sp005_wf_wlkjsdf094">
+    <prov:label>Waveform Trace</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:waveform_trace</prov:type>
+    <seis_prov:component>N</seis_prov:component>
+    <seis_prov:description>Observed Data</seis_prov:description>
+  </prov:entity>
+  <prov:entity prov:id="seis_prov:sp005_wf_wjasdf4380">
+    <prov:label>Waveform Trace</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:waveform_trace</prov:type>
+    <seis_prov:component>N</seis_prov:component>
+    <seis_prov:description>Observed Data</seis_prov:description>
+  </prov:entity>
+  <prov:entity prov:id="seis_prov:sp005_wf_ncbeirp">
+    <prov:label>Waveform Trace</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:waveform_trace</prov:type>
+    <seis_prov:component>N</seis_prov:component>
+    <seis_prov:description>Observed Data</seis_prov:description>
+  </prov:entity>
+  <prov:entity prov:id="seis_prov:sp005_wf_wkjasdfio">
+    <prov:label>Waveform Trace</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:waveform_trace</prov:type>
+    <seis_prov:component>N</seis_prov:component>
+    <seis_prov:description>Observed Data</seis_prov:description>
+  </prov:entity>
+  <prov:entity prov:id="seis_prov:sp005_wf_wjasd9043">
+    <prov:label>Waveform Trace</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:waveform_trace</prov:type>
+    <seis_prov:component>N</seis_prov:component>
+    <seis_prov:description>Observed Data</seis_prov:description>
+  </prov:entity>
+  <prov:entity prov:id="seis_prov:sp005_wf_jasdfh4">
+    <prov:label>Waveform Trace</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:waveform_trace</prov:type>
+    <seis_prov:component>N</seis_prov:component>
+    <seis_prov:description>Observed Data</seis_prov:description>
+  </prov:entity>
+  <prov:entity prov:id="seis_prov:sp005_wf_asdfj9043">
+    <prov:label>Waveform Trace</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:waveform_trace</prov:type>
+    <seis_prov:component>N</seis_prov:component>
+    <seis_prov:description>Observed Data</seis_prov:description>
+  </prov:entity>
+  <prov:entity prov:id="seis_prov:sp005_wf_niasdf043">
+    <prov:label>Waveform Trace</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:waveform_trace</prov:type>
+    <seis_prov:component>N</seis_prov:component>
+    <seis_prov:description>Observed Data</seis_prov:description>
+  </prov:entity>
+  <prov:entity prov:id="seis_prov:sp005_wf_9043594j">
+    <prov:label>Waveform Trace</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:waveform_trace</prov:type>
+    <seis_prov:component>N</seis_prov:component>
+    <seis_prov:description>Observed Data</seis_prov:description>
+  </prov:entity>
+  <prov:used>
+    <prov:activity prov:ref="seis_prov:sp011_dt_ij2390jdl"></prov:activity>
+    <prov:entity prov:ref="seis_prov:sp005_wf_asdfoij0"></prov:entity>
+  </prov:used>
+  <prov:wasGeneratedBy>
+    <prov:entity prov:ref="seis_prov:sp005_wf_asdjf043m"></prov:entity>
+    <prov:activity prov:ref="seis_prov:sp011_dt_ij2390jdl"></prov:activity>
+  </prov:wasGeneratedBy>
+  <prov:used>
+    <prov:activity prov:ref="seis_prov:sp012_dt_ij09328j"></prov:activity>
+    <prov:entity prov:ref="seis_prov:sp005_wf_asdjf043m"></prov:entity>
+  </prov:used>
+  <prov:wasGeneratedBy>
+    <prov:entity prov:ref="seis_prov:sp005_wf_9034jfzq"></prov:entity>
+    <prov:activity prov:ref="seis_prov:sp012_dt_ij09328j"></prov:activity>
+  </prov:wasGeneratedBy>
+  <prov:used>
+    <prov:activity prov:ref="seis_prov:sp013_tp_aioj309j"></prov:activity>
+    <prov:entity prov:ref="seis_prov:sp005_wf_9034jfzq"></prov:entity>
+  </prov:used>
+  <prov:wasGeneratedBy>
+    <prov:entity prov:ref="seis_prov:sp005_wf_w90jasdfh"></prov:entity>
+    <prov:activity prov:ref="seis_prov:sp013_tp_aioj309j"></prov:activity>
+  </prov:wasGeneratedBy>
+  <prov:used>
+    <prov:activity prov:ref="seis_prov:sp014_bp_ijasdoij4l"></prov:activity>
+    <prov:entity prov:ref="seis_prov:sp005_wf_w90jasdfh"></prov:entity>
+  </prov:used>
+  <prov:wasGeneratedBy>
+    <prov:entity prov:ref="seis_prov:sp005_wf_j0asdfm9"></prov:entity>
+    <prov:activity prov:ref="seis_prov:sp014_bp_ijasdoij4l"></prov:activity>
+  </prov:wasGeneratedBy>
+  <prov:used>
+    <prov:activity prov:ref="seis_prov:sp001_rr_asdf34034"></prov:activity>
+    <prov:entity prov:ref="seis_prov:sp005_wf_j0asdfm9"></prov:entity>
+  </prov:used>
+  <prov:wasGeneratedBy>
+    <prov:entity prov:ref="seis_prov:sp005_wf_wasdfjme"></prov:entity>
+    <prov:activity prov:ref="seis_prov:sp001_rr_asdf34034"></prov:activity>
+  </prov:wasGeneratedBy>
+  <prov:used>
+    <prov:activity prov:ref="seis_prov:sp011_dt_asdfoij4"></prov:activity>
+    <prov:entity prov:ref="seis_prov:sp005_wf_wasdfjme"></prov:entity>
+  </prov:used>
+  <prov:wasGeneratedBy>
+    <prov:entity prov:ref="seis_prov:sp005_wf_j09boija"></prov:entity>
+    <prov:activity prov:ref="seis_prov:sp011_dt_asdfoij4"></prov:activity>
+  </prov:wasGeneratedBy>
+  <prov:used>
+    <prov:activity prov:ref="seis_prov:sp014_dt_inv3l90o"></prov:activity>
+    <prov:entity prov:ref="seis_prov:sp005_wf_j09boija"></prov:entity>
+  </prov:used>
+  <prov:wasGeneratedBy>
+    <prov:entity prov:ref="seis_prov:sp005_wf_jasdf943"></prov:entity>
+    <prov:activity prov:ref="seis_prov:sp014_dt_inv3l90o"></prov:activity>
+  </prov:wasGeneratedBy>
+  <prov:used>
+    <prov:activity prov:ref="seis_prov:sp013_tp_9304jlkmio"></prov:activity>
+    <prov:entity prov:ref="seis_prov:sp005_wf_jasdf943"></prov:entity>
+  </prov:used>
+  <prov:wasGeneratedBy>
+    <prov:entity prov:ref="seis_prov:sp005_wf_wj9hljo"></prov:entity>
+    <prov:activity prov:ref="seis_prov:sp013_tp_9304jlkmio"></prov:activity>
+  </prov:wasGeneratedBy>
+  <prov:used>
+    <prov:activity prov:ref="seis_prov:sp001_ip_4309jlkjn"></prov:activity>
+    <prov:entity prov:ref="seis_prov:sp005_wf_wj9hljo"></prov:entity>
+  </prov:used>
+  <prov:wasGeneratedBy>
+    <prov:entity prov:ref="seis_prov:sp005_wf_fijioj345"></prov:entity>
+    <prov:activity prov:ref="seis_prov:sp001_ip_4309jlkjn"></prov:activity>
+  </prov:wasGeneratedBy>
+  <prov:used>
+    <prov:activity prov:ref="seis_prov:sp011_dt_o3ijasdfuh"></prov:activity>
+    <prov:entity prov:ref="seis_prov:sp005_wf_0askjdf0"></prov:entity>
+  </prov:used>
+  <prov:wasGeneratedBy>
+    <prov:entity prov:ref="seis_prov:sp005_wf_wlkjsdf094"></prov:entity>
+    <prov:activity prov:ref="seis_prov:sp011_dt_o3ijasdfuh"></prov:activity>
+  </prov:wasGeneratedBy>
+  <prov:used>
+    <prov:activity prov:ref="seis_prov:sp012_dt_3809adlkjo"></prov:activity>
+    <prov:entity prov:ref="seis_prov:sp005_wf_wlkjsdf094"></prov:entity>
+  </prov:used>
+  <prov:wasGeneratedBy>
+    <prov:entity prov:ref="seis_prov:sp005_wf_wjasdf4380"></prov:entity>
+    <prov:activity prov:ref="seis_prov:sp012_dt_3809adlkjo"></prov:activity>
+  </prov:wasGeneratedBy>
+  <prov:used>
+    <prov:activity prov:ref="seis_prov:sp013_tp_kio390jf"></prov:activity>
+    <prov:entity prov:ref="seis_prov:sp005_wf_wjasdf4380"></prov:entity>
+  </prov:used>
+  <prov:wasGeneratedBy>
+    <prov:entity prov:ref="seis_prov:sp005_wf_ncbeirp"></prov:entity>
+    <prov:activity prov:ref="seis_prov:sp013_tp_kio390jf"></prov:activity>
+  </prov:wasGeneratedBy>
+  <prov:used>
+    <prov:activity prov:ref="seis_prov:sp014_bp_lij09jel"></prov:activity>
+    <prov:entity prov:ref="seis_prov:sp005_wf_ncbeirp"></prov:entity>
+  </prov:used>
+  <prov:wasGeneratedBy>
+    <prov:entity prov:ref="seis_prov:sp005_wf_wkjasdfio"></prov:entity>
+    <prov:activity prov:ref="seis_prov:sp014_bp_lij09jel"></prov:activity>
+  </prov:wasGeneratedBy>
+  <prov:used>
+    <prov:activity prov:ref="seis_prov:sp001_rr_ddcc155"></prov:activity>
+    <prov:entity prov:ref="seis_prov:sp005_wf_wkjasdfio"></prov:entity>
+  </prov:used>
+  <prov:wasGeneratedBy>
+    <prov:entity prov:ref="seis_prov:sp005_wf_wjasd9043"></prov:entity>
+    <prov:activity prov:ref="seis_prov:sp001_rr_ddcc155"></prov:activity>
+  </prov:wasGeneratedBy>
+  <prov:used>
+    <prov:activity prov:ref="seis_prov:sp011_dt_as034lkjo"></prov:activity>
+    <prov:entity prov:ref="seis_prov:sp005_wf_wjasd9043"></prov:entity>
+  </prov:used>
+  <prov:wasGeneratedBy>
+    <prov:entity prov:ref="seis_prov:sp005_wf_jasdfh4"></prov:entity>
+    <prov:activity prov:ref="seis_prov:sp011_dt_as034lkjo"></prov:activity>
+  </prov:wasGeneratedBy>
+  <prov:used>
+    <prov:activity prov:ref="seis_prov:sp012_dt_340jdflioj"></prov:activity>
+    <prov:entity prov:ref="seis_prov:sp005_wf_jasdfh4"></prov:entity>
+  </prov:used>
+  <prov:wasGeneratedBy>
+    <prov:entity prov:ref="seis_prov:sp005_wf_asdfj9043"></prov:entity>
+    <prov:activity prov:ref="seis_prov:sp012_dt_340jdflioj"></prov:activity>
+  </prov:wasGeneratedBy>
+  <prov:used>
+    <prov:activity prov:ref="seis_prov:sp013_tp_io34oic83"></prov:activity>
+    <prov:entity prov:ref="seis_prov:sp005_wf_asdfj9043"></prov:entity>
+  </prov:used>
+  <prov:wasGeneratedBy>
+    <prov:entity prov:ref="seis_prov:sp005_wf_niasdf043"></prov:entity>
+    <prov:activity prov:ref="seis_prov:sp013_tp_io34oic83"></prov:activity>
+  </prov:wasGeneratedBy>
+  <prov:used>
+    <prov:activity prov:ref="seis_prov:sp001_ip_i34j09d"></prov:activity>
+    <prov:entity prov:ref="seis_prov:sp005_wf_niasdf043"></prov:entity>
+  </prov:used>
+  <prov:wasGeneratedBy>
+    <prov:entity prov:ref="seis_prov:sp005_wf_9043594j"></prov:entity>
+    <prov:activity prov:ref="seis_prov:sp001_ip_i34j09d"></prov:activity>
+  </prov:wasGeneratedBy>
+  <prov:used>
+    <prov:activity prov:ref="seis_prov:sp001_rt_039jznwmp"></prov:activity>
+    <prov:entity prov:ref="seis_prov:sp005_wf_niasdf043"></prov:entity>
+  </prov:used>
+  <prov:used>
+    <prov:activity prov:ref="seis_prov:sp001_rt_039jznwmp"></prov:activity>
+    <prov:entity prov:ref="seis_prov:sp005_wf_wj9hljo"></prov:entity>
+  </prov:used>
+  <prov:wasGeneratedBy>
+    <prov:entity prov:ref="seis_prov:sp005_wf_aj0934mjh"></prov:entity>
+    <prov:activity prov:ref="seis_prov:sp001_rt_039jznwmp"></prov:activity>
+  </prov:wasGeneratedBy>
+  <prov:activity prov:id="seis_prov:sp001_ca_c7540fc">
+    <prov:label>Calculate Adjoint Source</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:calculate_adjoint_source</prov:type>
+    <seis_prov:adjoint_source_type>Time Frequency Phase</seis_prov:adjoint_source_type>
+  </prov:activity>
+  <prov:wasAssociatedWith>
+    <prov:activity prov:ref="seis_prov:sp001_ca_c7540fc"></prov:activity>
+    <prov:agent prov:ref="seis_prov:sp000_sa_9d0h43a"></prov:agent>
+  </prov:wasAssociatedWith>
+  <prov:used>
+    <prov:activity prov:ref="seis_prov:sp001_ca_c7540fc"></prov:activity>
+    <prov:entity prov:ref="seis_prov:sp005_wf_aj0934mjh"></prov:entity>
+  </prov:used>
+  <prov:used>
+    <prov:activity prov:ref="seis_prov:sp001_ca_c7540fc"></prov:activity>
+    <prov:entity prov:ref="seis_prov:sp005_wf_43ptb430df"></prov:entity>
+  </prov:used>
+  <prov:entity prov:id="seis_prov:sp001_as_cd84e87">
+    <prov:label>Adjoint Source</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:adjoint_source</prov:type>
+    <seis_prov:adjoint_source_type>Time Frequency Phase</seis_prov:adjoint_source_type>
+  </prov:entity>
+  <prov:wasGeneratedBy>
+    <prov:entity prov:ref="seis_prov:sp001_as_cd84e87"></prov:entity>
+    <prov:activity prov:ref="seis_prov:sp001_ca_c7540fc"></prov:activity>
+  </prov:wasGeneratedBy>
+</prov:document>
