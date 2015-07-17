@@ -393,6 +393,16 @@ def test_non_valid_id():
         "required by the standard."]
 
 
+def test_duplicate_id():
+    filename = INVALID_FILES["duplicate_ids.xml"]
+    result = validate(filename)
+    assert result.is_valid is False
+    assert result.warnings == []
+    assert result.errors == [
+        "One or more ids have been used more than once: 'sp001_wf_c17dd1f'"
+    ]
+
+
 if __name__ == "__main__":
     PATH = os.path.dirname(os.path.abspath(inspect.getfile(
                            inspect.currentframe())))

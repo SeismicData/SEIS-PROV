@@ -245,7 +245,7 @@ def __validate_seis_prov(file_object):
                       if sum([1 for a in seis_prov_ids if a == i]) > 1])
     if duplicates:
         _log_error("One or more ids have been used more than once: %s" %
-                   ", ".join(['%s' % _i for _i in duplicates]))
+                   ", ".join(["'%s'" % _i for _i in duplicates]))
 
 
 def _validate_prov_bundle(doc, json_schema, ns):
