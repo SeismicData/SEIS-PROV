@@ -98,7 +98,8 @@ table {
 
 /* Some padding on the logo in the side bar */
 .logo {
-    width: 85% !important
+    width: 85% !important;
+    padding-top: 25px !important;
 }
 
 
@@ -135,4 +136,8 @@ a:hover {
 
 .wy-side-nav-search input[type="text"] {
     border-color: #659872
+}
+
+.icon-home {
+    color: #DDDDDD !important
 }

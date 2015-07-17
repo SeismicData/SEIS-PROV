@@ -10,6 +10,8 @@ SEIS-PROV: Provenance for Seismological Data
     While fairly fleshed out this is still a draft. Discuss any potential changes on
     `GitHub <https://github.com/SeismicData/SEIS-PROV>`_.
 
+    Version of ``SEIS-PROV`` described in this document: |BOLDVERSION|
+
 Welcome to the ``SEIS-PROV`` documentation and definition - a draft for a
 standardized description of data history for seismology. This document is
 organized as follows:
