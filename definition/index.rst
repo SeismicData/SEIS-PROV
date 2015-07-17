@@ -46,7 +46,7 @@ Subsequently the actual definitions are detailed.
 ``SEIS-PROV`` documents must be validateable and verified to be correct to be
 of any use. This section details this process and which steps must be
 performed in order to make sure a given SEIS-PROV file is valid. It also
-documents the usage of a reference implementation for a ``SEIS-PROV``
+documents the usage of a reference implementation of a ``SEIS-PROV``
 validator.
 
 .. toctree::
