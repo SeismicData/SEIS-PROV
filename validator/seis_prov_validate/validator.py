@@ -356,6 +356,16 @@ def _validate_prov_bundle(doc, json_schema, ns):
 
         definition = json_def[prov_type]
 
+        # If the id is in the SEIS-PROV namespace, it must adhere to the
+        # regular expression of the documentation.
+        if id_in_seis_prov_ns:
+            id_regex = r"^sp\d{3,5}_" + definition["two_letter_code"] + \
+                r"_[a-z0-9]{7,12}$"
+            if re.match(id_regex, record.identifier.localpart) is None:
+                _log_error("The local part of the identifier '%s' does not "
+                           "match the regular expression '%s' as is required "
+                           "by the standard."
+                           % (str(record.identifier), id_regex))
         count += 1
 
         # Validate the label.
