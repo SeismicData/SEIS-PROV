@@ -4,27 +4,28 @@
     "name": "bandpass_filter",
     "two_letter_code": "bp",
     "label": "Bandpass Filter",
-    "description": "Bandpass the data.",
+    "description": "A Bandpass filter. There is a huge variety of bandpass filters out there and this activity cannot capture them all in full detail.",
     "other_seis_prov_attributes_allowed": false,
     "attributes": [
         {
             "name": "filter_type",
             "types": ["xsd:string"],
-            "description": "The type of filter, e.g. `Butterworth`, `FIR`, `Chebyshev Type I/II`, `Bessel`, ...",
+            "description": "The type of filter, one of ``Butterworth``, ``FIR``, ``IIR``, ``Bessel``, ``Cosine SAC Taper``. Please give some more information with one or more of the other attributes. ``Cosine SAC Taper`` describes the frequency domain taper the SAC software package employs during instrument deconvolution.",
             "required": true,
+            "pattern":"Butterworth|FIR|IIR|Bessel|Cosine SAC Taper",
             "example_value": "Butterworth"
         },
         {
             "name": "lower_corner_frequency",
             "types": ["xsd:double"],
-            "description": "The lower corner frequency of the filter if applicable in Hz",
+            "description": "The lower corner frequency of the filter if applicable in Hz.",
             "required": false,
             "example_value": 5.0
         },
         {
-            "name": "uppoer_corner_frequency",
+            "name": "upper_corner_frequency",
             "types": ["xsd:double"],
-            "description": "The upper corner frequency of the filter if applicable in Hz",
+            "description": "The upper corner frequency of the filter if applicable in Hz.",
             "required": false,
             "example_value": 15.0
         },
@@ -43,20 +44,12 @@
             "example_value": 1
         },
         {
-            "name": "chebychev_transition_bw",
-            "types": ["xsd:double"],
+            "name": "sac_cosine_taper_frequency_limits",
+            "types": ["xsd:string"],
+            "description": "The frequency limits of the SAC frequency domain cosine taper in Hz from lowest to highest.",
             "required": false,
-            "description": "The transition band width in the case of a Chebychev filter.",
-            "example_value": 10.0,
-            "skip_example_in_doc": true
-        },
-        {
-            "name": "chebychev_attenuation_factor",
-            "types": ["xsd:double"],
-            "required": false,
-            "description": "The attenuation factor in the case of a Chebychev filter.",
-            "example_value": 20.0,
-            "skip_example_in_doc": true
+            "pattern": "^[+-]?(\\d*\\.)?\\d+,[+-]?(\\d*\\.)?\\d+,[+-]?(\\d*\\.)?\\d+,[+-]?(\\d*\\.)?\\d+$",
+            "example_value": "0.02,0.1,1,5"
         }
     ]
 }

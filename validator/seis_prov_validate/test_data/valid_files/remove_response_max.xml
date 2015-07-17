@@ -2,7 +2,7 @@
   <prov:activity prov:id="seis_prov:sp001_rr_ddcc155">
     <prov:label>Remove Response</prov:label>
     <prov:type xsi:type="xsd:string">seis_prov:remove_response</prov:type>
-    <seis_prov:input_units>m</seis_prov:input_units>
+    <seis_prov:input_units>counts</seis_prov:input_units>
     <seis_prov:output_units>m/s</seis_prov:output_units>
     <seis_prov:water_level xsi:type="xsd:double">60.0</seis_prov:water_level>
   </prov:activity>

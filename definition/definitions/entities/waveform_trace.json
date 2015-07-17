@@ -16,6 +16,14 @@
             "example_value": "BW.FURT..EHZ"
         },
         {
+            "name": "component",
+            "types": ["xsd:string"],
+            "pattern": "Z|N|E|R|T",
+            "description": "The component of the recording. Many algorithms require a specific component and this attribute enables the description of these algorithms without using a specific SEED id.",
+            "required": false,
+            "example_value": "Z"
+        },
+        {
             "name": "start_time",
             "types": ["xsd:dateTime"],
             "description": "The time of the first sample in UTC.",

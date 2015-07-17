@@ -10,8 +10,9 @@
         {
             "name": "interpolation_method",
             "types": ["xsd:string"],
-            "description": "The method used to interpolate the samples.",
+            "description": "The method used to interpolate the samples. ``weighted average slopes`` is the interpolation method use by SAC and detailed in a 1976 paper by Wiggins. This is in wide use and thus offered as a special option here.",
             "required": true,
+            "pattern": "weighted average slopes|linear spline|quadratic spline|cubic spline|linear|nearest",
             "example_value": "cubic spline"
         },
         {

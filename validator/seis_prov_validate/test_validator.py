@@ -379,7 +379,7 @@ def test_detrending_with_wrong_method():
     assert result.errors == [
         "Attribute 'detrending_method' in record 'seis_prov:sp001_dt_4e3a746' "
         "with the value 'random' does not match the regex "
-        "'detrend|demean|simple'."]
+        "'linear fit|demean|simple'."]
 
 
 if __name__ == "__main__":

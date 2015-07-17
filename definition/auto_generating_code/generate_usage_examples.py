@@ -19,7 +19,8 @@ with io.open(os.path.join(current_dir, os.pardir,
 EXAMPLES = ["example_detailed_processing_chain",
             "example_schematic_processing_chain",
             "example_waveform_simulation",
-            "example_cross_correlation"]
+            "example_cross_correlation",
+            "example_adjoint_source"]
 
 
 TEMPLATE = """

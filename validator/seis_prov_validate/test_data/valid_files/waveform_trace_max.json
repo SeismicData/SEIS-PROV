@@ -7,6 +7,7 @@
                 "$": 90.0,
                 "type": "xsd:double"
             },
+            "seis_prov:component": "Z",
             "seis_prov:dip": {
                 "$": 0.0,
                 "type": "xsd:double"

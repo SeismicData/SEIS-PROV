@@ -16,7 +16,8 @@
                 "$": "1",
                 "type": "xsd:positiveInteger"
             },
-            "seis_prov:uppoer_corner_frequency": {
+            "seis_prov:sac_cosine_taper_frequency_limits": "0.02,0.1,1,5",
+            "seis_prov:upper_corner_frequency": {
                 "$": 15.0,
                 "type": "xsd:double"
             }

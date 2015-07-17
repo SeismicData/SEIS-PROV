@@ -3,6 +3,7 @@
     <prov:label>Waveform Trace</prov:label>
     <prov:type xsi:type="xsd:string">seis_prov:waveform_trace</prov:type>
     <seis_prov:azimuth xsi:type="xsd:double">90.0</seis_prov:azimuth>
+    <seis_prov:component>Z</seis_prov:component>
     <seis_prov:dip xsi:type="xsd:double">0.0</seis_prov:dip>
     <seis_prov:number_of_samples xsi:type="xsd:positiveInteger">10000</seis_prov:number_of_samples>
     <seis_prov:sampling_rate xsi:type="xsd:double">20.0</seis_prov:sampling_rate>

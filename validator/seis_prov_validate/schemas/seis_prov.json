@@ -3,16 +3,17 @@
         "bandpass_filter": {
             "attributes": [
                 {
-                    "description": "The type of filter, e.g. `Butterworth`, `FIR`, `Chebyshev Type I/II`, `Bessel`, ...",
+                    "description": "The type of filter, one of ``Butterworth``, ``FIR``, ``IIR``, ``Bessel``, ``Cosine SAC Taper``. Please give some more information with one or more of the other attributes. ``Cosine SAC Taper`` describes the frequency domain taper the SAC software package employs during instrument deconvolution.",
                     "example_value": "Butterworth",
                     "name": "filter_type",
+                    "pattern": "Butterworth|FIR|IIR|Bessel|Cosine SAC Taper",
                     "required": true,
                     "types": [
                         "xsd:string"
                     ]
                 },
                 {
-                    "description": "The lower corner frequency of the filter if applicable in Hz",
+                    "description": "The lower corner frequency of the filter if applicable in Hz.",
                     "example_value": 5.0,
                     "name": "lower_corner_frequency",
                     "required": false,
@@ -21,9 +22,9 @@
                     ]
                 },
                 {
-                    "description": "The upper corner frequency of the filter if applicable in Hz",
+                    "description": "The upper corner frequency of the filter if applicable in Hz.",
                     "example_value": 15.0,
-                    "name": "uppoer_corner_frequency",
+                    "name": "upper_corner_frequency",
                     "required": false,
                     "types": [
                         "xsd:double"
@@ -48,27 +49,17 @@
                     ]
                 },
                 {
-                    "description": "The transition band width in the case of a Chebychev filter.",
-                    "example_value": 10.0,
-                    "name": "chebychev_transition_bw",
+                    "description": "The frequency limits of the SAC frequency domain cosine taper in Hz from lowest to highest.",
+                    "example_value": "0.02,0.1,1,5",
+                    "name": "sac_cosine_taper_frequency_limits",
+                    "pattern": "^[+-]?(\\d*\\.)?\\d+,[+-]?(\\d*\\.)?\\d+,[+-]?(\\d*\\.)?\\d+,[+-]?(\\d*\\.)?\\d+$",
                     "required": false,
-                    "skip_example_in_doc": true,
                     "types": [
-                        "xsd:double"
-                    ]
-                },
-                {
-                    "description": "The attenuation factor in the case of a Chebychev filter.",
-                    "example_value": 20.0,
-                    "name": "chebychev_attenuation_factor",
-                    "required": false,
-                    "skip_example_in_doc": true,
-                    "types": [
-                        "xsd:double"
+                        "xsd:string"
                     ]
                 }
             ],
-            "description": "Bandpass the data.",
+            "description": "A Bandpass filter. There is a huge variety of bandpass filters out there and this activity cannot capture them all in full detail.",
             "label": "Bandpass Filter",
             "name": "bandpass_filter",
             "other_seis_prov_attributes_allowed": false,
@@ -265,7 +256,7 @@
                     "description": "The method used to remove the trend from the data. ``detrend`` means substracting the best fitting linear line, ``demean`` removes the mean, and ``simple`` subtracts a line through the first and last point.",
                     "example_value": "demean",
                     "name": "detrending_method",
-                    "pattern": "detrend|demean|simple",
+                    "pattern": "linear fit|demean|simple",
                     "required": true,
                     "types": [
                         "xsd:string"
@@ -464,9 +455,10 @@
         "interpolate": {
             "attributes": [
                 {
-                    "description": "The method used to interpolate the samples.",
+                    "description": "The method used to interpolate the samples. ``weighted average slopes`` is the interpolation method use by SAC and detailed in a 1976 paper by Wiggins. This is in wide use and thus offered as a special option here.",
                     "example_value": "cubic spline",
                     "name": "interpolation_method",
+                    "pattern": "weighted average slopes|linear spline|quadratic spline|cubic spline|linear|nearest",
                     "required": true,
                     "types": [
                         "xsd:string"
@@ -687,7 +679,7 @@
                 },
                 {
                     "description": "Units of the input data in a common abbreviation, e.g. `m`, `m/s`, `nm/s^2`, ...",
-                    "example_value": "m",
+                    "example_value": "counts",
                     "name": "input_units",
                     "required": false,
                     "types": [
@@ -1351,6 +1343,16 @@
                     "example_value": "BW.FURT..EHZ",
                     "name": "seed_id",
                     "pattern": "^[A-Z0-9]{1,2}\\.[A-Z0-9]{1,5}\\.[A-Z0-9]{0,2}\\.[A-Z0-9]{3}$",
+                    "required": false,
+                    "types": [
+                        "xsd:string"
+                    ]
+                },
+                {
+                    "description": "The component of the recording. Many algorithms require a specific component and this attribute enables the description of these algorithms without using a specific SEED id.",
+                    "example_value": "Z",
+                    "name": "component",
+                    "pattern": "Z|N|E|R|T",
                     "required": false,
                     "types": [
                         "xsd:string"

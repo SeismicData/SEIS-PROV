@@ -3,7 +3,7 @@
         "seis_prov:sp001_rr_ddcc155": {
             "prov:label": "Remove Response",
             "prov:type": "seis_prov:remove_response",
-            "seis_prov:input_units": "m",
+            "seis_prov:input_units": "counts",
             "seis_prov:output_units": "m/s",
             "seis_prov:water_level": {
                 "$": 60.0,

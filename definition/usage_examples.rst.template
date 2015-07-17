@@ -74,3 +74,9 @@ processing steps that have been applied to the waveforms prior to the
 correlation.
 
 {example_cross_correlation}
+
+
+Adjoint Source Calculation
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+{example_adjoint_source}

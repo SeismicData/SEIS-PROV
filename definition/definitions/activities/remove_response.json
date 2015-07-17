@@ -19,7 +19,7 @@
             "types": ["xsd:string"],
             "description": "Units of the input data in a common abbreviation, e.g. `m`, `m/s`, `nm/s^2`, ...",
             "required": false,
-            "example_value": "m"
+            "example_value": "counts"
         },
         {
             "name": "output_units",
