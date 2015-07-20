@@ -65,7 +65,7 @@ file_object = pr.entity("seis_prov:sp000_fi_d49dh0h4", other_attributes=(
     ("prov:label", "File"),
     ("prov:type", "seis_prov:file"),
     ("seis_prov:filename", "constants.h"),
-    ("seis_prov:location", "/AuxiliaryData/Files/constants.h"),
+    ("seis_prov:location", "/AuxiliaryData/Files/constants_h"),
     ("seis_prov:location_type", "HDF5 Data Set")
 ))
 

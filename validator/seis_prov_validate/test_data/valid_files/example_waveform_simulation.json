@@ -55,7 +55,7 @@
             "prov:label": "File",
             "prov:type": "seis_prov:file",
             "seis_prov:filename": "constants.h",
-            "seis_prov:location": "/AuxiliaryData/Files/constants.h",
+            "seis_prov:location": "/AuxiliaryData/Files/constants_h",
             "seis_prov:location_type": "HDF5 Data Set"
         },
         "seis_prov:sp000_in_38jd89da8l": {
