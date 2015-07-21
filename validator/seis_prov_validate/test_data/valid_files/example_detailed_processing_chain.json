@@ -45,7 +45,7 @@
         }
     },
     "entity": {
-        "seis_prov:sp001_wf_a34j4didj3": {
+        "seis_prov:sp001_wf_490dfadf3": {
             "prov:label": "Waveform Trace",
             "prov:type": "seis_prov:waveform_trace",
             "seis_prov:number_of_samples": {
@@ -124,7 +124,7 @@
     "used": {
         "_:id4": {
             "prov:activity": "seis_prov:sp002_dt_f87sf7sf78",
-            "prov:entity": "seis_prov:sp001_wf_a34j4didj3"
+            "prov:entity": "seis_prov:sp001_wf_490dfadf3"
         },
         "_:id5": {
             "prov:activity": "seis_prov:sp004_lp_f87sf7sf78",

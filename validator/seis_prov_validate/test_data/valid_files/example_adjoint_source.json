@@ -403,7 +403,7 @@
             "seis_prov:component": "N",
             "seis_prov:description": "Observed Data"
         },
-        "seis_prov:sp001_wf_a34j4didj3": {
+        "seis_prov:sp001_wf_39409df": {
             "prov:label": "Waveform Trace",
             "prov:type": "seis_prov:waveform_trace",
             "seis_prov:component": "N",
@@ -729,7 +729,7 @@
         },
         "_:id42": {
             "prov:activity": "seis_prov:sp002_dt_4ijf0dfo0",
-            "prov:entity": "seis_prov:sp001_wf_a34j4didj3"
+            "prov:entity": "seis_prov:sp001_wf_39409df"
         },
         "_:id44": {
             "prov:activity": "seis_prov:sp003_dt_4834f0dj0",
@@ -1089,7 +1089,7 @@
         },
         "_:id7": {
             "prov:activity": "seis_prov:sp001_ws_f87sf7sf78",
-            "prov:entity": "seis_prov:sp001_wf_a34j4didj3"
+            "prov:entity": "seis_prov:sp001_wf_39409df"
         },
         "_:id79": {
             "prov:activity": "seis_prov:sp001_dt_ij2390jdl",

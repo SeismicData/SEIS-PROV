@@ -6,7 +6,7 @@
     <seis_prov:software_version>0.10.1</seis_prov:software_version>
     <seis_prov:website>http://www.obspy.org</seis_prov:website>
   </prov:softwareAgent>
-  <prov:entity prov:id="seis_prov:sp002_wf_a34j4didj3">
+  <prov:entity prov:id="seis_prov:sp002_wf_4390jsdfj">
     <prov:label>Waveform Trace</prov:label>
     <prov:type xsi:type="xsd:string">seis_prov:waveform_trace</prov:type>
     <seis_prov:number_of_samples xsi:type="xsd:int">6000</seis_prov:number_of_samples>
@@ -45,7 +45,7 @@
   </prov:wasAssociatedWith>
   <prov:used>
     <prov:activity prov:ref="seis_prov:sp004_co_f87sf7sf78"></prov:activity>
-    <prov:entity prov:ref="seis_prov:sp002_wf_a34j4didj3"></prov:entity>
+    <prov:entity prov:ref="seis_prov:sp002_wf_4390jsdfj"></prov:entity>
   </prov:used>
   <prov:used>
     <prov:activity prov:ref="seis_prov:sp004_co_f87sf7sf78"></prov:activity>

@@ -8,7 +8,7 @@ obspy = pr.agent("seis_prov:sp000_sa_9dig8ata", other_attributes=(
     ("seis_prov:doi", "10.1785/gssrl.81.3.530"))
 )
 
-trace_1 = pr.entity("seis_prov:sp001_wf_a34j4didj3", other_attributes=(
+trace_1 = pr.entity("seis_prov:sp001_wf_490dfadf3", other_attributes=(
     ("prov:label", "Waveform Trace"),
     ("prov:type", "seis_prov:waveform_trace"),
     ("seis_prov:seed_id", "BW.FURT.00.BHZ"),

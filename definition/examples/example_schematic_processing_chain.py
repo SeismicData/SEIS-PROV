@@ -1,4 +1,4 @@
-trace_1 = pr.entity("seis_prov:sp001_wf_a34j4didj3", other_attributes=(
+trace_1 = pr.entity("seis_prov:sp001_wf_0439jdf", other_attributes=(
     ("prov:label", "Waveform Trace"),
     ("prov:type", "seis_prov:waveform_trace"),
 ))

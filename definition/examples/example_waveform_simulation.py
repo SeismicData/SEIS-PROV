@@ -70,7 +70,7 @@ file_object = pr.entity("seis_prov:sp000_fi_d49dh0h4", other_attributes=(
 ))
 
 
-trace = pr.entity("seis_prov:sp001_wf_a34j4didj3", other_attributes=(
+trace = pr.entity("seis_prov:sp001_wf_4j09fj3", other_attributes=(
     ("prov:label", "Waveform Trace"),
     ("prov:type", "seis_prov:waveform_trace"),
     ("seis_prov:description", "Synthetic Waveform")

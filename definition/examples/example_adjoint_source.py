@@ -107,7 +107,7 @@ pr.usage(simulation, model)
 pr.usage(simulation, input_parameters)
 pr.usage(simulation, file_object)
 
-synthetic_trace_N_original = pr.entity("seis_prov:sp001_wf_a34j4didj3", other_attributes=(
+synthetic_trace_N_original = pr.entity("seis_prov:sp001_wf_39409df", other_attributes=(
     ("prov:label", "Waveform Trace"),
     ("prov:type", "seis_prov:waveform_trace"),
     ("seis_prov:component", "N"),

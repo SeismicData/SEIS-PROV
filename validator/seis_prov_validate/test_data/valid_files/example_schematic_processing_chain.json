@@ -32,7 +32,7 @@
         }
     },
     "entity": {
-        "seis_prov:sp001_wf_a34j4didj3": {
+        "seis_prov:sp001_wf_0439jdf": {
             "prov:label": "Waveform Trace",
             "prov:type": "seis_prov:waveform_trace"
         },
@@ -55,7 +55,7 @@
     "used": {
         "_:id1": {
             "prov:activity": "seis_prov:sp002_dt_f87sf7sf78",
-            "prov:entity": "seis_prov:sp001_wf_a34j4didj3"
+            "prov:entity": "seis_prov:sp001_wf_0439jdf"
         },
         "_:id2": {
             "prov:activity": "seis_prov:sp004_lp_f87sf7sf78",

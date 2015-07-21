@@ -121,7 +121,7 @@
             "seis_prov:TOPOGRAPHY": false,
             "seis_prov:USE_LDDRK": false
         },
-        "seis_prov:sp001_wf_a34j4didj3": {
+        "seis_prov:sp001_wf_4j09fj3": {
             "prov:label": "Waveform Trace",
             "prov:type": "seis_prov:waveform_trace",
             "seis_prov:description": "Synthetic Waveform"
@@ -157,7 +157,7 @@
     "wasGeneratedBy": {
         "_:id7": {
             "prov:activity": "seis_prov:sp001_ws_f87sf7sf78",
-            "prov:entity": "seis_prov:sp001_wf_a34j4didj3"
+            "prov:entity": "seis_prov:sp001_wf_4j09fj3"
         }
     }
 }
