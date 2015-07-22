@@ -297,217 +297,6 @@ In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
 
 ------
 
-Person
-^^^^^^
-
-A person is an agent either denoting who is responsible for a certain activity (``wasAssociatedWith``) or who is responsible for the actions of another agent (``actedOnBehalfOf``). This is useful to state who performed a particular task. A person in the ``SEIS-PROV`` namespace must have a name and can have an email address. A person can also have any number of additional attributes in the ``SEIS-PROV`` namespace to describe it in more detail.
-
-.. raw:: html
-
-    <div id="tab-container" class="tab-container">
-      <ul class='etabs'>
-        <li class='tab'>
-            <a href="#tabs-agents-person-description">Definition</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-agents-person-json_def">JSON Definition</a>
-        </li>
-      </ul>
-      <div class="tab-contents" id="tabs-agents-person-description">
-
-
-Properties
-    ============================ =======
-    Name                         Value
-    ============================ =======
-    ``prov:id``                  ``person``
-    ``prov:label``               ``*``
-    Two letter ID code:          ``pp``
-    ============================ =======
-
-Required Attributes
-    ====  ==============  =======================
-    Name  Type            Description            
-    ====  ==============  =======================
-    name  ``xsd:string``  The name of the person.
-    ====  ==============  =======================
-
-Optional Attributes
-    =====  ==============  ================================
-    Name   Type            Description                     
-    =====  ==============  ================================
-    email  ``xsd:string``  The email address of the person.
-    =====  ==============  ================================
-
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-agents-person-json_def">
-
-This shows the JSON that is used to generate the rest of the definition.
-
-.. literalinclude:: definitions/agents/person.json
-    :language: json
-
-.. raw:: html
-
-    </div>
-    </div>
-
-
-**Minimal Example**
-
-A concrete ``person`` node example is illustrated here as a graph, in code, and in various representations. This is a minimal but valid ``person`` node. See below for a full example.
-
-.. raw:: html
-
-    <div id="tab-container" class="tab-container">
-      <ul class='etabs'>
-        <li class='tab'>
-            <a href="#tabs-agents-person-ex_min-graph">Graph</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-agents-person-ex_min-python">Python Code</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-agents-person-ex_min-xml">PROV-XML</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-agents-person-ex_min-json">PROV-JSON</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-agents-person-ex_min-provn">PROV-N</a>
-        </li>
-      </ul>
-      <div class="tab-contents" id="tabs-agents-person-ex_min-graph">
-
-.. graphviz:: _generated/dot/agents/person_min.dot
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-agents-person-ex_min-python">
-
-Python code utilizing the `prov <http://prov.readthedocs.org/>`_ package.
-
-.. literalinclude:: _generated/py/agents/person_min.py
-    :language: python
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-agents-person-ex_min-xml">
-
-In the `PROV-XML <http://www.w3.org/TR/prov-xml/>`_ serialization.
-
-.. literalinclude:: _generated/xml/agents/person_min.xml
-    :language: xml
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-agents-person-ex_min-json">
-
-In the
-`PROV-JSON <http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/>`_
-serialization.
-
-.. literalinclude:: _generated/json/agents/person_min.json
-    :language: json
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-agents-person-ex_min-provn">
-
-In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
-
-.. literalinclude:: _generated/provn/agents/person_min.provn
-
-.. raw:: html
-
-    </div>
-    </div>
-
-
-**Full Example**
-
-A concrete ``person`` node example is illustrated here as a graph, in code, and in various representations. This is a full ``person`` node containing the maximum amount of information.
-
-.. raw:: html
-
-    <div id="tab-container" class="tab-container">
-      <ul class='etabs'>
-        <li class='tab'>
-            <a href="#tabs-agents-person-ex_max-graph">Graph</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-agents-person-ex_max-python">Python Code</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-agents-person-ex_max-xml">PROV-XML</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-agents-person-ex_max-json">PROV-JSON</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-agents-person-ex_max-provn">PROV-N</a>
-        </li>
-      </ul>
-      <div class="tab-contents" id="tabs-agents-person-ex_max-graph">
-
-.. graphviz:: _generated/dot/agents/person_max.dot
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-agents-person-ex_max-python">
-
-Python code utilizing the `prov <http://prov.readthedocs.org/>`_ package.
-
-.. literalinclude:: _generated/py/agents/person_max.py
-    :language: python
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-agents-person-ex_max-xml">
-
-In the `PROV-XML <http://www.w3.org/TR/prov-xml/>`_ serialization.
-
-.. literalinclude:: _generated/xml/agents/person_max.xml
-    :language: xml
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-agents-person-ex_max-json">
-
-In the
-`PROV-JSON <http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/>`_
-serialization.
-
-.. literalinclude:: _generated/json/agents/person_max.json
-    :language: json
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-agents-person-ex_max-provn">
-
-In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
-
-.. literalinclude:: _generated/provn/agents/person_max.provn
-
-.. raw:: html
-
-    </div>
-    </div>
-
-
-------
-
 Organization
 ^^^^^^^^^^^^
 
@@ -710,6 +499,217 @@ serialization.
 In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
 
 .. literalinclude:: _generated/provn/agents/organization_max.provn
+
+.. raw:: html
+
+    </div>
+    </div>
+
+
+------
+
+Person
+^^^^^^
+
+A person is an agent either denoting who is responsible for a certain activity (``wasAssociatedWith``) or who is responsible for the actions of another agent (``actedOnBehalfOf``). This is useful to state who performed a particular task. A person in the ``SEIS-PROV`` namespace must have a name and can have an email address. A person can also have any number of additional attributes in the ``SEIS-PROV`` namespace to describe it in more detail.
+
+.. raw:: html
+
+    <div id="tab-container" class="tab-container">
+      <ul class='etabs'>
+        <li class='tab'>
+            <a href="#tabs-agents-person-description">Definition</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-agents-person-json_def">JSON Definition</a>
+        </li>
+      </ul>
+      <div class="tab-contents" id="tabs-agents-person-description">
+
+
+Properties
+    ============================ =======
+    Name                         Value
+    ============================ =======
+    ``prov:id``                  ``person``
+    ``prov:label``               ``*``
+    Two letter ID code:          ``pp``
+    ============================ =======
+
+Required Attributes
+    ====  ==============  =======================
+    Name  Type            Description            
+    ====  ==============  =======================
+    name  ``xsd:string``  The name of the person.
+    ====  ==============  =======================
+
+Optional Attributes
+    =====  ==============  ================================
+    Name   Type            Description                     
+    =====  ==============  ================================
+    email  ``xsd:string``  The email address of the person.
+    =====  ==============  ================================
+
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-agents-person-json_def">
+
+This shows the JSON that is used to generate the rest of the definition.
+
+.. literalinclude:: definitions/agents/person.json
+    :language: json
+
+.. raw:: html
+
+    </div>
+    </div>
+
+
+**Minimal Example**
+
+A concrete ``person`` node example is illustrated here as a graph, in code, and in various representations. This is a minimal but valid ``person`` node. See below for a full example.
+
+.. raw:: html
+
+    <div id="tab-container" class="tab-container">
+      <ul class='etabs'>
+        <li class='tab'>
+            <a href="#tabs-agents-person-ex_min-graph">Graph</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-agents-person-ex_min-python">Python Code</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-agents-person-ex_min-xml">PROV-XML</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-agents-person-ex_min-json">PROV-JSON</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-agents-person-ex_min-provn">PROV-N</a>
+        </li>
+      </ul>
+      <div class="tab-contents" id="tabs-agents-person-ex_min-graph">
+
+.. graphviz:: _generated/dot/agents/person_min.dot
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-agents-person-ex_min-python">
+
+Python code utilizing the `prov <http://prov.readthedocs.org/>`_ package.
+
+.. literalinclude:: _generated/py/agents/person_min.py
+    :language: python
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-agents-person-ex_min-xml">
+
+In the `PROV-XML <http://www.w3.org/TR/prov-xml/>`_ serialization.
+
+.. literalinclude:: _generated/xml/agents/person_min.xml
+    :language: xml
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-agents-person-ex_min-json">
+
+In the
+`PROV-JSON <http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/>`_
+serialization.
+
+.. literalinclude:: _generated/json/agents/person_min.json
+    :language: json
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-agents-person-ex_min-provn">
+
+In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
+
+.. literalinclude:: _generated/provn/agents/person_min.provn
+
+.. raw:: html
+
+    </div>
+    </div>
+
+
+**Full Example**
+
+A concrete ``person`` node example is illustrated here as a graph, in code, and in various representations. This is a full ``person`` node containing the maximum amount of information.
+
+.. raw:: html
+
+    <div id="tab-container" class="tab-container">
+      <ul class='etabs'>
+        <li class='tab'>
+            <a href="#tabs-agents-person-ex_max-graph">Graph</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-agents-person-ex_max-python">Python Code</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-agents-person-ex_max-xml">PROV-XML</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-agents-person-ex_max-json">PROV-JSON</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-agents-person-ex_max-provn">PROV-N</a>
+        </li>
+      </ul>
+      <div class="tab-contents" id="tabs-agents-person-ex_max-graph">
+
+.. graphviz:: _generated/dot/agents/person_max.dot
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-agents-person-ex_max-python">
+
+Python code utilizing the `prov <http://prov.readthedocs.org/>`_ package.
+
+.. literalinclude:: _generated/py/agents/person_max.py
+    :language: python
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-agents-person-ex_max-xml">
+
+In the `PROV-XML <http://www.w3.org/TR/prov-xml/>`_ serialization.
+
+.. literalinclude:: _generated/xml/agents/person_max.xml
+    :language: xml
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-agents-person-ex_max-json">
+
+In the
+`PROV-JSON <http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/>`_
+serialization.
+
+.. literalinclude:: _generated/json/agents/person_max.json
+    :language: json
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-agents-person-ex_max-provn">
+
+In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
+
+.. literalinclude:: _generated/provn/agents/person_max.provn
 
 .. raw:: html
 
@@ -947,268 +947,6 @@ In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
 
 ------
 
-Input Parameters
-^^^^^^^^^^^^^^^^
-
-The input parameters for a program like a waveform solvers as a list of key, value pairs. Each key can live in the ``SEIS-PROV`` namespace.
-
-.. raw:: html
-
-    <div id="tab-container" class="tab-container">
-      <ul class='etabs'>
-        <li class='tab'>
-            <a href="#tabs-entities-input_parameters-description">Definition</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-entities-input_parameters-json_def">JSON Definition</a>
-        </li>
-      </ul>
-      <div class="tab-contents" id="tabs-entities-input_parameters-description">
-
-
-Properties
-    ============================ =======
-    Name                         Value
-    ============================ =======
-    ``prov:id``                  ``input_parameters``
-    ``prov:label``               ``Input Parameters``
-    Two letter ID code:          ``in``
-    ============================ =======
-
-Required Attributes
-    *None*
-
-Optional Attributes
-    *None*
-
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-entities-input_parameters-json_def">
-
-This shows the JSON that is used to generate the rest of the definition.
-
-.. literalinclude:: definitions/entities/input_parameters.json
-    :language: json
-
-.. raw:: html
-
-    </div>
-    </div>
-
-
-**Example**
-
-A concrete ``input_parameters`` node example is illustrated here as a graph, in code, and in various representations.
-
-.. raw:: html
-
-    <div id="tab-container" class="tab-container">
-      <ul class='etabs'>
-        <li class='tab'>
-            <a href="#tabs-entities-input_parameters-ex-graph">Graph</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-entities-input_parameters-ex-python">Python Code</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-entities-input_parameters-ex-xml">PROV-XML</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-entities-input_parameters-ex-json">PROV-JSON</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-entities-input_parameters-ex-provn">PROV-N</a>
-        </li>
-      </ul>
-      <div class="tab-contents" id="tabs-entities-input_parameters-ex-graph">
-
-.. graphviz:: _generated/dot/entities/input_parameters_max.dot
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-entities-input_parameters-ex-python">
-
-Python code utilizing the `prov <http://prov.readthedocs.org/>`_ package.
-
-.. literalinclude:: _generated/py/entities/input_parameters_max.py
-    :language: python
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-entities-input_parameters-ex-xml">
-
-In the `PROV-XML <http://www.w3.org/TR/prov-xml/>`_ serialization.
-
-.. literalinclude:: _generated/xml/entities/input_parameters_max.xml
-    :language: xml
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-entities-input_parameters-ex-json">
-
-In the
-`PROV-JSON <http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/>`_
-serialization.
-
-.. literalinclude:: _generated/json/entities/input_parameters_max.json
-    :language: json
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-entities-input_parameters-ex-provn">
-
-In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
-
-.. literalinclude:: _generated/provn/entities/input_parameters_max.provn
-
-.. raw:: html
-
-    </div>
-    </div>
-
-
-------
-
-File
-^^^^
-
-In some cases arbitrary files are needed to describe the provenance of something. Examples are special source code files who's information cannot be represented in the ``Input Parameter`` entity. This entity allows to refer to arbitrary files. Each file is represented by a filename, a location, and a location type. The location might be a URL; then provenance discovery is simple. It might also be a filename or a path in a container format. Users are responsible to either ship the files alongside the provenance information or provide access by other means.
-
-.. raw:: html
-
-    <div id="tab-container" class="tab-container">
-      <ul class='etabs'>
-        <li class='tab'>
-            <a href="#tabs-entities-file-description">Definition</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-entities-file-json_def">JSON Definition</a>
-        </li>
-      </ul>
-      <div class="tab-contents" id="tabs-entities-file-description">
-
-
-Properties
-    ============================ =======
-    Name                         Value
-    ============================ =======
-    ``prov:id``                  ``file``
-    ``prov:label``               ``File``
-    Two letter ID code:          ``fi``
-    ============================ =======
-
-Required Attributes
-    =============  ==============  ==========================================================================================================
-    Name           Type            Description                                                                                               
-    =============  ==============  ==========================================================================================================
-    filename       ``xsd:string``  The name of the file.                                                                                     
-    location       ``xsd:string``  The location of the file in a way that can be discovered. Can be a URL, a file path, or something similar.
-    location_type  ``xsd:string``  The type of location. Examples include ``Filename``, ``URL``, ``HDF5 Data Set``, ``SFTP Address``, ...    
-    =============  ==============  ==========================================================================================================
-
-Optional Attributes
-    *None*
-
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-entities-file-json_def">
-
-This shows the JSON that is used to generate the rest of the definition.
-
-.. literalinclude:: definitions/entities/file.json
-    :language: json
-
-.. raw:: html
-
-    </div>
-    </div>
-
-
-**Example**
-
-A concrete ``file`` node example is illustrated here as a graph, in code, and in various representations.
-
-.. raw:: html
-
-    <div id="tab-container" class="tab-container">
-      <ul class='etabs'>
-        <li class='tab'>
-            <a href="#tabs-entities-file-ex-graph">Graph</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-entities-file-ex-python">Python Code</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-entities-file-ex-xml">PROV-XML</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-entities-file-ex-json">PROV-JSON</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-entities-file-ex-provn">PROV-N</a>
-        </li>
-      </ul>
-      <div class="tab-contents" id="tabs-entities-file-ex-graph">
-
-.. graphviz:: _generated/dot/entities/file_max.dot
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-entities-file-ex-python">
-
-Python code utilizing the `prov <http://prov.readthedocs.org/>`_ package.
-
-.. literalinclude:: _generated/py/entities/file_max.py
-    :language: python
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-entities-file-ex-xml">
-
-In the `PROV-XML <http://www.w3.org/TR/prov-xml/>`_ serialization.
-
-.. literalinclude:: _generated/xml/entities/file_max.xml
-    :language: xml
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-entities-file-ex-json">
-
-In the
-`PROV-JSON <http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/>`_
-serialization.
-
-.. literalinclude:: _generated/json/entities/file_max.json
-    :language: json
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-entities-file-ex-provn">
-
-In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
-
-.. literalinclude:: _generated/provn/entities/file_max.provn
-
-.. raw:: html
-
-    </div>
-    </div>
-
-
-------
-
 Earth Model
 ^^^^^^^^^^^
 
@@ -1414,6 +1152,268 @@ serialization.
 In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
 
 .. literalinclude:: _generated/provn/entities/earth_model_max.provn
+
+.. raw:: html
+
+    </div>
+    </div>
+
+
+------
+
+File
+^^^^
+
+In some cases arbitrary files are needed to describe the provenance of something. Examples are special source code files who's information cannot be represented in the ``Input Parameter`` entity. This entity allows to refer to arbitrary files. Each file is represented by a filename, a location, and a location type. The location might be a URL; then provenance discovery is simple. It might also be a filename or a path in a container format. Users are responsible to either ship the files alongside the provenance information or provide access by other means.
+
+.. raw:: html
+
+    <div id="tab-container" class="tab-container">
+      <ul class='etabs'>
+        <li class='tab'>
+            <a href="#tabs-entities-file-description">Definition</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-entities-file-json_def">JSON Definition</a>
+        </li>
+      </ul>
+      <div class="tab-contents" id="tabs-entities-file-description">
+
+
+Properties
+    ============================ =======
+    Name                         Value
+    ============================ =======
+    ``prov:id``                  ``file``
+    ``prov:label``               ``File``
+    Two letter ID code:          ``fi``
+    ============================ =======
+
+Required Attributes
+    =============  ==============  ==========================================================================================================
+    Name           Type            Description                                                                                               
+    =============  ==============  ==========================================================================================================
+    filename       ``xsd:string``  The name of the file.                                                                                     
+    location       ``xsd:string``  The location of the file in a way that can be discovered. Can be a URL, a file path, or something similar.
+    location_type  ``xsd:string``  The type of location. Examples include ``Filename``, ``URL``, ``HDF5 Data Set``, ``SFTP Address``, ...    
+    =============  ==============  ==========================================================================================================
+
+Optional Attributes
+    *None*
+
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-entities-file-json_def">
+
+This shows the JSON that is used to generate the rest of the definition.
+
+.. literalinclude:: definitions/entities/file.json
+    :language: json
+
+.. raw:: html
+
+    </div>
+    </div>
+
+
+**Example**
+
+A concrete ``file`` node example is illustrated here as a graph, in code, and in various representations.
+
+.. raw:: html
+
+    <div id="tab-container" class="tab-container">
+      <ul class='etabs'>
+        <li class='tab'>
+            <a href="#tabs-entities-file-ex-graph">Graph</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-entities-file-ex-python">Python Code</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-entities-file-ex-xml">PROV-XML</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-entities-file-ex-json">PROV-JSON</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-entities-file-ex-provn">PROV-N</a>
+        </li>
+      </ul>
+      <div class="tab-contents" id="tabs-entities-file-ex-graph">
+
+.. graphviz:: _generated/dot/entities/file_max.dot
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-entities-file-ex-python">
+
+Python code utilizing the `prov <http://prov.readthedocs.org/>`_ package.
+
+.. literalinclude:: _generated/py/entities/file_max.py
+    :language: python
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-entities-file-ex-xml">
+
+In the `PROV-XML <http://www.w3.org/TR/prov-xml/>`_ serialization.
+
+.. literalinclude:: _generated/xml/entities/file_max.xml
+    :language: xml
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-entities-file-ex-json">
+
+In the
+`PROV-JSON <http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/>`_
+serialization.
+
+.. literalinclude:: _generated/json/entities/file_max.json
+    :language: json
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-entities-file-ex-provn">
+
+In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
+
+.. literalinclude:: _generated/provn/entities/file_max.provn
+
+.. raw:: html
+
+    </div>
+    </div>
+
+
+------
+
+Input Parameters
+^^^^^^^^^^^^^^^^
+
+The input parameters for a program like a waveform solvers as a list of key, value pairs. Each key can live in the ``SEIS-PROV`` namespace.
+
+.. raw:: html
+
+    <div id="tab-container" class="tab-container">
+      <ul class='etabs'>
+        <li class='tab'>
+            <a href="#tabs-entities-input_parameters-description">Definition</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-entities-input_parameters-json_def">JSON Definition</a>
+        </li>
+      </ul>
+      <div class="tab-contents" id="tabs-entities-input_parameters-description">
+
+
+Properties
+    ============================ =======
+    Name                         Value
+    ============================ =======
+    ``prov:id``                  ``input_parameters``
+    ``prov:label``               ``Input Parameters``
+    Two letter ID code:          ``in``
+    ============================ =======
+
+Required Attributes
+    *None*
+
+Optional Attributes
+    *None*
+
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-entities-input_parameters-json_def">
+
+This shows the JSON that is used to generate the rest of the definition.
+
+.. literalinclude:: definitions/entities/input_parameters.json
+    :language: json
+
+.. raw:: html
+
+    </div>
+    </div>
+
+
+**Example**
+
+A concrete ``input_parameters`` node example is illustrated here as a graph, in code, and in various representations.
+
+.. raw:: html
+
+    <div id="tab-container" class="tab-container">
+      <ul class='etabs'>
+        <li class='tab'>
+            <a href="#tabs-entities-input_parameters-ex-graph">Graph</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-entities-input_parameters-ex-python">Python Code</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-entities-input_parameters-ex-xml">PROV-XML</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-entities-input_parameters-ex-json">PROV-JSON</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-entities-input_parameters-ex-provn">PROV-N</a>
+        </li>
+      </ul>
+      <div class="tab-contents" id="tabs-entities-input_parameters-ex-graph">
+
+.. graphviz:: _generated/dot/entities/input_parameters_max.dot
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-entities-input_parameters-ex-python">
+
+Python code utilizing the `prov <http://prov.readthedocs.org/>`_ package.
+
+.. literalinclude:: _generated/py/entities/input_parameters_max.py
+    :language: python
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-entities-input_parameters-ex-xml">
+
+In the `PROV-XML <http://www.w3.org/TR/prov-xml/>`_ serialization.
+
+.. literalinclude:: _generated/xml/entities/input_parameters_max.xml
+    :language: xml
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-entities-input_parameters-ex-json">
+
+In the
+`PROV-JSON <http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/>`_
+serialization.
+
+.. literalinclude:: _generated/json/entities/input_parameters_max.json
+    :language: json
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-entities-input_parameters-ex-provn">
+
+In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
+
+.. literalinclude:: _generated/provn/entities/input_parameters_max.provn
 
 .. raw:: html
 
@@ -2083,6 +2083,483 @@ will be added as requested by the community.
 
 ------
 
+Normalize
+^^^^^^^^^
+
+Normalize the data.
+
+.. raw:: html
+
+    <div id="tab-container" class="tab-container">
+      <ul class='etabs'>
+        <li class='tab'>
+            <a href="#tabs-activities-normalize-description">Definition</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-normalize-json_def">JSON Definition</a>
+        </li>
+      </ul>
+      <div class="tab-contents" id="tabs-activities-normalize-description">
+
+
+Properties
+    ============================ =======
+    Name                         Value
+    ============================ =======
+    ``prov:id``                  ``normalize``
+    ``prov:label``               ``Normalize``
+    Two letter ID code:          ``nm``
+    ============================ =======
+
+Required Attributes
+    ====================  ==============  ==============================
+    Name                  Type            Description                   
+    ====================  ==============  ==============================
+    normalization_method  ``xsd:string``  The used normalization method.
+    ====================  ==============  ==============================
+
+Optional Attributes
+    *None*
+
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-normalize-json_def">
+
+This shows the JSON that is used to generate the rest of the definition.
+
+.. literalinclude:: definitions/activities/normalize.json
+    :language: json
+
+.. raw:: html
+
+    </div>
+    </div>
+
+
+**Example**
+
+A concrete ``normalize`` node example is illustrated here as a graph, in code, and in various representations.
+
+.. raw:: html
+
+    <div id="tab-container" class="tab-container">
+      <ul class='etabs'>
+        <li class='tab'>
+            <a href="#tabs-activities-normalize-ex-graph">Graph</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-normalize-ex-python">Python Code</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-normalize-ex-xml">PROV-XML</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-normalize-ex-json">PROV-JSON</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-normalize-ex-provn">PROV-N</a>
+        </li>
+      </ul>
+      <div class="tab-contents" id="tabs-activities-normalize-ex-graph">
+
+.. graphviz:: _generated/dot/activities/normalize_max.dot
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-normalize-ex-python">
+
+Python code utilizing the `prov <http://prov.readthedocs.org/>`_ package.
+
+.. literalinclude:: _generated/py/activities/normalize_max.py
+    :language: python
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-normalize-ex-xml">
+
+In the `PROV-XML <http://www.w3.org/TR/prov-xml/>`_ serialization.
+
+.. literalinclude:: _generated/xml/activities/normalize_max.xml
+    :language: xml
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-normalize-ex-json">
+
+In the
+`PROV-JSON <http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/>`_
+serialization.
+
+.. literalinclude:: _generated/json/activities/normalize_max.json
+    :language: json
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-normalize-ex-provn">
+
+In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
+
+.. literalinclude:: _generated/provn/activities/normalize_max.provn
+
+.. raw:: html
+
+    </div>
+    </div>
+
+
+------
+
+Interpolate
+^^^^^^^^^^^
+
+Interpolate the data to new sampling points.
+
+.. raw:: html
+
+    <div id="tab-container" class="tab-container">
+      <ul class='etabs'>
+        <li class='tab'>
+            <a href="#tabs-activities-interpolate-description">Definition</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-interpolate-json_def">JSON Definition</a>
+        </li>
+      </ul>
+      <div class="tab-contents" id="tabs-activities-interpolate-description">
+
+
+Properties
+    ============================ =======
+    Name                         Value
+    ============================ =======
+    ``prov:id``                  ``interpolate``
+    ``prov:label``               ``Interpolate``
+    Two letter ID code:          ``ip``
+    ============================ =======
+
+Required Attributes
+    ====================  ==============  ======================================================================================================================================================================================================================
+    Name                  Type            Description                                                                                                                                                                                                           
+    ====================  ==============  ======================================================================================================================================================================================================================
+    interpolation_method  ``xsd:string``  The method used to interpolate the samples. ``weighted average slopes`` is the interpolation method use by SAC and detailed in a 1976 paper by Wiggins. This is in wide use and thus offered as a special option here.
+    new_sampling_rate     ``xsd:double``  The sampling rate after the interpolation.                                                                                                                                                                            
+    ====================  ==============  ======================================================================================================================================================================================================================
+
+Optional Attributes
+    =====================  =======================  ============================================================
+    Name                   Type                     Description                                                 
+    =====================  =======================  ============================================================
+    new_start_time         ``xsd:dateTime``         The time of the first sample in UTC after the interpolation.
+    new_number_of_samples  ``xsd:positiveInteger``  The number of samples after the interpolation.              
+    =====================  =======================  ============================================================
+
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-interpolate-json_def">
+
+This shows the JSON that is used to generate the rest of the definition.
+
+.. literalinclude:: definitions/activities/interpolate.json
+    :language: json
+
+.. raw:: html
+
+    </div>
+    </div>
+
+
+**Minimal Example**
+
+A concrete ``interpolate`` node example is illustrated here as a graph, in code, and in various representations. This is a minimal but valid ``interpolate`` node. See below for a full example.
+
+.. raw:: html
+
+    <div id="tab-container" class="tab-container">
+      <ul class='etabs'>
+        <li class='tab'>
+            <a href="#tabs-activities-interpolate-ex_min-graph">Graph</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-interpolate-ex_min-python">Python Code</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-interpolate-ex_min-xml">PROV-XML</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-interpolate-ex_min-json">PROV-JSON</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-interpolate-ex_min-provn">PROV-N</a>
+        </li>
+      </ul>
+      <div class="tab-contents" id="tabs-activities-interpolate-ex_min-graph">
+
+.. graphviz:: _generated/dot/activities/interpolate_min.dot
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-interpolate-ex_min-python">
+
+Python code utilizing the `prov <http://prov.readthedocs.org/>`_ package.
+
+.. literalinclude:: _generated/py/activities/interpolate_min.py
+    :language: python
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-interpolate-ex_min-xml">
+
+In the `PROV-XML <http://www.w3.org/TR/prov-xml/>`_ serialization.
+
+.. literalinclude:: _generated/xml/activities/interpolate_min.xml
+    :language: xml
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-interpolate-ex_min-json">
+
+In the
+`PROV-JSON <http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/>`_
+serialization.
+
+.. literalinclude:: _generated/json/activities/interpolate_min.json
+    :language: json
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-interpolate-ex_min-provn">
+
+In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
+
+.. literalinclude:: _generated/provn/activities/interpolate_min.provn
+
+.. raw:: html
+
+    </div>
+    </div>
+
+
+**Full Example**
+
+A concrete ``interpolate`` node example is illustrated here as a graph, in code, and in various representations. This is a full ``interpolate`` node containing the maximum amount of information.
+
+.. raw:: html
+
+    <div id="tab-container" class="tab-container">
+      <ul class='etabs'>
+        <li class='tab'>
+            <a href="#tabs-activities-interpolate-ex_max-graph">Graph</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-interpolate-ex_max-python">Python Code</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-interpolate-ex_max-xml">PROV-XML</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-interpolate-ex_max-json">PROV-JSON</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-interpolate-ex_max-provn">PROV-N</a>
+        </li>
+      </ul>
+      <div class="tab-contents" id="tabs-activities-interpolate-ex_max-graph">
+
+.. graphviz:: _generated/dot/activities/interpolate_max.dot
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-interpolate-ex_max-python">
+
+Python code utilizing the `prov <http://prov.readthedocs.org/>`_ package.
+
+.. literalinclude:: _generated/py/activities/interpolate_max.py
+    :language: python
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-interpolate-ex_max-xml">
+
+In the `PROV-XML <http://www.w3.org/TR/prov-xml/>`_ serialization.
+
+.. literalinclude:: _generated/xml/activities/interpolate_max.xml
+    :language: xml
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-interpolate-ex_max-json">
+
+In the
+`PROV-JSON <http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/>`_
+serialization.
+
+.. literalinclude:: _generated/json/activities/interpolate_max.json
+    :language: json
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-interpolate-ex_max-provn">
+
+In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
+
+.. literalinclude:: _generated/provn/activities/interpolate_max.provn
+
+.. raw:: html
+
+    </div>
+    </div>
+
+
+------
+
+Merge
+^^^^^
+
+Merge several traces into one. This is very implementation dependent and thus the activity should be associated with a software agent.
+
+.. raw:: html
+
+    <div id="tab-container" class="tab-container">
+      <ul class='etabs'>
+        <li class='tab'>
+            <a href="#tabs-activities-merge-description">Definition</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-merge-json_def">JSON Definition</a>
+        </li>
+      </ul>
+      <div class="tab-contents" id="tabs-activities-merge-description">
+
+
+Properties
+    ============================ =======
+    Name                         Value
+    ============================ =======
+    ``prov:id``                  ``merge``
+    ``prov:label``               ``Merge``
+    Two letter ID code:          ``mg``
+    ============================ =======
+
+Required Attributes
+    ================  ==============  =================================================
+    Name              Type            Description                                      
+    ================  ==============  =================================================
+    merging_strategy  ``xsd:string``  A string describing the applied merging strategy.
+    ================  ==============  =================================================
+
+Optional Attributes
+    *None*
+
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-merge-json_def">
+
+This shows the JSON that is used to generate the rest of the definition.
+
+.. literalinclude:: definitions/activities/merge.json
+    :language: json
+
+.. raw:: html
+
+    </div>
+    </div>
+
+
+**Example**
+
+A concrete ``merge`` node example is illustrated here as a graph, in code, and in various representations.
+
+.. raw:: html
+
+    <div id="tab-container" class="tab-container">
+      <ul class='etabs'>
+        <li class='tab'>
+            <a href="#tabs-activities-merge-ex-graph">Graph</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-merge-ex-python">Python Code</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-merge-ex-xml">PROV-XML</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-merge-ex-json">PROV-JSON</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-merge-ex-provn">PROV-N</a>
+        </li>
+      </ul>
+      <div class="tab-contents" id="tabs-activities-merge-ex-graph">
+
+.. graphviz:: _generated/dot/activities/merge_max.dot
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-merge-ex-python">
+
+Python code utilizing the `prov <http://prov.readthedocs.org/>`_ package.
+
+.. literalinclude:: _generated/py/activities/merge_max.py
+    :language: python
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-merge-ex-xml">
+
+In the `PROV-XML <http://www.w3.org/TR/prov-xml/>`_ serialization.
+
+.. literalinclude:: _generated/xml/activities/merge_max.xml
+    :language: xml
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-merge-ex-json">
+
+In the
+`PROV-JSON <http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/>`_
+serialization.
+
+.. literalinclude:: _generated/json/activities/merge_max.json
+    :language: json
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-merge-ex-provn">
+
+In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
+
+.. literalinclude:: _generated/provn/activities/merge_max.provn
+
+.. raw:: html
+
+    </div>
+    </div>
+
+
+------
+
 Waveform Simulation
 ^^^^^^^^^^^^^^^^^^^
 
@@ -2211,42 +2688,40 @@ In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
 
 ------
 
-Taper
-^^^^^
+Decimate
+^^^^^^^^
 
-Apply a taper window to the data.
+Downsample the waveform data by an integer factor. Any applied anti-alias filtering has to be described by a filtering activity.
 
 .. raw:: html
 
     <div id="tab-container" class="tab-container">
       <ul class='etabs'>
         <li class='tab'>
-            <a href="#tabs-activities-taper-description">Definition</a>
+            <a href="#tabs-activities-decimate-description">Definition</a>
         </li>
         <li class='tab'>
-            <a href="#tabs-activities-taper-json_def">JSON Definition</a>
+            <a href="#tabs-activities-decimate-json_def">JSON Definition</a>
         </li>
       </ul>
-      <div class="tab-contents" id="tabs-activities-taper-description">
+      <div class="tab-contents" id="tabs-activities-decimate-description">
 
 
 Properties
     ============================ =======
     Name                         Value
     ============================ =======
-    ``prov:id``                  ``taper``
-    ``prov:label``               ``Taper``
-    Two letter ID code:          ``tp``
+    ``prov:id``                  ``decimate``
+    ``prov:label``               ``Decimate``
+    Two letter ID code:          ``dc``
     ============================ =======
 
 Required Attributes
-    ===========  ==============  ================================================================
-    Name         Type            Description                                                     
-    ===========  ==============  ================================================================
-    window_type  ``xsd:string``  The type applied window.                                        
-    taper_width  ``xsd:double``  The width of the taper at each end. Must be between 0.0 and 0.5.
-    side         ``xsd:string``  `'left'`, `'right'`, or `'both'`                                
-    ===========  ==============  ================================================================
+    ======  =======================  =====================
+    Name    Type                     Description          
+    ======  =======================  =====================
+    factor  ``xsd:positiveInteger``  The decimation factor
+    ======  =======================  =====================
 
 Optional Attributes
     *None*
@@ -2255,11 +2730,11 @@ Optional Attributes
 .. raw:: html
 
     </div>
-    <div class="tab-contents" id="tabs-activities-taper-json_def">
+    <div class="tab-contents" id="tabs-activities-decimate-json_def">
 
 This shows the JSON that is used to generate the rest of the definition.
 
-.. literalinclude:: definitions/activities/taper.json
+.. literalinclude:: definitions/activities/decimate.json
     :language: json
 
 .. raw:: html
@@ -2270,620 +2745,72 @@ This shows the JSON that is used to generate the rest of the definition.
 
 **Example**
 
-A concrete ``taper`` node example is illustrated here as a graph, in code, and in various representations.
+A concrete ``decimate`` node example is illustrated here as a graph, in code, and in various representations.
 
 .. raw:: html
 
     <div id="tab-container" class="tab-container">
       <ul class='etabs'>
         <li class='tab'>
-            <a href="#tabs-activities-taper-ex-graph">Graph</a>
+            <a href="#tabs-activities-decimate-ex-graph">Graph</a>
         </li>
         <li class='tab'>
-            <a href="#tabs-activities-taper-ex-python">Python Code</a>
+            <a href="#tabs-activities-decimate-ex-python">Python Code</a>
         </li>
         <li class='tab'>
-            <a href="#tabs-activities-taper-ex-xml">PROV-XML</a>
+            <a href="#tabs-activities-decimate-ex-xml">PROV-XML</a>
         </li>
         <li class='tab'>
-            <a href="#tabs-activities-taper-ex-json">PROV-JSON</a>
+            <a href="#tabs-activities-decimate-ex-json">PROV-JSON</a>
         </li>
         <li class='tab'>
-            <a href="#tabs-activities-taper-ex-provn">PROV-N</a>
+            <a href="#tabs-activities-decimate-ex-provn">PROV-N</a>
         </li>
       </ul>
-      <div class="tab-contents" id="tabs-activities-taper-ex-graph">
+      <div class="tab-contents" id="tabs-activities-decimate-ex-graph">
 
-.. graphviz:: _generated/dot/activities/taper_max.dot
+.. graphviz:: _generated/dot/activities/decimate_max.dot
 
 .. raw:: html
 
     </div>
-    <div class="tab-contents" id="tabs-activities-taper-ex-python">
+    <div class="tab-contents" id="tabs-activities-decimate-ex-python">
 
 Python code utilizing the `prov <http://prov.readthedocs.org/>`_ package.
 
-.. literalinclude:: _generated/py/activities/taper_max.py
+.. literalinclude:: _generated/py/activities/decimate_max.py
     :language: python
 
 .. raw:: html
 
     </div>
-    <div class="tab-contents" id="tabs-activities-taper-ex-xml">
+    <div class="tab-contents" id="tabs-activities-decimate-ex-xml">
 
 In the `PROV-XML <http://www.w3.org/TR/prov-xml/>`_ serialization.
 
-.. literalinclude:: _generated/xml/activities/taper_max.xml
+.. literalinclude:: _generated/xml/activities/decimate_max.xml
     :language: xml
 
 .. raw:: html
 
     </div>
-    <div class="tab-contents" id="tabs-activities-taper-ex-json">
+    <div class="tab-contents" id="tabs-activities-decimate-ex-json">
 
 In the
 `PROV-JSON <http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/>`_
 serialization.
 
-.. literalinclude:: _generated/json/activities/taper_max.json
+.. literalinclude:: _generated/json/activities/decimate_max.json
     :language: json
 
 .. raw:: html
 
     </div>
-    <div class="tab-contents" id="tabs-activities-taper-ex-provn">
+    <div class="tab-contents" id="tabs-activities-decimate-ex-provn">
 
 In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
 
-.. literalinclude:: _generated/provn/activities/taper_max.provn
-
-.. raw:: html
-
-    </div>
-    </div>
-
-
-------
-
-Stack Cross Correlations
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-Stack a number of cross correlations.
-
-.. raw:: html
-
-    <div id="tab-container" class="tab-container">
-      <ul class='etabs'>
-        <li class='tab'>
-            <a href="#tabs-activities-stack_cross_correlations-description">Definition</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-stack_cross_correlations-json_def">JSON Definition</a>
-        </li>
-      </ul>
-      <div class="tab-contents" id="tabs-activities-stack_cross_correlations-description">
-
-
-Properties
-    ============================ =======
-    Name                         Value
-    ============================ =======
-    ``prov:id``                  ``stack_cross_correlations``
-    ``prov:label``               ``Stack Cross Correlations``
-    Two letter ID code:          ``sc``
-    ============================ =======
-
-Required Attributes
-    ===============  ==============  ========================================================
-    Name             Type            Description                                             
-    ===============  ==============  ========================================================
-    stacking_method  ``xsd:string``  A string describing the method used to create the stack.
-    ===============  ==============  ========================================================
-
-Optional Attributes
-    *None*
-
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-stack_cross_correlations-json_def">
-
-This shows the JSON that is used to generate the rest of the definition.
-
-.. literalinclude:: definitions/activities/stack_cross_correlations.json
-    :language: json
-
-.. raw:: html
-
-    </div>
-    </div>
-
-
-**Example**
-
-A concrete ``stack_cross_correlations`` node example is illustrated here as a graph, in code, and in various representations.
-
-.. raw:: html
-
-    <div id="tab-container" class="tab-container">
-      <ul class='etabs'>
-        <li class='tab'>
-            <a href="#tabs-activities-stack_cross_correlations-ex-graph">Graph</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-stack_cross_correlations-ex-python">Python Code</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-stack_cross_correlations-ex-xml">PROV-XML</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-stack_cross_correlations-ex-json">PROV-JSON</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-stack_cross_correlations-ex-provn">PROV-N</a>
-        </li>
-      </ul>
-      <div class="tab-contents" id="tabs-activities-stack_cross_correlations-ex-graph">
-
-.. graphviz:: _generated/dot/activities/stack_cross_correlations_max.dot
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-stack_cross_correlations-ex-python">
-
-Python code utilizing the `prov <http://prov.readthedocs.org/>`_ package.
-
-.. literalinclude:: _generated/py/activities/stack_cross_correlations_max.py
-    :language: python
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-stack_cross_correlations-ex-xml">
-
-In the `PROV-XML <http://www.w3.org/TR/prov-xml/>`_ serialization.
-
-.. literalinclude:: _generated/xml/activities/stack_cross_correlations_max.xml
-    :language: xml
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-stack_cross_correlations-ex-json">
-
-In the
-`PROV-JSON <http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/>`_
-serialization.
-
-.. literalinclude:: _generated/json/activities/stack_cross_correlations_max.json
-    :language: json
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-stack_cross_correlations-ex-provn">
-
-In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
-
-.. literalinclude:: _generated/provn/activities/stack_cross_correlations_max.provn
-
-.. raw:: html
-
-    </div>
-    </div>
-
-
-------
-
-Simulate Response
-^^^^^^^^^^^^^^^^^
-
-Add an instrument’s response.
-
-.. raw:: html
-
-    <div id="tab-container" class="tab-container">
-      <ul class='etabs'>
-        <li class='tab'>
-            <a href="#tabs-activities-simulate_response-description">Definition</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-simulate_response-json_def">JSON Definition</a>
-        </li>
-      </ul>
-      <div class="tab-contents" id="tabs-activities-simulate_response-description">
-
-
-Properties
-    ============================ =======
-    Name                         Value
-    ============================ =======
-    ``prov:id``                  ``simulate_response``
-    ``prov:label``               ``Simulate Response``
-    Two letter ID code:          ``sr``
-    ============================ =======
-
-Required Attributes
-    *None*
-
-Optional Attributes
-    ============  ==============  ================================================================================================================================================
-    Name          Type            Description                                                                                                                                     
-    ============  ==============  ================================================================================================================================================
-    description   ``xsd:string``  Textual description of the added response. If more details are needed, then this activity should use an entity that points to the used response.
-    input_units   ``xsd:string``  Units of the input data in a common abbreviation, e.g. `m`, `m/s`, `nm/s^2`, ...                                                                
-    output_units  ``xsd:string``  Units of the output data in a common abbreviation, e.g. `m`, `m/s`, `nm/s^2`, ...                                                               
-    ============  ==============  ================================================================================================================================================
-
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-simulate_response-json_def">
-
-This shows the JSON that is used to generate the rest of the definition.
-
-.. literalinclude:: definitions/activities/simulate_response.json
-    :language: json
-
-.. raw:: html
-
-    </div>
-    </div>
-
-
-**Minimal Example**
-
-A concrete ``simulate_response`` node example is illustrated here as a graph, in code, and in various representations. This is a minimal but valid ``simulate_response`` node. See below for a full example.
-
-.. raw:: html
-
-    <div id="tab-container" class="tab-container">
-      <ul class='etabs'>
-        <li class='tab'>
-            <a href="#tabs-activities-simulate_response-ex_min-graph">Graph</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-simulate_response-ex_min-python">Python Code</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-simulate_response-ex_min-xml">PROV-XML</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-simulate_response-ex_min-json">PROV-JSON</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-simulate_response-ex_min-provn">PROV-N</a>
-        </li>
-      </ul>
-      <div class="tab-contents" id="tabs-activities-simulate_response-ex_min-graph">
-
-.. graphviz:: _generated/dot/activities/simulate_response_min.dot
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-simulate_response-ex_min-python">
-
-Python code utilizing the `prov <http://prov.readthedocs.org/>`_ package.
-
-.. literalinclude:: _generated/py/activities/simulate_response_min.py
-    :language: python
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-simulate_response-ex_min-xml">
-
-In the `PROV-XML <http://www.w3.org/TR/prov-xml/>`_ serialization.
-
-.. literalinclude:: _generated/xml/activities/simulate_response_min.xml
-    :language: xml
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-simulate_response-ex_min-json">
-
-In the
-`PROV-JSON <http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/>`_
-serialization.
-
-.. literalinclude:: _generated/json/activities/simulate_response_min.json
-    :language: json
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-simulate_response-ex_min-provn">
-
-In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
-
-.. literalinclude:: _generated/provn/activities/simulate_response_min.provn
-
-.. raw:: html
-
-    </div>
-    </div>
-
-
-**Full Example**
-
-A concrete ``simulate_response`` node example is illustrated here as a graph, in code, and in various representations. This is a full ``simulate_response`` node containing the maximum amount of information.
-
-.. raw:: html
-
-    <div id="tab-container" class="tab-container">
-      <ul class='etabs'>
-        <li class='tab'>
-            <a href="#tabs-activities-simulate_response-ex_max-graph">Graph</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-simulate_response-ex_max-python">Python Code</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-simulate_response-ex_max-xml">PROV-XML</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-simulate_response-ex_max-json">PROV-JSON</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-simulate_response-ex_max-provn">PROV-N</a>
-        </li>
-      </ul>
-      <div class="tab-contents" id="tabs-activities-simulate_response-ex_max-graph">
-
-.. graphviz:: _generated/dot/activities/simulate_response_max.dot
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-simulate_response-ex_max-python">
-
-Python code utilizing the `prov <http://prov.readthedocs.org/>`_ package.
-
-.. literalinclude:: _generated/py/activities/simulate_response_max.py
-    :language: python
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-simulate_response-ex_max-xml">
-
-In the `PROV-XML <http://www.w3.org/TR/prov-xml/>`_ serialization.
-
-.. literalinclude:: _generated/xml/activities/simulate_response_max.xml
-    :language: xml
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-simulate_response-ex_max-json">
-
-In the
-`PROV-JSON <http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/>`_
-serialization.
-
-.. literalinclude:: _generated/json/activities/simulate_response_max.json
-    :language: json
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-simulate_response-ex_max-provn">
-
-In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
-
-.. literalinclude:: _generated/provn/activities/simulate_response_max.provn
-
-.. raw:: html
-
-    </div>
-    </div>
-
-
-------
-
-Rotate
-^^^^^^
-
-Rotate multi-component data. The precise rotation angles could be inferred by comparing the dip and azimuth of inputs and outputs. Alternatively the rotation method can be specified.
-
-.. raw:: html
-
-    <div id="tab-container" class="tab-container">
-      <ul class='etabs'>
-        <li class='tab'>
-            <a href="#tabs-activities-rotate-description">Definition</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-rotate-json_def">JSON Definition</a>
-        </li>
-      </ul>
-      <div class="tab-contents" id="tabs-activities-rotate-description">
-
-
-Properties
-    ============================ =======
-    Name                         Value
-    ============================ =======
-    ``prov:id``                  ``rotate``
-    ``prov:label``               ``Rotate``
-    Two letter ID code:          ``rt``
-    ============================ =======
-
-Required Attributes
-    *None*
-
-Optional Attributes
-    ======  ==============  ====================
-    Name    Type            Description         
-    ======  ==============  ====================
-    method  ``xsd:string``  The rotation method.
-    ======  ==============  ====================
-
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-rotate-json_def">
-
-This shows the JSON that is used to generate the rest of the definition.
-
-.. literalinclude:: definitions/activities/rotate.json
-    :language: json
-
-.. raw:: html
-
-    </div>
-    </div>
-
-
-**Minimal Example**
-
-A concrete ``rotate`` node example is illustrated here as a graph, in code, and in various representations. This is a minimal but valid ``rotate`` node. See below for a full example.
-
-.. raw:: html
-
-    <div id="tab-container" class="tab-container">
-      <ul class='etabs'>
-        <li class='tab'>
-            <a href="#tabs-activities-rotate-ex_min-graph">Graph</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-rotate-ex_min-python">Python Code</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-rotate-ex_min-xml">PROV-XML</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-rotate-ex_min-json">PROV-JSON</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-rotate-ex_min-provn">PROV-N</a>
-        </li>
-      </ul>
-      <div class="tab-contents" id="tabs-activities-rotate-ex_min-graph">
-
-.. graphviz:: _generated/dot/activities/rotate_min.dot
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-rotate-ex_min-python">
-
-Python code utilizing the `prov <http://prov.readthedocs.org/>`_ package.
-
-.. literalinclude:: _generated/py/activities/rotate_min.py
-    :language: python
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-rotate-ex_min-xml">
-
-In the `PROV-XML <http://www.w3.org/TR/prov-xml/>`_ serialization.
-
-.. literalinclude:: _generated/xml/activities/rotate_min.xml
-    :language: xml
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-rotate-ex_min-json">
-
-In the
-`PROV-JSON <http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/>`_
-serialization.
-
-.. literalinclude:: _generated/json/activities/rotate_min.json
-    :language: json
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-rotate-ex_min-provn">
-
-In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
-
-.. literalinclude:: _generated/provn/activities/rotate_min.provn
-
-.. raw:: html
-
-    </div>
-    </div>
-
-
-**Full Example**
-
-A concrete ``rotate`` node example is illustrated here as a graph, in code, and in various representations. This is a full ``rotate`` node containing the maximum amount of information.
-
-.. raw:: html
-
-    <div id="tab-container" class="tab-container">
-      <ul class='etabs'>
-        <li class='tab'>
-            <a href="#tabs-activities-rotate-ex_max-graph">Graph</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-rotate-ex_max-python">Python Code</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-rotate-ex_max-xml">PROV-XML</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-rotate-ex_max-json">PROV-JSON</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-rotate-ex_max-provn">PROV-N</a>
-        </li>
-      </ul>
-      <div class="tab-contents" id="tabs-activities-rotate-ex_max-graph">
-
-.. graphviz:: _generated/dot/activities/rotate_max.dot
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-rotate-ex_max-python">
-
-Python code utilizing the `prov <http://prov.readthedocs.org/>`_ package.
-
-.. literalinclude:: _generated/py/activities/rotate_max.py
-    :language: python
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-rotate-ex_max-xml">
-
-In the `PROV-XML <http://www.w3.org/TR/prov-xml/>`_ serialization.
-
-.. literalinclude:: _generated/xml/activities/rotate_max.xml
-    :language: xml
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-rotate-ex_max-json">
-
-In the
-`PROV-JSON <http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/>`_
-serialization.
-
-.. literalinclude:: _generated/json/activities/rotate_max.json
-    :language: json
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-rotate-ex_max-provn">
-
-In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
-
-.. literalinclude:: _generated/provn/activities/rotate_max.provn
+.. literalinclude:: _generated/provn/activities/decimate_max.provn
 
 .. raw:: html
 
@@ -3106,55 +3033,61 @@ In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
 
 ------
 
-Remove Response
+Bandpass Filter
 ^^^^^^^^^^^^^^^
 
-Remove an instrument's response.
+A Bandpass filter. There is a huge variety of bandpass filters out there and this activity cannot capture them all in full detail.
 
 .. raw:: html
 
     <div id="tab-container" class="tab-container">
       <ul class='etabs'>
         <li class='tab'>
-            <a href="#tabs-activities-remove_response-description">Definition</a>
+            <a href="#tabs-activities-bandpass_filter-description">Definition</a>
         </li>
         <li class='tab'>
-            <a href="#tabs-activities-remove_response-json_def">JSON Definition</a>
+            <a href="#tabs-activities-bandpass_filter-json_def">JSON Definition</a>
         </li>
       </ul>
-      <div class="tab-contents" id="tabs-activities-remove_response-description">
+      <div class="tab-contents" id="tabs-activities-bandpass_filter-description">
 
 
 Properties
     ============================ =======
     Name                         Value
     ============================ =======
-    ``prov:id``                  ``remove_response``
-    ``prov:label``               ``Remove Response``
-    Two letter ID code:          ``rr``
+    ``prov:id``                  ``bandpass_filter``
+    ``prov:label``               ``Bandpass Filter``
+    Two letter ID code:          ``bp``
     ============================ =======
 
 Required Attributes
-    *None*
+    ===========  ==============  =======================================================================================================================================================================================================================================================================================================
+    Name         Type            Description                                                                                                                                                                                                                                                                                            
+    ===========  ==============  =======================================================================================================================================================================================================================================================================================================
+    filter_type  ``xsd:string``  The type of filter, one of ``Butterworth``, ``FIR``, ``IIR``, ``Bessel``, ``Cosine SAC Taper``. Please give some more information with one or more of the other attributes. ``Cosine SAC Taper`` describes the frequency domain taper the SAC software package employs during instrument deconvolution.
+    ===========  ==============  =======================================================================================================================================================================================================================================================================================================
 
 Optional Attributes
-    ============  ==============  =================================================================================
-    Name          Type            Description                                                                      
-    ============  ==============  =================================================================================
-    water_level   ``xsd:double``  The applied water level in dB.                                                   
-    input_units   ``xsd:string``  Units of the input data in a common abbreviation, e.g. `m`, `m/s`, `nm/s^2`, ... 
-    output_units  ``xsd:string``  Units of the output data in a common abbreviation, e.g. `m`, `m/s`, `nm/s^2`, ...
-    ============  ==============  =================================================================================
+    =================================  =======================  ===========================================================================================
+    Name                               Type                     Description                                                                                
+    =================================  =======================  ===========================================================================================
+    lower_corner_frequency             ``xsd:double``           The lower corner frequency of the filter if applicable in Hz.                              
+    upper_corner_frequency             ``xsd:double``           The upper corner frequency of the filter if applicable in Hz.                              
+    filter_order                       ``xsd:positiveInteger``  The order of the filter if applicable.                                                     
+    number_of_passes                   ``xsd:positiveInteger``  The number of filter passes if applicable.                                                 
+    sac_cosine_taper_frequency_limits  ``xsd:string``           The frequency limits of the SAC frequency domain cosine taper in Hz from lowest to highest.
+    =================================  =======================  ===========================================================================================
 
 
 .. raw:: html
 
     </div>
-    <div class="tab-contents" id="tabs-activities-remove_response-json_def">
+    <div class="tab-contents" id="tabs-activities-bandpass_filter-json_def">
 
 This shows the JSON that is used to generate the rest of the definition.
 
-.. literalinclude:: definitions/activities/remove_response.json
+.. literalinclude:: definitions/activities/bandpass_filter.json
     :language: json
 
 .. raw:: html
@@ -3165,72 +3098,72 @@ This shows the JSON that is used to generate the rest of the definition.
 
 **Minimal Example**
 
-A concrete ``remove_response`` node example is illustrated here as a graph, in code, and in various representations. This is a minimal but valid ``remove_response`` node. See below for a full example.
+A concrete ``bandpass_filter`` node example is illustrated here as a graph, in code, and in various representations. This is a minimal but valid ``bandpass_filter`` node. See below for a full example.
 
 .. raw:: html
 
     <div id="tab-container" class="tab-container">
       <ul class='etabs'>
         <li class='tab'>
-            <a href="#tabs-activities-remove_response-ex_min-graph">Graph</a>
+            <a href="#tabs-activities-bandpass_filter-ex_min-graph">Graph</a>
         </li>
         <li class='tab'>
-            <a href="#tabs-activities-remove_response-ex_min-python">Python Code</a>
+            <a href="#tabs-activities-bandpass_filter-ex_min-python">Python Code</a>
         </li>
         <li class='tab'>
-            <a href="#tabs-activities-remove_response-ex_min-xml">PROV-XML</a>
+            <a href="#tabs-activities-bandpass_filter-ex_min-xml">PROV-XML</a>
         </li>
         <li class='tab'>
-            <a href="#tabs-activities-remove_response-ex_min-json">PROV-JSON</a>
+            <a href="#tabs-activities-bandpass_filter-ex_min-json">PROV-JSON</a>
         </li>
         <li class='tab'>
-            <a href="#tabs-activities-remove_response-ex_min-provn">PROV-N</a>
+            <a href="#tabs-activities-bandpass_filter-ex_min-provn">PROV-N</a>
         </li>
       </ul>
-      <div class="tab-contents" id="tabs-activities-remove_response-ex_min-graph">
+      <div class="tab-contents" id="tabs-activities-bandpass_filter-ex_min-graph">
 
-.. graphviz:: _generated/dot/activities/remove_response_min.dot
+.. graphviz:: _generated/dot/activities/bandpass_filter_min.dot
 
 .. raw:: html
 
     </div>
-    <div class="tab-contents" id="tabs-activities-remove_response-ex_min-python">
+    <div class="tab-contents" id="tabs-activities-bandpass_filter-ex_min-python">
 
 Python code utilizing the `prov <http://prov.readthedocs.org/>`_ package.
 
-.. literalinclude:: _generated/py/activities/remove_response_min.py
+.. literalinclude:: _generated/py/activities/bandpass_filter_min.py
     :language: python
 
 .. raw:: html
 
     </div>
-    <div class="tab-contents" id="tabs-activities-remove_response-ex_min-xml">
+    <div class="tab-contents" id="tabs-activities-bandpass_filter-ex_min-xml">
 
 In the `PROV-XML <http://www.w3.org/TR/prov-xml/>`_ serialization.
 
-.. literalinclude:: _generated/xml/activities/remove_response_min.xml
+.. literalinclude:: _generated/xml/activities/bandpass_filter_min.xml
     :language: xml
 
 .. raw:: html
 
     </div>
-    <div class="tab-contents" id="tabs-activities-remove_response-ex_min-json">
+    <div class="tab-contents" id="tabs-activities-bandpass_filter-ex_min-json">
 
 In the
 `PROV-JSON <http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/>`_
 serialization.
 
-.. literalinclude:: _generated/json/activities/remove_response_min.json
+.. literalinclude:: _generated/json/activities/bandpass_filter_min.json
     :language: json
 
 .. raw:: html
 
     </div>
-    <div class="tab-contents" id="tabs-activities-remove_response-ex_min-provn">
+    <div class="tab-contents" id="tabs-activities-bandpass_filter-ex_min-provn">
 
 In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
 
-.. literalinclude:: _generated/provn/activities/remove_response_min.provn
+.. literalinclude:: _generated/provn/activities/bandpass_filter_min.provn
 
 .. raw:: html
 
@@ -3240,72 +3173,72 @@ In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
 
 **Full Example**
 
-A concrete ``remove_response`` node example is illustrated here as a graph, in code, and in various representations. This is a full ``remove_response`` node containing the maximum amount of information.
+A concrete ``bandpass_filter`` node example is illustrated here as a graph, in code, and in various representations. This is a full ``bandpass_filter`` node containing the maximum amount of information.
 
 .. raw:: html
 
     <div id="tab-container" class="tab-container">
       <ul class='etabs'>
         <li class='tab'>
-            <a href="#tabs-activities-remove_response-ex_max-graph">Graph</a>
+            <a href="#tabs-activities-bandpass_filter-ex_max-graph">Graph</a>
         </li>
         <li class='tab'>
-            <a href="#tabs-activities-remove_response-ex_max-python">Python Code</a>
+            <a href="#tabs-activities-bandpass_filter-ex_max-python">Python Code</a>
         </li>
         <li class='tab'>
-            <a href="#tabs-activities-remove_response-ex_max-xml">PROV-XML</a>
+            <a href="#tabs-activities-bandpass_filter-ex_max-xml">PROV-XML</a>
         </li>
         <li class='tab'>
-            <a href="#tabs-activities-remove_response-ex_max-json">PROV-JSON</a>
+            <a href="#tabs-activities-bandpass_filter-ex_max-json">PROV-JSON</a>
         </li>
         <li class='tab'>
-            <a href="#tabs-activities-remove_response-ex_max-provn">PROV-N</a>
+            <a href="#tabs-activities-bandpass_filter-ex_max-provn">PROV-N</a>
         </li>
       </ul>
-      <div class="tab-contents" id="tabs-activities-remove_response-ex_max-graph">
+      <div class="tab-contents" id="tabs-activities-bandpass_filter-ex_max-graph">
 
-.. graphviz:: _generated/dot/activities/remove_response_max.dot
+.. graphviz:: _generated/dot/activities/bandpass_filter_max.dot
 
 .. raw:: html
 
     </div>
-    <div class="tab-contents" id="tabs-activities-remove_response-ex_max-python">
+    <div class="tab-contents" id="tabs-activities-bandpass_filter-ex_max-python">
 
 Python code utilizing the `prov <http://prov.readthedocs.org/>`_ package.
 
-.. literalinclude:: _generated/py/activities/remove_response_max.py
+.. literalinclude:: _generated/py/activities/bandpass_filter_max.py
     :language: python
 
 .. raw:: html
 
     </div>
-    <div class="tab-contents" id="tabs-activities-remove_response-ex_max-xml">
+    <div class="tab-contents" id="tabs-activities-bandpass_filter-ex_max-xml">
 
 In the `PROV-XML <http://www.w3.org/TR/prov-xml/>`_ serialization.
 
-.. literalinclude:: _generated/xml/activities/remove_response_max.xml
+.. literalinclude:: _generated/xml/activities/bandpass_filter_max.xml
     :language: xml
 
 .. raw:: html
 
     </div>
-    <div class="tab-contents" id="tabs-activities-remove_response-ex_max-json">
+    <div class="tab-contents" id="tabs-activities-bandpass_filter-ex_max-json">
 
 In the
 `PROV-JSON <http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/>`_
 serialization.
 
-.. literalinclude:: _generated/json/activities/remove_response_max.json
+.. literalinclude:: _generated/json/activities/bandpass_filter_max.json
     :language: json
 
 .. raw:: html
 
     </div>
-    <div class="tab-contents" id="tabs-activities-remove_response-ex_max-provn">
+    <div class="tab-contents" id="tabs-activities-bandpass_filter-ex_max-provn">
 
 In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
 
-.. literalinclude:: _generated/provn/activities/remove_response_max.provn
+.. literalinclude:: _generated/provn/activities/bandpass_filter_max.provn
 
 .. raw:: html
 
@@ -3527,40 +3460,40 @@ In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
 
 ------
 
-Normalize
-^^^^^^^^^
+Divide
+^^^^^^
 
-Normalize the data.
+Divide each value of the data by a certain factor. This is implied by many operations but sometimes useful to capture in its own right.
 
 .. raw:: html
 
     <div id="tab-container" class="tab-container">
       <ul class='etabs'>
         <li class='tab'>
-            <a href="#tabs-activities-normalize-description">Definition</a>
+            <a href="#tabs-activities-divide-description">Definition</a>
         </li>
         <li class='tab'>
-            <a href="#tabs-activities-normalize-json_def">JSON Definition</a>
+            <a href="#tabs-activities-divide-json_def">JSON Definition</a>
         </li>
       </ul>
-      <div class="tab-contents" id="tabs-activities-normalize-description">
+      <div class="tab-contents" id="tabs-activities-divide-description">
 
 
 Properties
     ============================ =======
     Name                         Value
     ============================ =======
-    ``prov:id``                  ``normalize``
-    ``prov:label``               ``Normalize``
-    Two letter ID code:          ``nm``
+    ``prov:id``                  ``divide``
+    ``prov:label``               ``Divide``
+    Two letter ID code:          ``dv``
     ============================ =======
 
 Required Attributes
-    ====================  ==============  ==============================
-    Name                  Type            Description                   
-    ====================  ==============  ==============================
-    normalization_method  ``xsd:string``  The used normalization method.
-    ====================  ==============  ==============================
+    =======  ==============  ==============================
+    Name     Type            Description                   
+    =======  ==============  ==============================
+    divisor  ``xsd:double``  The factor by which to divide.
+    =======  ==============  ==============================
 
 Optional Attributes
     *None*
@@ -3569,11 +3502,11 @@ Optional Attributes
 .. raw:: html
 
     </div>
-    <div class="tab-contents" id="tabs-activities-normalize-json_def">
+    <div class="tab-contents" id="tabs-activities-divide-json_def">
 
 This shows the JSON that is used to generate the rest of the definition.
 
-.. literalinclude:: definitions/activities/normalize.json
+.. literalinclude:: definitions/activities/divide.json
     :language: json
 
 .. raw:: html
@@ -3584,336 +3517,72 @@ This shows the JSON that is used to generate the rest of the definition.
 
 **Example**
 
-A concrete ``normalize`` node example is illustrated here as a graph, in code, and in various representations.
+A concrete ``divide`` node example is illustrated here as a graph, in code, and in various representations.
 
 .. raw:: html
 
     <div id="tab-container" class="tab-container">
       <ul class='etabs'>
         <li class='tab'>
-            <a href="#tabs-activities-normalize-ex-graph">Graph</a>
+            <a href="#tabs-activities-divide-ex-graph">Graph</a>
         </li>
         <li class='tab'>
-            <a href="#tabs-activities-normalize-ex-python">Python Code</a>
+            <a href="#tabs-activities-divide-ex-python">Python Code</a>
         </li>
         <li class='tab'>
-            <a href="#tabs-activities-normalize-ex-xml">PROV-XML</a>
+            <a href="#tabs-activities-divide-ex-xml">PROV-XML</a>
         </li>
         <li class='tab'>
-            <a href="#tabs-activities-normalize-ex-json">PROV-JSON</a>
+            <a href="#tabs-activities-divide-ex-json">PROV-JSON</a>
         </li>
         <li class='tab'>
-            <a href="#tabs-activities-normalize-ex-provn">PROV-N</a>
+            <a href="#tabs-activities-divide-ex-provn">PROV-N</a>
         </li>
       </ul>
-      <div class="tab-contents" id="tabs-activities-normalize-ex-graph">
+      <div class="tab-contents" id="tabs-activities-divide-ex-graph">
 
-.. graphviz:: _generated/dot/activities/normalize_max.dot
+.. graphviz:: _generated/dot/activities/divide_max.dot
 
 .. raw:: html
 
     </div>
-    <div class="tab-contents" id="tabs-activities-normalize-ex-python">
+    <div class="tab-contents" id="tabs-activities-divide-ex-python">
 
 Python code utilizing the `prov <http://prov.readthedocs.org/>`_ package.
 
-.. literalinclude:: _generated/py/activities/normalize_max.py
+.. literalinclude:: _generated/py/activities/divide_max.py
     :language: python
 
 .. raw:: html
 
     </div>
-    <div class="tab-contents" id="tabs-activities-normalize-ex-xml">
+    <div class="tab-contents" id="tabs-activities-divide-ex-xml">
 
 In the `PROV-XML <http://www.w3.org/TR/prov-xml/>`_ serialization.
 
-.. literalinclude:: _generated/xml/activities/normalize_max.xml
+.. literalinclude:: _generated/xml/activities/divide_max.xml
     :language: xml
 
 .. raw:: html
 
     </div>
-    <div class="tab-contents" id="tabs-activities-normalize-ex-json">
+    <div class="tab-contents" id="tabs-activities-divide-ex-json">
 
 In the
 `PROV-JSON <http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/>`_
 serialization.
 
-.. literalinclude:: _generated/json/activities/normalize_max.json
+.. literalinclude:: _generated/json/activities/divide_max.json
     :language: json
 
 .. raw:: html
 
     </div>
-    <div class="tab-contents" id="tabs-activities-normalize-ex-provn">
+    <div class="tab-contents" id="tabs-activities-divide-ex-provn">
 
 In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
 
-.. literalinclude:: _generated/provn/activities/normalize_max.provn
-
-.. raw:: html
-
-    </div>
-    </div>
-
-
-------
-
-Multiply
-^^^^^^^^
-
-Multiply each value of the data with a certain factor. This is implied by many operations but sometimes useful to capture in its own right.
-
-.. raw:: html
-
-    <div id="tab-container" class="tab-container">
-      <ul class='etabs'>
-        <li class='tab'>
-            <a href="#tabs-activities-multiply-description">Definition</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-multiply-json_def">JSON Definition</a>
-        </li>
-      </ul>
-      <div class="tab-contents" id="tabs-activities-multiply-description">
-
-
-Properties
-    ============================ =======
-    Name                         Value
-    ============================ =======
-    ``prov:id``                  ``multiply``
-    ``prov:label``               ``Multiply``
-    Two letter ID code:          ``mp``
-    ============================ =======
-
-Required Attributes
-    ======  ==============  ================================
-    Name    Type            Description                     
-    ======  ==============  ================================
-    factor  ``xsd:double``  The factor by which to multiply.
-    ======  ==============  ================================
-
-Optional Attributes
-    *None*
-
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-multiply-json_def">
-
-This shows the JSON that is used to generate the rest of the definition.
-
-.. literalinclude:: definitions/activities/multiply.json
-    :language: json
-
-.. raw:: html
-
-    </div>
-    </div>
-
-
-**Example**
-
-A concrete ``multiply`` node example is illustrated here as a graph, in code, and in various representations.
-
-.. raw:: html
-
-    <div id="tab-container" class="tab-container">
-      <ul class='etabs'>
-        <li class='tab'>
-            <a href="#tabs-activities-multiply-ex-graph">Graph</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-multiply-ex-python">Python Code</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-multiply-ex-xml">PROV-XML</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-multiply-ex-json">PROV-JSON</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-multiply-ex-provn">PROV-N</a>
-        </li>
-      </ul>
-      <div class="tab-contents" id="tabs-activities-multiply-ex-graph">
-
-.. graphviz:: _generated/dot/activities/multiply_max.dot
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-multiply-ex-python">
-
-Python code utilizing the `prov <http://prov.readthedocs.org/>`_ package.
-
-.. literalinclude:: _generated/py/activities/multiply_max.py
-    :language: python
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-multiply-ex-xml">
-
-In the `PROV-XML <http://www.w3.org/TR/prov-xml/>`_ serialization.
-
-.. literalinclude:: _generated/xml/activities/multiply_max.xml
-    :language: xml
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-multiply-ex-json">
-
-In the
-`PROV-JSON <http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/>`_
-serialization.
-
-.. literalinclude:: _generated/json/activities/multiply_max.json
-    :language: json
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-multiply-ex-provn">
-
-In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
-
-.. literalinclude:: _generated/provn/activities/multiply_max.provn
-
-.. raw:: html
-
-    </div>
-    </div>
-
-
-------
-
-Merge
-^^^^^
-
-Merge several traces into one. This is very implementation dependent and thus the activity should be associated with a software agent.
-
-.. raw:: html
-
-    <div id="tab-container" class="tab-container">
-      <ul class='etabs'>
-        <li class='tab'>
-            <a href="#tabs-activities-merge-description">Definition</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-merge-json_def">JSON Definition</a>
-        </li>
-      </ul>
-      <div class="tab-contents" id="tabs-activities-merge-description">
-
-
-Properties
-    ============================ =======
-    Name                         Value
-    ============================ =======
-    ``prov:id``                  ``merge``
-    ``prov:label``               ``Merge``
-    Two letter ID code:          ``mg``
-    ============================ =======
-
-Required Attributes
-    ================  ==============  =================================================
-    Name              Type            Description                                      
-    ================  ==============  =================================================
-    merging_strategy  ``xsd:string``  A string describing the applied merging strategy.
-    ================  ==============  =================================================
-
-Optional Attributes
-    *None*
-
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-merge-json_def">
-
-This shows the JSON that is used to generate the rest of the definition.
-
-.. literalinclude:: definitions/activities/merge.json
-    :language: json
-
-.. raw:: html
-
-    </div>
-    </div>
-
-
-**Example**
-
-A concrete ``merge`` node example is illustrated here as a graph, in code, and in various representations.
-
-.. raw:: html
-
-    <div id="tab-container" class="tab-container">
-      <ul class='etabs'>
-        <li class='tab'>
-            <a href="#tabs-activities-merge-ex-graph">Graph</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-merge-ex-python">Python Code</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-merge-ex-xml">PROV-XML</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-merge-ex-json">PROV-JSON</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-merge-ex-provn">PROV-N</a>
-        </li>
-      </ul>
-      <div class="tab-contents" id="tabs-activities-merge-ex-graph">
-
-.. graphviz:: _generated/dot/activities/merge_max.dot
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-merge-ex-python">
-
-Python code utilizing the `prov <http://prov.readthedocs.org/>`_ package.
-
-.. literalinclude:: _generated/py/activities/merge_max.py
-    :language: python
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-merge-ex-xml">
-
-In the `PROV-XML <http://www.w3.org/TR/prov-xml/>`_ serialization.
-
-.. literalinclude:: _generated/xml/activities/merge_max.xml
-    :language: xml
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-merge-ex-json">
-
-In the
-`PROV-JSON <http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/>`_
-serialization.
-
-.. literalinclude:: _generated/json/activities/merge_max.json
-    :language: json
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-merge-ex-provn">
-
-In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
-
-.. literalinclude:: _generated/provn/activities/merge_max.provn
+.. literalinclude:: _generated/provn/activities/divide_max.provn
 
 .. raw:: html
 
@@ -4138,59 +3807,55 @@ In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
 
 ------
 
-Interpolate
-^^^^^^^^^^^
+Remove Response
+^^^^^^^^^^^^^^^
 
-Interpolate the data to new sampling points.
+Remove an instrument's response.
 
 .. raw:: html
 
     <div id="tab-container" class="tab-container">
       <ul class='etabs'>
         <li class='tab'>
-            <a href="#tabs-activities-interpolate-description">Definition</a>
+            <a href="#tabs-activities-remove_response-description">Definition</a>
         </li>
         <li class='tab'>
-            <a href="#tabs-activities-interpolate-json_def">JSON Definition</a>
+            <a href="#tabs-activities-remove_response-json_def">JSON Definition</a>
         </li>
       </ul>
-      <div class="tab-contents" id="tabs-activities-interpolate-description">
+      <div class="tab-contents" id="tabs-activities-remove_response-description">
 
 
 Properties
     ============================ =======
     Name                         Value
     ============================ =======
-    ``prov:id``                  ``interpolate``
-    ``prov:label``               ``Interpolate``
-    Two letter ID code:          ``ip``
+    ``prov:id``                  ``remove_response``
+    ``prov:label``               ``Remove Response``
+    Two letter ID code:          ``rr``
     ============================ =======
 
 Required Attributes
-    ====================  ==============  ======================================================================================================================================================================================================================
-    Name                  Type            Description                                                                                                                                                                                                           
-    ====================  ==============  ======================================================================================================================================================================================================================
-    interpolation_method  ``xsd:string``  The method used to interpolate the samples. ``weighted average slopes`` is the interpolation method use by SAC and detailed in a 1976 paper by Wiggins. This is in wide use and thus offered as a special option here.
-    new_sampling_rate     ``xsd:double``  The sampling rate after the interpolation.                                                                                                                                                                            
-    ====================  ==============  ======================================================================================================================================================================================================================
+    *None*
 
 Optional Attributes
-    =====================  =======================  ============================================================
-    Name                   Type                     Description                                                 
-    =====================  =======================  ============================================================
-    new_start_time         ``xsd:dateTime``         The time of the first sample in UTC after the interpolation.
-    new_number_of_samples  ``xsd:positiveInteger``  The number of samples after the interpolation.              
-    =====================  =======================  ============================================================
+    ============  ==============  =================================================================================
+    Name          Type            Description                                                                      
+    ============  ==============  =================================================================================
+    water_level   ``xsd:double``  The applied water level in dB.                                                   
+    input_units   ``xsd:string``  Units of the input data in a common abbreviation, e.g. `m`, `m/s`, `nm/s^2`, ... 
+    output_units  ``xsd:string``  Units of the output data in a common abbreviation, e.g. `m`, `m/s`, `nm/s^2`, ...
+    ============  ==============  =================================================================================
 
 
 .. raw:: html
 
     </div>
-    <div class="tab-contents" id="tabs-activities-interpolate-json_def">
+    <div class="tab-contents" id="tabs-activities-remove_response-json_def">
 
 This shows the JSON that is used to generate the rest of the definition.
 
-.. literalinclude:: definitions/activities/interpolate.json
+.. literalinclude:: definitions/activities/remove_response.json
     :language: json
 
 .. raw:: html
@@ -4201,72 +3866,72 @@ This shows the JSON that is used to generate the rest of the definition.
 
 **Minimal Example**
 
-A concrete ``interpolate`` node example is illustrated here as a graph, in code, and in various representations. This is a minimal but valid ``interpolate`` node. See below for a full example.
+A concrete ``remove_response`` node example is illustrated here as a graph, in code, and in various representations. This is a minimal but valid ``remove_response`` node. See below for a full example.
 
 .. raw:: html
 
     <div id="tab-container" class="tab-container">
       <ul class='etabs'>
         <li class='tab'>
-            <a href="#tabs-activities-interpolate-ex_min-graph">Graph</a>
+            <a href="#tabs-activities-remove_response-ex_min-graph">Graph</a>
         </li>
         <li class='tab'>
-            <a href="#tabs-activities-interpolate-ex_min-python">Python Code</a>
+            <a href="#tabs-activities-remove_response-ex_min-python">Python Code</a>
         </li>
         <li class='tab'>
-            <a href="#tabs-activities-interpolate-ex_min-xml">PROV-XML</a>
+            <a href="#tabs-activities-remove_response-ex_min-xml">PROV-XML</a>
         </li>
         <li class='tab'>
-            <a href="#tabs-activities-interpolate-ex_min-json">PROV-JSON</a>
+            <a href="#tabs-activities-remove_response-ex_min-json">PROV-JSON</a>
         </li>
         <li class='tab'>
-            <a href="#tabs-activities-interpolate-ex_min-provn">PROV-N</a>
+            <a href="#tabs-activities-remove_response-ex_min-provn">PROV-N</a>
         </li>
       </ul>
-      <div class="tab-contents" id="tabs-activities-interpolate-ex_min-graph">
+      <div class="tab-contents" id="tabs-activities-remove_response-ex_min-graph">
 
-.. graphviz:: _generated/dot/activities/interpolate_min.dot
+.. graphviz:: _generated/dot/activities/remove_response_min.dot
 
 .. raw:: html
 
     </div>
-    <div class="tab-contents" id="tabs-activities-interpolate-ex_min-python">
+    <div class="tab-contents" id="tabs-activities-remove_response-ex_min-python">
 
 Python code utilizing the `prov <http://prov.readthedocs.org/>`_ package.
 
-.. literalinclude:: _generated/py/activities/interpolate_min.py
+.. literalinclude:: _generated/py/activities/remove_response_min.py
     :language: python
 
 .. raw:: html
 
     </div>
-    <div class="tab-contents" id="tabs-activities-interpolate-ex_min-xml">
+    <div class="tab-contents" id="tabs-activities-remove_response-ex_min-xml">
 
 In the `PROV-XML <http://www.w3.org/TR/prov-xml/>`_ serialization.
 
-.. literalinclude:: _generated/xml/activities/interpolate_min.xml
+.. literalinclude:: _generated/xml/activities/remove_response_min.xml
     :language: xml
 
 .. raw:: html
 
     </div>
-    <div class="tab-contents" id="tabs-activities-interpolate-ex_min-json">
+    <div class="tab-contents" id="tabs-activities-remove_response-ex_min-json">
 
 In the
 `PROV-JSON <http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/>`_
 serialization.
 
-.. literalinclude:: _generated/json/activities/interpolate_min.json
+.. literalinclude:: _generated/json/activities/remove_response_min.json
     :language: json
 
 .. raw:: html
 
     </div>
-    <div class="tab-contents" id="tabs-activities-interpolate-ex_min-provn">
+    <div class="tab-contents" id="tabs-activities-remove_response-ex_min-provn">
 
 In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
 
-.. literalinclude:: _generated/provn/activities/interpolate_min.provn
+.. literalinclude:: _generated/provn/activities/remove_response_min.provn
 
 .. raw:: html
 
@@ -4276,285 +3941,72 @@ In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
 
 **Full Example**
 
-A concrete ``interpolate`` node example is illustrated here as a graph, in code, and in various representations. This is a full ``interpolate`` node containing the maximum amount of information.
+A concrete ``remove_response`` node example is illustrated here as a graph, in code, and in various representations. This is a full ``remove_response`` node containing the maximum amount of information.
 
 .. raw:: html
 
     <div id="tab-container" class="tab-container">
       <ul class='etabs'>
         <li class='tab'>
-            <a href="#tabs-activities-interpolate-ex_max-graph">Graph</a>
+            <a href="#tabs-activities-remove_response-ex_max-graph">Graph</a>
         </li>
         <li class='tab'>
-            <a href="#tabs-activities-interpolate-ex_max-python">Python Code</a>
+            <a href="#tabs-activities-remove_response-ex_max-python">Python Code</a>
         </li>
         <li class='tab'>
-            <a href="#tabs-activities-interpolate-ex_max-xml">PROV-XML</a>
+            <a href="#tabs-activities-remove_response-ex_max-xml">PROV-XML</a>
         </li>
         <li class='tab'>
-            <a href="#tabs-activities-interpolate-ex_max-json">PROV-JSON</a>
+            <a href="#tabs-activities-remove_response-ex_max-json">PROV-JSON</a>
         </li>
         <li class='tab'>
-            <a href="#tabs-activities-interpolate-ex_max-provn">PROV-N</a>
+            <a href="#tabs-activities-remove_response-ex_max-provn">PROV-N</a>
         </li>
       </ul>
-      <div class="tab-contents" id="tabs-activities-interpolate-ex_max-graph">
+      <div class="tab-contents" id="tabs-activities-remove_response-ex_max-graph">
 
-.. graphviz:: _generated/dot/activities/interpolate_max.dot
+.. graphviz:: _generated/dot/activities/remove_response_max.dot
 
 .. raw:: html
 
     </div>
-    <div class="tab-contents" id="tabs-activities-interpolate-ex_max-python">
+    <div class="tab-contents" id="tabs-activities-remove_response-ex_max-python">
 
 Python code utilizing the `prov <http://prov.readthedocs.org/>`_ package.
 
-.. literalinclude:: _generated/py/activities/interpolate_max.py
+.. literalinclude:: _generated/py/activities/remove_response_max.py
     :language: python
 
 .. raw:: html
 
     </div>
-    <div class="tab-contents" id="tabs-activities-interpolate-ex_max-xml">
+    <div class="tab-contents" id="tabs-activities-remove_response-ex_max-xml">
 
 In the `PROV-XML <http://www.w3.org/TR/prov-xml/>`_ serialization.
 
-.. literalinclude:: _generated/xml/activities/interpolate_max.xml
+.. literalinclude:: _generated/xml/activities/remove_response_max.xml
     :language: xml
 
 .. raw:: html
 
     </div>
-    <div class="tab-contents" id="tabs-activities-interpolate-ex_max-json">
+    <div class="tab-contents" id="tabs-activities-remove_response-ex_max-json">
 
 In the
 `PROV-JSON <http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/>`_
 serialization.
 
-.. literalinclude:: _generated/json/activities/interpolate_max.json
+.. literalinclude:: _generated/json/activities/remove_response_max.json
     :language: json
 
 .. raw:: html
 
     </div>
-    <div class="tab-contents" id="tabs-activities-interpolate-ex_max-provn">
+    <div class="tab-contents" id="tabs-activities-remove_response-ex_max-provn">
 
 In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
 
-.. literalinclude:: _generated/provn/activities/interpolate_max.provn
-
-.. raw:: html
-
-    </div>
-    </div>
-
-
-------
-
-Integrate
-^^^^^^^^^
-
-Integrate the data with respect to time.
-
-.. raw:: html
-
-    <div id="tab-container" class="tab-container">
-      <ul class='etabs'>
-        <li class='tab'>
-            <a href="#tabs-activities-integrate-description">Definition</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-integrate-json_def">JSON Definition</a>
-        </li>
-      </ul>
-      <div class="tab-contents" id="tabs-activities-integrate-description">
-
-
-Properties
-    ============================ =======
-    Name                         Value
-    ============================ =======
-    ``prov:id``                  ``integrate``
-    ``prov:label``               ``Integrate``
-    Two letter ID code:          ``ig``
-    ============================ =======
-
-Required Attributes
-    =====  =======================  ===========================================================
-    Name   Type                     Description                                                
-    =====  =======================  ===========================================================
-    order  ``xsd:positiveInteger``  The order of the integration, e.g. the nth anti-derivative.
-    =====  =======================  ===========================================================
-
-Optional Attributes
-    ==================  ==============  =================================================================================
-    Name                Type            Description                                                                      
-    ==================  ==============  =================================================================================
-    integration_method  ``xsd:string``  The integration method.                                                          
-    input_units         ``xsd:string``  Units of the input data in a common abbreviation, e.g. `m`, `m/s`, `nm/s^2`, ... 
-    output_units        ``xsd:string``  Units of the output data in a common abbreviation, e.g. `m`, `m/s`, `nm/s^2`, ...
-    ==================  ==============  =================================================================================
-
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-integrate-json_def">
-
-This shows the JSON that is used to generate the rest of the definition.
-
-.. literalinclude:: definitions/activities/integrate.json
-    :language: json
-
-.. raw:: html
-
-    </div>
-    </div>
-
-
-**Minimal Example**
-
-A concrete ``integrate`` node example is illustrated here as a graph, in code, and in various representations. This is a minimal but valid ``integrate`` node. See below for a full example.
-
-.. raw:: html
-
-    <div id="tab-container" class="tab-container">
-      <ul class='etabs'>
-        <li class='tab'>
-            <a href="#tabs-activities-integrate-ex_min-graph">Graph</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-integrate-ex_min-python">Python Code</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-integrate-ex_min-xml">PROV-XML</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-integrate-ex_min-json">PROV-JSON</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-integrate-ex_min-provn">PROV-N</a>
-        </li>
-      </ul>
-      <div class="tab-contents" id="tabs-activities-integrate-ex_min-graph">
-
-.. graphviz:: _generated/dot/activities/integrate_min.dot
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-integrate-ex_min-python">
-
-Python code utilizing the `prov <http://prov.readthedocs.org/>`_ package.
-
-.. literalinclude:: _generated/py/activities/integrate_min.py
-    :language: python
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-integrate-ex_min-xml">
-
-In the `PROV-XML <http://www.w3.org/TR/prov-xml/>`_ serialization.
-
-.. literalinclude:: _generated/xml/activities/integrate_min.xml
-    :language: xml
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-integrate-ex_min-json">
-
-In the
-`PROV-JSON <http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/>`_
-serialization.
-
-.. literalinclude:: _generated/json/activities/integrate_min.json
-    :language: json
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-integrate-ex_min-provn">
-
-In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
-
-.. literalinclude:: _generated/provn/activities/integrate_min.provn
-
-.. raw:: html
-
-    </div>
-    </div>
-
-
-**Full Example**
-
-A concrete ``integrate`` node example is illustrated here as a graph, in code, and in various representations. This is a full ``integrate`` node containing the maximum amount of information.
-
-.. raw:: html
-
-    <div id="tab-container" class="tab-container">
-      <ul class='etabs'>
-        <li class='tab'>
-            <a href="#tabs-activities-integrate-ex_max-graph">Graph</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-integrate-ex_max-python">Python Code</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-integrate-ex_max-xml">PROV-XML</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-integrate-ex_max-json">PROV-JSON</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-integrate-ex_max-provn">PROV-N</a>
-        </li>
-      </ul>
-      <div class="tab-contents" id="tabs-activities-integrate-ex_max-graph">
-
-.. graphviz:: _generated/dot/activities/integrate_max.dot
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-integrate-ex_max-python">
-
-Python code utilizing the `prov <http://prov.readthedocs.org/>`_ package.
-
-.. literalinclude:: _generated/py/activities/integrate_max.py
-    :language: python
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-integrate-ex_max-xml">
-
-In the `PROV-XML <http://www.w3.org/TR/prov-xml/>`_ serialization.
-
-.. literalinclude:: _generated/xml/activities/integrate_max.xml
-    :language: xml
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-integrate-ex_max-json">
-
-In the
-`PROV-JSON <http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/>`_
-serialization.
-
-.. literalinclude:: _generated/json/activities/integrate_max.json
-    :language: json
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-integrate-ex_max-provn">
-
-In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
-
-.. literalinclude:: _generated/provn/activities/integrate_max.provn
+.. literalinclude:: _generated/provn/activities/remove_response_max.provn
 
 .. raw:: html
 
@@ -4779,40 +4231,248 @@ In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
 
 ------
 
-Divide
-^^^^^^
+Cut
+^^^
 
-Divide each value of the data by a certain factor. This is implied by many operations but sometimes useful to capture in its own right.
+Cut the data resulting in a shorter trace.
 
 .. raw:: html
 
     <div id="tab-container" class="tab-container">
       <ul class='etabs'>
         <li class='tab'>
-            <a href="#tabs-activities-divide-description">Definition</a>
+            <a href="#tabs-activities-cut-description">Definition</a>
         </li>
         <li class='tab'>
-            <a href="#tabs-activities-divide-json_def">JSON Definition</a>
+            <a href="#tabs-activities-cut-json_def">JSON Definition</a>
         </li>
       </ul>
-      <div class="tab-contents" id="tabs-activities-divide-description">
+      <div class="tab-contents" id="tabs-activities-cut-description">
 
 
 Properties
     ============================ =======
     Name                         Value
     ============================ =======
-    ``prov:id``                  ``divide``
-    ``prov:label``               ``Divide``
-    Two letter ID code:          ``dv``
+    ``prov:id``                  ``cut``
+    ``prov:label``               ``Cut``
+    Two letter ID code:          ``ct``
     ============================ =======
 
 Required Attributes
-    =======  ==============  ==============================
-    Name     Type            Description                   
-    =======  ==============  ==============================
-    divisor  ``xsd:double``  The factor by which to divide.
-    =======  ==============  ==============================
+    *None*
+
+Optional Attributes
+    ==============  ================  =====================================================
+    Name            Type              Description                                          
+    ==============  ================  =====================================================
+    new_start_time  ``xsd:dateTime``  The time of the first sample in UTC after cutting it.
+    new_end_time    ``xsd:dateTime``  The time of the last sample in UTC after cutting it. 
+    ==============  ================  =====================================================
+
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-cut-json_def">
+
+This shows the JSON that is used to generate the rest of the definition.
+
+.. literalinclude:: definitions/activities/cut.json
+    :language: json
+
+.. raw:: html
+
+    </div>
+    </div>
+
+
+**Minimal Example**
+
+A concrete ``cut`` node example is illustrated here as a graph, in code, and in various representations. This is a minimal but valid ``cut`` node. See below for a full example.
+
+.. raw:: html
+
+    <div id="tab-container" class="tab-container">
+      <ul class='etabs'>
+        <li class='tab'>
+            <a href="#tabs-activities-cut-ex_min-graph">Graph</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-cut-ex_min-python">Python Code</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-cut-ex_min-xml">PROV-XML</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-cut-ex_min-json">PROV-JSON</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-cut-ex_min-provn">PROV-N</a>
+        </li>
+      </ul>
+      <div class="tab-contents" id="tabs-activities-cut-ex_min-graph">
+
+.. graphviz:: _generated/dot/activities/cut_min.dot
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-cut-ex_min-python">
+
+Python code utilizing the `prov <http://prov.readthedocs.org/>`_ package.
+
+.. literalinclude:: _generated/py/activities/cut_min.py
+    :language: python
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-cut-ex_min-xml">
+
+In the `PROV-XML <http://www.w3.org/TR/prov-xml/>`_ serialization.
+
+.. literalinclude:: _generated/xml/activities/cut_min.xml
+    :language: xml
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-cut-ex_min-json">
+
+In the
+`PROV-JSON <http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/>`_
+serialization.
+
+.. literalinclude:: _generated/json/activities/cut_min.json
+    :language: json
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-cut-ex_min-provn">
+
+In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
+
+.. literalinclude:: _generated/provn/activities/cut_min.provn
+
+.. raw:: html
+
+    </div>
+    </div>
+
+
+**Full Example**
+
+A concrete ``cut`` node example is illustrated here as a graph, in code, and in various representations. This is a full ``cut`` node containing the maximum amount of information.
+
+.. raw:: html
+
+    <div id="tab-container" class="tab-container">
+      <ul class='etabs'>
+        <li class='tab'>
+            <a href="#tabs-activities-cut-ex_max-graph">Graph</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-cut-ex_max-python">Python Code</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-cut-ex_max-xml">PROV-XML</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-cut-ex_max-json">PROV-JSON</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-cut-ex_max-provn">PROV-N</a>
+        </li>
+      </ul>
+      <div class="tab-contents" id="tabs-activities-cut-ex_max-graph">
+
+.. graphviz:: _generated/dot/activities/cut_max.dot
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-cut-ex_max-python">
+
+Python code utilizing the `prov <http://prov.readthedocs.org/>`_ package.
+
+.. literalinclude:: _generated/py/activities/cut_max.py
+    :language: python
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-cut-ex_max-xml">
+
+In the `PROV-XML <http://www.w3.org/TR/prov-xml/>`_ serialization.
+
+.. literalinclude:: _generated/xml/activities/cut_max.xml
+    :language: xml
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-cut-ex_max-json">
+
+In the
+`PROV-JSON <http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/>`_
+serialization.
+
+.. literalinclude:: _generated/json/activities/cut_max.json
+    :language: json
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-cut-ex_max-provn">
+
+In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
+
+.. literalinclude:: _generated/provn/activities/cut_max.provn
+
+.. raw:: html
+
+    </div>
+    </div>
+
+
+------
+
+Detrend
+^^^^^^^
+
+Remove trend from the data.
+
+.. raw:: html
+
+    <div id="tab-container" class="tab-container">
+      <ul class='etabs'>
+        <li class='tab'>
+            <a href="#tabs-activities-detrend-description">Definition</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-detrend-json_def">JSON Definition</a>
+        </li>
+      </ul>
+      <div class="tab-contents" id="tabs-activities-detrend-description">
+
+
+Properties
+    ============================ =======
+    Name                         Value
+    ============================ =======
+    ``prov:id``                  ``detrend``
+    ``prov:label``               ``Detrend``
+    Two letter ID code:          ``dt``
+    ============================ =======
+
+Required Attributes
+    =================  ==============  ==============================================================================================================================================================================================================
+    Name               Type            Description                                                                                                                                                                                                   
+    =================  ==============  ==============================================================================================================================================================================================================
+    detrending_method  ``xsd:string``  The method used to remove the trend from the data. ``detrend`` means substracting the best fitting linear line, ``demean`` removes the mean, and ``simple`` subtracts a line through the first and last point.
+    =================  ==============  ==============================================================================================================================================================================================================
 
 Optional Attributes
     *None*
@@ -4821,11 +4481,11 @@ Optional Attributes
 .. raw:: html
 
     </div>
-    <div class="tab-contents" id="tabs-activities-divide-json_def">
+    <div class="tab-contents" id="tabs-activities-detrend-json_def">
 
 This shows the JSON that is used to generate the rest of the definition.
 
-.. literalinclude:: definitions/activities/divide.json
+.. literalinclude:: definitions/activities/detrend.json
     :language: json
 
 .. raw:: html
@@ -4836,72 +4496,835 @@ This shows the JSON that is used to generate the rest of the definition.
 
 **Example**
 
-A concrete ``divide`` node example is illustrated here as a graph, in code, and in various representations.
+A concrete ``detrend`` node example is illustrated here as a graph, in code, and in various representations.
 
 .. raw:: html
 
     <div id="tab-container" class="tab-container">
       <ul class='etabs'>
         <li class='tab'>
-            <a href="#tabs-activities-divide-ex-graph">Graph</a>
+            <a href="#tabs-activities-detrend-ex-graph">Graph</a>
         </li>
         <li class='tab'>
-            <a href="#tabs-activities-divide-ex-python">Python Code</a>
+            <a href="#tabs-activities-detrend-ex-python">Python Code</a>
         </li>
         <li class='tab'>
-            <a href="#tabs-activities-divide-ex-xml">PROV-XML</a>
+            <a href="#tabs-activities-detrend-ex-xml">PROV-XML</a>
         </li>
         <li class='tab'>
-            <a href="#tabs-activities-divide-ex-json">PROV-JSON</a>
+            <a href="#tabs-activities-detrend-ex-json">PROV-JSON</a>
         </li>
         <li class='tab'>
-            <a href="#tabs-activities-divide-ex-provn">PROV-N</a>
+            <a href="#tabs-activities-detrend-ex-provn">PROV-N</a>
         </li>
       </ul>
-      <div class="tab-contents" id="tabs-activities-divide-ex-graph">
+      <div class="tab-contents" id="tabs-activities-detrend-ex-graph">
 
-.. graphviz:: _generated/dot/activities/divide_max.dot
+.. graphviz:: _generated/dot/activities/detrend_max.dot
 
 .. raw:: html
 
     </div>
-    <div class="tab-contents" id="tabs-activities-divide-ex-python">
+    <div class="tab-contents" id="tabs-activities-detrend-ex-python">
 
 Python code utilizing the `prov <http://prov.readthedocs.org/>`_ package.
 
-.. literalinclude:: _generated/py/activities/divide_max.py
+.. literalinclude:: _generated/py/activities/detrend_max.py
     :language: python
 
 .. raw:: html
 
     </div>
-    <div class="tab-contents" id="tabs-activities-divide-ex-xml">
+    <div class="tab-contents" id="tabs-activities-detrend-ex-xml">
 
 In the `PROV-XML <http://www.w3.org/TR/prov-xml/>`_ serialization.
 
-.. literalinclude:: _generated/xml/activities/divide_max.xml
+.. literalinclude:: _generated/xml/activities/detrend_max.xml
     :language: xml
 
 .. raw:: html
 
     </div>
-    <div class="tab-contents" id="tabs-activities-divide-ex-json">
+    <div class="tab-contents" id="tabs-activities-detrend-ex-json">
 
 In the
 `PROV-JSON <http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/>`_
 serialization.
 
-.. literalinclude:: _generated/json/activities/divide_max.json
+.. literalinclude:: _generated/json/activities/detrend_max.json
     :language: json
 
 .. raw:: html
 
     </div>
-    <div class="tab-contents" id="tabs-activities-divide-ex-provn">
+    <div class="tab-contents" id="tabs-activities-detrend-ex-provn">
 
 In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
 
-.. literalinclude:: _generated/provn/activities/divide_max.provn
+.. literalinclude:: _generated/provn/activities/detrend_max.provn
+
+.. raw:: html
+
+    </div>
+    </div>
+
+
+------
+
+Integrate
+^^^^^^^^^
+
+Integrate the data with respect to time.
+
+.. raw:: html
+
+    <div id="tab-container" class="tab-container">
+      <ul class='etabs'>
+        <li class='tab'>
+            <a href="#tabs-activities-integrate-description">Definition</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-integrate-json_def">JSON Definition</a>
+        </li>
+      </ul>
+      <div class="tab-contents" id="tabs-activities-integrate-description">
+
+
+Properties
+    ============================ =======
+    Name                         Value
+    ============================ =======
+    ``prov:id``                  ``integrate``
+    ``prov:label``               ``Integrate``
+    Two letter ID code:          ``ig``
+    ============================ =======
+
+Required Attributes
+    =====  =======================  ===========================================================
+    Name   Type                     Description                                                
+    =====  =======================  ===========================================================
+    order  ``xsd:positiveInteger``  The order of the integration, e.g. the nth anti-derivative.
+    =====  =======================  ===========================================================
+
+Optional Attributes
+    ==================  ==============  =================================================================================
+    Name                Type            Description                                                                      
+    ==================  ==============  =================================================================================
+    integration_method  ``xsd:string``  The integration method.                                                          
+    input_units         ``xsd:string``  Units of the input data in a common abbreviation, e.g. `m`, `m/s`, `nm/s^2`, ... 
+    output_units        ``xsd:string``  Units of the output data in a common abbreviation, e.g. `m`, `m/s`, `nm/s^2`, ...
+    ==================  ==============  =================================================================================
+
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-integrate-json_def">
+
+This shows the JSON that is used to generate the rest of the definition.
+
+.. literalinclude:: definitions/activities/integrate.json
+    :language: json
+
+.. raw:: html
+
+    </div>
+    </div>
+
+
+**Minimal Example**
+
+A concrete ``integrate`` node example is illustrated here as a graph, in code, and in various representations. This is a minimal but valid ``integrate`` node. See below for a full example.
+
+.. raw:: html
+
+    <div id="tab-container" class="tab-container">
+      <ul class='etabs'>
+        <li class='tab'>
+            <a href="#tabs-activities-integrate-ex_min-graph">Graph</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-integrate-ex_min-python">Python Code</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-integrate-ex_min-xml">PROV-XML</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-integrate-ex_min-json">PROV-JSON</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-integrate-ex_min-provn">PROV-N</a>
+        </li>
+      </ul>
+      <div class="tab-contents" id="tabs-activities-integrate-ex_min-graph">
+
+.. graphviz:: _generated/dot/activities/integrate_min.dot
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-integrate-ex_min-python">
+
+Python code utilizing the `prov <http://prov.readthedocs.org/>`_ package.
+
+.. literalinclude:: _generated/py/activities/integrate_min.py
+    :language: python
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-integrate-ex_min-xml">
+
+In the `PROV-XML <http://www.w3.org/TR/prov-xml/>`_ serialization.
+
+.. literalinclude:: _generated/xml/activities/integrate_min.xml
+    :language: xml
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-integrate-ex_min-json">
+
+In the
+`PROV-JSON <http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/>`_
+serialization.
+
+.. literalinclude:: _generated/json/activities/integrate_min.json
+    :language: json
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-integrate-ex_min-provn">
+
+In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
+
+.. literalinclude:: _generated/provn/activities/integrate_min.provn
+
+.. raw:: html
+
+    </div>
+    </div>
+
+
+**Full Example**
+
+A concrete ``integrate`` node example is illustrated here as a graph, in code, and in various representations. This is a full ``integrate`` node containing the maximum amount of information.
+
+.. raw:: html
+
+    <div id="tab-container" class="tab-container">
+      <ul class='etabs'>
+        <li class='tab'>
+            <a href="#tabs-activities-integrate-ex_max-graph">Graph</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-integrate-ex_max-python">Python Code</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-integrate-ex_max-xml">PROV-XML</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-integrate-ex_max-json">PROV-JSON</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-integrate-ex_max-provn">PROV-N</a>
+        </li>
+      </ul>
+      <div class="tab-contents" id="tabs-activities-integrate-ex_max-graph">
+
+.. graphviz:: _generated/dot/activities/integrate_max.dot
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-integrate-ex_max-python">
+
+Python code utilizing the `prov <http://prov.readthedocs.org/>`_ package.
+
+.. literalinclude:: _generated/py/activities/integrate_max.py
+    :language: python
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-integrate-ex_max-xml">
+
+In the `PROV-XML <http://www.w3.org/TR/prov-xml/>`_ serialization.
+
+.. literalinclude:: _generated/xml/activities/integrate_max.xml
+    :language: xml
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-integrate-ex_max-json">
+
+In the
+`PROV-JSON <http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/>`_
+serialization.
+
+.. literalinclude:: _generated/json/activities/integrate_max.json
+    :language: json
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-integrate-ex_max-provn">
+
+In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
+
+.. literalinclude:: _generated/provn/activities/integrate_max.provn
+
+.. raw:: html
+
+    </div>
+    </div>
+
+
+------
+
+Multiply
+^^^^^^^^
+
+Multiply each value of the data with a certain factor. This is implied by many operations but sometimes useful to capture in its own right.
+
+.. raw:: html
+
+    <div id="tab-container" class="tab-container">
+      <ul class='etabs'>
+        <li class='tab'>
+            <a href="#tabs-activities-multiply-description">Definition</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-multiply-json_def">JSON Definition</a>
+        </li>
+      </ul>
+      <div class="tab-contents" id="tabs-activities-multiply-description">
+
+
+Properties
+    ============================ =======
+    Name                         Value
+    ============================ =======
+    ``prov:id``                  ``multiply``
+    ``prov:label``               ``Multiply``
+    Two letter ID code:          ``mp``
+    ============================ =======
+
+Required Attributes
+    ======  ==============  ================================
+    Name    Type            Description                     
+    ======  ==============  ================================
+    factor  ``xsd:double``  The factor by which to multiply.
+    ======  ==============  ================================
+
+Optional Attributes
+    *None*
+
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-multiply-json_def">
+
+This shows the JSON that is used to generate the rest of the definition.
+
+.. literalinclude:: definitions/activities/multiply.json
+    :language: json
+
+.. raw:: html
+
+    </div>
+    </div>
+
+
+**Example**
+
+A concrete ``multiply`` node example is illustrated here as a graph, in code, and in various representations.
+
+.. raw:: html
+
+    <div id="tab-container" class="tab-container">
+      <ul class='etabs'>
+        <li class='tab'>
+            <a href="#tabs-activities-multiply-ex-graph">Graph</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-multiply-ex-python">Python Code</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-multiply-ex-xml">PROV-XML</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-multiply-ex-json">PROV-JSON</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-multiply-ex-provn">PROV-N</a>
+        </li>
+      </ul>
+      <div class="tab-contents" id="tabs-activities-multiply-ex-graph">
+
+.. graphviz:: _generated/dot/activities/multiply_max.dot
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-multiply-ex-python">
+
+Python code utilizing the `prov <http://prov.readthedocs.org/>`_ package.
+
+.. literalinclude:: _generated/py/activities/multiply_max.py
+    :language: python
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-multiply-ex-xml">
+
+In the `PROV-XML <http://www.w3.org/TR/prov-xml/>`_ serialization.
+
+.. literalinclude:: _generated/xml/activities/multiply_max.xml
+    :language: xml
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-multiply-ex-json">
+
+In the
+`PROV-JSON <http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/>`_
+serialization.
+
+.. literalinclude:: _generated/json/activities/multiply_max.json
+    :language: json
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-multiply-ex-provn">
+
+In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
+
+.. literalinclude:: _generated/provn/activities/multiply_max.provn
+
+.. raw:: html
+
+    </div>
+    </div>
+
+
+------
+
+Rotate
+^^^^^^
+
+Rotate multi-component data. The precise rotation angles could be inferred by comparing the dip and azimuth of inputs and outputs. Alternatively the rotation method can be specified.
+
+.. raw:: html
+
+    <div id="tab-container" class="tab-container">
+      <ul class='etabs'>
+        <li class='tab'>
+            <a href="#tabs-activities-rotate-description">Definition</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-rotate-json_def">JSON Definition</a>
+        </li>
+      </ul>
+      <div class="tab-contents" id="tabs-activities-rotate-description">
+
+
+Properties
+    ============================ =======
+    Name                         Value
+    ============================ =======
+    ``prov:id``                  ``rotate``
+    ``prov:label``               ``Rotate``
+    Two letter ID code:          ``rt``
+    ============================ =======
+
+Required Attributes
+    *None*
+
+Optional Attributes
+    ======  ==============  ====================
+    Name    Type            Description         
+    ======  ==============  ====================
+    method  ``xsd:string``  The rotation method.
+    ======  ==============  ====================
+
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-rotate-json_def">
+
+This shows the JSON that is used to generate the rest of the definition.
+
+.. literalinclude:: definitions/activities/rotate.json
+    :language: json
+
+.. raw:: html
+
+    </div>
+    </div>
+
+
+**Minimal Example**
+
+A concrete ``rotate`` node example is illustrated here as a graph, in code, and in various representations. This is a minimal but valid ``rotate`` node. See below for a full example.
+
+.. raw:: html
+
+    <div id="tab-container" class="tab-container">
+      <ul class='etabs'>
+        <li class='tab'>
+            <a href="#tabs-activities-rotate-ex_min-graph">Graph</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-rotate-ex_min-python">Python Code</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-rotate-ex_min-xml">PROV-XML</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-rotate-ex_min-json">PROV-JSON</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-rotate-ex_min-provn">PROV-N</a>
+        </li>
+      </ul>
+      <div class="tab-contents" id="tabs-activities-rotate-ex_min-graph">
+
+.. graphviz:: _generated/dot/activities/rotate_min.dot
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-rotate-ex_min-python">
+
+Python code utilizing the `prov <http://prov.readthedocs.org/>`_ package.
+
+.. literalinclude:: _generated/py/activities/rotate_min.py
+    :language: python
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-rotate-ex_min-xml">
+
+In the `PROV-XML <http://www.w3.org/TR/prov-xml/>`_ serialization.
+
+.. literalinclude:: _generated/xml/activities/rotate_min.xml
+    :language: xml
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-rotate-ex_min-json">
+
+In the
+`PROV-JSON <http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/>`_
+serialization.
+
+.. literalinclude:: _generated/json/activities/rotate_min.json
+    :language: json
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-rotate-ex_min-provn">
+
+In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
+
+.. literalinclude:: _generated/provn/activities/rotate_min.provn
+
+.. raw:: html
+
+    </div>
+    </div>
+
+
+**Full Example**
+
+A concrete ``rotate`` node example is illustrated here as a graph, in code, and in various representations. This is a full ``rotate`` node containing the maximum amount of information.
+
+.. raw:: html
+
+    <div id="tab-container" class="tab-container">
+      <ul class='etabs'>
+        <li class='tab'>
+            <a href="#tabs-activities-rotate-ex_max-graph">Graph</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-rotate-ex_max-python">Python Code</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-rotate-ex_max-xml">PROV-XML</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-rotate-ex_max-json">PROV-JSON</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-rotate-ex_max-provn">PROV-N</a>
+        </li>
+      </ul>
+      <div class="tab-contents" id="tabs-activities-rotate-ex_max-graph">
+
+.. graphviz:: _generated/dot/activities/rotate_max.dot
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-rotate-ex_max-python">
+
+Python code utilizing the `prov <http://prov.readthedocs.org/>`_ package.
+
+.. literalinclude:: _generated/py/activities/rotate_max.py
+    :language: python
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-rotate-ex_max-xml">
+
+In the `PROV-XML <http://www.w3.org/TR/prov-xml/>`_ serialization.
+
+.. literalinclude:: _generated/xml/activities/rotate_max.xml
+    :language: xml
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-rotate-ex_max-json">
+
+In the
+`PROV-JSON <http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/>`_
+serialization.
+
+.. literalinclude:: _generated/json/activities/rotate_max.json
+    :language: json
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-rotate-ex_max-provn">
+
+In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
+
+.. literalinclude:: _generated/provn/activities/rotate_max.provn
+
+.. raw:: html
+
+    </div>
+    </div>
+
+
+------
+
+Calculate Adjoint Source
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Calculate an adjoint source.
+
+.. raw:: html
+
+    <div id="tab-container" class="tab-container">
+      <ul class='etabs'>
+        <li class='tab'>
+            <a href="#tabs-activities-calculate_adjoint_source-description">Definition</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-calculate_adjoint_source-json_def">JSON Definition</a>
+        </li>
+      </ul>
+      <div class="tab-contents" id="tabs-activities-calculate_adjoint_source-description">
+
+
+Properties
+    ============================ =======
+    Name                         Value
+    ============================ =======
+    ``prov:id``                  ``calculate_adjoint_source``
+    ``prov:label``               ``Calculate Adjoint Source``
+    Two letter ID code:          ``ca``
+    ============================ =======
+
+Required Attributes
+    ===================  ==============  =============================================
+    Name                 Type            Description                                  
+    ===================  ==============  =============================================
+    adjoint_source_type  ``xsd:string``  A string denoting the type of adjoint source.
+    ===================  ==============  =============================================
+
+Optional Attributes
+    =======================  ==============  ========================================================================================================
+    Name                     Type            Description                                                                                             
+    =======================  ==============  ========================================================================================================
+    adjoint_source_type_uri  ``xsd:anyURI``  A URI pointing to a detailed description of the adjoint source, for example a DOI link to a publication.
+    =======================  ==============  ========================================================================================================
+
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-calculate_adjoint_source-json_def">
+
+This shows the JSON that is used to generate the rest of the definition.
+
+.. literalinclude:: definitions/activities/calculate_adjoint_source.json
+    :language: json
+
+.. raw:: html
+
+    </div>
+    </div>
+
+
+**Minimal Example**
+
+A concrete ``calculate_adjoint_source`` node example is illustrated here as a graph, in code, and in various representations. This is a minimal but valid ``calculate_adjoint_source`` node. See below for a full example.
+
+.. raw:: html
+
+    <div id="tab-container" class="tab-container">
+      <ul class='etabs'>
+        <li class='tab'>
+            <a href="#tabs-activities-calculate_adjoint_source-ex_min-graph">Graph</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-calculate_adjoint_source-ex_min-python">Python Code</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-calculate_adjoint_source-ex_min-xml">PROV-XML</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-calculate_adjoint_source-ex_min-json">PROV-JSON</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-calculate_adjoint_source-ex_min-provn">PROV-N</a>
+        </li>
+      </ul>
+      <div class="tab-contents" id="tabs-activities-calculate_adjoint_source-ex_min-graph">
+
+.. graphviz:: _generated/dot/activities/calculate_adjoint_source_min.dot
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-calculate_adjoint_source-ex_min-python">
+
+Python code utilizing the `prov <http://prov.readthedocs.org/>`_ package.
+
+.. literalinclude:: _generated/py/activities/calculate_adjoint_source_min.py
+    :language: python
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-calculate_adjoint_source-ex_min-xml">
+
+In the `PROV-XML <http://www.w3.org/TR/prov-xml/>`_ serialization.
+
+.. literalinclude:: _generated/xml/activities/calculate_adjoint_source_min.xml
+    :language: xml
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-calculate_adjoint_source-ex_min-json">
+
+In the
+`PROV-JSON <http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/>`_
+serialization.
+
+.. literalinclude:: _generated/json/activities/calculate_adjoint_source_min.json
+    :language: json
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-calculate_adjoint_source-ex_min-provn">
+
+In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
+
+.. literalinclude:: _generated/provn/activities/calculate_adjoint_source_min.provn
+
+.. raw:: html
+
+    </div>
+    </div>
+
+
+**Full Example**
+
+A concrete ``calculate_adjoint_source`` node example is illustrated here as a graph, in code, and in various representations. This is a full ``calculate_adjoint_source`` node containing the maximum amount of information.
+
+.. raw:: html
+
+    <div id="tab-container" class="tab-container">
+      <ul class='etabs'>
+        <li class='tab'>
+            <a href="#tabs-activities-calculate_adjoint_source-ex_max-graph">Graph</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-calculate_adjoint_source-ex_max-python">Python Code</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-calculate_adjoint_source-ex_max-xml">PROV-XML</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-calculate_adjoint_source-ex_max-json">PROV-JSON</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-calculate_adjoint_source-ex_max-provn">PROV-N</a>
+        </li>
+      </ul>
+      <div class="tab-contents" id="tabs-activities-calculate_adjoint_source-ex_max-graph">
+
+.. graphviz:: _generated/dot/activities/calculate_adjoint_source_max.dot
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-calculate_adjoint_source-ex_max-python">
+
+Python code utilizing the `prov <http://prov.readthedocs.org/>`_ package.
+
+.. literalinclude:: _generated/py/activities/calculate_adjoint_source_max.py
+    :language: python
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-calculate_adjoint_source-ex_max-xml">
+
+In the `PROV-XML <http://www.w3.org/TR/prov-xml/>`_ serialization.
+
+.. literalinclude:: _generated/xml/activities/calculate_adjoint_source_max.xml
+    :language: xml
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-calculate_adjoint_source-ex_max-json">
+
+In the
+`PROV-JSON <http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/>`_
+serialization.
+
+.. literalinclude:: _generated/json/activities/calculate_adjoint_source_max.json
+    :language: json
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-calculate_adjoint_source-ex_max-provn">
+
+In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
+
+.. literalinclude:: _generated/provn/activities/calculate_adjoint_source_max.provn
 
 .. raw:: html
 
@@ -5124,318 +5547,55 @@ In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
 
 ------
 
-Detrend
-^^^^^^^
+Simulate Response
+^^^^^^^^^^^^^^^^^
 
-Remove trend from the data.
+Add an instrument’s response.
 
 .. raw:: html
 
     <div id="tab-container" class="tab-container">
       <ul class='etabs'>
         <li class='tab'>
-            <a href="#tabs-activities-detrend-description">Definition</a>
+            <a href="#tabs-activities-simulate_response-description">Definition</a>
         </li>
         <li class='tab'>
-            <a href="#tabs-activities-detrend-json_def">JSON Definition</a>
+            <a href="#tabs-activities-simulate_response-json_def">JSON Definition</a>
         </li>
       </ul>
-      <div class="tab-contents" id="tabs-activities-detrend-description">
+      <div class="tab-contents" id="tabs-activities-simulate_response-description">
 
 
 Properties
     ============================ =======
     Name                         Value
     ============================ =======
-    ``prov:id``                  ``detrend``
-    ``prov:label``               ``Detrend``
-    Two letter ID code:          ``dt``
-    ============================ =======
-
-Required Attributes
-    =================  ==============  ==============================================================================================================================================================================================================
-    Name               Type            Description                                                                                                                                                                                                   
-    =================  ==============  ==============================================================================================================================================================================================================
-    detrending_method  ``xsd:string``  The method used to remove the trend from the data. ``detrend`` means substracting the best fitting linear line, ``demean`` removes the mean, and ``simple`` subtracts a line through the first and last point.
-    =================  ==============  ==============================================================================================================================================================================================================
-
-Optional Attributes
-    *None*
-
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-detrend-json_def">
-
-This shows the JSON that is used to generate the rest of the definition.
-
-.. literalinclude:: definitions/activities/detrend.json
-    :language: json
-
-.. raw:: html
-
-    </div>
-    </div>
-
-
-**Example**
-
-A concrete ``detrend`` node example is illustrated here as a graph, in code, and in various representations.
-
-.. raw:: html
-
-    <div id="tab-container" class="tab-container">
-      <ul class='etabs'>
-        <li class='tab'>
-            <a href="#tabs-activities-detrend-ex-graph">Graph</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-detrend-ex-python">Python Code</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-detrend-ex-xml">PROV-XML</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-detrend-ex-json">PROV-JSON</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-detrend-ex-provn">PROV-N</a>
-        </li>
-      </ul>
-      <div class="tab-contents" id="tabs-activities-detrend-ex-graph">
-
-.. graphviz:: _generated/dot/activities/detrend_max.dot
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-detrend-ex-python">
-
-Python code utilizing the `prov <http://prov.readthedocs.org/>`_ package.
-
-.. literalinclude:: _generated/py/activities/detrend_max.py
-    :language: python
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-detrend-ex-xml">
-
-In the `PROV-XML <http://www.w3.org/TR/prov-xml/>`_ serialization.
-
-.. literalinclude:: _generated/xml/activities/detrend_max.xml
-    :language: xml
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-detrend-ex-json">
-
-In the
-`PROV-JSON <http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/>`_
-serialization.
-
-.. literalinclude:: _generated/json/activities/detrend_max.json
-    :language: json
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-detrend-ex-provn">
-
-In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
-
-.. literalinclude:: _generated/provn/activities/detrend_max.provn
-
-.. raw:: html
-
-    </div>
-    </div>
-
-
-------
-
-Decimate
-^^^^^^^^
-
-Downsample the waveform data by an integer factor. Any applied anti-alias filtering has to be described by a filtering activity.
-
-.. raw:: html
-
-    <div id="tab-container" class="tab-container">
-      <ul class='etabs'>
-        <li class='tab'>
-            <a href="#tabs-activities-decimate-description">Definition</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-decimate-json_def">JSON Definition</a>
-        </li>
-      </ul>
-      <div class="tab-contents" id="tabs-activities-decimate-description">
-
-
-Properties
-    ============================ =======
-    Name                         Value
-    ============================ =======
-    ``prov:id``                  ``decimate``
-    ``prov:label``               ``Decimate``
-    Two letter ID code:          ``dc``
-    ============================ =======
-
-Required Attributes
-    ======  =======================  =====================
-    Name    Type                     Description          
-    ======  =======================  =====================
-    factor  ``xsd:positiveInteger``  The decimation factor
-    ======  =======================  =====================
-
-Optional Attributes
-    *None*
-
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-decimate-json_def">
-
-This shows the JSON that is used to generate the rest of the definition.
-
-.. literalinclude:: definitions/activities/decimate.json
-    :language: json
-
-.. raw:: html
-
-    </div>
-    </div>
-
-
-**Example**
-
-A concrete ``decimate`` node example is illustrated here as a graph, in code, and in various representations.
-
-.. raw:: html
-
-    <div id="tab-container" class="tab-container">
-      <ul class='etabs'>
-        <li class='tab'>
-            <a href="#tabs-activities-decimate-ex-graph">Graph</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-decimate-ex-python">Python Code</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-decimate-ex-xml">PROV-XML</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-decimate-ex-json">PROV-JSON</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-decimate-ex-provn">PROV-N</a>
-        </li>
-      </ul>
-      <div class="tab-contents" id="tabs-activities-decimate-ex-graph">
-
-.. graphviz:: _generated/dot/activities/decimate_max.dot
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-decimate-ex-python">
-
-Python code utilizing the `prov <http://prov.readthedocs.org/>`_ package.
-
-.. literalinclude:: _generated/py/activities/decimate_max.py
-    :language: python
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-decimate-ex-xml">
-
-In the `PROV-XML <http://www.w3.org/TR/prov-xml/>`_ serialization.
-
-.. literalinclude:: _generated/xml/activities/decimate_max.xml
-    :language: xml
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-decimate-ex-json">
-
-In the
-`PROV-JSON <http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/>`_
-serialization.
-
-.. literalinclude:: _generated/json/activities/decimate_max.json
-    :language: json
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-decimate-ex-provn">
-
-In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
-
-.. literalinclude:: _generated/provn/activities/decimate_max.provn
-
-.. raw:: html
-
-    </div>
-    </div>
-
-
-------
-
-Cut
-^^^
-
-Cut the data resulting in a shorter trace.
-
-.. raw:: html
-
-    <div id="tab-container" class="tab-container">
-      <ul class='etabs'>
-        <li class='tab'>
-            <a href="#tabs-activities-cut-description">Definition</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-cut-json_def">JSON Definition</a>
-        </li>
-      </ul>
-      <div class="tab-contents" id="tabs-activities-cut-description">
-
-
-Properties
-    ============================ =======
-    Name                         Value
-    ============================ =======
-    ``prov:id``                  ``cut``
-    ``prov:label``               ``Cut``
-    Two letter ID code:          ``ct``
+    ``prov:id``                  ``simulate_response``
+    ``prov:label``               ``Simulate Response``
+    Two letter ID code:          ``sr``
     ============================ =======
 
 Required Attributes
     *None*
 
 Optional Attributes
-    ==============  ================  =====================================================
-    Name            Type              Description                                          
-    ==============  ================  =====================================================
-    new_start_time  ``xsd:dateTime``  The time of the first sample in UTC after cutting it.
-    new_end_time    ``xsd:dateTime``  The time of the last sample in UTC after cutting it. 
-    ==============  ================  =====================================================
+    ============  ==============  ================================================================================================================================================
+    Name          Type            Description                                                                                                                                     
+    ============  ==============  ================================================================================================================================================
+    description   ``xsd:string``  Textual description of the added response. If more details are needed, then this activity should use an entity that points to the used response.
+    input_units   ``xsd:string``  Units of the input data in a common abbreviation, e.g. `m`, `m/s`, `nm/s^2`, ...                                                                
+    output_units  ``xsd:string``  Units of the output data in a common abbreviation, e.g. `m`, `m/s`, `nm/s^2`, ...                                                               
+    ============  ==============  ================================================================================================================================================
 
 
 .. raw:: html
 
     </div>
-    <div class="tab-contents" id="tabs-activities-cut-json_def">
+    <div class="tab-contents" id="tabs-activities-simulate_response-json_def">
 
 This shows the JSON that is used to generate the rest of the definition.
 
-.. literalinclude:: definitions/activities/cut.json
+.. literalinclude:: definitions/activities/simulate_response.json
     :language: json
 
 .. raw:: html
@@ -5446,72 +5606,72 @@ This shows the JSON that is used to generate the rest of the definition.
 
 **Minimal Example**
 
-A concrete ``cut`` node example is illustrated here as a graph, in code, and in various representations. This is a minimal but valid ``cut`` node. See below for a full example.
+A concrete ``simulate_response`` node example is illustrated here as a graph, in code, and in various representations. This is a minimal but valid ``simulate_response`` node. See below for a full example.
 
 .. raw:: html
 
     <div id="tab-container" class="tab-container">
       <ul class='etabs'>
         <li class='tab'>
-            <a href="#tabs-activities-cut-ex_min-graph">Graph</a>
+            <a href="#tabs-activities-simulate_response-ex_min-graph">Graph</a>
         </li>
         <li class='tab'>
-            <a href="#tabs-activities-cut-ex_min-python">Python Code</a>
+            <a href="#tabs-activities-simulate_response-ex_min-python">Python Code</a>
         </li>
         <li class='tab'>
-            <a href="#tabs-activities-cut-ex_min-xml">PROV-XML</a>
+            <a href="#tabs-activities-simulate_response-ex_min-xml">PROV-XML</a>
         </li>
         <li class='tab'>
-            <a href="#tabs-activities-cut-ex_min-json">PROV-JSON</a>
+            <a href="#tabs-activities-simulate_response-ex_min-json">PROV-JSON</a>
         </li>
         <li class='tab'>
-            <a href="#tabs-activities-cut-ex_min-provn">PROV-N</a>
+            <a href="#tabs-activities-simulate_response-ex_min-provn">PROV-N</a>
         </li>
       </ul>
-      <div class="tab-contents" id="tabs-activities-cut-ex_min-graph">
+      <div class="tab-contents" id="tabs-activities-simulate_response-ex_min-graph">
 
-.. graphviz:: _generated/dot/activities/cut_min.dot
+.. graphviz:: _generated/dot/activities/simulate_response_min.dot
 
 .. raw:: html
 
     </div>
-    <div class="tab-contents" id="tabs-activities-cut-ex_min-python">
+    <div class="tab-contents" id="tabs-activities-simulate_response-ex_min-python">
 
 Python code utilizing the `prov <http://prov.readthedocs.org/>`_ package.
 
-.. literalinclude:: _generated/py/activities/cut_min.py
+.. literalinclude:: _generated/py/activities/simulate_response_min.py
     :language: python
 
 .. raw:: html
 
     </div>
-    <div class="tab-contents" id="tabs-activities-cut-ex_min-xml">
+    <div class="tab-contents" id="tabs-activities-simulate_response-ex_min-xml">
 
 In the `PROV-XML <http://www.w3.org/TR/prov-xml/>`_ serialization.
 
-.. literalinclude:: _generated/xml/activities/cut_min.xml
+.. literalinclude:: _generated/xml/activities/simulate_response_min.xml
     :language: xml
 
 .. raw:: html
 
     </div>
-    <div class="tab-contents" id="tabs-activities-cut-ex_min-json">
+    <div class="tab-contents" id="tabs-activities-simulate_response-ex_min-json">
 
 In the
 `PROV-JSON <http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/>`_
 serialization.
 
-.. literalinclude:: _generated/json/activities/cut_min.json
+.. literalinclude:: _generated/json/activities/simulate_response_min.json
     :language: json
 
 .. raw:: html
 
     </div>
-    <div class="tab-contents" id="tabs-activities-cut-ex_min-provn">
+    <div class="tab-contents" id="tabs-activities-simulate_response-ex_min-provn">
 
 In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
 
-.. literalinclude:: _generated/provn/activities/cut_min.provn
+.. literalinclude:: _generated/provn/activities/simulate_response_min.provn
 
 .. raw:: html
 
@@ -5521,72 +5681,204 @@ In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
 
 **Full Example**
 
-A concrete ``cut`` node example is illustrated here as a graph, in code, and in various representations. This is a full ``cut`` node containing the maximum amount of information.
+A concrete ``simulate_response`` node example is illustrated here as a graph, in code, and in various representations. This is a full ``simulate_response`` node containing the maximum amount of information.
 
 .. raw:: html
 
     <div id="tab-container" class="tab-container">
       <ul class='etabs'>
         <li class='tab'>
-            <a href="#tabs-activities-cut-ex_max-graph">Graph</a>
+            <a href="#tabs-activities-simulate_response-ex_max-graph">Graph</a>
         </li>
         <li class='tab'>
-            <a href="#tabs-activities-cut-ex_max-python">Python Code</a>
+            <a href="#tabs-activities-simulate_response-ex_max-python">Python Code</a>
         </li>
         <li class='tab'>
-            <a href="#tabs-activities-cut-ex_max-xml">PROV-XML</a>
+            <a href="#tabs-activities-simulate_response-ex_max-xml">PROV-XML</a>
         </li>
         <li class='tab'>
-            <a href="#tabs-activities-cut-ex_max-json">PROV-JSON</a>
+            <a href="#tabs-activities-simulate_response-ex_max-json">PROV-JSON</a>
         </li>
         <li class='tab'>
-            <a href="#tabs-activities-cut-ex_max-provn">PROV-N</a>
+            <a href="#tabs-activities-simulate_response-ex_max-provn">PROV-N</a>
         </li>
       </ul>
-      <div class="tab-contents" id="tabs-activities-cut-ex_max-graph">
+      <div class="tab-contents" id="tabs-activities-simulate_response-ex_max-graph">
 
-.. graphviz:: _generated/dot/activities/cut_max.dot
+.. graphviz:: _generated/dot/activities/simulate_response_max.dot
 
 .. raw:: html
 
     </div>
-    <div class="tab-contents" id="tabs-activities-cut-ex_max-python">
+    <div class="tab-contents" id="tabs-activities-simulate_response-ex_max-python">
 
 Python code utilizing the `prov <http://prov.readthedocs.org/>`_ package.
 
-.. literalinclude:: _generated/py/activities/cut_max.py
+.. literalinclude:: _generated/py/activities/simulate_response_max.py
     :language: python
 
 .. raw:: html
 
     </div>
-    <div class="tab-contents" id="tabs-activities-cut-ex_max-xml">
+    <div class="tab-contents" id="tabs-activities-simulate_response-ex_max-xml">
 
 In the `PROV-XML <http://www.w3.org/TR/prov-xml/>`_ serialization.
 
-.. literalinclude:: _generated/xml/activities/cut_max.xml
+.. literalinclude:: _generated/xml/activities/simulate_response_max.xml
     :language: xml
 
 .. raw:: html
 
     </div>
-    <div class="tab-contents" id="tabs-activities-cut-ex_max-json">
+    <div class="tab-contents" id="tabs-activities-simulate_response-ex_max-json">
 
 In the
 `PROV-JSON <http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/>`_
 serialization.
 
-.. literalinclude:: _generated/json/activities/cut_max.json
+.. literalinclude:: _generated/json/activities/simulate_response_max.json
     :language: json
 
 .. raw:: html
 
     </div>
-    <div class="tab-contents" id="tabs-activities-cut-ex_max-provn">
+    <div class="tab-contents" id="tabs-activities-simulate_response-ex_max-provn">
 
 In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
 
-.. literalinclude:: _generated/provn/activities/cut_max.provn
+.. literalinclude:: _generated/provn/activities/simulate_response_max.provn
+
+.. raw:: html
+
+    </div>
+    </div>
+
+
+------
+
+Stack Cross Correlations
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Stack a number of cross correlations.
+
+.. raw:: html
+
+    <div id="tab-container" class="tab-container">
+      <ul class='etabs'>
+        <li class='tab'>
+            <a href="#tabs-activities-stack_cross_correlations-description">Definition</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-stack_cross_correlations-json_def">JSON Definition</a>
+        </li>
+      </ul>
+      <div class="tab-contents" id="tabs-activities-stack_cross_correlations-description">
+
+
+Properties
+    ============================ =======
+    Name                         Value
+    ============================ =======
+    ``prov:id``                  ``stack_cross_correlations``
+    ``prov:label``               ``Stack Cross Correlations``
+    Two letter ID code:          ``sc``
+    ============================ =======
+
+Required Attributes
+    ===============  ==============  ========================================================
+    Name             Type            Description                                             
+    ===============  ==============  ========================================================
+    stacking_method  ``xsd:string``  A string describing the method used to create the stack.
+    ===============  ==============  ========================================================
+
+Optional Attributes
+    *None*
+
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-stack_cross_correlations-json_def">
+
+This shows the JSON that is used to generate the rest of the definition.
+
+.. literalinclude:: definitions/activities/stack_cross_correlations.json
+    :language: json
+
+.. raw:: html
+
+    </div>
+    </div>
+
+
+**Example**
+
+A concrete ``stack_cross_correlations`` node example is illustrated here as a graph, in code, and in various representations.
+
+.. raw:: html
+
+    <div id="tab-container" class="tab-container">
+      <ul class='etabs'>
+        <li class='tab'>
+            <a href="#tabs-activities-stack_cross_correlations-ex-graph">Graph</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-stack_cross_correlations-ex-python">Python Code</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-stack_cross_correlations-ex-xml">PROV-XML</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-stack_cross_correlations-ex-json">PROV-JSON</a>
+        </li>
+        <li class='tab'>
+            <a href="#tabs-activities-stack_cross_correlations-ex-provn">PROV-N</a>
+        </li>
+      </ul>
+      <div class="tab-contents" id="tabs-activities-stack_cross_correlations-ex-graph">
+
+.. graphviz:: _generated/dot/activities/stack_cross_correlations_max.dot
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-stack_cross_correlations-ex-python">
+
+Python code utilizing the `prov <http://prov.readthedocs.org/>`_ package.
+
+.. literalinclude:: _generated/py/activities/stack_cross_correlations_max.py
+    :language: python
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-stack_cross_correlations-ex-xml">
+
+In the `PROV-XML <http://www.w3.org/TR/prov-xml/>`_ serialization.
+
+.. literalinclude:: _generated/xml/activities/stack_cross_correlations_max.xml
+    :language: xml
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-stack_cross_correlations-ex-json">
+
+In the
+`PROV-JSON <http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/>`_
+serialization.
+
+.. literalinclude:: _generated/json/activities/stack_cross_correlations_max.json
+    :language: json
+
+.. raw:: html
+
+    </div>
+    <div class="tab-contents" id="tabs-activities-stack_cross_correlations-ex-provn">
+
+In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
+
+.. literalinclude:: _generated/provn/activities/stack_cross_correlations_max.provn
 
 .. raw:: html
 
@@ -5798,217 +6090,6 @@ serialization.
 In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
 
 .. literalinclude:: _generated/provn/activities/cross_correlate_max.provn
-
-.. raw:: html
-
-    </div>
-    </div>
-
-
-------
-
-Calculate Adjoint Source
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-Calculate an adjoint source.
-
-.. raw:: html
-
-    <div id="tab-container" class="tab-container">
-      <ul class='etabs'>
-        <li class='tab'>
-            <a href="#tabs-activities-calculate_adjoint_source-description">Definition</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-calculate_adjoint_source-json_def">JSON Definition</a>
-        </li>
-      </ul>
-      <div class="tab-contents" id="tabs-activities-calculate_adjoint_source-description">
-
-
-Properties
-    ============================ =======
-    Name                         Value
-    ============================ =======
-    ``prov:id``                  ``calculate_adjoint_source``
-    ``prov:label``               ``Calculate Adjoint Source``
-    Two letter ID code:          ``ca``
-    ============================ =======
-
-Required Attributes
-    ===================  ==============  =============================================
-    Name                 Type            Description                                  
-    ===================  ==============  =============================================
-    adjoint_source_type  ``xsd:string``  A string denoting the type of adjoint source.
-    ===================  ==============  =============================================
-
-Optional Attributes
-    =======================  ==============  ========================================================================================================
-    Name                     Type            Description                                                                                             
-    =======================  ==============  ========================================================================================================
-    adjoint_source_type_uri  ``xsd:anyURI``  A URI pointing to a detailed description of the adjoint source, for example a DOI link to a publication.
-    =======================  ==============  ========================================================================================================
-
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-calculate_adjoint_source-json_def">
-
-This shows the JSON that is used to generate the rest of the definition.
-
-.. literalinclude:: definitions/activities/calculate_adjoint_source.json
-    :language: json
-
-.. raw:: html
-
-    </div>
-    </div>
-
-
-**Minimal Example**
-
-A concrete ``calculate_adjoint_source`` node example is illustrated here as a graph, in code, and in various representations. This is a minimal but valid ``calculate_adjoint_source`` node. See below for a full example.
-
-.. raw:: html
-
-    <div id="tab-container" class="tab-container">
-      <ul class='etabs'>
-        <li class='tab'>
-            <a href="#tabs-activities-calculate_adjoint_source-ex_min-graph">Graph</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-calculate_adjoint_source-ex_min-python">Python Code</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-calculate_adjoint_source-ex_min-xml">PROV-XML</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-calculate_adjoint_source-ex_min-json">PROV-JSON</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-calculate_adjoint_source-ex_min-provn">PROV-N</a>
-        </li>
-      </ul>
-      <div class="tab-contents" id="tabs-activities-calculate_adjoint_source-ex_min-graph">
-
-.. graphviz:: _generated/dot/activities/calculate_adjoint_source_min.dot
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-calculate_adjoint_source-ex_min-python">
-
-Python code utilizing the `prov <http://prov.readthedocs.org/>`_ package.
-
-.. literalinclude:: _generated/py/activities/calculate_adjoint_source_min.py
-    :language: python
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-calculate_adjoint_source-ex_min-xml">
-
-In the `PROV-XML <http://www.w3.org/TR/prov-xml/>`_ serialization.
-
-.. literalinclude:: _generated/xml/activities/calculate_adjoint_source_min.xml
-    :language: xml
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-calculate_adjoint_source-ex_min-json">
-
-In the
-`PROV-JSON <http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/>`_
-serialization.
-
-.. literalinclude:: _generated/json/activities/calculate_adjoint_source_min.json
-    :language: json
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-calculate_adjoint_source-ex_min-provn">
-
-In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
-
-.. literalinclude:: _generated/provn/activities/calculate_adjoint_source_min.provn
-
-.. raw:: html
-
-    </div>
-    </div>
-
-
-**Full Example**
-
-A concrete ``calculate_adjoint_source`` node example is illustrated here as a graph, in code, and in various representations. This is a full ``calculate_adjoint_source`` node containing the maximum amount of information.
-
-.. raw:: html
-
-    <div id="tab-container" class="tab-container">
-      <ul class='etabs'>
-        <li class='tab'>
-            <a href="#tabs-activities-calculate_adjoint_source-ex_max-graph">Graph</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-calculate_adjoint_source-ex_max-python">Python Code</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-calculate_adjoint_source-ex_max-xml">PROV-XML</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-calculate_adjoint_source-ex_max-json">PROV-JSON</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-calculate_adjoint_source-ex_max-provn">PROV-N</a>
-        </li>
-      </ul>
-      <div class="tab-contents" id="tabs-activities-calculate_adjoint_source-ex_max-graph">
-
-.. graphviz:: _generated/dot/activities/calculate_adjoint_source_max.dot
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-calculate_adjoint_source-ex_max-python">
-
-Python code utilizing the `prov <http://prov.readthedocs.org/>`_ package.
-
-.. literalinclude:: _generated/py/activities/calculate_adjoint_source_max.py
-    :language: python
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-calculate_adjoint_source-ex_max-xml">
-
-In the `PROV-XML <http://www.w3.org/TR/prov-xml/>`_ serialization.
-
-.. literalinclude:: _generated/xml/activities/calculate_adjoint_source_max.xml
-    :language: xml
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-calculate_adjoint_source-ex_max-json">
-
-In the
-`PROV-JSON <http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/>`_
-serialization.
-
-.. literalinclude:: _generated/json/activities/calculate_adjoint_source_max.json
-    :language: json
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-calculate_adjoint_source-ex_max-provn">
-
-In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
-
-.. literalinclude:: _generated/provn/activities/calculate_adjoint_source_max.provn
 
 .. raw:: html
 
@@ -6234,61 +6315,55 @@ In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
 
 ------
 
-Bandpass Filter
-^^^^^^^^^^^^^^^
+Taper
+^^^^^
 
-A Bandpass filter. There is a huge variety of bandpass filters out there and this activity cannot capture them all in full detail.
+Apply a taper window to the data.
 
 .. raw:: html
 
     <div id="tab-container" class="tab-container">
       <ul class='etabs'>
         <li class='tab'>
-            <a href="#tabs-activities-bandpass_filter-description">Definition</a>
+            <a href="#tabs-activities-taper-description">Definition</a>
         </li>
         <li class='tab'>
-            <a href="#tabs-activities-bandpass_filter-json_def">JSON Definition</a>
+            <a href="#tabs-activities-taper-json_def">JSON Definition</a>
         </li>
       </ul>
-      <div class="tab-contents" id="tabs-activities-bandpass_filter-description">
+      <div class="tab-contents" id="tabs-activities-taper-description">
 
 
 Properties
     ============================ =======
     Name                         Value
     ============================ =======
-    ``prov:id``                  ``bandpass_filter``
-    ``prov:label``               ``Bandpass Filter``
-    Two letter ID code:          ``bp``
+    ``prov:id``                  ``taper``
+    ``prov:label``               ``Taper``
+    Two letter ID code:          ``tp``
     ============================ =======
 
 Required Attributes
-    ===========  ==============  =======================================================================================================================================================================================================================================================================================================
-    Name         Type            Description                                                                                                                                                                                                                                                                                            
-    ===========  ==============  =======================================================================================================================================================================================================================================================================================================
-    filter_type  ``xsd:string``  The type of filter, one of ``Butterworth``, ``FIR``, ``IIR``, ``Bessel``, ``Cosine SAC Taper``. Please give some more information with one or more of the other attributes. ``Cosine SAC Taper`` describes the frequency domain taper the SAC software package employs during instrument deconvolution.
-    ===========  ==============  =======================================================================================================================================================================================================================================================================================================
+    ===========  ==============  ================================================================
+    Name         Type            Description                                                     
+    ===========  ==============  ================================================================
+    window_type  ``xsd:string``  The type applied window.                                        
+    taper_width  ``xsd:double``  The width of the taper at each end. Must be between 0.0 and 0.5.
+    side         ``xsd:string``  `'left'`, `'right'`, or `'both'`                                
+    ===========  ==============  ================================================================
 
 Optional Attributes
-    =================================  =======================  ===========================================================================================
-    Name                               Type                     Description                                                                                
-    =================================  =======================  ===========================================================================================
-    lower_corner_frequency             ``xsd:double``           The lower corner frequency of the filter if applicable in Hz.                              
-    upper_corner_frequency             ``xsd:double``           The upper corner frequency of the filter if applicable in Hz.                              
-    filter_order                       ``xsd:positiveInteger``  The order of the filter if applicable.                                                     
-    number_of_passes                   ``xsd:positiveInteger``  The number of filter passes if applicable.                                                 
-    sac_cosine_taper_frequency_limits  ``xsd:string``           The frequency limits of the SAC frequency domain cosine taper in Hz from lowest to highest.
-    =================================  =======================  ===========================================================================================
+    *None*
 
 
 .. raw:: html
 
     </div>
-    <div class="tab-contents" id="tabs-activities-bandpass_filter-json_def">
+    <div class="tab-contents" id="tabs-activities-taper-json_def">
 
 This shows the JSON that is used to generate the rest of the definition.
 
-.. literalinclude:: definitions/activities/bandpass_filter.json
+.. literalinclude:: definitions/activities/taper.json
     :language: json
 
 .. raw:: html
@@ -6297,149 +6372,74 @@ This shows the JSON that is used to generate the rest of the definition.
     </div>
 
 
-**Minimal Example**
+**Example**
 
-A concrete ``bandpass_filter`` node example is illustrated here as a graph, in code, and in various representations. This is a minimal but valid ``bandpass_filter`` node. See below for a full example.
+A concrete ``taper`` node example is illustrated here as a graph, in code, and in various representations.
 
 .. raw:: html
 
     <div id="tab-container" class="tab-container">
       <ul class='etabs'>
         <li class='tab'>
-            <a href="#tabs-activities-bandpass_filter-ex_min-graph">Graph</a>
+            <a href="#tabs-activities-taper-ex-graph">Graph</a>
         </li>
         <li class='tab'>
-            <a href="#tabs-activities-bandpass_filter-ex_min-python">Python Code</a>
+            <a href="#tabs-activities-taper-ex-python">Python Code</a>
         </li>
         <li class='tab'>
-            <a href="#tabs-activities-bandpass_filter-ex_min-xml">PROV-XML</a>
+            <a href="#tabs-activities-taper-ex-xml">PROV-XML</a>
         </li>
         <li class='tab'>
-            <a href="#tabs-activities-bandpass_filter-ex_min-json">PROV-JSON</a>
+            <a href="#tabs-activities-taper-ex-json">PROV-JSON</a>
         </li>
         <li class='tab'>
-            <a href="#tabs-activities-bandpass_filter-ex_min-provn">PROV-N</a>
+            <a href="#tabs-activities-taper-ex-provn">PROV-N</a>
         </li>
       </ul>
-      <div class="tab-contents" id="tabs-activities-bandpass_filter-ex_min-graph">
+      <div class="tab-contents" id="tabs-activities-taper-ex-graph">
 
-.. graphviz:: _generated/dot/activities/bandpass_filter_min.dot
+.. graphviz:: _generated/dot/activities/taper_max.dot
 
 .. raw:: html
 
     </div>
-    <div class="tab-contents" id="tabs-activities-bandpass_filter-ex_min-python">
+    <div class="tab-contents" id="tabs-activities-taper-ex-python">
 
 Python code utilizing the `prov <http://prov.readthedocs.org/>`_ package.
 
-.. literalinclude:: _generated/py/activities/bandpass_filter_min.py
+.. literalinclude:: _generated/py/activities/taper_max.py
     :language: python
 
 .. raw:: html
 
     </div>
-    <div class="tab-contents" id="tabs-activities-bandpass_filter-ex_min-xml">
+    <div class="tab-contents" id="tabs-activities-taper-ex-xml">
 
 In the `PROV-XML <http://www.w3.org/TR/prov-xml/>`_ serialization.
 
-.. literalinclude:: _generated/xml/activities/bandpass_filter_min.xml
+.. literalinclude:: _generated/xml/activities/taper_max.xml
     :language: xml
 
 .. raw:: html
 
     </div>
-    <div class="tab-contents" id="tabs-activities-bandpass_filter-ex_min-json">
+    <div class="tab-contents" id="tabs-activities-taper-ex-json">
 
 In the
 `PROV-JSON <http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/>`_
 serialization.
 
-.. literalinclude:: _generated/json/activities/bandpass_filter_min.json
+.. literalinclude:: _generated/json/activities/taper_max.json
     :language: json
 
 .. raw:: html
 
     </div>
-    <div class="tab-contents" id="tabs-activities-bandpass_filter-ex_min-provn">
+    <div class="tab-contents" id="tabs-activities-taper-ex-provn">
 
 In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
 
-.. literalinclude:: _generated/provn/activities/bandpass_filter_min.provn
-
-.. raw:: html
-
-    </div>
-    </div>
-
-
-**Full Example**
-
-A concrete ``bandpass_filter`` node example is illustrated here as a graph, in code, and in various representations. This is a full ``bandpass_filter`` node containing the maximum amount of information.
-
-.. raw:: html
-
-    <div id="tab-container" class="tab-container">
-      <ul class='etabs'>
-        <li class='tab'>
-            <a href="#tabs-activities-bandpass_filter-ex_max-graph">Graph</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-bandpass_filter-ex_max-python">Python Code</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-bandpass_filter-ex_max-xml">PROV-XML</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-bandpass_filter-ex_max-json">PROV-JSON</a>
-        </li>
-        <li class='tab'>
-            <a href="#tabs-activities-bandpass_filter-ex_max-provn">PROV-N</a>
-        </li>
-      </ul>
-      <div class="tab-contents" id="tabs-activities-bandpass_filter-ex_max-graph">
-
-.. graphviz:: _generated/dot/activities/bandpass_filter_max.dot
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-bandpass_filter-ex_max-python">
-
-Python code utilizing the `prov <http://prov.readthedocs.org/>`_ package.
-
-.. literalinclude:: _generated/py/activities/bandpass_filter_max.py
-    :language: python
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-bandpass_filter-ex_max-xml">
-
-In the `PROV-XML <http://www.w3.org/TR/prov-xml/>`_ serialization.
-
-.. literalinclude:: _generated/xml/activities/bandpass_filter_max.xml
-    :language: xml
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-bandpass_filter-ex_max-json">
-
-In the
-`PROV-JSON <http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/>`_
-serialization.
-
-.. literalinclude:: _generated/json/activities/bandpass_filter_max.json
-    :language: json
-
-.. raw:: html
-
-    </div>
-    <div class="tab-contents" id="tabs-activities-bandpass_filter-ex_max-provn">
-
-In `PROV-N <http://www.w3.org/TR/prov-n/>`_ notation.
-
-.. literalinclude:: _generated/provn/activities/bandpass_filter_max.provn
+.. literalinclude:: _generated/provn/activities/taper_max.provn
 
 .. raw:: html
 
