@@ -69,6 +69,14 @@ file_object = pr.entity("seis_prov:sp000_fi_d49dh0h4", other_attributes=(
     ("seis_prov:location_type", "HDF5 Data Set")
 ))
 
+par_file_object = pr.entity("seis_prov:sp000_fi_asf90345", other_attributes=(
+    ("prov:label", "File"),
+    ("prov:type", "seis_prov:file"),
+    ("seis_prov:filename", "Parfile"),
+    ("seis_prov:location", "/AuxiliaryData/Files/Parfile"),
+    ("seis_prov:location_type", "HDF5 Data Set")
+))
+
 
 trace = pr.entity("seis_prov:sp001_wf_4j09fj3", other_attributes=(
     ("prov:label", "Waveform Trace"),
@@ -92,5 +100,7 @@ pr.delegation(specfem, me)
 pr.usage(simulation, model)
 pr.usage(simulation, param)
 pr.usage(simulation, file_object)
+
+pr.primary_source(param, par_file_object)
 
 pr.generation(trace, simulation)

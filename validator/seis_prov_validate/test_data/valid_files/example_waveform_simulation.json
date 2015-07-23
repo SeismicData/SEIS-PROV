@@ -51,6 +51,13 @@
             "seis_prov:model_type": "3D",
             "seis_prov:website": "http://random.org/model"
         },
+        "seis_prov:sp000_fi_asf90345": {
+            "prov:label": "File",
+            "prov:type": "seis_prov:file",
+            "seis_prov:filename": "Parfile",
+            "seis_prov:location": "/AuxiliaryData/Files/Parfile",
+            "seis_prov:location_type": "HDF5 Data Set"
+        },
         "seis_prov:sp000_fi_d49dh0h4": {
             "prov:label": "File",
             "prov:type": "seis_prov:file",
@@ -154,8 +161,18 @@
             "prov:agent": "seis_prov:sp000_pp_9034j90df"
         }
     },
-    "wasGeneratedBy": {
+    "wasDerivedFrom": {
         "_:id7": {
+            "prov:generatedEntity": "seis_prov:sp000_in_38jd89da8l",
+            "prov:type": {
+                "$": "prov:PrimarySource",
+                "type": "prov:QualifiedName"
+            },
+            "prov:usedEntity": "seis_prov:sp000_fi_asf90345"
+        }
+    },
+    "wasGeneratedBy": {
+        "_:id8": {
             "prov:activity": "seis_prov:sp001_ws_f87sf7sf78",
             "prov:entity": "seis_prov:sp001_wf_4j09fj3"
         }

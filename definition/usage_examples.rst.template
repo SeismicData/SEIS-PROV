@@ -58,6 +58,10 @@ Additionally in this case the provenance also contains a reference to a source
 code file which might often be user defined and thus influences the final
 result of the simulation.
 
+One can also see which parameter file the input parameters have been
+extracted from. In the provenance data model this is done by specifying the
+source of some information.
+
 The implementation of this in a waveform solver is fairly simple by just using
 an existing SEIS PROV XML file as a template and adjusting the information
 dynamically. No need to incorporate an actual XML library.

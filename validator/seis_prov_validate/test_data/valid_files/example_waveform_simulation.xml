@@ -56,6 +56,13 @@
     <seis_prov:location>/AuxiliaryData/Files/constants_h</seis_prov:location>
     <seis_prov:location_type>HDF5 Data Set</seis_prov:location_type>
   </prov:entity>
+  <prov:entity prov:id="seis_prov:sp000_fi_asf90345">
+    <prov:label>File</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:file</prov:type>
+    <seis_prov:filename>Parfile</seis_prov:filename>
+    <seis_prov:location>/AuxiliaryData/Files/Parfile</seis_prov:location>
+    <seis_prov:location_type>HDF5 Data Set</seis_prov:location_type>
+  </prov:entity>
   <prov:entity prov:id="seis_prov:sp001_wf_4j09fj3">
     <prov:label>Waveform Trace</prov:label>
     <prov:type xsi:type="xsd:string">seis_prov:waveform_trace</prov:type>
@@ -91,6 +98,10 @@
     <prov:activity prov:ref="seis_prov:sp001_ws_f87sf7sf78"></prov:activity>
     <prov:entity prov:ref="seis_prov:sp000_fi_d49dh0h4"></prov:entity>
   </prov:used>
+  <prov:hadPrimarySource>
+    <prov:generatedEntity prov:ref="seis_prov:sp000_in_38jd89da8l"></prov:generatedEntity>
+    <prov:usedEntity prov:ref="seis_prov:sp000_fi_asf90345"></prov:usedEntity>
+  </prov:hadPrimarySource>
   <prov:wasGeneratedBy>
     <prov:entity prov:ref="seis_prov:sp001_wf_4j09fj3"></prov:entity>
     <prov:activity prov:ref="seis_prov:sp001_ws_f87sf7sf78"></prov:activity>
