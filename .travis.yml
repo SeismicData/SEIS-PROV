@@ -19,10 +19,9 @@ before_install:
   - conda install --yes -n condaenv pip
   - source activate condaenv
   - conda install --yes python=$TRAVIS_PYTHON_VERSION pytest lxml jsonschema six python-dateutil networkx
+  - pip install pydotplus
   # Build docs on Python 3.4.
   - if [[ $TRAVIS_PYTHON_VERSION == '3.4' ]]; then pip install -U sphinx colorama sphinx_rtd_theme; fi
-  # pydot on 3.4 is a bit tricky.
-  - if [[ $TRAVIS_PYTHON_VERSION == '3.4' ]]; then pip install https://github.com/nlhepler/pydot/archive/master.zip ; fi
   # Graphviz is needed for the documentation as well.
   - if [[ $TRAVIS_PYTHON_VERSION == '3.4' ]]; then sudo apt-get -qq install graphviz ; fi
 
