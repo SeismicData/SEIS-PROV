@@ -33,7 +33,8 @@ setup(
                                "test_data/invalid_files/*.json",
                                "test_data/invalid_files/*.txt"]
     },
-    install_requires=["prov", "jsonschema>=2.4.0", "lxml", "pytest", "six"],
+    install_requires=["prov>=1.4.0", "jsonschema>=2.4.0", "lxml", "pytest",
+                      "six"],
     entry_points="""
         [console_scripts]
         seis-prov-validate=seis_prov_validate.validator:main

@@ -1,0 +1,16 @@
+<prov:document
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:prov="http://www.w3.org/ns/prov#"
+    xmlns:tr="http://example.com/ns/tr#"
+    xmlns:seis_prov="http://seisprov.org/seis_prov/0.1/#">
+  <prov:entity prov:id="tr:sp001_wf_c17dd1f">
+    <prov:label>Waveform Trace</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:waveform_trace</prov:type>
+  </prov:entity>
+  <prov:activity prov:id="seis_prov:sp001_bp_1cb9e3d">
+    <prov:label>Bandpass Filter</prov:label>
+    <prov:type xsi:type="xsd:string">seis_prov:bandpass_filter</prov:type>
+    <seis_prov:filter_type>Butterworth</seis_prov:filter_type>
+  </prov:activity>
+</prov:document>

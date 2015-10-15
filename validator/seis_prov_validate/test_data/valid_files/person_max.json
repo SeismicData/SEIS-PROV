@@ -4,7 +4,7 @@
             "prov:label": "Susanna Musterfrau",
             "prov:type": {
                 "$": "prov:Person",
-                "type": "prov:QualifiedName"
+                "type": "prov:QUALIFIED_NAME"
             },
             "seis_prov:email": "susanna.musterfrau@email.com",
             "seis_prov:name": "Susanna Musterfrau"

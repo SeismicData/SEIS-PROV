@@ -172,30 +172,26 @@ def test_validating_random_xml_file():
     result = validate(filename)
     assert result.is_valid is False
     assert result.warnings == []
-    assert len(result.errors) == 1
-    assert result.errors[0].startswith(
-        "SEIS-PROV namespace not found in document!")
+    assert result.errors == [
+        "File does not contain a single provenance record."]
 
 
 def test_empty_seis_prov_documents():
-    """
-    These are valid but at least a warning should be shown to alert the users.
-    """
-    filename = os.path.join(DATA_DIR, "valid_files",
+    filename = os.path.join(DATA_DIR, "invalid_files",
                             "empty_seis_prov_document.xml")
     result = validate(filename)
-    assert result.is_valid is True
-    assert result.errors == []
-    assert result.warnings == ["The document is a valid W3C PROV document but "
-                               "not a single SEIS-PROV record has been found."]
+    assert result.is_valid is False
+    assert result.warnings == []
+    assert result.errors == [
+           "File does not contain a single provenance record."]
 
-    filename = os.path.join(DATA_DIR, "valid_files",
+    filename = os.path.join(DATA_DIR, "invalid_files",
                             "empty_seis_prov_document.json")
     result = validate(filename)
-    assert result.is_valid is True
-    assert result.errors == []
-    assert result.warnings == ["The document is a valid W3C PROV document but "
-                               "not a single SEIS-PROV record has been found."]
+    assert result.is_valid is False
+    assert result.warnings == []
+    assert result.errors == [
+        "File does not contain a single provenance record."]
 
 
 def test_seis_prov_document_with_two_types():
@@ -260,10 +256,27 @@ def test_seis_prov_record_with_two_types_and_seis_prov_id():
 
 
 def test_normal_prov_record_but_seis_prov_type():
-    filename = os.path.join(DATA_DIR, "invalid_files",
+    """
+    Bit of an edge case.
+
+    It uses a seis-prov type but it is only a string within a tag. There is
+    no additional seis prov element thus the namespace is not active and it
+    will not be detected...
+    """
+    filename = os.path.join(DATA_DIR, "valid_files",
                             "record_non_sp_ns_but_sp_type.xml")
     result = validate(filename)
-    assert result.is_valid is False
+    assert result.is_valid is True
+
+
+def test_normal_prov_record_but_seis_prov_type_extra_elem():
+    """
+    Same as test_normal_prov_record_but_seis_prov_type() but this time with
+    an additional element.
+    """
+    filename = os.path.join(DATA_DIR, "invalid_files",
+                            "record_non_sp_ns_but_sp_type_extra_elem.xml")
+    result = validate(filename)
     assert result.warnings == []
     assert result.errors == [
         "Record 'tr:sp001_wf_c17dd1f' has a prov:type attribute in the "

@@ -4,7 +4,7 @@
             "prov:label": "Example Organization",
             "prov:type": {
                 "$": "prov:Organization",
-                "type": "prov:QualifiedName"
+                "type": "prov:QUALIFIED_NAME"
             },
             "seis_prov:name": "Example Organization"
         }

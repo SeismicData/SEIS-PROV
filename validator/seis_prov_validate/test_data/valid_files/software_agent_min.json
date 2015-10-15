@@ -4,7 +4,7 @@
             "prov:label": "ObsPy",
             "prov:type": {
                 "$": "prov:SoftwareAgent",
-                "type": "prov:QualifiedName"
+                "type": "prov:QUALIFIED_NAME"
             },
             "seis_prov:software_name": "ObsPy",
             "seis_prov:software_version": "0.10.2",

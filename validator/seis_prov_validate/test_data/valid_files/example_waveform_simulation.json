@@ -18,7 +18,7 @@
             "prov:label": "Susanna Musterfrau",
             "prov:type": {
                 "$": "prov:Person",
-                "type": "prov:QualifiedName"
+                "type": "prov:QUALIFIED_NAME"
             },
             "seis_prov:email": "susanna.musterfrau@email.com",
             "seis_prov:name": "Susanna Musterfrau"
@@ -27,7 +27,7 @@
             "prov:label": "Hans Mustermann",
             "prov:type": {
                 "$": "prov:Person",
-                "type": "prov:QualifiedName"
+                "type": "prov:QUALIFIED_NAME"
             },
             "seis_prov:email": "hans.mustermann@email.com",
             "seis_prov:name": "Hans Mustermann"
@@ -36,7 +36,7 @@
             "prov:label": "SPECFEM3D GLOBE",
             "prov:type": {
                 "$": "prov:SoftwareAgent",
-                "type": "prov:QualifiedName"
+                "type": "prov:QUALIFIED_NAME"
             },
             "seis_prov:software_name": "SPECFEM3D GLOBE",
             "seis_prov:software_version": "7.0.0",
@@ -166,7 +166,7 @@
             "prov:generatedEntity": "seis_prov:sp000_in_38jd89da8l",
             "prov:type": {
                 "$": "prov:PrimarySource",
-                "type": "prov:QualifiedName"
+                "type": "prov:QUALIFIED_NAME"
             },
             "prov:usedEntity": "seis_prov:sp000_fi_asf90345"
         }

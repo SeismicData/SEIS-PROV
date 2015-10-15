@@ -36,7 +36,7 @@
             "prov:label": "ObsPy",
             "prov:type": {
                 "$": "prov:SoftwareAgent",
-                "type": "prov:QualifiedName"
+                "type": "prov:QUALIFIED_NAME"
             },
             "seis_prov:doi": "10.1785/gssrl.81.3.530",
             "seis_prov:software_name": "ObsPy",

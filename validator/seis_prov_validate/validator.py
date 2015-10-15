@@ -227,12 +227,19 @@ def __validate_seis_prov(file_object):
     # Step 3: Validate against the PROV XML XSD Scheme.
     _validate_against_xsd_scheme(doc)
 
-    # Find the seis prov namespace.
+    # Check if it has any records.
+    if not doc._records:
+        _log_error("File does not contain a single provenance record.")
+
+    # Find the seis prov namespace. If it does not exist, it is still a
+    # valid PROV document!
     for ns in doc.namespaces:
         if ns.uri == SEIS_PROV_NAMESPACE:
             break
     else:
-        _log_error("SEIS-PROV namespace not found in document!")
+        _log_warning("The document is a valid W3C PROV document but not a "
+                     "single SEIS-PROV record has been found.")
+        return
 
     # Step 4: Custom validation against the JSON schema. Validate the root
     # document as well as any bundles.
@@ -244,6 +251,7 @@ def __validate_seis_prov(file_object):
     if not seis_prov_ids:
         _log_warning("The document is a valid W3C PROV document but not a "
                      "single SEIS-PROV record has been found.")
+        return
 
     # Find duplicate ids.
     duplicates = set([i for i in seis_prov_ids
